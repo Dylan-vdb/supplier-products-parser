@@ -18,17 +18,16 @@ import { useDropZone } from '@vueuse/core'
 import { XMLParser } from 'fast-xml-parser'
 import Papa from 'papaparse'
 
+import { processSyntechStock } from './helpers/syntechFixer'
+import { processMicropointStock } from './helpers/micropointFixer'
+
 export default {
   setup() {
     const dropzoneRef = ref(null)
     const filesData = ref([])
     const { isOverDropZone } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
-
-    // onMounted(() => {
-    //   const filtered = textToFilter.replaceAll(`â€”`, ' ') // .replaceAll(`€`, '').replaceAll(`”`, '')
-
-    // })
+    const micropointData = ref([])
 
     async function onDrop(files) {
       parseXml(files[0])
@@ -38,75 +37,72 @@ export default {
       const reader = new FileReader()
       reader.onload = async (event) => {
         const xmlRaw = event.target.result
-        const xmlNoSymbols = removeSymbols(xmlRaw)
+        // const xmlNoSymbols = removeSymbols(xmlRaw)
         const parser = new XMLParser()
-        const parsedXml = parser.parse(xmlNoSymbols)
-        if (xmlFile.name.includes('syntech')) processSyntechStock(parsedXml)
-        if (xmlFile.name.includes('micropoint')) processMicropointStock(parsedXml)
+        const parsedXml = parser.parse(xmlRaw)
+
+        if (xmlFile.name.includes('micropoint')) {
+          micropointData.value = processMicropointStock(parsedXml)
+          // TODO, first combine the two tables
+          outPutCsv(micropointData.value)
+        }
+
+        if (xmlFile.name.includes('syntech')) {
+          syntechData.value = processSyntechStock(parsedXml)
+          // TODO, first combine the two tables
+          outPutCsv(syntechData.value)
+        }
       }
       reader.readAsText(xmlFile)
     }
 
     function removeSymbols(text) {
       const filtered = text
-        .replaceAll(`â€”`, ' ')
         .replaceAll('™', '') // Success
+        .replaceAll('∅', '')
+        .replaceAll('—', '-')
+        .replaceAll('•', '-')
+        .replaceAll('‘', "'")
+        .replaceAll('₂', '2')
+        .replaceAll('¹⁷', ' to the power 17')
+        .replaceAll('¹', '1')
+        .replaceAll('²', '2')
+        .replaceAll('³', '3')
+        .replaceAll('Ω', 'ohms')
+        .replaceAll('±', ' plus or minus ')
+        .replaceAll('°', ' deg ')
         .replaceAll('“', '') // Success
         .replaceAll('”', '') // Success
+        .replaceAll('″', 'inches ') // Success
         .replaceAll('®', '') // Success
         .replaceAll('©', '') // Success
         .replaceAll('⎓', '') // Success
+        .replaceAll('×', 'x')
+        .replaceAll('△', '')
+        .replaceAll('µs', 'microseconds')
+        .replaceAll(' ‎', ' ')
+        .replaceAll(/\u200e/giu, ' ')
+        .replaceAll('º', 'deg ')
         .replaceAll('.', '.')
         .replaceAll(/\u2024/giu, '.')
         .replaceAll(/\u2025/giu, '.')
         .replaceAll(/\u2019/giu, "'") // Success
         .replaceAll(/\u2013/giu, '-') // Success
-        .replaceAll('≤', 'less than or equal to') // Success
-        .replaceAll('≥', 'greater than or equal to') // Success
-        .replaceAll('≦', 'less than or equal to') // Success
-        .replaceAll('≧', 'greater than or equal to') // Success
-        .replaceAll(/Â/giu, '')
+        .replaceAll('≤', ' less than ') // Success
+        .replaceAll('≥', ' greater than ') // Success
+        .replaceAll('≦', ' less than or equal to ') // Success
+        .replaceAll('≧', ' greater than or equal to ') // Success
         .replaceAll(/\u00a0/giu, ' ')
         .replaceAll(/\u00e2/giu, '')
         .replaceAll('€', '')
-        .replaceAll('â', '')
         .replaceAll('ª', '')
         .replaceAll('ª', '')
         .replaceAll('℃', ' degC') // Success
-      return filtered
+        .replaceAll('℉', ' degF') // Success
+        .replaceAll('◦C', ' degC') // Success
+      return filtered.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
     }
-
-    function processSyntechStock(parsedXml) {
-      const xmlData = parsedXml.syntechstock.stock.product
-      const deduplicated = removeDuplicates(xmlData)
-      const desiredCategories = removeUnwantedCategories(deduplicated)
-      const fixedAllImagesField = fixAllImagesField(desiredCategories)
-      // const removedAllUnusualSymbols = removeUnusualSymbols(fixedAllImagesField)
-      const improvedCategoryNames = improveCategoryNames(fixedAllImagesField)
-      // const improvedCategoryNames = fixedAllImagesField
-      const combinedStocksField = combineStocksField(improvedCategoryNames)
-      const finalizedFields = tidyFields(combinedStocksField)
-      outPutCsv(finalizedFields)
-    }
-
-    function processMicropointStock(rawXml) {
-      const parser = new XMLParser()
-      const parsedXml = parser.parse(rawXml)
-      const xmlData = parsedXml.xml_data.items.item
-      debugger
-      // There are no duplicates in micropoint table
-
-      // const deduplicated = removeDuplicates(xmlData)
-      // const desiredCategories = removeUnwantedCategories(deduplicated)
-
-      // const fixedAllImagesField = fixAllImagesField(desiredCategories)
-      // // const removedAllUnusualSymbols = removeUnusualSymbols(fixedAllImagesField)
-      // const improvedCategoryNames = improveCategoryNames(fixedAllImagesField)
-      // const combinedStocksField = combineStocksField(improvedCategoryNames)
-      // const finalizedFields = tidyFields(combinedStocksField)
-      outPutCsv(xmlData)
-    }
-
+    // ead:9 175Âµs  µs to 200Âµs; Rand
     function outPutCsv(data) {
       const csvRaw = Papa.unparse(data, {
         delimiter: ';',
@@ -114,27 +110,28 @@ export default {
         // escapeChar: ''
       })
 
-      const csvRawDesymboled = csvRaw
-        .replaceAll(/all\D\D\Wand more/giu, 'all and more')
-        .replaceAll('â€”', ' ')
-        .replaceAll('Â', '')
-        .replaceAll(/Â/giu, '')
-        .replaceAll(/\u00a0/giu, ' ')
-        .replaceAll(/\u00e2/giu, '')
+      const csv = removeSymbols(csvRaw)
 
-      // console.log('csvRaw: ', csvRaw)
-      // console.log('csvRawDesymboled: ', csvRawDesymboled)
+      // const csv = csvRaw
+      //   .replaceAll(/all\D\D\Wand more/giu, 'all and more')
+      //   .replaceAll('â€”', ' ')
+      //   .replaceAll('Â', '')
+      //   .replaceAll(/Â/giu, '')
+      //   .replaceAll(/\u00a0/giu, ' ')
+      //   .replaceAll(/\u00e2/giu, '')
 
-      const object = Papa.parse(csvRawDesymboled, { header: true }).data
-
-      // const newObject = removeUnusualSymbols(object)
-      const csv = Papa.unparse(object, {
-        delimiter: ';',
-        quoteChars: '""'
-        // escapeChar: ''
-      })
-
-      const blob = new Blob([csv], { type: 'text/csv' })
+      //powerful processor that can handle it all
+      const blob = new Blob(
+        [
+          csv
+            .replaceAll(/\u00a0/giu, ' ')
+            .replaceAll('â€”', ' ')
+            .replaceAll('â€‹', '')
+        ],
+        {
+          type: 'text/csv'
+        }
+      )
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
@@ -144,163 +141,6 @@ export default {
       link.click()
       document.body.removeChild(link)
       URL.revokeObjectURL(url)
-    }
-
-    function tidyFields(products) {
-      return products.map((obj) => {
-        const {
-          sku,
-          name,
-          rrp_incl,
-          recommended_margin,
-          cptstock,
-          jhbstock,
-          weight,
-          length,
-          width,
-          height,
-          all_images,
-          categorytree,
-          description
-        } = obj
-        const stock = cptstock + jhbstock
-        const price = rrp_incl
-        const images = all_images
-        const categories = categorytree
-        const type = 'simple' // Add the new field
-
-        return {
-          sku,
-          name,
-          price,
-          categories,
-          description,
-          recommended_margin,
-          weight,
-          length,
-          width,
-          height,
-          images,
-          cptstock,
-          jhbstock,
-          stock,
-          type
-        }
-      })
-    }
-
-    function combineStocksField(products) {
-      return products.map((obj) => {
-        const stock = obj.cptstock + obj.jhbstock
-        return { ...obj, stock }
-      })
-    }
-
-    function improveCategoryNames(products) {
-      return products.map((product) => {
-        const updatedCategoryTree = product.categorytree
-          // .replace(
-          //   /Components >/g,
-          //   'Computer Components >'
-          // )
-          .replace('Computers & Peripherals', 'Peripherals')
-          .replace('Consumer Electronics > ', 'Accessories > ')
-          .replace(
-            'Peripherals > Desktop Computers > Gaming Desktops',
-            'Computers > Gaming Desktops'
-          )
-          .replace(
-            'Peripherals > Desktop Computers > Office Desktops',
-            'Computers > Office Desktops'
-          )
-          .replace('Peripherals > Mini PCs > Barebone Systems', 'Mini PCs > Barebone Systems')
-          .replace('Peripherals > Mini PCs > Complete Systems', 'Mini PCs > Complete Systems')
-          .replace('Peripherals > Mousepads', 'Accessories > Mousepads')
-          .replace('Peripherals > Stands and Cooling', 'Accessories > Stands and Cooling')
-          .replace('Accessories > Bags and Covers', 'Accessories > Bags and Covers')
-          .replace('Appliances > ', 'Gadgets > ')
-          .replace(
-            'Peripherals > Computer Audio > Headsets',
-            'Peripherals > Computer Audio > Headsets > Over-Ears'
-          )
-
-          // Accessories > Speakers > Bluetooth Speakers
-
-          .replace('Accessories > Headphones > ', 'Peripherals > Computer Audio > Headsets > ')
-          .replace('Accessories > Lighting', 'Gadgets > Lighting')
-          .replace('Accessories > Portable Printing > Printers', 'Printers > Portable Printers')
-          .replace(
-            'Accessories > Portable Printing > Printing Consumables',
-            'Printers > Portable Printers > Consumables'
-          )
-
-          .replace('Accessories > Speakers', 'Peripherals > Computer Audio > Speakers') // Double check this
-        return { ...product, categorytree: updatedCategoryTree }
-      })
-    }
-
-    function fixAllImagesField(products) {
-      return products.map((product) => {
-        const updatedAllImages = product.all_images?.replace(/ \|\s*/g, ',')
-        return { ...product, all_images: updatedAllImages }
-      })
-    }
-
-    function removeUnwantedCategories(arr) {
-      const unwantedSubstrings = [
-        'Coming Soon',
-        'On Promotion',
-        'Just Arrived',
-        'Unboxed',
-        'Last Chance',
-        'Apparel',
-        'Hydroponics',
-        ' > Mounts and Brackets',
-        ' > Screen Protectors',
-        ' > Cables',
-        ' > Tools',
-        ' > Mounts and Brackets',
-        ' > Screen Protectors',
-        ' > Mobile Devices > Stylus',
-        ' > Smart Security',
-        ' > Scooters and Bikes',
-        ' > Wearables > Accessories',
-        ' > Lifestyle Accessories'
-      ]
-      const filteredArray = arr.filter((obj) => {
-        if (obj.categories) {
-          const categories = obj.categorytree.toUpperCase()
-          return !unwantedSubstrings.some((substring) =>
-            categories.includes(substring.toUpperCase())
-          )
-        } else {
-          return false
-        }
-      })
-      return filteredArray
-    }
-
-    function removeDuplicates(arr) {
-      const sortedArray = [...arr].sort((a, b) => {
-        const nameA = a.name.toUpperCase()
-        const nameB = b.name.toUpperCase()
-        if (nameA < nameB) {
-          return -1
-        }
-        if (nameA > nameB) {
-          return 1
-        }
-        return 0
-      })
-
-      const uniqueObjects = sortedArray.reduce((unique, obj) => {
-        if (!unique.some((o) => o.name === obj.name)) {
-          unique.push(obj)
-        }
-        return unique
-      }, [])
-
-      return uniqueObjects
     }
 
     return {
