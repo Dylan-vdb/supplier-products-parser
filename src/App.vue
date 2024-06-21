@@ -43,6 +43,7 @@ export default {
 
         if (xmlFile.name.includes('micropoint')) {
           micropointData.value = processMicropointStock(parsedXml)
+
           // TODO, first combine the two tables
           outPutCsv(micropointData.value)
         }

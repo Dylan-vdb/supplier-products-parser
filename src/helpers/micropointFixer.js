@@ -1,7 +1,8 @@
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
   const combinedCategories = combineCategoriesField(products)
-  const combinedStocks = removeUnwantedCategories(combinedCategories)
+  const categoriesRemoved = removeUnwantedCategories(combinedCategories)
+  const combinedStocks = improveCategoryNames(categoriesRemoved)
 
   // const filteredProducts = removeUnwantedCategories(products)
   // const fixedImages = fixAllImagesField(filteredProducts)
@@ -9,6 +10,118 @@ export function processMicropointStock(xmlData) {
   // const combinedStocks = combineStocksField(categorizedProducts)
   // return tidyFields(combinedStocks)
   return combinedStocks
+}
+
+function improveCategoryNames(products) {
+  return products.reduce((updatedProducts, product) => {
+    const updatedCategoryTree = product.combinedCategories
+      // ADAPTERS > becomes Peripherals > Adapters > [micropoint subcategory]
+      .replace('ADAPTERS >', `Peripherals > Adapters >`)
+      //  ADD-ON CARDS  -->  Components > Expansion and PCIe Adapters
+      .replace('ADD-ON CARDS >', 'Components > Expansion and PCIe Adapters >')
+
+      // ANCILLARY ITEMS  -->  Gadgets > [micropoint subcategory]
+      .replace('ANCILLARY ITEMS >', 'Gadgets >')
+      .replace('APPLE >', 'Components > Apple')
+      .replace('CABLES >', 'Peripherals > Cables >')
+      .replace('CABLES : MEDIA', 'Peripherals > Cables > Media')
+      .replace('CABLES : NETWORK', 'Peripherals > Cables > Network')
+      .replace('CABLES : POWER', 'Peripherals > Cables > Power')
+      .replace('FLASH DRIVES AND MICRO-SD > FLASH DRIVES', 'Peripherals > Storage > Flash Drives')
+      .replace('FLASH DRIVES AND MICRO-SD > MICRO SD', 'Peripherals > Storage > Micro SD')
+      .replace('FLASH DRIVES AND MICRO-SD > USB', 'Peripherals > Storage > Flash Drives')
+      .replace('GRAPHIC CARDS >', 'Components > Graphics Cards >')
+
+      .replace('HARD DRIVES > 2.5" SSD', 'Components > Solid State Drives > Consumer')
+      .replace('HARD DRIVES > 3.5" SSD', 'Components > Solid State Drives > Consumer')
+      .replace('HARD DRIVES > 2.5" HDD', 'Components > Disk Drives > Consumer')
+      .replace('HARD DRIVES > 2.5" SATA HDD', 'Components > Disk Drives > Consumer')
+      .replace('HARD DRIVES > 3.5" SATA HDD', 'Components > Disk Drives > Consumer')
+      .replace('HARD DRIVES > EXTERNAL 2.5" HDD', 'Peripherals > Storage > External Disk Drives')
+      .replace('HARD DRIVES > HDD DOCKING', 'Peripherals > Storage > Enclosures')
+
+      .replace('NETAC > FLASH DRIVES', 'Peripherals > Storage > Flash Drives')
+      .replace('NETAC > MICRO SD', 'Peripherals > Storage > Micro SD')
+      .replace('NETAC > EXTERNAL 2.5" HDD', 'Peripherals > Storage > External Disk Drives')
+      .replace('NETAC > 2.5" SSD', 'Components > Solid State Drives > Consumer')
+
+      .replace('HEADSETS > GAMING', 'Peripherals > Computer Audio > Headsets > Over-Ears')
+      .replace('HEADSETS > HEADSET', 'Peripherals > Computer Audio > Headsets > Over-Ears')
+      .replace('HEADSETS > SOUND', 'Peripherals > Computer Audio > Headsets > Over-Ears')
+      .replace('KEYBOARDS > ACCESSORIES', 'Peripherals > Keyboards > Keyboard Accessories')
+      .replace('KEYBOARDS > GAMING', 'Peripherals > Keyboards > Gaming Keyboards')
+      .replace('KEYBOARDS > BLUETOOTH', 'Peripherals > Keyboards > Office Keyboards')
+      .replace('KEYBOARDS > CORDER', 'Peripherals > Keyboards > Office Keyboards')
+      .replace('KEYBOARDS > DESKTOP KEYBOARD', 'Peripherals > Keyboards > Office Keyboards')
+      .replace('KEYBOARDS > GAMING', 'Peripherals > Keyboards > Gaming Keyboards')
+      .replace('KEYBOARDS > USB', 'Peripherals > Keyboards > Office Keyboards')
+      .replace('KEYBOARDS > WIRELESS', 'Peripherals > Keyboards > Office Keyboards')
+      /**
+  MEMORY	   DESKTOP MEMORY   --->     Components > Memory > Desktop Memory
+	MEMORY	FLASH DRIVES   --->          Components > Memory > Flash Drives
+  MEMORY	GAMING             ---->     Components > Memory > Gaming Memory
+ 	MEMORY	MICRO SD	--->         Components > Memory > Micro SD
+	MEMORY	NOTEBOOK MEMORY   ---->      Components > Memory > Notebook Memory
+
+       */
+
+      .replace('MEMORY > DESKTOP MEMORY', 'Components > Memory > Desktop Memory')
+      .replace('MEMORY > FLASH DRIVES', 'Components > Memory > Flash Drives')
+      .replace('MEMORY > GAMING', 'Components > Memory > Gaming Memory')
+      .replace('MEMORY > MICRO SD', 'Components > Memory > Micro SD')
+      .replace('MEMORY > NOTEBOOK MEMORY', 'Components > Memory > Notebook Memory')
+      .replace('MEMORY > MEMORY >', 'Components > Memory > Notebook Memory')
+      // ^SOFTWARE >\.*.\S*
+      .replace(/^MICROSOFT >.*/giu, 'Components > Software')
+      .replace(/^SOFTWARE >.*/giu, 'Components > Software')
+      .replace(/^MINI PC >.*/giu, 'Mini PCs > Complete Systems')
+      // MONITORS >
+      .replace(/^MONITORS >.*/giu, 'Components > Software')
+      .replace('MOTHERBOARDS >', 'Components > Motherboards >')
+      .replace(/^MOUSE > GAMING.*$/giu, 'Peripherals > Mice > Gaming Mice')
+      .replace('MOUSE > CORDER', 'Peripherals > Mice > Gaming Mice')
+      .replace('MOUSE > MOUSE PAD', 'Accessories > Mousepads')
+      .replace('MOUSE > USB', 'Peripherals > Mice > Gaming Mice')
+      .replace('MOUSE > WIRED MOUSE', 'Peripherals > Mice > Office Mice')
+      .replace('MOUSE > WIRELESS MOUSE', 'Peripherals > Mice > Office Mice')
+
+      .replace('NETBOOKS > INTEL CELERON', 'Notebooks')
+      .replace('NOTEBOOKS > ACCESSORIES', 'Accessories > Notebook Accessories')
+      .replace('NOTEBOOK BAGS > SLEEVE', 'Accessories > Bags and Covers > Sleeves')
+      .replace('NOTEBOOK BAGS > TABLET  SLEEVES', 'Accessories > Bags and Covers > Sleeves')
+      .replace(/^NOTEBOOK ACCESSORIES >.*/giu, 'Accessories > Notebook Accessories')
+      .replace(/^NOTEBOOK BAGS >\s*\S.*$/giu, 'Accessories > Bags and Covers > Bags')
+      .replace(/^NOTEBOOKS >\s*\S.*$/giu, 'Notebooks')
+
+      .replace('NETWORKING > 3G / LTE DEVICES', 'Networking & Security > Portable Routers')
+      .replace('NETWORKING > ACCESSORIES', 'Networking & Security > Accessories')
+      .replace('NETWORKING > CONSUMABLES', 'Networking & Security > Consumables')
+      .replace('NETWORKING > ROUTERS', 'Networking & Security > Routers and Mesh')
+      .replace('NETWORKING > SWITCHES', 'Networking & Security > Switches')
+
+      .replace('SOUND > EARPHONES', 'Peripherals > Computer Audio > Headsets > In-Ears')
+      .replace('SOUND > HEADSET', 'Peripherals > Computer Audio > Headsets > Over-Ears')
+      .replace('SOUND > MICROPHONE', 'Peripherals > Computer Audio > Microphones')
+      .replace('SOUND > SPEAKERS', 'Peripherals > Computer Audio > Speakers')
+      .replace('SOUND > MP3', 'Gadgets > Audio')
+      .replace(/^SPEAKERS >.*$/giu, 'Peripherals > Computer Audio > Speakers')
+      .replace('SPLITTERS >', 'Peripherals > Splitters >')
+      .replace('SWITCHES > ', 'Peripherals > Switches >')
+      .replace('TABLETS >', 'Tablets >')
+
+      .replace(/^UPS > \d+VA *\w*$/giu, 'Power Solutions > PC UPS')
+
+      .replace('UPS > INVERTER', 'Power Solutions > Inverters')
+
+      .replace(/^USB \w*DEVICES > \w* *\w*$/giu, 'Peripherals > USB Devices')
+      .replace(/USB ADDON DEVICES > (BLUETOOTH|NETWORK|SOUND)/giu, 'Peripherals > USB Devices')
+      .replace(/^USB HUB >\s*\S.*$/giu, 'Peripherals > USB Devices')
+      // Ensure that after all the above, no category ends with '>'
+      .replace(/ > $/giu, '')
+
+    updatedProducts.push({ ...product, categorytree: updatedCategoryTree })
+    return updatedProducts
+  }, [])
 }
 
 function removeUnwantedCategories(products) {
@@ -34,6 +147,7 @@ function removeUnwantedCategories(products) {
     'HARD DRIVES > NOTE BOOK DRIVE CADDY',
     'HARD DRIVES > REFURBISHED STOCK',
     'HARD DRIVES > SUPPLIER STOCK',
+    'HEALTHCARE >',
     'KVM SWITCHES >',
     'LAN PRODUCTS >',
     'LOGITECH >',
@@ -67,24 +181,33 @@ function removeUnwantedCategories(products) {
     'SANITIZER >',
     'SERVERS >',
     'SLEEVE >',
-    'SOLID STATE DRIVE > ACCESSORIES',
+    'SOLID STATE DRIVE >',
     'TOOLS >',
     'TP-LINK >',
     'TRANSMITTERS >',
     'TV >',
-    'WARRANTY >'
+    'WARRANTY >',
+    'MICROSOFT > SERVER',
+    'PHILIPS >',
+    'PHONES >',
+    'PROCESSORS >',
+    'UPS > ACCESSORIES',
+    'MOUSE > GAMING',
+    'MOUSE > ACCESSORIES'
+    // /mouse > $/giu
   ]
 
   let preFiltered = products.filter((product) => {
-    const soundHasNoSubcategories =
-      product.category_description == 'SOUND' && product.group_description == ''
-    return !soundHasNoSubcategories
+    const emptyOfSubcategories =
+      (product.category_description == 'SOUND' && product.group_description == '') ||
+      (product.category_description == 'MOUSE' && product.group_description == '')
+    return !emptyOfSubcategories
   })
 
   const filteredArray = preFiltered.filter((product) => {
-    if (product.category) {
-      const categories = product.category.toUpperCase()
-      return !unwantedSubstrings.some((substring) => categories.includes(substring.toUpperCase()))
+    if (product.combinedCategories) {
+      const categories = product.combinedCategories
+      return !unwantedSubstrings.some((substring) => categories.includes(substring))
     } else {
       return false
     }
@@ -133,44 +256,7 @@ function combineCategoriesField(products) {
   // Merge the two columns into one with the same '>' separator as symtech stock.
   return products.map((product) => {
     const combinedCategories = `${product.category_description} > ${product.group_description}`
-    return { ...product, category: combinedCategories }
-  })
-}
-
-function improveCategoryNames(products) {
-  return products.map((product) => {
-    const updatedCategoryTree = product.categorytree
-      // .replace(
-      //   /Components >/g,
-      //   'Computer Components >'
-      // )
-      .replace('Computers & Peripherals', 'Peripherals')
-      .replace('Consumer Electronics > ', 'Accessories > ')
-      .replace('Peripherals > Desktop Computers > Gaming Desktops', 'Computers > Gaming Desktops')
-      .replace('Peripherals > Desktop Computers > Office Desktops', 'Computers > Office Desktops')
-      .replace('Peripherals > Mini PCs > Barebone Systems', 'Mini PCs > Barebone Systems')
-      .replace('Peripherals > Mini PCs > Complete Systems', 'Mini PCs > Complete Systems')
-      .replace('Peripherals > Mousepads', 'Accessories > Mousepads')
-      .replace('Peripherals > Stands and Cooling', 'Accessories > Stands and Cooling')
-      .replace('Accessories > Bags and Covers', 'Accessories > Bags and Covers')
-      .replace('Appliances > ', 'Gadgets > ')
-      .replace(
-        'Peripherals > Computer Audio > Headsets',
-        'Peripherals > Computer Audio > Headsets > Over-Ears'
-      )
-
-      // Accessories > Speakers > Bluetooth Speakers
-
-      .replace('Accessories > Headphones > ', 'Peripherals > Computer Audio > Headsets > ')
-      .replace('Accessories > Lighting', 'Gadgets > Lighting')
-      .replace('Accessories > Portable Printing > Printers', 'Printers > Portable Printers')
-      .replace(
-        'Accessories > Portable Printing > Printing Consumables',
-        'Printers > Portable Printers > Consumables'
-      )
-
-      .replace('Accessories > Speakers', 'Peripherals > Computer Audio > Speakers') // Double check this
-    return { ...product, categorytree: updatedCategoryTree }
+    return { ...product, combinedCategories }
   })
 }
 
@@ -179,27 +265,4 @@ function fixAllImagesField(products) {
     const updatedAllImages = product.all_images?.replace(/ \|\s*/g, ',')
     return { ...product, all_images: updatedAllImages }
   })
-}
-
-function removeDuplicates(arr) {
-  const sortedArray = [...arr].sort((a, b) => {
-    const nameA = a.name.toUpperCase()
-    const nameB = b.name.toUpperCase()
-    if (nameA < nameB) {
-      return -1
-    }
-    if (nameA > nameB) {
-      return 1
-    }
-    return 0
-  })
-
-  const uniqueObjects = sortedArray.reduce((unique, obj) => {
-    if (!unique.some((o) => o.name === obj.name)) {
-      unique.push(obj)
-    }
-    return unique
-  }, [])
-
-  return uniqueObjects
 }

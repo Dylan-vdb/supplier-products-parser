@@ -124,6 +124,12 @@ function removeUnwantedCategories(arr) {
     ' > Wearables > Accessories',
     ' > Lifestyle Accessories'
   ]
+  const onPromotion = arr.filter((product) => {
+    if (product.categorytree) return product.categorytree.includes('On Promotion')
+    else return false
+  })
+  debugger
+
   const filteredArray = arr.filter((obj) => {
     if (obj.categories) {
       const categories = obj.categorytree.toUpperCase()
