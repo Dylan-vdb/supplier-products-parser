@@ -1,26 +1,63 @@
+import { calculateFullPrice } from '../helpers/baseHelpers'
+
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
-  const combinedCategories = combineCategoriesField(products)
+  const wantedFields = removeUnwantedFields(products)
+  const combinedCategories = combineCategoriesField(wantedFields)
   const categoriesRemoved = removeUnwantedCategories(combinedCategories)
-  const combinedStocks = improveCategoryNames(categoriesRemoved)
+  const promotedProductsHandled = handlePromotedProducts(categoriesRemoved)
+  const improvedCategoryNames = improveCategoryNames(promotedProductsHandled)
 
-  // const filteredProducts = removeUnwantedCategories(products)
-  // const fixedImages = fixAllImagesField(filteredProducts)
-  // const categorizedProducts = improveCategoryNames(fixedImages)
-  // const combinedStocks = combineStocksField(categorizedProducts)
-  // return tidyFields(combinedStocks)
-  return combinedStocks
+  return improvedCategoryNames
+}
+
+function handlePromotedProducts(products) {
+  return products.map((product) => {
+    const promotionEndDate = new Date(product.promo_ends)
+    const isPromoted =
+      product.specialPrice > 0 && promotionEndDate > new Date('15/06/2024  00:00:00') // TODO get back to compare with today.
+
+    return isPromoted
+      ? {
+          ...product,
+
+          tags: 'On Promotion',
+          sale_price: calculateFullPrice(Number(product.specialPrice), 15, 15),
+          price: product.rrp_incl
+        }
+      : product
+  })
+}
+
+// Wanted fields are: item_number: SKU, short_description: name, detailed_decription: description, price, specialPrice: special_price, specialStartDate: promo_starts, specialEndDate: promo_ends, recommendedRetail: rrp_incl, category_description, group_description, quantity: stock, image_url: images
+function removeUnwantedFields(products) {
+  return products.map((product) => {
+    return {
+      sku: product.item_number,
+      name: product.short_description,
+      category_description: product.category_description,
+      group_description: product.group_description,
+      normal_cost: product.price,
+      rrp_incl: product.recommendedRetail,
+      promo_cost: product.specialPrice,
+      promo_starts: product.specialStartDate,
+      promo_ends: product.specialEndDate,
+
+      stock: product.quantity,
+      images: product.image_url,
+
+      description: product.detailed_description
+    }
+  })
 }
 
 function improveCategoryNames(products) {
   return products.reduce((updatedProducts, product) => {
     const updatedCategoryTree = product.combinedCategories
-      // ADAPTERS > becomes Peripherals > Adapters > [micropoint subcategory]
       .replace('ADAPTERS >', `Peripherals > Adapters >`)
-      //  ADD-ON CARDS  -->  Components > Expansion and PCIe Adapters
+
       .replace('ADD-ON CARDS >', 'Components > Expansion and PCIe Adapters >')
 
-      // ANCILLARY ITEMS  -->  Gadgets > [micropoint subcategory]
       .replace('ANCILLARY ITEMS >', 'Gadgets >')
       .replace('APPLE >', 'Components > Apple')
       .replace('CABLES >', 'Peripherals > Cables >')
@@ -56,14 +93,6 @@ function improveCategoryNames(products) {
       .replace('KEYBOARDS > GAMING', 'Peripherals > Keyboards > Gaming Keyboards')
       .replace('KEYBOARDS > USB', 'Peripherals > Keyboards > Office Keyboards')
       .replace('KEYBOARDS > WIRELESS', 'Peripherals > Keyboards > Office Keyboards')
-      /**
-  MEMORY	   DESKTOP MEMORY   --->     Components > Memory > Desktop Memory
-	MEMORY	FLASH DRIVES   --->          Components > Memory > Flash Drives
-  MEMORY	GAMING             ---->     Components > Memory > Gaming Memory
- 	MEMORY	MICRO SD	--->         Components > Memory > Micro SD
-	MEMORY	NOTEBOOK MEMORY   ---->      Components > Memory > Notebook Memory
-
-       */
 
       .replace('MEMORY > DESKTOP MEMORY', 'Components > Memory > Desktop Memory')
       .replace('MEMORY > FLASH DRIVES', 'Components > Memory > Flash Drives')
@@ -81,7 +110,7 @@ function improveCategoryNames(products) {
       .replace(/^MOUSE > GAMING.*$/giu, 'Peripherals > Mice > Gaming Mice')
       .replace('MOUSE > CORDER', 'Peripherals > Mice > Gaming Mice')
       .replace('MOUSE > MOUSE PAD', 'Accessories > Mousepads')
-      .replace('MOUSE > USB', 'Peripherals > Mice > Gaming Mice')
+      .replace('MOUSE > USB', 'Peripherals > Mice > Office Mice')
       .replace('MOUSE > WIRED MOUSE', 'Peripherals > Mice > Office Mice')
       .replace('MOUSE > WIRELESS MOUSE', 'Peripherals > Mice > Office Mice')
 
@@ -93,11 +122,11 @@ function improveCategoryNames(products) {
       .replace(/^NOTEBOOK BAGS >\s*\S.*$/giu, 'Accessories > Bags and Covers > Bags')
       .replace(/^NOTEBOOKS >\s*\S.*$/giu, 'Notebooks')
 
-      .replace('NETWORKING > 3G / LTE DEVICES', 'Networking & Security > Portable Routers')
-      .replace('NETWORKING > ACCESSORIES', 'Networking & Security > Accessories')
-      .replace('NETWORKING > CONSUMABLES', 'Networking & Security > Consumables')
-      .replace('NETWORKING > ROUTERS', 'Networking & Security > Routers and Mesh')
-      .replace('NETWORKING > SWITCHES', 'Networking & Security > Switches')
+      .replace('NETWORKING > 3G / LTE DEVICES', 'Networking > Portable Routers')
+      .replace('NETWORKING > ACCESSORIES', 'Networking > Accessories')
+      .replace('NETWORKING > CONSUMABLES', 'Networking > Consumables')
+      .replace('NETWORKING > ROUTERS', 'Networking > Routers and Mesh')
+      .replace('NETWORKING > SWITCHES', 'Networking > Switches')
 
       .replace('SOUND > EARPHONES', 'Peripherals > Computer Audio > Headsets > In-Ears')
       .replace('SOUND > HEADSET', 'Peripherals > Computer Audio > Headsets > Over-Ears')
@@ -118,6 +147,18 @@ function improveCategoryNames(products) {
       .replace(/^USB HUB >\s*\S.*$/giu, 'Peripherals > USB Devices')
       // Ensure that after all the above, no category ends with '>'
       .replace(/ > $/giu, '')
+      .replace('GAMING', 'Gaming')
+      .replace('ACCESSORIES', 'Accessories')
+      .replace('BLUETOOTH', 'Bluetooth')
+      .replace('GADGETS', 'Gadgets')
+      .replace('CPU FANS', 'CPU Fans')
+      .replace('DESKTOP MEMORY', 'Desktop Memory')
+      .replace('INTEL CORE I5', 'Intel Core i5')
+      .replace('INTEL CORE I7', 'Intel Core i7')
+      .replace('INTEL CORE I3', 'Intel Core i3')
+      .replace('INTEL CORE I9', 'Intel Core i9')
+      .replace('MOUSE PAD', 'Mouse Pad')
+      .replace('WIRELESS', 'Wireless')
 
     updatedProducts.push({ ...product, categorytree: updatedCategoryTree })
     return updatedProducts
@@ -193,7 +234,8 @@ function removeUnwantedCategories(products) {
     'PROCESSORS >',
     'UPS > ACCESSORIES',
     'MOUSE > GAMING',
-    'MOUSE > ACCESSORIES'
+    'MOUSE > ACCESSORIES',
+    'MEMORY > MEMORY'
     // /mouse > $/giu
   ]
 

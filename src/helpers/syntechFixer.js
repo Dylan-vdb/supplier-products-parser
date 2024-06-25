@@ -1,6 +1,10 @@
+import { calculateFullPrice } from '../helpers/baseHelpers'
+
 export function processSyntechStock(xmlData) {
   const products = xmlData.syntechstock.stock.product
-  const cleanedProducts = removeDuplicates(products)
+  const promotedProductsHandled = handlePromotedProducts(products)
+  const allPipedCategoriesHandled = removeOtherPipes(promotedProductsHandled)
+  const cleanedProducts = removeDuplicates(allPipedCategoriesHandled)
   const filteredProducts = removeUnwantedCategories(cleanedProducts)
   const fixedImages = fixAllImagesField(filteredProducts)
   const categorizedProducts = improveCategoryNames(fixedImages)
@@ -8,12 +12,48 @@ export function processSyntechStock(xmlData) {
   return tidyFields(combinedStocks)
 }
 
+function handlePromotedProducts(products) {
+  return products.map((product) => {
+    const promotionEndDate = new Date(product.promo_ends)
+    const isPromoted =
+      product.categorytreealt?.includes('|On Promotion') && promotionEndDate > new Date()
+
+    return isPromoted
+      ? {
+          ...product,
+          categorytreealt: product.categorytreealt.replace('|On Promotion', ''),
+          tags: 'On Promotion',
+          sale_price: calculateFullPrice(
+            Number(product.promo_price),
+            Number(product.recommended_margin),
+            15
+          ),
+          price: product.rrp_incl
+        }
+      : { ...product, price: product.rrp_incl, sale_price: null }
+  })
+}
+
+function removeOtherPipes(products) {
+  return products.map((product) => {
+    product.categorytreealt = product.categorytreealt?.split('|')[0]
+
+    return product
+  })
+}
+
 function tidyFields(products) {
   return products.map(
     ({
       sku,
       name,
-      rrp_incl: price,
+      price,
+      rrp_incl,
+      sale_price,
+      promo_price: promo_cost,
+      promo_starts,
+      promo_ends,
+      price: normal_cost,
       recommended_margin,
       cptstock,
       jhbstock,
@@ -24,12 +64,20 @@ function tidyFields(products) {
       height,
       all_images: images,
       categorytree: categories,
+      tags,
       description
     }) => ({
       sku,
       name,
       price,
+      rrp_incl,
+      sale_price,
+      promo_cost,
+      promo_starts,
+      promo_ends,
+      normal_cost,
       categories,
+      tags,
       description,
       recommended_margin,
       weight,
@@ -56,10 +104,7 @@ function combineStocksField(products) {
 function improveCategoryNames(products) {
   return products.map((product) => {
     const updatedCategoryTree = product.categorytree
-      // .replace(
-      //   /Components >/g,
-      //   'Computer Components >'
-      // )
+
       .replace('Computers & Peripherals', 'Peripherals')
       .replace('Consumer Electronics > ', 'Accessories > ')
       .replace('Peripherals > Desktop Computers > Gaming Desktops', 'Computers > Gaming Desktops')
@@ -75,9 +120,6 @@ function improveCategoryNames(products) {
         'Peripherals > Computer Audio > Headsets',
         'Peripherals > Computer Audio > Headsets > Over-Ears'
       )
-
-      // Accessories > Speakers > Bluetooth Speakers
-
       .replace('Accessories > Headphones > ', 'Peripherals > Computer Audio > Headsets > ')
       .replace('Accessories > Lighting', 'Gadgets > Lighting')
       .replace('Accessories > Portable Printing > Printers', 'Printers > Portable Printers')
@@ -85,12 +127,12 @@ function improveCategoryNames(products) {
         'Accessories > Portable Printing > Printing Consumables',
         'Printers > Portable Printers > Consumables'
       )
-
       .replace('Accessories > Speakers', 'Peripherals > Computer Audio > Speakers') // Double check this
       .replace(
         'Accessories > Media and Streaming > Adapters and Converters',
         'Peripherals > Adapters > Display Adapters'
       )
+      .replace('Networking & Security > ', 'Networking > ')
 
     return { ...product, categorytree: updatedCategoryTree }
   })
@@ -106,7 +148,7 @@ function fixAllImagesField(products) {
 function removeUnwantedCategories(arr) {
   const unwantedSubstrings = [
     'Coming Soon',
-    'On Promotion',
+    // 'On Promotion',
     'Just Arrived',
     'Unboxed',
     'Last Chance',
@@ -124,20 +166,21 @@ function removeUnwantedCategories(arr) {
     ' > Wearables > Accessories',
     ' > Lifestyle Accessories'
   ]
-  const onPromotion = arr.filter((product) => {
-    if (product.categorytree) return product.categorytree.includes('On Promotion')
-    else return false
-  })
-  debugger
 
-  const filteredArray = arr.filter((obj) => {
-    if (obj.categories) {
-      const categories = obj.categorytree.toUpperCase()
-      return !unwantedSubstrings.some((substring) => categories.includes(substring.toUpperCase()))
-    } else {
-      return false
-    }
-  })
+  const filteredArray = arr
+    .filter((product) => {
+      if (product.categories) {
+        const categories = product.categorytree.toUpperCase()
+        return !unwantedSubstrings.some((substring) => categories.includes(substring.toUpperCase()))
+      } else {
+        return false
+      }
+    })
+    .map((product) => {
+      product.categorytree = product.categorytree?.split('|')[0]
+      return product
+    })
+    .filter((product) => !product.categorytree?.includes('On Promotion'))
   return filteredArray
 }
 
