@@ -9,7 +9,27 @@ export function processSyntechStock(xmlData) {
   const fixedImages = fixAllImagesField(filteredProducts)
   const categorizedProducts = improveCategoryNames(fixedImages)
   const combinedStocks = combineStocksField(categorizedProducts)
-  return tidyFields(combinedStocks)
+  const tidiedFields = tidyFields(combinedStocks)
+  const finalProducts = saveSkuList(tidiedFields)
+  return finalProducts
+}
+
+function saveSkuList(products) {
+  const skuList = products.map((product) => product.sku)
+  const existingListString = localStorage.getItem('syntechSkuListNew')
+  if (existingListString) {
+    let existingSkus = JSON.parse(existingListString)
+    let discontinuedSkus = existingSkus.filter((sku) => !skuList.includes(sku))
+    discontinuedSkus.forEach((sku) => {
+      products.push({
+        sku: sku,
+        published: 0
+      })
+    })
+    localStorage.setItem('syntechSkuListOld', existingListString)
+  }
+  localStorage.setItem('syntechSkuListNew', JSON.stringify(skuList))
+  return products
 }
 
 function handlePromotedProducts(products) {
@@ -88,7 +108,8 @@ function tidyFields(products) {
       cptstock,
       jhbstock,
       stock,
-      type: 'simple'
+      type: 'simple',
+      published: 1
     })
   )
 }

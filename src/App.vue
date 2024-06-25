@@ -24,13 +24,29 @@ import { processMicropointStock } from './helpers/micropointFixer'
 export default {
   setup() {
     const dropzoneRef = ref(null)
-    const filesData = ref([])
     const { isOverDropZone } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
     const micropointData = ref([])
+    const syntechKey = import.meta.env.VITE_SYNTECH_KEY
 
     async function onDrop(files) {
       parseXml(files[0])
+    }
+
+    onMounted(async () => {
+      const xml = await fetchXmlData()
+      debugger
+    })
+    async function fetchXmlData() {
+      const response = await fetch(
+        `https://www.syntech.co.za/feeds/feedhandler.php?key=3CCC41DC-9732-4435-880B-7CCC0B8E3C8B&feed=syntech-xml-update`,
+        { mode: 'no-cors' }
+      )
+      debugger
+      const xmlText = await response.text()
+
+      console.log(xmlText) // This will log the XML data to the console
+      return xmlText
     }
 
     function parseXml(xmlFile) {
@@ -103,7 +119,7 @@ export default {
         .replaceAll('◦C', ' degC') // Success
       return filtered.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
     }
-    // ead:9 175Âµs  µs to 200Âµs; Rand
+
     function outPutCsv(data) {
       const csvRaw = Papa.unparse(data, {
         delimiter: ';',
@@ -113,15 +129,6 @@ export default {
 
       const csv = removeSymbols(csvRaw)
 
-      // const csv = csvRaw
-      //   .replaceAll(/all\D\D\Wand more/giu, 'all and more')
-      //   .replaceAll('â€”', ' ')
-      //   .replaceAll('Â', '')
-      //   .replaceAll(/Â/giu, '')
-      //   .replaceAll(/\u00a0/giu, ' ')
-      //   .replaceAll(/\u00e2/giu, '')
-
-      //powerful processor that can handle it all
       const blob = new Blob(
         [
           csv
