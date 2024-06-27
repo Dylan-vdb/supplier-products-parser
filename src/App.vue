@@ -33,22 +33,6 @@ export default {
       parseXml(files[0])
     }
 
-    onMounted(async () => {
-      const xml = await fetchXmlData()
-      debugger
-    })
-    async function fetchXmlData() {
-      const response = await fetch(
-        `https://www.syntech.co.za/feeds/feedhandler.php?key=3CCC41DC-9732-4435-880B-7CCC0B8E3C8B&feed=syntech-xml-update`,
-        { mode: 'no-cors' }
-      )
-      debugger
-      const xmlText = await response.text()
-
-      console.log(xmlText) // This will log the XML data to the console
-      return xmlText
-    }
-
     function parseXml(xmlFile) {
       const reader = new FileReader()
       reader.onload = async (event) => {

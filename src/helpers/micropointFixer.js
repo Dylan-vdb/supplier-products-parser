@@ -7,8 +7,53 @@ export function processMicropointStock(xmlData) {
   const categoriesRemoved = removeUnwantedCategories(combinedCategories)
   const promotedProductsHandled = handlePromotedProducts(categoriesRemoved)
   const improvedCategoryNames = improveCategoryNames(promotedProductsHandled)
+  const improvedCategoryCapitalization = improveCategoryCapitalization(improvedCategoryNames)
 
-  return improvedCategoryNames
+  return improvedCategoryCapitalization
+}
+
+function improveCategoryCapitalization(products) {
+  const acronyms = new Set([
+    'USB',
+    'HDMI',
+    'OTG',
+    'VGA',
+    'DVI',
+    'RCA',
+    'PS2',
+    'PCI-E',
+    'PCMCIA',
+    'PCI',
+    'MSATA',
+    'HDD',
+    'LDINO',
+    'MOLEX',
+    'KVM',
+    'IDE',
+    'SAS',
+    'RJ11',
+    'CAT',
+    'CPU',
+    'SSD',
+    'AMD',
+    'ATI',
+    'AM2'
+  ])
+
+  return products.reduce((updatedProducts, product) => {
+    const updatedCategoryTree = product.categories
+      .replace(/([^\s-]+)(?:\s+|$)/g, (match, word) => {
+        if (acronyms.has(word.toUpperCase())) {
+          return word.toUpperCase() + ' '
+        } else {
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase() + ' '
+        }
+      })
+      .replace(/ $/, '')
+
+    updatedProducts.push({ ...product, categories: updatedCategoryTree })
+    return updatedProducts
+  }, [])
 }
 
 function handlePromotedProducts(products) {
@@ -160,7 +205,7 @@ function improveCategoryNames(products) {
       .replace('MOUSE PAD', 'Mouse Pad')
       .replace('WIRELESS', 'Wireless')
 
-    updatedProducts.push({ ...product, categorytree: updatedCategoryTree })
+    updatedProducts.push({ ...product, categories: updatedCategoryTree })
     return updatedProducts
   }, [])
 }
