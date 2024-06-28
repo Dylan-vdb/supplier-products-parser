@@ -89,7 +89,9 @@ export default {
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.download = 'computer-gadgets-woocommerce-products.csv'
+      // get today's date in a simple format
+      const today = new Date().toISOString().slice(0, 10)
+      link.download = `computer-gadgets-woocommerce-products-${today}.csv`
       link.style.display = 'none'
       document.body.appendChild(link)
       link.click()
