@@ -1,4 +1,5 @@
-import { calculateFullPrice } from '../helpers/baseHelpers'
+import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
+import { syntechCategoryReplacements, syntechUnwantedSubstrings } from '../helpers/constants'
 
 export function processSyntechStock(xmlData) {
   const products = xmlData.syntechstock.stock.product
@@ -10,26 +11,8 @@ export function processSyntechStock(xmlData) {
   const categorizedProducts = improveCategoryNames(fixedImages)
   const combinedStocks = combineStocksField(categorizedProducts)
   const tidiedFields = tidyFields(combinedStocks)
-  const finalProducts = saveSkuList(tidiedFields)
+  const finalProducts = saveSkuList(tidiedFields, 'syntech')
   return finalProducts
-}
-
-function saveSkuList(products) {
-  const skuList = products.map((product) => product.sku)
-  const existingListString = localStorage.getItem('syntechSkuListNew')
-  if (existingListString) {
-    let existingSkus = JSON.parse(existingListString)
-    let discontinuedSkus = existingSkus.filter((sku) => !skuList.includes(sku))
-    discontinuedSkus.forEach((sku) => {
-      products.push({
-        sku: sku,
-        published: 0
-      })
-    })
-    localStorage.setItem('syntechSkuListOld', existingListString)
-  }
-  localStorage.setItem('syntechSkuListNew', JSON.stringify(skuList))
-  return products
 }
 
 function handlePromotedProducts(products) {
@@ -85,7 +68,8 @@ function tidyFields(products) {
       all_images: images,
       categorytree: categories,
       tags,
-      description
+      description,
+      attributes
     }) => ({
       sku,
       name,
@@ -108,6 +92,7 @@ function tidyFields(products) {
       cptstock,
       jhbstock,
       stock,
+      brand: attributes.brand,
       type: 'simple',
       published: 1
     })
@@ -123,37 +108,14 @@ function combineStocksField(products) {
 }
 
 function improveCategoryNames(products) {
-  return products.map((product) => {
-    const updatedCategoryTree = product.categorytree
+  const replacements = syntechCategoryReplacements
 
-      .replace('Computers & Peripherals', 'Peripherals')
-      .replace('Consumer Electronics > ', 'Accessories > ')
-      .replace('Peripherals > Desktop Computers > Gaming Desktops', 'Computers > Gaming Desktops')
-      .replace('Peripherals > Desktop Computers > Office Desktops', 'Computers > Office Desktops')
-      .replace('Peripherals > Mini PCs > Barebone Systems', 'Mini PCs > Barebone Systems')
-      .replace('Peripherals > Mini PCs > Complete Systems', 'Mini PCs > Complete Systems')
-      .replace('Peripherals > Mousepads', 'Accessories > Mousepads')
-      .replace('Peripherals > Stands and Cooling', 'Accessories > Stands and Cooling')
-      .replace('Accessories > Bags and Covers', 'Accessories > Bags and Covers')
-      .replace('Heating, Cooling, and Air Quality', 'Heating Cooling and Air Quality')
-      .replace('Appliances > ', 'Gadgets > ')
-      .replace(
-        'Peripherals > Computer Audio > Headsets',
-        'Peripherals > Computer Audio > Headsets > Over-Ears'
-      )
-      .replace('Accessories > Headphones > ', 'Peripherals > Computer Audio > Headsets > ')
-      .replace('Accessories > Lighting', 'Gadgets > Lighting')
-      .replace('Accessories > Portable Printing > Printers', 'Printers > Portable Printers')
-      .replace(
-        'Accessories > Portable Printing > Printing Consumables',
-        'Printers > Portable Printers > Consumables'
-      )
-      .replace('Accessories > Speakers', 'Peripherals > Computer Audio > Speakers') // Double check this
-      .replace(
-        'Accessories > Media and Streaming > Adapters and Converters',
-        'Peripherals > Adapters > Display Adapters'
-      )
-      .replace('Networking & Security > ', 'Networking > ')
+  return products.map((product) => {
+    let updatedCategoryTree = product.categorytree
+
+    replacements.forEach(([find, replace]) => {
+      updatedCategoryTree = updatedCategoryTree.replace(find, replace)
+    })
 
     return { ...product, categorytree: updatedCategoryTree }
   })
@@ -167,26 +129,7 @@ function fixAllImagesField(products) {
 }
 
 function removeUnwantedCategories(arr) {
-  const unwantedSubstrings = [
-    'Coming Soon',
-    // 'On Promotion',
-    'Just Arrived',
-    'Unboxed',
-    'Last Chance',
-    'Apparel',
-    'Hydroponics',
-    ' > Mounts and Brackets',
-    ' > Screen Protectors',
-    ' > Cables',
-    ' > Tools',
-    ' > Mounts and Brackets',
-    ' > Screen Protectors',
-    ' > Mobile Devices > Stylus',
-    ' > Smart Security',
-    ' > Scooters and Bikes',
-    ' > Wearables > Accessories',
-    ' > Lifestyle Accessories'
-  ]
+  const unwantedSubstrings = syntechUnwantedSubstrings
 
   const filteredArray = arr
     .filter((product) => {
@@ -201,6 +144,7 @@ function removeUnwantedCategories(arr) {
       product.categorytree = product.categorytree?.split('|')[0]
       return product
     })
+    // For the case when the only category information is 'On Promotion'
     .filter((product) => !product.categorytree?.includes('On Promotion'))
   return filteredArray
 }

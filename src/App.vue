@@ -13,21 +13,21 @@
 </template>
 
 <script>
-import { ref, watchEffect, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useDropZone } from '@vueuse/core'
 import { XMLParser } from 'fast-xml-parser'
 import Papa from 'papaparse'
 
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
+import { symbolMap } from './helpers/constants'
 
 export default {
   setup() {
     const dropzoneRef = ref(null)
-    const { isOverDropZone } = useDropZone(dropzoneRef, onDrop)
+    const { isDragActive } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
     const micropointData = ref([])
-    const syntechKey = import.meta.env.VITE_SYNTECH_KEY
 
     async function onDrop(files) {
       parseXml(files[0])
@@ -58,50 +58,12 @@ export default {
     }
 
     function removeSymbols(text) {
-      const filtered = text
-        .replaceAll('™', '') // Success
-        .replaceAll('∅', '')
-        .replaceAll('—', '-')
-        .replaceAll('•', '-')
-        .replaceAll('‘', "'")
-        .replaceAll('₂', '2')
-        .replaceAll('¹⁷', ' to the power 17')
-        .replaceAll('¹', '1')
-        .replaceAll('²', '2')
-        .replaceAll('³', '3')
-        .replaceAll('Ω', 'ohms')
-        .replaceAll('±', ' plus or minus ')
-        .replaceAll('°', ' deg ')
-        .replaceAll('“', '') // Success
-        .replaceAll('”', '') // Success
-        .replaceAll('″', 'inches ') // Success
-        .replaceAll('®', '') // Success
-        .replaceAll('©', '') // Success
-        .replaceAll('⎓', '') // Success
-        .replaceAll('×', 'x')
-        .replaceAll('△', '')
-        .replaceAll('µs', 'microseconds')
-        .replaceAll(' ‎', ' ')
-        .replaceAll(/\u200e/giu, ' ')
-        .replaceAll('º', 'deg ')
-        .replaceAll('.', '.')
-        .replaceAll(/\u2024/giu, '.')
-        .replaceAll(/\u2025/giu, '.')
-        .replaceAll(/\u2019/giu, "'") // Success
-        .replaceAll(/\u2013/giu, '-') // Success
-        .replaceAll('≤', ' less than ') // Success
-        .replaceAll('≥', ' greater than ') // Success
-        .replaceAll('≦', ' less than or equal to ') // Success
-        .replaceAll('≧', ' greater than or equal to ') // Success
-        .replaceAll(/\u00a0/giu, ' ')
-        .replaceAll(/\u00e2/giu, '')
-        .replaceAll('€', '')
-        .replaceAll('ª', '')
-        .replaceAll('ª', '')
-        .replaceAll('℃', ' degC') // Success
-        .replaceAll('℉', ' degF') // Success
-        .replaceAll('◦C', ' degC') // Success
-      return filtered.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
+      let cleanedText = text
+      for (const symbol in symbolMap) {
+        const replacement = symbolMap[symbol]
+        cleanedText = cleanedText.replaceAll(symbol, replacement)
+      }
+      return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
     }
 
     function outPutCsv(data) {
@@ -136,7 +98,8 @@ export default {
     }
 
     return {
-      dropzoneRef
+      dropzoneRef,
+      isDragActive
     }
   }
 }
