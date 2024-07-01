@@ -1,5 +1,5 @@
 import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
-import { micropointUnwantedSubstrings } from '@/helpers/constants'
+import { micropointUnwantedSubstrings, micropointAcronyms } from '@/helpers/constants'
 
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
@@ -15,6 +15,50 @@ export function processMicropointStock(xmlData) {
   const finalProducts = saveSkuList(leaflessCategoryTrees, 'micropoint')
 
   return finalProducts
+}
+
+function removeUnwantedFields(products) {
+  return products.map((product) => {
+    // Older csv data has product.image_url. Newer csv data has product.images.image.image_url or product.images.image as array of objects.
+    const images = product.image_url
+      ? product.image_url
+      : Array.isArray(product.images.image)
+        ? product.images.image.reduce((acc, image) => {
+            return acc === '' ? image.image_url : acc + ',' + image.image_url
+          }, '')
+        : product.images.image.image_url
+
+    return {
+      sku: product.item_number,
+      name: product.short_description,
+      normal_cost: product.price,
+      sale_price: 0, // default until calculated in handlePromotedProducts
+      price: calculateFullPrice({
+        price: Number(product.price),
+        margin: 15,
+        vat: 15
+      }),
+      recommended_retail: product.recommendedRetail,
+      promo_cost: product.specialPrice,
+      promo_starts: product.specialStartDate,
+      promo_ends: product.specialEndDate,
+      stock: product.quantity,
+      images,
+      description: product.detailed_description,
+      category_description: product.category_description,
+      group_description: product.group_description,
+      tags: '',
+      brand: product.brand
+    }
+  })
+}
+
+function combineCategoriesField(products) {
+  // Merge the two columns into one with the same '>' separator as symtech stock.
+  return products.map((product) => {
+    const combinedCategories = `${product.category_description} > ${product.group_description}`
+    return { ...product, categories: combinedCategories }
+  })
 }
 
 function removeLeaflessCategoryTrees(products) {
@@ -38,6 +82,7 @@ function mapToCommonFields(products) {
       price,
       tags,
       promo_cost,
+      recommended_retail,
       promo_starts,
       promo_ends,
       stock,
@@ -52,6 +97,7 @@ function mapToCommonFields(products) {
         normal_cost,
         sale_price,
         price,
+        recommended_retail,
         tags,
         promo_cost,
         promo_starts,
@@ -73,32 +119,7 @@ function mapToCommonFields(products) {
 }
 
 function improveCategoryCapitalization(products) {
-  const acronyms = new Set([
-    'USB',
-    'HDMI',
-    'OTG',
-    'VGA',
-    'DVI',
-    'RCA',
-    'PS2',
-    'PCI-E',
-    'PCMCIA',
-    'PCI',
-    'MSATA',
-    'HDD',
-    'LDINO',
-    'MOLEX',
-    'KVM',
-    'IDE',
-    'SAS',
-    'RJ11',
-    'CAT',
-    'CPU',
-    'SSD',
-    'AMD',
-    'ATI',
-    'AM2'
-  ])
+  const acronyms = micropointAcronyms
 
   return products.reduce((updatedProducts, product) => {
     const updatedCategoryTree = product.categories
@@ -125,49 +146,13 @@ function handlePromotedProducts(products) {
       ? {
           ...product,
           tags: 'On Promotion',
-          sale_price: calculateFullPrice(Number(product.promo_cost), 15, 15)
+          sale_price: calculateFullPrice({
+            price: Number(product.promo_cost),
+            margin: 15,
+            vat: 15
+          })
         }
       : product
-  })
-}
-
-// Wanted fields are: item_number: SKU, short_description: name, detailed_decription: description, price, specialPrice: special_price, specialStartDate: promo_starts, specialEndDate: promo_ends, recommendedRetail: rrp_incl, category_description, group_description, quantity: stock, image_url: images
-function removeUnwantedFields(products) {
-  return products.map((product) => {
-    // Older csv data has product.image_url. Newer csv data has product.images.image.image_url or product.images.image as array of objects.
-    const images = product.image_url
-      ? product.image_url
-      : Array.isArray(product.images.image)
-        ? product.images.image.reduce((acc, image) => {
-            return acc === '' ? image.image_url : acc + ',' + image.image_url
-          }, '')
-        : product.images.image.image_url
-
-    return {
-      sku: product.item_number,
-      name: product.short_description,
-      normal_cost: product.price,
-      sale_price: 0, // default until calculated in handlePromotedProducts
-      price: product.recommendedRetail,
-      promo_cost: product.specialPrice,
-      promo_starts: product.specialStartDate,
-      promo_ends: product.specialEndDate,
-      stock: product.quantity,
-      images,
-      description: product.detailed_description,
-      category_description: product.category_description,
-      group_description: product.group_description,
-      tags: '',
-      brand: product.brand
-    }
-  })
-}
-
-function combineCategoriesField(products) {
-  // Merge the two columns into one with the same '>' separator as symtech stock.
-  return products.map((product) => {
-    const combinedCategories = `${product.category_description} > ${product.group_description}`
-    return { ...product, categories: combinedCategories }
   })
 }
 
@@ -284,7 +269,15 @@ function improveCategoryNames(products) {
     ['INTEL CORE I3', 'Intel Core i3'],
     ['INTEL CORE I9', 'Intel Core i9'],
     ['MOUSE PAD', 'Mouse Pad'],
-    ['WIRELESS', 'Wireless']
+    ['WIRELESS', 'Wireless'],
+    [/Peripherals > Cables > HDMI Cables/gi, 'Peripherals > Cables > Media > HDMI'],
+    [/HDMI Products > Cables/gi, 'Peripherals > Cables > Media > HDMI'],
+    [/HDMI Products > Accessories/gi, 'Peripherals > Cables > Media > HDMI'],
+    [/HDMI Products > Consumables/gi, 'Peripherals > Cables > Media > HDMI'],
+    [/Peripherals > Cables > Media > HDMI To DVI/gi, 'Peripherals > Adapters > HDMI Adapters'],
+    [/Peripherals > Adapters > HDMI$/gi, 'Peripherals > Adapters > HDMI Adapters'],
+    [/Peripherals > Cables > Media > HDMI Cables/gi, 'Peripherals > Cables > Media > HDMI'],
+    [/Peripherals > Switches >hdmi$/gi, 'Peripherals > Switches > HDMI']
   ]
   return products.map((product) => {
     let updatedCategoryTree = product.categories

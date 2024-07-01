@@ -1,4 +1,4 @@
-export function calculateFullPrice(price, margin, vat) {
+export function calculateFullPrice({ price, margin, vat }) {
   const marginPercentage = margin / 100
   const vatPercentage = vat / 100
 

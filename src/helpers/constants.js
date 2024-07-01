@@ -166,3 +166,29 @@ export const micropointUnwantedSubstrings = [
   'MEMORY > MEMORY'
   // /mouse > $/giu
 ]
+
+export const micropointAcronyms = new Set([
+  'USB',
+  'HDMI',
+  'OTG',
+  'VGA',
+  'DVI',
+  'RCA',
+  'PS2',
+  'PCI-E',
+  'PCMCIA',
+  'PCI',
+  'MSATA',
+  'HDD',
+  'LDINO',
+  'KVM',
+  'IDE',
+  'SAS',
+  'RJ11',
+  'CAT',
+  'CPU',
+  'SSD',
+  'AMD',
+  'ATI',
+  'AM2'
+])
