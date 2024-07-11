@@ -26,11 +26,11 @@ function handlePromotedProducts(products) {
           ...product,
           categorytreealt: product.categorytreealt.replace('|On Promotion', ''),
           tags: 'On Promotion',
-          sale_price: calculateFullPrice(
-            Number(product.promo_price),
-            Number(product.recommended_margin),
-            15
-          ),
+          sale_price: calculateFullPrice({
+            price: Number(product.promo_price),
+            margin: Number(product.recommended_margin),
+            vat: 15
+          }),
           price: product.rrp_incl
         }
       : { ...product, price: product.rrp_incl, sale_price: null }

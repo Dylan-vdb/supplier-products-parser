@@ -32,7 +32,7 @@ function removeUnwantedFields(products) {
       sku: product.item_number,
       name: product.short_description,
       normal_cost: product.price,
-      sale_price: 0, // default until calculated in handlePromotedProducts
+      sale_price: null, // default until calculated in handlePromotedProducts
       price: calculateFullPrice({
         price: Number(product.price),
         margin: 15,
@@ -67,7 +67,8 @@ function removeLeaflessCategoryTrees(products) {
       product.categories !== 'Gadgets >' &&
       product.categories !== 'Gaming >' &&
       product.categories !== 'HDMI Products >' &&
-      product.categories !== 'Components > Graphics Cards >'
+      product.categories !== 'Components > Graphics Cards >' &&
+      product.categories !== 'Peripherals > Cables >'
     )
   })
 }
@@ -140,7 +141,10 @@ function improveCategoryCapitalization(products) {
 function handlePromotedProducts(products) {
   return products.map((product) => {
     const promotionEndDate = new Date(product.promo_ends)
-    const isPromoted = product.promo_cost > 0 && promotionEndDate > new Date()
+    const isPromoted =
+      product.promo_cost > 0 &&
+      product.promo_cost < product.normal_cost &&
+      promotionEndDate > new Date()
 
     return isPromoted
       ? {
@@ -152,7 +156,7 @@ function handlePromotedProducts(products) {
             vat: 15
           })
         }
-      : product
+      : { ...product, tags: '', sale_price: null }
   })
 }
 
