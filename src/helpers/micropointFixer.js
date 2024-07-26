@@ -1,5 +1,9 @@
 import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
-import { micropointUnwantedSubstrings, micropointAcronyms } from '@/helpers/constants'
+import {
+  micropointUnwantedSubstrings,
+  micropointAcronyms,
+  micropointCategoryReplacements
+} from '@/helpers/constants'
 
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
@@ -163,15 +167,18 @@ function handlePromotedProducts(products) {
 function removeUnwantedCategories(products) {
   const unwantedSubstrings = micropointUnwantedSubstrings
 
-  let preFiltered = products.filter((product) => {
-    const emptyOfSubcategories =
-      (product.category_description == 'SOUND' && product.group_description == '') ||
-      (product.category_description == 'MOUSE' && product.group_description == '')
-    const brokenImageLink = product.images.endsWith('.jfif')
+  let preFiltered = products
+    .filter((product) => {
+      const emptyOfSubcategories =
+        (product.category_description == 'SOUND' && product.group_description == '') ||
+        (product.category_description == 'MOUSE' && product.group_description == '')
+      const brokenImageLink = product.images.endsWith('.jfif')
 
-    return !emptyOfSubcategories && !brokenImageLink
-  })
-
+      return !emptyOfSubcategories && !brokenImageLink
+    })
+    .filter((product) => {
+      return product.images.length > 0
+    })
   const filteredArray = preFiltered?.filter((product) => {
     const categories = product.categories
     return !unwantedSubstrings.some((substring) => {
@@ -184,105 +191,7 @@ function removeUnwantedCategories(products) {
 }
 
 function improveCategoryNames(products) {
-  const replacements = [
-    ['ADAPTERS >', `Peripherals > Adapters >`],
-    ['ADD-ON CARDS >', 'Components > Expansion and PCIe Adapters >'],
-    ['ANCILLARY ITEMS >', 'Gadgets >'],
-    ['APPLE >', 'Components > Apple'],
-    ['CABLES >', 'Peripherals > Cables >'],
-    ['CABLES : MEDIA', 'Peripherals > Cables > Media'],
-    ['CABLES : NETWORK', 'Peripherals > Cables > Network'],
-    ['CABLES : POWER', 'Peripherals > Cables > Power'],
-    ['FLASH DRIVES AND MICRO-SD > FLASH DRIVES', 'Peripherals > Storage > Flash Drives'],
-    ['FLASH DRIVES AND MICRO-SD > MICRO SD', 'Peripherals > Storage > Micro SD'],
-    ['FLASH DRIVES AND MICRO-SD > USB', 'Peripherals > Storage > Flash Drives'],
-    ['GRAPHIC CARDS >', 'Components > Graphics Cards >'],
-    ['HARD DRIVES > 2.5" SSD', 'Components > Solid State Drives > Consumer'],
-    ['HARD DRIVES > 3.5" SSD', 'Components > Solid State Drives > Consumer'],
-    ['HARD DRIVES > 2.5" HDD', 'Components > Disk Drives > Consumer'],
-    ['HARD DRIVES > 2.5" SATA HDD', 'Components > Disk Drives > Consumer'],
-    ['HARD DRIVES > 3.5" SATA HDD', 'Components > Disk Drives > Consumer'],
-    ['HARD DRIVES > EXTERNAL 2.5" HDD', 'Peripherals > Storage > External Disk Drives'],
-    ['HARD DRIVES > HDD DOCKING', 'Peripherals > Storage > Enclosures'],
-    ['NETAC > FLASH DRIVES', 'Peripherals > Storage > Flash Drives'],
-    ['NETAC > MICRO SD', 'Peripherals > Storage > Micro SD'],
-    ['NETAC > EXTERNAL 2.5" HDD', 'Peripherals > Storage > External Disk Drives'],
-    ['NETAC > 2.5" SSD', 'Components > Solid State Drives > Consumer'],
-    ['HEADSETS > GAMING', 'Peripherals > Computer Audio > Headsets > Over-Ears'],
-    ['HEADSETS > HEADSET', 'Peripherals > Computer Audio > Headsets > Over-Ears'],
-    ['HEADSETS > SOUND', 'Peripherals > Computer Audio > Headsets > Over-Ears'],
-    ['KEYBOARDS > ACCESSORIES', 'Peripherals > Keyboards > Keyboard Accessories'],
-    ['KEYBOARDS > GAMING', 'Peripherals > Keyboards > Gaming Keyboards'],
-    ['KEYBOARDS > BLUETOOTH', 'Peripherals > Keyboards > Office Keyboards'],
-    ['KEYBOARDS > CORDER', 'Peripherals > Keyboards > Office Keyboards'],
-    ['KEYBOARDS > DESKTOP KEYBOARD', 'Peripherals > Keyboards > Office Keyboards'],
-    ['KEYBOARDS > GAMING', 'Peripherals > Keyboards > Gaming Keyboards'],
-    ['KEYBOARDS > USB', 'Peripherals > Keyboards > Office Keyboards'],
-    ['KEYBOARDS > WIRELESS', 'Peripherals > Keyboards > Office Keyboards'],
-    ['MEMORY > DESKTOP MEMORY', 'Components > Memory > Desktop Memory'],
-    ['MEMORY > FLASH DRIVES', 'Components > Memory > Flash Drives'],
-    ['MEMORY > GAMING', 'Components > Memory > Gaming Memory'],
-    ['MEMORY > MICRO SD', 'Components > Memory > Micro SD'],
-    ['MEMORY > NOTEBOOK MEMORY', 'Components > Memory > Notebook Memory'],
-    ['MEMORY > MEMORY >', 'Components > Memory > Notebook Memory'],
-    [/^MICROSOFT >.*/giu, 'Components > Software'],
-    [/^SOFTWARE >.*/giu, 'Components > Software'],
-    [/^MINI PC >.*/giu, 'Mini PCs > Complete Systems'],
-    [/^MONITORS >.*/giu, 'Components > Software'],
-    ['MOTHERBOARDS >', 'Components > Motherboards >'],
-    [/^MOUSE > GAMING.*$/giu, 'Peripherals > Mice > Gaming Mice'],
-    ['MOUSE > CORDER', 'Peripherals > Mice > Gaming Mice'],
-    ['MOUSE > MOUSE PAD', 'Accessories > Mousepads'],
-    ['MOUSE > USB', 'Peripherals > Mice > Office Mice'],
-    ['MOUSE > WIRED MOUSE', 'Peripherals > Mice > Office Mice'],
-    ['MOUSE > WIRELESS MOUSE', 'Peripherals > Mice > Office Mice'],
-    ['NETBOOKS > INTEL CELERON', 'Notebooks'],
-    ['NOTEBOOKS > ACCESSORIES', 'Accessories > Notebook Accessories'],
-    ['NOTEBOOK BAGS > SLEEVE', 'Accessories > Bags and Covers > Sleeves'],
-    ['NOTEBOOK BAGS > TABLET  SLEEVES', 'Accessories > Bags and Covers > Sleeves'],
-    [/^NOTEBOOK ACCESSORIES >.*/giu, 'Accessories > Notebook Accessories'],
-    [/^NOTEBOOK BAGS >\s*\S.*$/giu, 'Accessories > Bags and Covers > Bags'],
-    [/^NOTEBOOKS >\s*\S.*$/giu, 'Notebooks'],
-    ['NETWORKING > 3G / LTE DEVICES', 'Networking > Portable Routers'],
-    ['NETWORKING > ACCESSORIES', 'Networking > Accessories'],
-    ['NETWORKING > CONSUMABLES', 'Networking > Consumables'],
-    ['NETWORKING > ROUTERS', 'Networking > Routers and Mesh'],
-    ['NETWORKING > SWITCHES', 'Networking > Switches'],
-    ['SOUND > EARPHONES', 'Peripherals > Computer Audio > Headsets > In-Ears'],
-    ['SOUND > HEADSET', 'Peripherals > Computer Audio > Headsets > Over-Ears'],
-    ['SOUND > MICROPHONE', 'Peripherals > Computer Audio > Microphones'],
-    ['SOUND > SPEAKERS', 'Peripherals > Computer Audio > Speakers'],
-    ['SOUND > MP3', 'Gadgets > Audio'],
-    [/^SPEAKERS >.*$/giu, 'Peripherals > Computer Audio > Speakers'],
-    ['SPLITTERS >', 'Peripherals > Splitters >'],
-    ['SWITCHES > ', 'Peripherals > Switches >'],
-    ['TABLETS >', 'Tablets >'],
-    [/^UPS > \d+VA *\w*$/giu, 'Power Solutions > PC UPS'],
-    ['UPS > INVERTER', 'Power Solutions > Inverters'],
-    [/^USB \w*DEVICES > \w* *\w*$/giu, 'Peripherals > USB Devices'],
-    ['USB ADDON DEVICES > (BLUETOOTH|NETWORK|SOUND)', 'Peripherals > USB Devices'],
-    [/^USB HUB >\s*\S.*$/giu, 'Peripherals > USB Devices'],
-    ['GAMING', 'Gaming'],
-    ['ACCESSORIES', 'Accessories'],
-    ['BLUETOOTH', 'Bluetooth'],
-    ['GADGETS', 'Gadgets'],
-    ['CPU FANS', 'CPU Fans'],
-    ['DESKTOP MEMORY', 'Desktop Memory'],
-    ['INTEL CORE I5', 'Intel Core i5'],
-    ['INTEL CORE I7', 'Intel Core i7'],
-    ['INTEL CORE I3', 'Intel Core i3'],
-    ['INTEL CORE I9', 'Intel Core i9'],
-    ['MOUSE PAD', 'Mouse Pad'],
-    ['WIRELESS', 'Wireless'],
-    [/Peripherals > Cables > HDMI Cables/gi, 'Peripherals > Cables > Media > HDMI'],
-    [/HDMI Products > Cables/gi, 'Peripherals > Cables > Media > HDMI'],
-    [/HDMI Products > Accessories/gi, 'Peripherals > Cables > Media > HDMI'],
-    [/HDMI Products > Consumables/gi, 'Peripherals > Cables > Media > HDMI'],
-    [/Peripherals > Cables > Media > HDMI To DVI/gi, 'Peripherals > Adapters > HDMI Adapters'],
-    [/Peripherals > Adapters > HDMI$/gi, 'Peripherals > Adapters > HDMI Adapters'],
-    [/Peripherals > Cables > Media > HDMI Cables/gi, 'Peripherals > Cables > Media > HDMI'],
-    [/Peripherals > Switches >hdmi$/gi, 'Peripherals > Switches > HDMI']
-  ]
+  const replacements = micropointCategoryReplacements
   return products.map((product) => {
     let updatedCategoryTree = product.categories
     replacements.forEach(([find, replace]) => {

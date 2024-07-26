@@ -8,11 +8,20 @@ export function processSyntechStock(xmlData) {
   const cleanedProducts = removeDuplicates(allPipedCategoriesHandled)
   const filteredProducts = removeUnwantedCategories(cleanedProducts)
   const fixedImages = fixAllImagesField(filteredProducts)
-  const categorizedProducts = improveCategoryNames(fixedImages)
+  const fixedPipedNames = fixPipedNames(fixedImages)
+  const categorizedProducts = improveCategoryNames(fixedPipedNames)
   const combinedStocks = combineStocksField(categorizedProducts)
   const tidiedFields = tidyFields(combinedStocks)
   const finalProducts = saveSkuList(tidiedFields, 'syntech')
   return finalProducts
+}
+
+function fixPipedNames(products) {
+  // Some of the names have pipes (ie |) in them with no spaces between them, this messes with the ui. TODO make sure that pipes directly between two words instead has a space between the pipe and each of the words.
+  return products.map((product) => {
+    const name = product.name.replace(/(\w)\|(\w)/g, '$1 | $2')
+    return { ...product, name }
+  })
 }
 
 function handlePromotedProducts(products) {
