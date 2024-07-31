@@ -21,7 +21,7 @@ import Papa from 'papaparse'
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { symbolMap } from './helpers/constants'
-// Hello World from Reuben Stander
+// Hello World from Reuben Stander plus test of code at new location
 export default {
   setup() {
     const dropzoneRef = ref(null)

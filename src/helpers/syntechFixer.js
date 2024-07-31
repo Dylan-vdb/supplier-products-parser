@@ -16,8 +16,6 @@ export function processSyntechStock(xmlData) {
   return finalProducts
 }
 
-// Dylan's messup
-
 function fixPipedNames(products) {
   // Some of the names have pipes (ie |) in them with no spaces between them, this messes with the ui. TODO make sure that pipes directly between two words instead has a space between the pipe and each of the words.
   return products.map((product) => {
@@ -88,8 +86,8 @@ function tidyFields(products) {
       rrp_incl,
       sale_price,
       promo_cost,
-      promo_starts,
-      promo_ends,
+      date_sale_price_starts: promo_starts,
+      date_sale_price_ends: promo_ends,
       normal_cost,
       categories,
       tags,
