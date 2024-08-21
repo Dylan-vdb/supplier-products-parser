@@ -2,9 +2,7 @@ export function calculateFullPrice({ price, margin, vat }) {
   const marginPercentage = margin / 100
   const vatPercentage = vat / 100
 
-  const recommendedPrice = price / (1 - marginPercentage)
-  const priceWithVat = Math.round(recommendedPrice * (1 + vatPercentage))
-
+  const priceWithVat = Math.round(price * (1 + marginPercentage) * (1 + vatPercentage))
   return priceWithVat
 }
 

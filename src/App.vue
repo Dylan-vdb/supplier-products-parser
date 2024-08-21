@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useDropZone } from '@vueuse/core'
 import { XMLParser } from 'fast-xml-parser'
 import Papa from 'papaparse'
@@ -21,7 +21,7 @@ import Papa from 'papaparse'
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { symbolMap } from './helpers/constants'
-// Hello World from Reuben Stander plus test of code at new location
+
 export default {
   setup() {
     const dropzoneRef = ref(null)
