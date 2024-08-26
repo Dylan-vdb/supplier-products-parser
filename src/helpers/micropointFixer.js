@@ -22,6 +22,7 @@ export function processMicropointStock(xmlData) {
 }
 
 function removeUnwantedFields(products) {
+  console.log('🚀 ~ removeUnwantedFields ~ products:', products)
   return products.map((product) => {
     // Older csv data has product.image_url. Newer csv data has product.images.image.image_url or product.images.image as array of objects.
     const images = product.image_url
