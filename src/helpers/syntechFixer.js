@@ -4,6 +4,7 @@ import { syntechCategoryReplacements, syntechUnwantedSubstrings } from '../helpe
 export function processSyntechStock(xmlData) {
   const products = xmlData.syntechstock.stock.product
   const promotedProductsHandled = handlePromotedProducts(products)
+  console.log('promotedProductsHandled', promotedProductsHandled)
   const allPipedCategoriesHandled = removeOtherPipes(promotedProductsHandled)
   const cleanedProducts = removeDuplicates(allPipedCategoriesHandled)
   const filteredProducts = removeUnwantedCategories(cleanedProducts)

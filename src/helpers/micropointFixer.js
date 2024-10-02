@@ -39,7 +39,7 @@ function removeUnwantedFields(products) {
       sale_price: null, // default until calculated in handlePromotedProducts
       price: calculateFullPrice({
         price: Number(product.price),
-        margin: 15,
+        margin: 17,
         vat: 15
       }),
       recommended_retail: product.recommendedRetail,
@@ -156,7 +156,7 @@ function handlePromotedProducts(products) {
           tags: 'On Promotion',
           sale_price: calculateFullPrice({
             price: Number(product.promo_cost),
-            margin: 15,
+            margin: 17,
             vat: 15
           })
         }
