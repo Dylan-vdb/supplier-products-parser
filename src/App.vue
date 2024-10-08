@@ -20,6 +20,7 @@ import Papa from 'papaparse'
 
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
+import { processAstrumStock } from './helpers/astrumFixer'
 import { symbolMap } from './helpers/constants'
 
 export default {
@@ -28,9 +29,30 @@ export default {
     const { isDragActive } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
     const micropointData = ref([])
+    const astrumData = ref([])
 
     async function onDrop(files) {
-      parseXml(files[0])
+      const file = files[0]
+      if (file.type == 'text/csv') {
+        parseCsv(file)
+      } else {
+        parseXml(file)
+      }
+    }
+
+    function parseCsv(csvFile) {
+      Papa.parse(csvFile, {
+        header: true,
+        complete: function (results) {
+          console.log(results)
+
+          if (csvFile.name.includes('astrum')) {
+            astrumData.value = processAstrumStock(results.data)
+
+            // outPutCsv(astrumData.value)
+          }
+        }
+      })
     }
 
     function parseXml(xmlFile) {

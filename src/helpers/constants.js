@@ -269,6 +269,36 @@ export const micropointCategoryReplacements = [
   [/Peripherals > Switches >hdmi$/gi, 'Peripherals > Switches > HDMI']
 ]
 
+export const astrumCategoryReplacements = [
+  ['Headphones', 'Peripherals > Computer Audio > Headsets > Over-Ears'],
+  ['Earbuds', 'Peripherals > Computer Audio > Headsets > In-Ears '],
+  ['Toner Cartridges', 'Printers > Toner Cartridges'],
+  ['Laptop Keyboards', 'Components > Notebook Keyboards'],
+  ['Laptop Batteries', 'Components > Notebook Batteries'],
+  ['Power Banks', 'Power Solutions > Power Banks'],
+  ['Laptop Bags', 'Accessories > Bags and Covers > Bags >'],
+  ['Mobile Chargers', 'Power Solutions > Mobile Chargers'],
+  ['Smart Watches', 'Accessories > Wearables > Bands and Watches'],
+  ['Mouse', 'Peripherals > Mice'],
+  ['Memory Modules', 'Components > Memory'],
+  ['Enclosures', 'Components > Memory > Enclosures'],
+  ['Keyboards & Combo', 'Peripherals > Keyboards > Office Keyboard'],
+  ['Mobile Holders', 'Gadgets > Mobile Holders'],
+  ['Cables', 'Peripherals > Cables'],
+  ['Speakers', 'Peripherals > Computer Audio > Speakers'],
+  ['Networking', 'Networking'],
+  ['SSD DISK DRIVES', 'Components > Solid State Drives > Enterprise'],
+  ['Adapters & Converters', 'Peripherals > Adapters & Converters'],
+  ['Cleaning Solutions', 'Acessories > Cleaning Solutions'],
+  ['Gadgets', 'Gadgets'],
+  ['FM Modulators', 'Gadgets > FM Modulators'],
+  ['Gaming Products', 'Peripherals > Gaming'],
+  ['Laptop Chargers', 'Components > Notebook Chargers'],
+  ['Notebook PC', 'Accessories > Notebook Accessories'],
+  ['Tablets PC', 'Tablets'],
+  ['USB Peripherals', 'Peripherals > USB Devices']
+]
+
 export const micropointAcronyms = new Set([
   'USB',
   'HDMI',
