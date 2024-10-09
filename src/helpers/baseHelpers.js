@@ -15,6 +15,7 @@ export function saveSkuList(products, supplier) {
     discontinuedSkus.forEach((sku) => {
       products.push({
         sku: sku,
+        stock: 0,
         published: 0
       })
     })
