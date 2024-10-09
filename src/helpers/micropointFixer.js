@@ -16,13 +16,28 @@ export function processMicropointStock(xmlData) {
   const improvedCategoryCapitalization = improveCategoryCapitalization(improvedCategoryNames)
   const commonFieldMapping = mapToCommonFields(improvedCategoryCapitalization)
   const leaflessCategoryTrees = removeLeaflessCategoryTrees(commonFieldMapping)
-  const finalProducts = saveSkuList(leaflessCategoryTrees, 'micropoint')
+  const notebooksSpecialPrice = giveNotebooksSpecialPrice(leaflessCategoryTrees)
+  const finalProducts = saveSkuList(notebooksSpecialPrice, 'micropoint')
 
   return finalProducts
 }
 
+function giveNotebooksSpecialPrice(products) {
+  return products.map((product) =>
+    product.categories === 'Notebooks'
+      ? {
+          ...product,
+          price: calculateFullPrice({
+            price: Number(product.normal_cost),
+            margin: 10,
+            vat: 15
+          })
+        }
+      : product
+  )
+}
+
 function removeUnwantedFields(products) {
-  console.log('🚀 ~ removeUnwantedFields ~ products:', products)
   return products.map((product) => {
     // Older csv data has product.image_url. Newer csv data has product.images.image.image_url or product.images.image as array of objects.
     const images = product.image_url

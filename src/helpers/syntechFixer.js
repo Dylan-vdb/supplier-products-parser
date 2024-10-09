@@ -18,7 +18,6 @@ export function processSyntechStock(xmlData) {
 }
 
 function addNormalCost(products) {
-  debugger
   return products.map((product) => {
     return {
       ...product,
@@ -44,7 +43,7 @@ function handlePromotedProducts(products) {
             vat: 15
           }),
           price: calculateFullPrice({
-            price: Number(product.price),
+            price: Number(product.normal_cost),
             margin: 15,
             vat: 15
           })
@@ -52,7 +51,7 @@ function handlePromotedProducts(products) {
       : {
           ...product,
           price: calculateFullPrice({
-            price: Number(product.price),
+            price: Number(product.normal_cost),
             margin: 15,
             vat: 15
           }),
