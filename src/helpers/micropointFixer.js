@@ -4,7 +4,7 @@ import {
   micropointAcronyms,
   micropointCategoryReplacements
 } from '@/helpers/constants'
-
+// To test the fix
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
   const wantedFields = removeUnwantedFields(products)
