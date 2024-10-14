@@ -17,9 +17,23 @@ export function processMicropointStock(xmlData) {
   const commonFieldMapping = mapToCommonFields(improvedCategoryCapitalization)
   const leaflessCategoryTrees = removeLeaflessCategoryTrees(commonFieldMapping)
   const notebooksSpecialPrice = giveNotebooksSpecialPrice(leaflessCategoryTrees)
-  const finalProducts = saveSkuList(notebooksSpecialPrice, 'micropoint')
+  const fixedSquashedTitles = fixSquashedTitles(notebooksSpecialPrice)
+  const finalProducts = saveSkuList(fixedSquashedTitles, 'micropoint')
 
   return finalProducts
+}
+
+function fixCommaSquashing(title) {
+  return title.replace(/([a-zA-Z0-9]),([a-zA-Z0-9])/g, '$1, $2')
+}
+
+function fixSquashedTitles(products) {
+  return products.map((product) => {
+    return {
+      ...product,
+      name: fixCommaSquashing(product.name)
+    }
+  })
 }
 
 function giveNotebooksSpecialPrice(products) {
