@@ -1,13 +1,18 @@
 <template>
-  <div class="dropzone">
-    <div class="dropzone__inner" ref="dropzoneRef">
-      <p>Drop your XML file here</p>
-      <div v-if="isDragActive">
-        <p>Drop the file to start parsing</p>
+  <div class="app-wrapper">
+    <div class="dropzone">
+      <div class="dropzone__inner" ref="dropzoneRef">
+        <p>Drop your XML file here</p>
+        <div v-if="isDragActive">
+          <p>Drop the file to start parsing</p>
+        </div>
+        <div v-else>
+          <p>Drag and drop your XML file here</p>
+        </div>
       </div>
-      <div v-else>
-        <p>Drag and drop your XML file here</p>
-      </div>
+    </div>
+    <div class="frontosa-section">
+      <button @click="fetchFrontosaData">Fetch Frontosa Data</button>
     </div>
   </div>
 </template>
@@ -21,6 +26,10 @@ import Papa from 'papaparse'
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { symbolMap } from './helpers/constants'
+import axios from 'axios'
+
+import frontosaCategories from './helpers/frontosaCategories.json'
+import frontosaStock from './helpers/frontosaStock.json'
 
 export default {
   setup() {
@@ -29,79 +38,98 @@ export default {
     const syntechData = ref([])
     const micropointData = ref([])
 
-    async function onDrop(files) {
-      parseXml(files[0])
-    }
+    async function fetchFrontosaData() {
+      const categories = frontosaCategories
+      const stock = frontosaStock
 
-    function parseXml(xmlFile) {
-      const reader = new FileReader()
-      reader.onload = async (event) => {
-        const xmlRaw = event.target.result
-        // const xmlNoSymbols = removeSymbols(xmlRaw)
-        const parser = new XMLParser()
-        const parsedXml = parser.parse(xmlRaw)
+      // https://everyorigin.jwvbremen.nl/get?url=
+      // TODO: Use later from server
+      //   try {
+      //     const { data } = await axios.get(
+      //       'http://live.frontosa.co.za/json/stock.asp?token=dc3087306fe93a4'
+      //     )
+      //     debugger
+      //   } catch (error) {
+      //     debugger
+      //     console.error(error)
+      //   }
+      // }
 
-        if (xmlFile.name.includes('micropoint')) {
-          micropointData.value = processMicropointStock(parsedXml)
-
-          // TODO, first combine the two tables
-          outPutCsv(micropointData.value)
-        }
-
-        if (xmlFile.name.includes('syntech')) {
-          syntechData.value = processSyntechStock(parsedXml)
-          // TODO, first combine the two tables
-          outPutCsv(syntechData.value)
-        }
+      async function onDrop(files) {
+        parseXml(files[0])
       }
-      reader.readAsText(xmlFile)
-    }
 
-    function removeSymbols(text) {
-      let cleanedText = text
-      for (const symbol in symbolMap) {
-        const replacement = symbolMap[symbol]
-        cleanedText = cleanedText.replaceAll(symbol, replacement)
-      }
-      return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
-    }
+      function parseXml(xmlFile) {
+        const reader = new FileReader()
+        reader.onload = async (event) => {
+          const xmlRaw = event.target.result
+          // const xmlNoSymbols = removeSymbols(xmlRaw)
+          const parser = new XMLParser()
+          const parsedXml = parser.parse(xmlRaw)
 
-    function outPutCsv(data) {
-      const csvRaw = Papa.unparse(data, {
-        delimiter: ';',
-        quoteChars: '""'
-        // escapeChar: ''
-      })
+          if (xmlFile.name.includes('micropoint')) {
+            micropointData.value = processMicropointStock(parsedXml)
 
-      const csv = removeSymbols(csvRaw)
+            // TODO, first combine the two tables
+            outPutCsv(micropointData.value)
+          }
 
-      const blob = new Blob(
-        [
-          csv
-            .replaceAll(/\u00a0/giu, ' ')
-            .replaceAll('â€”', ' ')
-            .replaceAll('â€‹', '')
-        ],
-        {
-          type: 'text/csv'
+          if (xmlFile.name.includes('syntech')) {
+            syntechData.value = processSyntechStock(parsedXml)
+            // TODO, first combine the two tables
+            outPutCsv(syntechData.value)
+          }
         }
-      )
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      // get today's date in a simple format
-      const today = new Date().toISOString().slice(0, 10)
-      link.download = `computer-gadgets-woocommerce-products-${today}.csv`
-      link.style.display = 'none'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      URL.revokeObjectURL(url)
-    }
+        reader.readAsText(xmlFile)
+      }
 
-    return {
-      dropzoneRef,
-      isDragActive
+      function removeSymbols(text) {
+        let cleanedText = text
+        for (const symbol in symbolMap) {
+          const replacement = symbolMap[symbol]
+          cleanedText = cleanedText.replaceAll(symbol, replacement)
+        }
+        return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
+      }
+
+      function outPutCsv(data) {
+        const csvRaw = Papa.unparse(data, {
+          delimiter: ';',
+          quoteChars: '""'
+          // escapeChar: ''
+        })
+
+        const csv = removeSymbols(csvRaw)
+
+        const blob = new Blob(
+          [
+            csv
+              .replaceAll(/\u00a0/giu, ' ')
+              .replaceAll('â€”', ' ')
+              .replaceAll('â€‹', '')
+          ],
+          {
+            type: 'text/csv'
+          }
+        )
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        // get today's date in a simple format
+        const today = new Date().toISOString().slice(0, 10)
+        link.download = `computer-gadgets-woocommerce-products-${today}.csv`
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      }
+
+      return {
+        dropzoneRef,
+        isDragActive,
+        fetchFrontosaData
+      }
     }
   }
 }
