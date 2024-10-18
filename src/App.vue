@@ -39,9 +39,24 @@ export default {
     const micropointData = ref([])
 
     async function fetchFrontosaData() {
-      const categories = frontosaCategories
-      const stock = frontosaStock
+      const categories = frontosaCategories.categories
+      const stock = frontosaStock.items
+      debugger
+      const myStock = stock
+        .filter((product) => {
+          return product.pid !== 0
+        })
+        .map((product) => {
+          const result = {
+            ...product,
+            category: frontosaCategories.categories.filter((category) => {
+              return category.id === product.pid
+            })[0]?.name
+          }
+          return result
+        })
 
+      debugger
       // https://everyorigin.jwvbremen.nl/get?url=
       // TODO: Use later from server
       //   try {
@@ -53,83 +68,82 @@ export default {
       //     debugger
       //     console.error(error)
       //   }
-      // }
+    }
 
-      async function onDrop(files) {
-        parseXml(files[0])
-      }
+    async function onDrop(files) {
+      parseXml(files[0])
+    }
 
-      function parseXml(xmlFile) {
-        const reader = new FileReader()
-        reader.onload = async (event) => {
-          const xmlRaw = event.target.result
-          // const xmlNoSymbols = removeSymbols(xmlRaw)
-          const parser = new XMLParser()
-          const parsedXml = parser.parse(xmlRaw)
+    function parseXml(xmlFile) {
+      const reader = new FileReader()
+      reader.onload = async (event) => {
+        const xmlRaw = event.target.result
+        // const xmlNoSymbols = removeSymbols(xmlRaw)
+        const parser = new XMLParser()
+        const parsedXml = parser.parse(xmlRaw)
 
-          if (xmlFile.name.includes('micropoint')) {
-            micropointData.value = processMicropointStock(parsedXml)
+        if (xmlFile.name.includes('micropoint')) {
+          micropointData.value = processMicropointStock(parsedXml)
 
-            // TODO, first combine the two tables
-            outPutCsv(micropointData.value)
-          }
-
-          if (xmlFile.name.includes('syntech')) {
-            syntechData.value = processSyntechStock(parsedXml)
-            // TODO, first combine the two tables
-            outPutCsv(syntechData.value)
-          }
+          // TODO, first combine the two tables
+          outPutCsv(micropointData.value)
         }
-        reader.readAsText(xmlFile)
-      }
 
-      function removeSymbols(text) {
-        let cleanedText = text
-        for (const symbol in symbolMap) {
-          const replacement = symbolMap[symbol]
-          cleanedText = cleanedText.replaceAll(symbol, replacement)
+        if (xmlFile.name.includes('syntech')) {
+          syntechData.value = processSyntechStock(parsedXml)
+          // TODO, first combine the two tables
+          outPutCsv(syntechData.value)
         }
-        return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
       }
+      reader.readAsText(xmlFile)
+    }
 
-      function outPutCsv(data) {
-        const csvRaw = Papa.unparse(data, {
-          delimiter: ';',
-          quoteChars: '""'
-          // escapeChar: ''
-        })
-
-        const csv = removeSymbols(csvRaw)
-
-        const blob = new Blob(
-          [
-            csv
-              .replaceAll(/\u00a0/giu, ' ')
-              .replaceAll('â€”', ' ')
-              .replaceAll('â€‹', '')
-          ],
-          {
-            type: 'text/csv'
-          }
-        )
-        const url = URL.createObjectURL(blob)
-        const link = document.createElement('a')
-        link.href = url
-        // get today's date in a simple format
-        const today = new Date().toISOString().slice(0, 10)
-        link.download = `computer-gadgets-woocommerce-products-${today}.csv`
-        link.style.display = 'none'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        URL.revokeObjectURL(url)
+    function removeSymbols(text) {
+      let cleanedText = text
+      for (const symbol in symbolMap) {
+        const replacement = symbolMap[symbol]
+        cleanedText = cleanedText.replaceAll(symbol, replacement)
       }
+      return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
+    }
 
-      return {
-        dropzoneRef,
-        isDragActive,
-        fetchFrontosaData
-      }
+    function outPutCsv(data) {
+      const csvRaw = Papa.unparse(data, {
+        delimiter: ';',
+        quoteChars: '""'
+        // escapeChar: ''
+      })
+
+      const csv = removeSymbols(csvRaw)
+
+      const blob = new Blob(
+        [
+          csv
+            .replaceAll(/\u00a0/giu, ' ')
+            .replaceAll('â€”', ' ')
+            .replaceAll('â€‹', '')
+        ],
+        {
+          type: 'text/csv'
+        }
+      )
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      // get today's date in a simple format
+      const today = new Date().toISOString().slice(0, 10)
+      link.download = `computer-gadgets-woocommerce-products-${today}.csv`
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    }
+
+    return {
+      dropzoneRef,
+      isDragActive,
+      fetchFrontosaData
     }
   }
 }
