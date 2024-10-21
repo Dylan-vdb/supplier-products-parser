@@ -26,7 +26,6 @@ import Papa from 'papaparse'
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { symbolMap } from './helpers/constants'
-import axios from 'axios'
 
 import frontosaCategories from './helpers/frontosaCategories.json'
 import frontosaStock from './helpers/frontosaStock.json'
@@ -42,6 +41,7 @@ export default {
       const categories = frontosaCategories.categories
       const stock = frontosaStock.items
       debugger
+
       const myStock = stock
         .filter((product) => {
           return product.pid !== 0
@@ -54,6 +54,19 @@ export default {
             })[0]?.name
           }
           return result
+        })
+        .sort((a, b) => {
+          const categoryNameA = a.category.toUpperCase()
+          const categoryNameB = b.category.toUpperCase()
+
+          if (categoryNameA < categoryNameB) {
+            return -1
+          }
+          if (categoryNameA > categoryNameB) {
+            return 1
+          }
+
+          return 0
         })
 
       debugger
