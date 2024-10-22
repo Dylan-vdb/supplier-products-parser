@@ -1,5 +1,5 @@
 import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
-import { syntechCategoryReplacements, syntechUnwantedSubstrings } from '../helpers/constants'
+import { syntechCategoryReplacements, syntechUnwantedSubstrings } from './constants'
 
 export function processSyntechStock(xmlData) {
   const products = xmlData.syntechstock.stock.product

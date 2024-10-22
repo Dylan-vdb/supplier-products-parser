@@ -11,9 +11,6 @@
         </div>
       </div>
     </div>
-    <div class="frontosa-section">
-      <button @click="fetchFrontosaData">Fetch Frontosa Data</button>
-    </div>
   </div>
 </template>
 
@@ -25,10 +22,8 @@ import Papa from 'papaparse'
 
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
+import { processFrontosaStock } from './helpers/frontosaFixer'
 import { symbolMap } from './helpers/constants'
-
-import frontosaCategories from './helpers/frontosaCategories.json'
-import frontosaStock from './helpers/frontosaStock.json'
 
 export default {
   setup() {
@@ -36,57 +31,36 @@ export default {
     const { isDragActive } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
     const micropointData = ref([])
-
-    async function fetchFrontosaData() {
-      const categories = frontosaCategories.categories
-      const stock = frontosaStock.items
-      debugger
-
-      const myStock = stock
-        .filter((product) => {
-          return product.pid !== 0
-        })
-        .map((product) => {
-          const result = {
-            ...product,
-            category: frontosaCategories.categories.filter((category) => {
-              return category.id === product.pid
-            })[0]?.name
-          }
-          return result
-        })
-        .sort((a, b) => {
-          const categoryNameA = a.category.toUpperCase()
-          const categoryNameB = b.category.toUpperCase()
-
-          if (categoryNameA < categoryNameB) {
-            return -1
-          }
-          if (categoryNameA > categoryNameB) {
-            return 1
-          }
-
-          return 0
-        })
-
-      debugger
-      // https://everyorigin.jwvbremen.nl/get?url=
-      // TODO: Use later from server
-      //   try {
-      //     const { data } = await axios.get(
-      //       'http://live.frontosa.co.za/json/stock.asp?token=dc3087306fe93a4'
-      //     )
-      //     debugger
-      //   } catch (error) {
-      //     debugger
-      //     console.error(error)
-      //   }
-    }
+    const frontosaData = ref([])
 
     async function onDrop(files) {
-      parseXml(files[0])
+      const file = files[0]
+
+      if (file.type === 'text/xml') {
+        parseXml(file)
+      } else if (file.type === 'text/csv') {
+        parseCsv(file)
+      }
     }
 
+    function parseCsv(csvFile) {
+      const reader = new FileReader()
+      reader.onload = async (event) => {
+        const csvRaw = event.target.result
+        const parsedCsv = Papa.parse(csvRaw, {
+          header: true,
+          dynamicTyping: true,
+          skipEmptyLines: true
+        })
+
+        if (csvFile.name.includes('Frontosa')) {
+          frontosaData.value = processFrontosaStock(parsedCsv.data)
+          outPutCsv(frontosaData.value)
+        }
+      }
+
+      reader.readAsText(csvFile)
+    }
     function parseXml(xmlFile) {
       const reader = new FileReader()
       reader.onload = async (event) => {
@@ -155,8 +129,7 @@ export default {
 
     return {
       dropzoneRef,
-      isDragActive,
-      fetchFrontosaData
+      isDragActive
     }
   }
 }

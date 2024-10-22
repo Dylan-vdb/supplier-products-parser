@@ -269,6 +269,32 @@ export const micropointCategoryReplacements = [
   [/Peripherals > Switches >hdmi$/gi, 'Peripherals > Switches > HDMI']
 ]
 
+export const frontosaCategoryReplacements = [
+  ['Add-On Cards', 'Components > Add-On Cards'],
+  ['Bags - Covers', 'Accessories > Bags and Covers'],
+  ['Chassis', 'Components > Chassis'],
+  ['Consumable', 'Consumables and Cartridges'],
+  ['CPU', 'Components > CPU'],
+  ['Docking Stations', 'Peripherals > Hubs and Docking Stations'],
+  ['External Hard Drives', 'Peripherals > Storage > External SSDs'],
+  ['Flash Drives', 'Peripherals > Storage > Flash Drives'],
+  ['Game Capture', 'Gaming > Game Video Capture'],
+  ['Graphics', 'Components > Graphics Cards'],
+  ['Hard Drive', 'Components > Hard Drives'],
+  ['Keyboard', 'Peripherals > Keyboards'],
+  ['Memory', 'Components > Memory'],
+  ['Motherboard', 'Components > Motherboards'],
+  ['Mounting Kits', 'Accessories > Mounting Kits'],
+  ['Mouse', 'Peripherals > Mice'],
+  ['Mousepad', 'Accessories > Mousepads'],
+  ['Notebook', 'Notebooks'],
+  ['Printer', 'Printers'],
+  ['SD Card', 'Peripherals > Storage > Memory Cards'],
+  ['Streaming', 'Accessories > Media and Streaming'],
+  ['USB Hub', 'Peripherals > Hubs and Docking Stations'],
+  ['Webcam', 'Peripherals > Webcams']
+]
+
 export const micropointAcronyms = new Set([
   'USB',
   'HDMI',
