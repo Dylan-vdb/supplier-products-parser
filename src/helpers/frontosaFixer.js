@@ -67,11 +67,13 @@ function gatherInitialProducts(rawData) {
 function imageLinksPerCode(imageNames) {
   const result = imageNames.reduce((acc, image) => {
     const imageUrl = `https://ik.imagekit.io/ajwhrydzs/FlattenedImages/${image.replaceAll(' ', '%20')}`
-    const [productBrand, productCode, imageNumber] = image.split('__')
+    const [, productCode] = image.split('__')
     if (!acc[productCode]) {
       acc[productCode] = []
     }
+
     acc[productCode].push(imageUrl)
+
     return acc
   }, {})
 
