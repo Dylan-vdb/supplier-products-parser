@@ -7,7 +7,10 @@ import { frontosaCategoryReplacements } from './constants'
 export function processFrontosaStock(rawData) {
   const initialProducts = gatherInitialProducts(rawData)
   const emptyDescriptionsRemoved = removeEmptyDescriptions(initialProducts)
-  const products = improveCategoryNames(emptyDescriptionsRemoved)
+  const categorizedProducts = improveCategoryNames(emptyDescriptionsRemoved)
+  const faultyCategorySymbolsRemoved = removeCategorySymbolFaults(categorizedProducts)
+  const prependedProductCodes = prependProductCodes(faultyCategorySymbolsRemoved)
+  const products = prependedProductCodes
   return products
 }
 
@@ -128,4 +131,20 @@ function improveCategoryNames(products) {
 
 function removeEmptyDescriptions(products) {
   return products.filter((product) => product.description)
+}
+
+function removeCategorySymbolFaults(products) {
+  return products.map((product) => {
+    const cleanedName = product.name.replace(/^!!/, '').replace(/^!/, '').replace(/^\*/, '')
+    return { ...product, name: cleanedName }
+  })
+}
+
+function prependProductCodes(products) {
+  return products.map((product) => {
+    return {
+      ...product,
+      sku: 'FTSA-' + product.sku
+    }
+  })
 }
