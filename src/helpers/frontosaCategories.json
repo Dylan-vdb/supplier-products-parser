@@ -22,6 +22,10 @@
       "name": "AMD"
     },
     {
+      "id": 80,
+      "name": "Antec"
+    },
+    {
       "id": 6,
       "name": "APC"
     },
@@ -172,10 +176,6 @@
     {
       "id": 30,
       "name": "Logitech"
-    },
-    {
-      "id": 31,
-      "name": "Makerbot"
     },
     {
       "id": 32,
@@ -625,7 +625,7 @@
       "desc": "!Antec FDD UV Rounded Cable",
       "created": "2000/01/01",
       "status": "C",
-      "bid": 0,
+      "bid": 80,
       "pid": 60,
       "war": 0
     },
@@ -823,7 +823,7 @@
       "desc": "!!Antec 6 PCI back Panel 2u ca",
       "created": "2004/11/18",
       "status": "",
-      "bid": 0,
+      "bid": 80,
       "pid": 0,
       "war": 0
     },
@@ -877,8 +877,8 @@
       "desc": "!!Antec SP160W SIDE PANEL-P160",
       "created": "2005/04/14",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -940,8 +940,8 @@
       "desc": "!!300/103:Antec Aria cube",
       "created": "2004/12/10",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 18
     },
     {
@@ -949,8 +949,8 @@
       "desc": "!SP350/323:Antec SLK1650B Blac",
       "created": "2005/03/22",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 36
     },
     {
@@ -1125,15 +1125,6 @@
       "war": 36
     },
     {
-      "code": "KE-LOIP",
-      "desc": "Pls use ke-loi350 !!!!!!!!!S2",
-      "created": "2005/05/13",
-      "status": "",
-      "bid": 0,
-      "pid": 0,
-      "war": 24
-    },
-    {
       "code": "SD-256T60",
       "desc": "256MB Tatu SD 60X",
       "created": "2005/05/31",
@@ -1292,7 +1283,7 @@
       "created": "2005/07/28",
       "status": "",
       "bid": 0,
-      "pid": 0,
+      "pid": 19,
       "war": 0
     },
     {
@@ -2677,8 +2668,8 @@
       "desc": "!ANTEC Neopower 430W+Modular",
       "created": "2005/11/07",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 47,
       "war": 36
     },
     {
@@ -2830,7 +2821,7 @@
       "desc": "!!ANTEC EXT. LED LIGHT RED",
       "created": "2005/10/14",
       "status": "",
-      "bid": 0,
+      "bid": 80,
       "pid": 39,
       "war": 12
     },
@@ -4810,8 +4801,8 @@
       "desc": "!!416/650+550w:Antec P190 Blac",
       "created": "2007/06/01",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 36
     },
     {
@@ -5278,8 +5269,8 @@
       "desc": "!!Antec Front Panel-Orange",
       "created": "2007/09/12",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -5287,8 +5278,8 @@
       "desc": "!!Antec Front Panel-Green high",
       "created": "2007/09/12",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -5296,8 +5287,8 @@
       "desc": "!!Antec Front Panel-Pink strip",
       "created": "2007/09/12",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -5926,7 +5917,7 @@
       "desc": "!!Antec Neo-Link 550s - p190",
       "created": "2008/05/07",
       "status": "",
-      "bid": 0,
+      "bid": 80,
       "pid": 0,
       "war": 60
     },
@@ -6160,7 +6151,7 @@
       "desc": "Antec PAG0302 mx1 ac-adapter",
       "created": "2008/07/01",
       "status": "",
-      "bid": 0,
+      "bid": 80,
       "pid": 0,
       "war": 0
     },
@@ -6628,7 +6619,7 @@
       "desc": "Antec Veris E-Z mce clip-on",
       "created": "2008/09/03",
       "status": "",
-      "bid": 0,
+      "bid": 80,
       "pid": 0,
       "war": 12
     },
@@ -7888,8 +7879,8 @@
       "desc": "!!Antec Mini SKeleton90+ psu",
       "created": "2009/06/22",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -7897,8 +7888,8 @@
       "desc": "!Antec Accessory-SKeleton Mesh",
       "created": "2009/06/22",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -9787,8 +9778,8 @@
       "desc": "!!Anteck iSK310-150 mini-it",
       "created": "2010/08/26",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 12
     },
     {
@@ -10030,7 +10021,7 @@
       "desc": "!!Antec Nb Cooler Designer",
       "created": "2010/06/30",
       "status": "",
-      "bid": 0,
+      "bid": 80,
       "pid": 10,
       "war": 12
     },
@@ -12073,8 +12064,8 @@
       "desc": "Antec DarkFleet HotSwapMoudle",
       "created": "2011/05/25",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -12082,8 +12073,8 @@
       "desc": "Antec DarkFleet HotSwapModule",
       "created": "2011/05/25",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 80,
+      "pid": 7,
       "war": 1
     },
     {
@@ -21288,15 +21279,6 @@
       "code": "ME-AD4421X13X4R",
       "desc": "!!AX4U2133W4G13-Q Xpg D4 4x4",
       "created": "2014/10/22",
-      "status": "",
-      "bid": 4,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-AD4824X16X4R",
-      "desc": "!!AX4U2400W?G16-Q Xpg D4 8x4",
-      "created": "2014/11/03",
       "status": "",
       "bid": 4,
       "pid": 5,
@@ -40869,15 +40851,6 @@
       "war": 24
     },
     {
-      "code": "ME-KD4829V21",
-      "desc": "!!KVR29N21S?/8 D4 8G 2933 C21",
-      "created": "2019/10/27",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-KD41629V21",
       "desc": "!!KVR29N21?8/16 D4 16G 2933 C2",
       "created": "2019/10/27",
@@ -40957,6 +40930,15 @@
       "bid": 7,
       "pid": 9,
       "war": 0
+    },
+    {
+      "code": "SY-I5FNH",
+      "desc": "!!Intel nuC10-i5FNH m.2+2.5\"",
+      "created": "2019/11/02",
+      "status": "",
+      "bid": 20,
+      "pid": 62,
+      "war": 36
     },
     {
       "code": "NB-GAE17-71665",
@@ -49104,15 +49086,6 @@
       "war": 36
     },
     {
-      "code": "SY-I3TNK",
-      "desc": "!!Intel nuc11-i3TNK m.2",
-      "created": "2021/03/10",
-      "status": "",
-      "bid": 20,
-      "pid": 62,
-      "war": 36
-    },
-    {
       "code": "SY-I7TNH",
       "desc": "!!Intel nuc11-i7TNH m.2+2.5\"",
       "created": "2021/03/10",
@@ -49226,7 +49199,7 @@
       "created": "2021/03/18",
       "status": "R",
       "bid": 15,
-      "pid": 0,
+      "pid": 1,
       "war": 12
     },
     {
@@ -50081,7 +50054,7 @@
       "created": "2021/05/24",
       "status": "R",
       "bid": 0,
-      "pid": 67,
+      "pid": 76,
       "war": 24
     },
     {
@@ -51791,7 +51764,7 @@
       "created": "2021/09/01",
       "status": "R",
       "bid": 0,
-      "pid": 67,
+      "pid": 76,
       "war": 24
     },
     {
@@ -51800,7 +51773,7 @@
       "created": "2021/09/01",
       "status": "R",
       "bid": 0,
-      "pid": 67,
+      "pid": 76,
       "war": 24
     },
     {
@@ -52421,7 +52394,7 @@
       "created": "2021/10/06",
       "status": "",
       "bid": 0,
-      "pid": 0,
+      "pid": 76,
       "war": 24
     },
     {
@@ -54801,6 +54774,15 @@
       "war": 36
     },
     {
+      "code": "SY-IPATKPE+S",
+      "desc": "!!Intel nuc11-ATKPE Pentium+64",
+      "created": "2022/03/06",
+      "status": "",
+      "bid": 20,
+      "pid": 62,
+      "war": 36
+    },
+    {
       "code": "NA-I225T1R",
       "desc": "Intel i225T1 2.5G Retail pci-e",
       "created": "2022/03/06",
@@ -56201,7 +56183,7 @@
       "created": "2022/06/15",
       "status": "C",
       "bid": 0,
-      "pid": 67,
+      "pid": 76,
       "war": 24
     },
     {
@@ -56210,7 +56192,7 @@
       "created": "2022/06/15",
       "status": "C",
       "bid": 0,
-      "pid": 0,
+      "pid": 60,
       "war": 0
     },
     {
@@ -60879,7 +60861,7 @@
       "code": "LC-DE2223",
       "desc": "Dell E2223hn 22\" -FHD",
       "created": "2022/10/06",
-      "status": "C",
+      "status": "N",
       "bid": 65,
       "pid": 37,
       "war": 36
@@ -63588,7 +63570,7 @@
       "code": "ME-KD5856R36",
       "desc": "KF556C36BBEA-8 D5-5600 b R 8g",
       "created": "2023/01/30",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -64018,7 +64000,7 @@
     },
     {
       "code": "LP-H4003DN",
-      "desc": "Hp 2Z609A LaserPro 4003DN",
+      "desc": "!!Hp 2Z609A LaserPro 4003DN",
       "created": "2023/02/14",
       "status": "",
       "bid": 18,
@@ -70898,7 +70880,7 @@
       "created": "2024/02/26",
       "status": "C",
       "bid": 0,
-      "pid": 0,
+      "pid": 60,
       "war": 0
     },
     {
@@ -72039,7 +72021,7 @@
       "code": "LP-H3003DN",
       "desc": "Hp 3G653A LaserPro 3003DN",
       "created": "2024/07/15",
-      "status": "C",
+      "status": "N",
       "bid": 18,
       "pid": 1,
       "war": 12
@@ -72102,7 +72084,7 @@
       "code": "ME-KD51660B30X2",
       "desc": "KF560C30BBK2-32 D5-6000B 16x2",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72316,7 +72298,7 @@
     },
     {
       "code": "MB-GZ790SD4+W",
-      "desc": "Gb Z790 S Elite Ddr4+Wifi",
+      "desc": "Gb Z790 S Ddr4+Wifi",
       "created": "2024/07/23",
       "status": "N",
       "bid": 17,

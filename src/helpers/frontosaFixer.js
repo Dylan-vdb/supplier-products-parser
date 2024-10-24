@@ -10,7 +10,8 @@ export function processFrontosaStock(rawData) {
   const categorizedProducts = improveCategoryNames(emptyDescriptionsRemoved)
   const faultyCategorySymbolsRemoved = removeCategorySymbolFaults(categorizedProducts)
   const prependedProductCodes = prependProductCodes(faultyCategorySymbolsRemoved)
-  const products = prependedProductCodes
+  const fixedDescriptions = fixDescriptions(prependedProductCodes)
+  const products = fixedDescriptions
   return products
 }
 
@@ -37,7 +38,7 @@ function gatherInitialProducts(rawData) {
         more_jhb,
         price,
         DESCRIPTION,
-        category,
+        categories,
         brand
       }) => {
         return {
@@ -46,7 +47,7 @@ function gatherInitialProducts(rawData) {
           stock: qty_cpt + qty_dbn + qty_els + qty_jhb + more_cpt + more_dbn + more_els + more_jhb,
           normal_cost: price,
           description: DESCRIPTION,
-          category,
+          categories,
           brand,
           price: calculateFullPrice({
             price: price,
@@ -58,7 +59,7 @@ function gatherInitialProducts(rawData) {
       }
     )
     .filter((product) => {
-      return product.images
+      return product.images && product.stock > 0
     })
 
   return products
@@ -92,7 +93,7 @@ function fetchFrontosaData() {
     .map((product) => {
       const result = {
         ...product,
-        category: categories.filter((category) => {
+        categories: categories.filter((category) => {
           return category.id === product.pid
         })[0]?.name,
         brand:
@@ -103,8 +104,8 @@ function fetchFrontosaData() {
       return result
     })
     .sort((a, b) => {
-      const categoryNameA = a.category.toUpperCase()
-      const categoryNameB = b.category.toUpperCase()
+      const categoryNameA = a.categories.toUpperCase()
+      const categoryNameB = b.categories.toUpperCase()
 
       if (categoryNameA < categoryNameB) {
         return -1
@@ -120,15 +121,23 @@ function fetchFrontosaData() {
 function improveCategoryNames(products) {
   const replacements = frontosaCategoryReplacements
 
-  return products.map((product) => {
-    let updatedCategoryTree = product.category
+  return products
+    .map((product) => {
+      let updatedCategoryTree = product.categories
 
-    replacements.forEach(([find, replace]) => {
-      updatedCategoryTree = updatedCategoryTree.replace(find, replace)
+      replacements.forEach(([find, replace]) => {
+        updatedCategoryTree = updatedCategoryTree.replace(find, replace)
+      })
+
+      return { ...product, categories: updatedCategoryTree }
     })
-
-    return { ...product, category: updatedCategoryTree }
-  })
+    .map((product) => {
+      if (product.categories === 'Peripherals > Micepad') {
+        return { ...product, categories: 'Accessories > Mousepads' }
+      } else {
+        return product
+      }
+    })
 }
 
 function removeEmptyDescriptions(products) {
@@ -147,6 +156,15 @@ function prependProductCodes(products) {
     return {
       ...product,
       sku: 'FTSA-' + product.sku
+    }
+  })
+}
+
+function fixDescriptions(products) {
+  return products.map((product) => {
+    return {
+      ...product,
+      description: product.description.replace(/,/gm, '\n')
     }
   })
 }
