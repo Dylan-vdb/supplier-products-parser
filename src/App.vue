@@ -32,8 +32,20 @@ export default {
     const { isDragActive } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
     const micropointData = ref([])
+    const frontosaData = ref([])
+    const astrumData = ref([])
 
     async function onDrop(files) {
+      if (files[0].name.includes('Astrum')) {
+        const rawData = await Promise.all(files.map((file) => parseCsv(file)))
+        astrumData.value = processAstrumStock(rawData)
+      }
+      if (files[0].name.includes('Frontosa')) {
+        const rawData = await parseCsv(files[0])
+        frontosaData.value = processFrontosaStock(rawData.data)
+        outPutCsv(frontosaData.value)
+      }
+
       const file = files[0]
       if (file.type == 'text/csv') {
         parseCsv(file)
@@ -43,17 +55,16 @@ export default {
     }
 
     function parseCsv(csvFile) {
-      Papa.parse(csvFile, {
-        header: true,
-        complete: function (results) {
-          console.log(results)
-
-          if (csvFile.name.includes('astrum')) {
-            astrumData.value = processAstrumStock(results.data)
-
-            // outPutCsv(astrumData.value)
+      return new Promise((resolve, reject) => {
+        Papa.parse(csvFile, {
+          header: true,
+          complete: (results) => {
+            resolve(results)
+          },
+          error: (error) => {
+            reject(error)
           }
-        }
+        })
       })
     }
 

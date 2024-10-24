@@ -1,8 +1,9 @@
 import { astrumCategoryReplacements } from '@/helpers/constants'
+import { calculateFullPrice } from '@/helpers/baseHelpers'
 
 export function processAstrumStock(productsRaw) {
-  const blankRowRemoved = productsRaw.slice(0, productsRaw.length - 1)
-  const wantedRows = removeUnwantedRows(blankRowRemoved)
+  // const blankRowRemoved = productsRaw.slice(0, productsRaw.length - 1)
+  const wantedRows = removeUnwantedRows(productsRaw)
   const fixedFieldNames = fixFieldNames(wantedRows)
   const improvedCategoryNames = improveCategoryNames(fixedFieldNames)
   const addedPricing = addPricing(improvedCategoryNames)
@@ -18,11 +19,11 @@ function removeUnwantedRows(products) {
 const fixFieldNames = (products) => {
   return products.map((product) => {
     return {
-      sku: product['Part Number'],
+      sku: 'AST-' + product['Part Number'],
       name: product.title,
-      stock: 5,
+      stock: product.Stock,
       images: product.image_link,
-      normal_cost: product.SRP,
+      normal_cost: parseInt(product.SRP),
       description: product.description,
       categories: product.categories
     }
@@ -45,7 +46,11 @@ function addPricing(products) {
   return products.map((product) => {
     return {
       ...product,
-      sale_price: product.normal_cost
+      price: calculateFullPrice({
+        price: product.normal_cost,
+        margin: 17,
+        vat: 15
+      })
     }
   })
 }
