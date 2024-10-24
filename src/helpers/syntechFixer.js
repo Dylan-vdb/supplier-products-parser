@@ -1,10 +1,10 @@
 import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
-import { syntechCategoryReplacements, syntechUnwantedSubstrings } from '../helpers/constants'
+import { syntechCategoryReplacements, syntechUnwantedSubstrings } from './constants'
 
 export function processSyntechStock(xmlData) {
   const products = xmlData.syntechstock.stock.product
-  const promotedProductsHandled = handlePromotedProducts(products)
-  console.log('promotedProductsHandled', promotedProductsHandled)
+  const withNormalCost = addNormalCost(products)
+  const promotedProductsHandled = handlePromotedProducts(withNormalCost)
   const allPipedCategoriesHandled = removeOtherPipes(promotedProductsHandled)
   const cleanedProducts = removeDuplicates(allPipedCategoriesHandled)
   const filteredProducts = removeUnwantedCategories(cleanedProducts)
@@ -17,11 +17,12 @@ export function processSyntechStock(xmlData) {
   return finalProducts
 }
 
-function fixPipedNames(products) {
-  // Some of the names have pipes (ie |) in them with no spaces between them, this messes with the ui. TODO make sure that pipes directly between two words instead has a space between the pipe and each of the words.
+function addNormalCost(products) {
   return products.map((product) => {
-    const name = product.name.replace(/(\w)\|(\w)/g, '$1 | $2')
-    return { ...product, name }
+    return {
+      ...product,
+      normal_cost: product.price
+    }
   })
 }
 
@@ -38,12 +39,24 @@ function handlePromotedProducts(products) {
           tags: 'On Promotion',
           sale_price: calculateFullPrice({
             price: Number(product.promo_price),
-            margin: Number(product.recommended_margin),
+            margin: 15,
             vat: 15
           }),
-          price: product.rrp_incl
+          price: calculateFullPrice({
+            price: Number(product.normal_cost),
+            margin: 15,
+            vat: 15
+          })
         }
-      : { ...product, price: product.rrp_incl, sale_price: null }
+      : {
+          ...product,
+          price: calculateFullPrice({
+            price: Number(product.normal_cost),
+            margin: 15,
+            vat: 15
+          }),
+          sale_price: null
+        }
   })
 }
 
@@ -61,12 +74,12 @@ function tidyFields(products) {
       sku,
       name,
       price,
+      normal_cost,
       rrp_incl,
       sale_price,
       promo_price: promo_cost,
       promo_starts,
       promo_ends,
-      price: normal_cost,
       recommended_margin,
       cptstock,
       jhbstock,
@@ -128,6 +141,14 @@ function improveCategoryNames(products) {
     })
 
     return { ...product, categorytree: updatedCategoryTree }
+  })
+}
+
+function fixPipedNames(products) {
+  // Some of the names have pipes (ie |) in them with no spaces between them, this messes with the ui. TODO make sure that pipes directly between two words instead has a space between the pipe and each of the words.
+  return products.map((product) => {
+    const name = product.name.replace(/(\w)\|(\w)/g, '$1 | $2')
+    return { ...product, name }
   })
 }
 

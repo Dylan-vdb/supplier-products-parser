@@ -4,7 +4,7 @@ import {
   micropointAcronyms,
   micropointCategoryReplacements
 } from '@/helpers/constants'
-
+// To test the fix
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
   const wantedFields = removeUnwantedFields(products)
@@ -16,9 +16,39 @@ export function processMicropointStock(xmlData) {
   const improvedCategoryCapitalization = improveCategoryCapitalization(improvedCategoryNames)
   const commonFieldMapping = mapToCommonFields(improvedCategoryCapitalization)
   const leaflessCategoryTrees = removeLeaflessCategoryTrees(commonFieldMapping)
-  const finalProducts = saveSkuList(leaflessCategoryTrees, 'micropoint')
+  const notebooksSpecialPrice = giveNotebooksSpecialPrice(leaflessCategoryTrees)
+  const fixedSquashedTitles = fixSquashedTitles(notebooksSpecialPrice)
+  const finalProducts = saveSkuList(fixedSquashedTitles, 'micropoint')
 
   return finalProducts
+}
+
+function fixCommaSquashing(title) {
+  return title.replace(/([a-zA-Z0-9]),([a-zA-Z0-9])/g, '$1, $2')
+}
+
+function fixSquashedTitles(products) {
+  return products.map((product) => {
+    return {
+      ...product,
+      name: fixCommaSquashing(product.name)
+    }
+  })
+}
+
+function giveNotebooksSpecialPrice(products) {
+  return products.map((product) =>
+    product.categories === 'Notebooks'
+      ? {
+          ...product,
+          price: calculateFullPrice({
+            price: Number(product.normal_cost),
+            margin: 10,
+            vat: 15
+          })
+        }
+      : product
+  )
 }
 
 function removeUnwantedFields(products) {

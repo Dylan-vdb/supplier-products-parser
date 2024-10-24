@@ -1,12 +1,14 @@
 <template>
-  <div class="dropzone">
-    <div class="dropzone__inner" ref="dropzoneRef">
-      <p>Drop your XML file here</p>
-      <div v-if="isDragActive">
-        <p>Drop the file to start parsing</p>
-      </div>
-      <div v-else>
-        <p>Drag and drop your XML file here</p>
+  <div class="app-wrapper">
+    <div class="dropzone">
+      <div class="dropzone__inner" ref="dropzoneRef">
+        <p>Drop your XML file here</p>
+        <div v-if="isDragActive">
+          <p>Drop the file to start parsing</p>
+        </div>
+        <div v-else>
+          <p>Drag and drop your XML file here</p>
+        </div>
       </div>
     </div>
   </div>
@@ -20,6 +22,7 @@ import Papa from 'papaparse'
 
 import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
+import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
 import { symbolMap } from './helpers/constants'
 
@@ -29,7 +32,6 @@ export default {
     const { isDragActive } = useDropZone(dropzoneRef, onDrop)
     const syntechData = ref([])
     const micropointData = ref([])
-    const astrumData = ref([])
 
     async function onDrop(files) {
       const file = files[0]
