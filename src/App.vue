@@ -38,11 +38,13 @@ export default {
     async function onDrop(files) {
       if (files[0].name.includes('Astrum')) {
         const rawData = await Promise.all(files.map((file) => parseCsv(file)))
+
         astrumData.value = processAstrumStock(rawData)
+        outPutCsv(astrumData.value)
       }
       if (files[0].name.includes('Frontosa')) {
         const rawData = await parseCsv(files[0])
-        frontosaData.value = processFrontosaStock(rawData.data)
+        frontosaData.value = processFrontosaStock(rawData.result.data)
         outPutCsv(frontosaData.value)
       }
 
@@ -59,7 +61,7 @@ export default {
         Papa.parse(csvFile, {
           header: true,
           complete: (results) => {
-            resolve(results)
+            resolve({ name: csvFile.name, result: results })
           },
           error: (error) => {
             reject(error)
