@@ -16,7 +16,8 @@ export function saveSkuList(products, supplier) {
       products.push({
         sku: sku,
         stock: 0,
-        published: 0
+        published: 0,
+        'Visibility in catalog': 'hidden'
       })
     })
     localStorage.setItem(`${supplier}SkuListOld`, existingListString)

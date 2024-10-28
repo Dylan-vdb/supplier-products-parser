@@ -24,6 +24,7 @@ import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
+import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
 
 export default {
@@ -34,6 +35,7 @@ export default {
     const micropointData = ref([])
     const frontosaData = ref([])
     const astrumData = ref([])
+    const discontinuedStock = ref([])
 
     async function onDrop(files) {
       if (files[0].name.includes('Astrum')) {
@@ -41,13 +43,20 @@ export default {
 
         astrumData.value = processAstrumStock(rawData)
         outPutCsv(astrumData.value)
+        return
       }
       if (files[0].name.includes('Frontosa')) {
         const rawData = await parseCsv(files[0])
         frontosaData.value = processFrontosaStock(rawData.result.data)
         outPutCsv(frontosaData.value)
+        return
       }
-
+      if (files[0].name.includes('wc-product-export')) {
+        const rawData = await parseCsv(files[0])
+        discontinuedStock.value = processDiscontinuedStock(rawData.result.data)
+        outPutCsv(discontinuedStock.value)
+        return
+      }
       const file = files[0]
       if (file.type == 'text/csv') {
         parseCsv(file)

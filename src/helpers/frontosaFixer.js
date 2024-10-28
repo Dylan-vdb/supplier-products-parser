@@ -1,6 +1,6 @@
 import frontosaCategories from '@/helpers/frontosaCategories.json'
 import frontosaStock from '@/helpers/frontosaStock.json'
-import { calculateFullPrice } from '@/helpers/baseHelpers'
+import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
 import frontosaImages from './image_filenames.json'
 import { frontosaCategoryReplacements } from './constants'
 
@@ -11,7 +11,7 @@ export function processFrontosaStock(rawData) {
   const faultyCategorySymbolsRemoved = removeCategorySymbolFaults(categorizedProducts)
   const prependedProductCodes = prependProductCodes(faultyCategorySymbolsRemoved)
   const fixedDescriptions = fixDescriptions(prependedProductCodes)
-  const products = fixedDescriptions
+  const products = saveSkuList(fixedDescriptions, 'frontosa')
   return products
 }
 

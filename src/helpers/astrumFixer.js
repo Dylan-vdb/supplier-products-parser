@@ -1,11 +1,12 @@
 import { astrumCategoryReplacements } from '@/helpers/constants'
-import { calculateFullPrice } from '@/helpers/baseHelpers'
+import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
 
 export function processAstrumStock(productsRaw) {
   const tablesJoined = combineTables(productsRaw)
   const pricing = setPricing(tablesJoined)
   const improvedCategoryNames = improveCategoryNames(pricing)
-  return improvedCategoryNames
+  const products = saveSkuList(improvedCategoryNames, 'astrum')
+  return products
 }
 
 function combineTables(productsTables) {
@@ -18,7 +19,7 @@ function combineTables(productsTables) {
     })
     .filter((product) => product.id)
   const issueProduct = joinedTable.find((product) => product['Part Number'] === 'A33401-B')
-  debugger
+
   return joinedTable
 }
 
@@ -78,7 +79,7 @@ function setPricing(products) {
 function improveCategoryNames(products) {
   const productsWithEmptyCategories = products.filter((product) => product.categories === '')
   const issueProduct = products.find((product) => product.sku === 'AST-A33401-B')
-  debugger
+
   const replacements = astrumCategoryReplacements
   return products.map((product) => {
     let updatedCategoryTree = product.categories
