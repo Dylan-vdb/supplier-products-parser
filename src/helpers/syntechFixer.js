@@ -117,6 +117,7 @@ function tidyFields(products) {
       stock,
       brand: attributes.brand,
       type: 'simple',
+      'Visibility in catalog': 'visible',
       published: 1
     })
   )

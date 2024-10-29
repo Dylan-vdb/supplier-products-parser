@@ -148,7 +148,8 @@ function mapToCommonFields(products) {
         height: null,
         brand,
         type: 'simple',
-        published: 1
+        published: 1,
+        'Visibility in catalog': 'visible'
       }
     }
   )

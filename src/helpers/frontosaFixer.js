@@ -54,7 +54,9 @@ function gatherInitialProducts(rawData) {
             margin: 17,
             vat: 15
           }),
-          images: imagesPerCode[code]?.join(',') || null
+          images: imagesPerCode[code]?.join(',') || null,
+          'Visibility in catalog': 'visible',
+          published: 1
         }
       }
     )

@@ -18,18 +18,18 @@ function combineTables(productsTables) {
       return { ...product, ...details }
     })
     .filter((product) => product.id)
-  const issueProduct = joinedTable.find((product) => product['Part Number'] === 'A33401-B')
 
   return joinedTable
 }
 
 function setPricing(products) {
   let aboveCount = 0
+
   return products
     .map(
       ({
         AVAIL: stock,
-        COST: normal_cost,
+        SAR: normal_cost,
         title: name,
         'Part Number': sku,
         SRP,
@@ -46,7 +46,9 @@ function setPricing(products) {
           categories,
           description,
           images,
-          brand: 'Astrum'
+          brand: 'Astrum',
+          'Visibility in catalog': 'visible',
+          published: 1
         }
       }
     )
@@ -74,12 +76,10 @@ function setPricing(products) {
         }
       }
     })
+    .filter((product) => !product.stock.includes('N/A'))
 }
 
 function improveCategoryNames(products) {
-  const productsWithEmptyCategories = products.filter((product) => product.categories === '')
-  const issueProduct = products.find((product) => product.sku === 'AST-A33401-B')
-
   const replacements = astrumCategoryReplacements
   return products.map((product) => {
     let updatedCategoryTree = product.categories

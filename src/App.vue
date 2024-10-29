@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useDropZone } from '@vueuse/core'
 import { XMLParser } from 'fast-xml-parser'
 import Papa from 'papaparse'
@@ -109,14 +109,13 @@ export default {
         const replacement = symbolMap[symbol]
         cleanedText = cleanedText.replaceAll(symbol, replacement)
       }
-      return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '')
+      return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '').replaceAll('â€™', '')
     }
 
     function outPutCsv(data) {
       const csvRaw = Papa.unparse(data, {
         delimiter: ';',
         quoteChars: '""'
-        // escapeChar: ''
       })
 
       const csv = removeSymbols(csvRaw)
