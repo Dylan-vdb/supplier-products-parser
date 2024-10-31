@@ -26101,7 +26101,7 @@
     },
     {
       "code": "TO-S404Y",
-      "desc": "Samsung clt-Y404S Yellow",
+      "desc": "!!Samsung clt-Y404S Yellow",
       "created": "2016/01/23",
       "status": "",
       "bid": 40,
@@ -58789,7 +58789,7 @@
     },
     {
       "code": "HD-KG250NV2",
-      "desc": "Kingston nGff/m.2 250 NV2 G4x4",
+      "desc": "!!Kingston nGff/m.2 250 NV2 G4",
       "created": "2022/08/21",
       "status": "",
       "bid": 24,
@@ -72426,7 +72426,7 @@
       "code": "NB-AX1502-7T165",
       "desc": "X1502ZA-I716512BL0W 7T+16+512",
       "created": "2024/08/28",
-      "status": "N",
+      "status": "",
       "bid": 7,
       "pid": 9,
       "war": 12
@@ -73069,6 +73069,87 @@
       "bid": 36,
       "pid": 4,
       "war": 36
+    },
+    {
+      "code": "ME-CD52460R30DZ",
+      "desc": "*CMH48GX5M2B6000Z30 v.Rgb 24x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD52466R38D",
+      "desc": "*CMH48GX5M2B6600C38 vRgb 24x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD52468R34D",
+      "desc": "*CMH48GX5M2B6800C34 vRgb 24x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD53270R40D",
+      "desc": "*CMH64GX5M2B7000C40 vRgb 32x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD54868R34D",
+      "desc": "*CMH96GX5M2B6800C34 v.Rgb 48x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD54872R40D",
+      "desc": "*CMH96GX5M2B7200C40 v.Rgb 48x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD52470L36D",
+      "desc": "*CMK48GX5M2B7000C36 Lpx 24Gx2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-CD54868TRX2",
+      "desc": "*CMP96GX5M2B6600C32 T.Rgb 48x2",
+      "created": "2024/10/29",
+      "status": "R",
+      "bid": 13,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-KD52480RG36D",
+      "desc": "KF580C36RLAK2-48 D5-8000 R 24D",
+      "created": "2024/10/29",
+      "status": "C",
+      "bid": 24,
+      "pid": 5,
+      "war": 12
     }
   ]
 }

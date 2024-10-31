@@ -23,13 +23,14 @@ function combineTables(productsTables) {
 }
 
 function setPricing(products) {
+  debugger
   let aboveCount = 0
 
   return products
     .map(
       ({
         AVAIL: stock,
-        SAR: normal_cost,
+        COST: normal_cost,
         title: name,
         'Part Number': sku,
         SRP,
@@ -53,6 +54,9 @@ function setPricing(products) {
       }
     )
     .map((product) => {
+      // if (product.sku.includes('A84010-B') || product.sku.includes('A84011-B')) {
+      //   debugger
+      // }
       const recommended_retail = parseInt(product.SRP)
       const sale_price = calculateFullPrice({
         price: Number(product.normal_cost),
