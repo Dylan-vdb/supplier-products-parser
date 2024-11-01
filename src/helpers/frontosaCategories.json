@@ -46108,9 +46108,9 @@
     },
     {
       "code": "ME-KD43236R18X4",
-      "desc": "436C18P/RB?AK4/128 3600R 32x4",
+      "desc": "*436C18P/RB?AK4/128 3600R 32x4",
       "created": "2020/07/20",
-      "status": "",
+      "status": "R",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -64819,7 +64819,7 @@
     },
     {
       "code": "HD-KG4000NV2",
-      "desc": "Kingston nGff/m.2 4Tb NV2 G4x4",
+      "desc": "!!Kingston nGff/m2 4Tb NV2 4x4",
       "created": "2023/04/03",
       "status": "",
       "bid": 24,
@@ -71461,7 +71461,7 @@
     },
     {
       "code": "ME-K5N48V56X2",
-      "desc": "KVR56S46BD8K2-96 Nb5600 48x2",
+      "desc": "!!KVR56S46BD8K2-96 Nb5600 48x2",
       "created": "2024/04/10",
       "status": "",
       "bid": 24,
@@ -73150,6 +73150,42 @@
       "bid": 24,
       "pid": 5,
       "war": 12
+    },
+    {
+      "code": "FD-K512GIKKP200",
+      "desc": "*iKKP200/512GB IronK KPad200",
+      "created": "2024/10/31",
+      "status": "R",
+      "bid": 24,
+      "pid": 2,
+      "war": 36
+    },
+    {
+      "code": "HD-KG240DC2000",
+      "desc": "SEDC2000BM8/240G nGff Gen4x4",
+      "created": "2024/10/31",
+      "status": "C",
+      "bid": 24,
+      "pid": 11,
+      "war": 60
+    },
+    {
+      "code": "HD-KG480DC2000",
+      "desc": "SEDC2000BM8/480G nGff Gen4x4",
+      "created": "2024/10/31",
+      "status": "C",
+      "bid": 24,
+      "pid": 11,
+      "war": 60
+    },
+    {
+      "code": "HD-KG960DC2000",
+      "desc": "SEDC2000BM8/960G nGff Gen4x4",
+      "created": "2024/10/31",
+      "status": "C",
+      "bid": 24,
+      "pid": 11,
+      "war": 60
     }
   ]
 }

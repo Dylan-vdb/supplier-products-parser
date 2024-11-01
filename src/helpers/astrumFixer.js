@@ -49,7 +49,8 @@ function setPricing(products) {
           images,
           brand: 'Astrum',
           'Visibility in catalog': 'visible',
-          published: 1
+          published: 1,
+          is_featured: 0
         }
       }
     )

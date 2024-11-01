@@ -37,6 +37,7 @@ function handlePromotedProducts(products) {
           ...product,
           categorytreealt: product.categorytreealt.replace('|On Promotion', ''),
           tags: 'On Promotion',
+          is_featured: 1,
           sale_price: calculateFullPrice({
             price: Number(product.promo_price),
             margin: 15,
@@ -55,7 +56,8 @@ function handlePromotedProducts(products) {
             margin: 15,
             vat: 15
           }),
-          sale_price: null
+          sale_price: null,
+          is_featured: 0
         }
   })
 }
@@ -92,7 +94,8 @@ function tidyFields(products) {
       categorytree: categories,
       tags,
       description,
-      attributes
+      attributes,
+      is_featured
     }) => ({
       sku,
       name,
@@ -105,6 +108,7 @@ function tidyFields(products) {
       normal_cost,
       categories,
       tags,
+      is_featured,
       description,
       recommended_margin,
       weight,
