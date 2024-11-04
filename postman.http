@@ -1,1 +1,13 @@
-GET http://live.frontosa.co.za/json/stock.asp?token=dc3087306fe93a4
+GET http://test-site-01.local/wp-json/wc/v3/products HTTP/1.1
+X-API-KEY: ck_a2c7e168136dbde57d6da2083cc04781a020705c
+X-API-SECRET: cs_5d3829cf2f1518ca1a4aff101b1d4ddc08f24527
+
+
+###
+curl https://computergadgets.co.za//wp-json/wc/v3/products \
+    -u ck_5ee8a80eb429b6c65127522393593a42116936c4:cs_a7bde7b0b3fe4ce77ad6d7c013b12f1beeeec315
+
+
+###
+curl http://test-site-01.local/wp-json/wc/v3/products \
+    -u ck_a2c7e168136dbde57d6da2083cc04781a020705c:cs_5d3829cf2f1518ca1a4aff101b1d4ddc08f24527

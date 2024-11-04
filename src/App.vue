@@ -11,6 +11,7 @@
         </div>
       </div>
     </div>
+    <button @click="fetchAllProducts">Fetch All Products</button>
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
+import { fetchAllProducts } from './helpers/restApi.js'
 
 export default {
   setup() {
@@ -146,7 +148,8 @@ export default {
 
     return {
       dropzoneRef,
-      isDragActive
+      isDragActive,
+      fetchAllProducts
     }
   }
 }
