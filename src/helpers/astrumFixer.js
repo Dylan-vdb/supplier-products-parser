@@ -54,9 +54,6 @@ function setPricing(products) {
       }
     )
     .map((product) => {
-      // if (product.sku.includes('A84010-B') || product.sku.includes('A84011-B')) {
-      //   debugger
-      // }
       const recommended_retail = parseInt(product.SRP)
       const sale_price = calculateFullPrice({
         price: Number(product.normal_cost),
@@ -86,11 +83,16 @@ function setPricing(products) {
 function improveCategoryNames(products) {
   const replacements = astrumCategoryReplacements
   return products.map((product) => {
+    if (product.sku.includes('A83511-B')) {
+      debugger
+    }
     let updatedCategoryTree = product.categories
     replacements.forEach(([find, replace]) => {
       updatedCategoryTree = updatedCategoryTree.replace(find, replace)
     })
-
+    if (product.sku.includes('A83511-B')) {
+      debugger
+    }
     return { ...product, categories: updatedCategoryTree }
   })
 }

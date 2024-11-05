@@ -29,7 +29,11 @@ function fixCommaSquashing(title) {
 }
 
 function fixSquashedTitles(products) {
+  debugger
   return products.map((product) => {
+    // if (product.sku == '35290') {
+    //   debugger
+    // }
     return {
       ...product,
       name: fixCommaSquashing(product.name)
@@ -125,7 +129,8 @@ function mapToCommonFields(products) {
       images,
       description,
       categories,
-      brand
+      brand,
+      is_featured
     }) => {
       return {
         sku,
@@ -149,7 +154,8 @@ function mapToCommonFields(products) {
         brand,
         type: 'simple',
         published: 1,
-        'Visibility in catalog': 'visible'
+        'Visibility in catalog': 'visible',
+        is_featured
       }
     }
   )
@@ -190,9 +196,10 @@ function handlePromotedProducts(products) {
             price: Number(product.promo_cost),
             margin: 17,
             vat: 15
-          })
+          }),
+          is_featured: 1
         }
-      : { ...product, tags: '', sale_price: null }
+      : { ...product, tags: '', sale_price: null, is_featured: 0 }
   })
 }
 
@@ -225,11 +232,16 @@ function removeUnwantedCategories(products) {
 function improveCategoryNames(products) {
   const replacements = micropointCategoryReplacements
   return products.map((product) => {
+    if (product.sku == 'BRACKET1') {
+      debugger
+    }
     let updatedCategoryTree = product.categories
     replacements.forEach(([find, replace]) => {
       updatedCategoryTree = updatedCategoryTree.replace(find, replace)
     })
-
+    if (product.sku == 'BRACKET1') {
+      debugger
+    }
     return { ...product, categories: updatedCategoryTree }
   })
 }
