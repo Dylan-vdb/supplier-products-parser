@@ -23,7 +23,6 @@ function combineTables(productsTables) {
 }
 
 function setPricing(products) {
-  debugger
   let aboveCount = 0
 
   return products

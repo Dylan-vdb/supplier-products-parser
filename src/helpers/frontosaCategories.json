@@ -10026,15 +10026,6 @@
       "war": 12
     },
     {
-      "code": "CH-LT1SN",
-      "desc": "!!LIAN-LI pc-T1 spider Sil No",
-      "created": "2010/06/23",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 1
-    },
-    {
       "code": "CP-AG6128",
       "desc": "Amd G34 6128 2G 8xcore -no fan",
       "created": "2010/10/14",
@@ -14887,7 +14878,7 @@
     },
     {
       "code": "ME-K4V16C11",
-      "desc": "KVR16N11?/4 1600 CL11 4GB",
+      "desc": "!!KVR16N11?/4 1600 CL11 4GB",
       "created": "2012/07/27",
       "status": "",
       "bid": 24,
@@ -16468,15 +16459,6 @@
       "bid": 13,
       "pid": 5,
       "war": 12
-    },
-    {
-      "code": "HS-SFGW2",
-      "desc": "!!SteelSeries Flux-guildWars 2",
-      "created": "2012/12/05",
-      "status": "",
-      "bid": 44,
-      "pid": 31,
-      "war": 24
     },
     {
       "code": "CO-MHH",
@@ -18936,15 +18918,6 @@
       "war": 3
     },
     {
-      "code": "NA-I210T1R",
-      "desc": "!!Intel i210T1 Retail pci-e",
-      "created": "2013/11/12",
-      "status": "",
-      "bid": 20,
-      "pid": 59,
-      "war": 36
-    },
-    {
       "code": "CT-C445",
       "desc": "Canon pg-445 blk 180p",
       "created": "2013/11/18",
@@ -20194,15 +20167,6 @@
       "bid": 28,
       "pid": 0,
       "war": 0
-    },
-    {
-      "code": "ME-K4F16C10W",
-      "desc": "!!HX316C10FW/4 Fury 1600 C10 4",
-      "created": "2014/03/26",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
     },
     {
       "code": "ME-K4F16C10K",
@@ -22052,15 +22016,6 @@
     {
       "code": "CH-LDKQ1H",
       "desc": "!!Lian-li DK-Q1H computer desk",
-      "created": "2014/11/17",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-LA56B",
-      "desc": "!!Lian-li pc-A56 Black",
       "created": "2014/11/17",
       "status": "",
       "bid": 28,
@@ -24003,15 +23958,6 @@
       "war": 24
     },
     {
-      "code": "CA-PI100M-S",
-      "desc": "Pqi i-cable 100cm Metallic-Sil",
-      "created": "2015/07/05",
-      "status": "",
-      "bid": 37,
-      "pid": 60,
-      "war": 0
-    },
-    {
       "code": "CA-PI100M-G",
       "desc": "Pqi i-cable 100cm Metallic-Gol",
       "created": "2015/07/05",
@@ -24543,26 +24489,8 @@
       "war": 12
     },
     {
-      "code": "ME-CD4832L16X2R",
-      "desc": "CMK16GX4M2B3200C16R D4 Lp 8Gx2",
-      "created": "2015/08/22",
-      "status": "",
-      "bid": 13,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "PS-C1000RMX",
       "desc": "!!Corsair 1000w RMX modular",
-      "created": "2015/08/22",
-      "status": "",
-      "bid": 13,
-      "pid": 47,
-      "war": 120
-    },
-    {
-      "code": "PS-C750RMX",
-      "desc": "!!Corsair 750w RMX modular",
       "created": "2015/08/22",
       "status": "",
       "bid": 13,
@@ -26811,15 +26739,6 @@
       "war": 0
     },
     {
-      "code": "BS-160312",
-      "desc": "CA-Pi100M-S+G+R",
-      "created": "2000/01/01",
-      "status": "",
-      "bid": 0,
-      "pid": 0,
-      "war": 0
-    },
-    {
       "code": "SN-H2500F1",
       "desc": "*HP L2747A scanJet pro 2500F1",
       "created": "2016/03/14",
@@ -26989,15 +26908,6 @@
       "bid": 18,
       "pid": 19,
       "war": 3
-    },
-    {
-      "code": "SD-16GKCIT",
-      "desc": "!!SDCiT/16GB miCro IndusTrial",
-      "created": "2016/04/05",
-      "status": "",
-      "bid": 24,
-      "pid": 6,
-      "war": 60
     },
     {
       "code": "KM-L235C",
@@ -32776,15 +32686,6 @@
       "bid": 13,
       "pid": 7,
       "war": 6
-    },
-    {
-      "code": "ME-CD4830L16X2W",
-      "desc": "!!CMK16GX4M2?3000C16W D4Lp 8x2",
-      "created": "2017/12/29",
-      "status": "",
-      "bid": 13,
-      "pid": 5,
-      "war": 12
     },
     {
       "code": "WA-HUK703E",
@@ -44118,15 +44019,6 @@
       "war": 12
     },
     {
-      "code": "PR-CMM150M",
-      "desc": "!!Corsair MM150 Medium UltraTh",
-      "created": "2020/05/11",
-      "status": "",
-      "bid": 13,
-      "pid": 46,
-      "war": 0
-    },
-    {
       "code": "HD-AG256SX8100",
       "desc": "!!Adata nGff/m.2 256gb SX8100",
       "created": "2020/05/11",
@@ -45578,15 +45470,6 @@
     {
       "code": "ME-CD4832RPX1Z",
       "desc": "CMW8GX4M1Z3200C16 RPro 8G ryZe",
-      "created": "2020/07/14",
-      "status": "",
-      "bid": 13,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-CD4832L16X1Z",
-      "desc": "!!CMK8GX4M1Z3200C16 Lp 8x1 ryZ",
       "created": "2020/07/14",
       "status": "",
       "bid": 13,
@@ -48015,15 +47898,6 @@
       "war": 36
     },
     {
-      "code": "WC-CH100IEW",
-      "desc": "!!Corsair H100i Elite White240",
-      "created": "2020/12/11",
-      "status": "",
-      "bid": 13,
-      "pid": 10,
-      "war": 60
-    },
-    {
       "code": "WC-JVCU435",
       "desc": "J5 jVCU435 4k ultra HD webcam",
       "created": "2020/12/13",
@@ -48530,15 +48404,6 @@
     {
       "code": "CP-IM11700",
       "desc": "Intel 11700 8/16 -rocket lake",
-      "created": "2021/01/10",
-      "status": "",
-      "bid": 20,
-      "pid": 13,
-      "war": 36
-    },
-    {
-      "code": "CP-IM11700K",
-      "desc": "!!Intel 11700K 8/16 -rocket la",
       "created": "2021/01/10",
       "status": "",
       "bid": 20,
@@ -52227,15 +52092,6 @@
       "war": 12
     },
     {
-      "code": "SF-MOHB21R",
-      "desc": "!!Ms Office HomeBusiness2021 R",
-      "created": "2021/10/01",
-      "status": "",
-      "bid": 32,
-      "pid": 48,
-      "war": 0
-    },
-    {
       "code": "SF-MOHS21R",
       "desc": "!!Ms Office HomeStudent 2021 R",
       "created": "2021/10/01",
@@ -53694,15 +53550,6 @@
       "war": 36
     },
     {
-      "code": "CP-IA12900F",
-      "desc": "!!Intel 12900F i9 16/24-Alderl",
-      "created": "2021/12/23",
-      "status": "",
-      "bid": 20,
-      "pid": 13,
-      "war": 36
-    },
-    {
       "code": "BT-AT10000K",
       "desc": "Adata T10000 10000mAh blacK",
       "created": "2019/10/01",
@@ -54762,24 +54609,6 @@
       "status": "",
       "bid": 20,
       "pid": 62,
-      "war": 36
-    },
-    {
-      "code": "SY-IPATKPE+S",
-      "desc": "!!Intel nuc11-ATKPE Pentium+64",
-      "created": "2022/03/06",
-      "status": "",
-      "bid": 20,
-      "pid": 62,
-      "war": 36
-    },
-    {
-      "code": "NA-I225T1R",
-      "desc": "Intel i225T1 2.5G Retail pci-e",
-      "created": "2022/03/06",
-      "status": "",
-      "bid": 20,
-      "pid": 59,
       "war": 36
     },
     {
@@ -61812,15 +61641,6 @@
       "war": 12
     },
     {
-      "code": "ME-CD51656L36Q",
-      "desc": "!!CMK64GX5M4B5600C36 vLpx 16x4",
-      "created": "2022/11/07",
-      "status": "",
-      "bid": 13,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "FA-120CSPE",
       "desc": "120mm Corsair SP Elite",
       "created": "2022/11/07",
@@ -64564,15 +64384,6 @@
       "bid": 13,
       "pid": 5,
       "war": 12
-    },
-    {
-      "code": "HD-CG2T-MP700",
-      "desc": "!!Corsair nGff/m.2 2T MP700 g5",
-      "created": "2023/03/27",
-      "status": "",
-      "bid": 13,
-      "pid": 11,
-      "war": 60
     },
     {
       "code": "CH-C2000DA-K",
@@ -72129,7 +71940,7 @@
       "code": "ME-KD51664B32X2",
       "desc": "KF564C32BBK2-32 D5-6400 Be 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72147,7 +71958,7 @@
       "code": "ME-KD51664R32X2",
       "desc": "KF564C32BBAK2-32 D5-6400 R 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72156,7 +71967,7 @@
       "code": "ME-KD51664R32DW",
       "desc": "KF564C32BWAK2-32 D5-6400 R 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72165,7 +71976,7 @@
       "code": "ME-KD51664B32DW",
       "desc": "KF564C32BWK2-32 D5-6400 Be 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72219,7 +72030,7 @@
       "code": "ME-KD53260R30X2",
       "desc": "KF560C30BBAK2-64 D5-6000 R 32D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72228,7 +72039,7 @@
       "code": "ME-KD53260B30DW",
       "desc": "KF560C30BWK2-64 D5-6000B 32Gx2",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72237,7 +72048,7 @@
       "code": "ME-KD53260R30DW",
       "desc": "KF560C30BWAK2-64 D5-6000 R 32D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -73186,6 +72997,51 @@
       "bid": 24,
       "pid": 11,
       "war": 60
+    },
+    {
+      "code": "MB-GX870-G+W",
+      "desc": "Gb X870 Gaming +Wifi",
+      "created": "2024/11/05",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "CH-GC102GW",
+      "desc": "Gigabyte C102Gi White t.Glass",
+      "created": "2024/11/05",
+      "status": "C",
+      "bid": 17,
+      "pid": 7,
+      "war": 0
+    },
+    {
+      "code": "CH-GC102G",
+      "desc": "Gigabyte C102G blk t.Glass",
+      "created": "2024/11/05",
+      "status": "C",
+      "bid": 17,
+      "pid": 7,
+      "war": 0
+    },
+    {
+      "code": "CH-GC500PW",
+      "desc": "Gigabyte C500 Panoramic Whi",
+      "created": "2024/11/05",
+      "status": "C",
+      "bid": 17,
+      "pid": 7,
+      "war": 0
+    },
+    {
+      "code": "CH-GC500P",
+      "desc": "Gigabyte C500 Panoramic blk",
+      "created": "2024/11/05",
+      "status": "C",
+      "bid": 17,
+      "pid": 7,
+      "war": 36
     }
   ]
 }
