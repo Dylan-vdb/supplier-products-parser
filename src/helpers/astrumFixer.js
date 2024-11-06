@@ -83,16 +83,11 @@ function setPricing(products) {
 function improveCategoryNames(products) {
   const replacements = astrumCategoryReplacements
   return products.map((product) => {
-    if (product.sku.includes('A83511-B')) {
-      debugger
-    }
     let updatedCategoryTree = product.categories
     replacements.forEach(([find, replace]) => {
       updatedCategoryTree = updatedCategoryTree.replace(find, replace)
     })
-    if (product.sku.includes('A83511-B')) {
-      debugger
-    }
+
     return { ...product, categories: updatedCategoryTree }
   })
 }

@@ -86,16 +86,15 @@ export const syntechUnwantedSubstrings = [
   ' > Screen Protectors',
   ' > Cables',
   ' > Tools',
-  ' > Mounts and Brackets',
-  ' > Screen Protectors',
   ' > Mobile Devices > Stylus',
   ' > Smart Security',
   ' > Scooters and Bikes',
   ' > Wearables > Accessories',
   ' > Lifestyle Accessories'
 ]
-
+// SM4447AE7L7
 export const micropointUnwantedSubstrings = [
+  'PHABLETS',
   'MERCUSYS',
   'ACCESS POINT',
   'AA STOCK CLEARANCE >',
@@ -247,6 +246,7 @@ export const micropointCategoryReplacements = [
   [/^SPEAKERS >.*$/giu, 'Peripherals > Computer Audio > Speakers'],
   ['SPLITTERS >', 'Peripherals > Splitters >'],
   ['SWITCHES > ', 'Peripherals > Switches >'],
+  ['TABLETS > 12 INCH TABLETS', 'Tablets > 12" Tablets'],
   ['TABLETS >', 'Tablets >'],
   [/^UPS > \d+VA *\w*$/giu, 'Power Solutions > PC UPS'],
   ['UPS > INVERTER', 'Power Solutions > Inverters'],
@@ -283,7 +283,7 @@ export const astrumCategoryReplacements = [
   ['Earbuds', 'Peripherals > Computer Audio > Headsets > In-Ears '],
   ['Toner Cartridges', 'Printers > Toner Cartridges'],
   ['Laptop Keyboards', 'Components > Notebook Keyboards'],
-  ['Laptop Batteries', 'Components > Notebook Batteries'],
+  ['Laptop Batteries', 'Power Solutions > Notebook Batteries,Components > Notebook Batteries'],
   ['Laptop Screens', 'Components > Notebook Screens'],
   ['Power Banks', 'Power Solutions > Power Banks'],
   ['Laptop Bags', 'Accessories > Bags and Covers > Bags >'],
@@ -303,7 +303,7 @@ export const astrumCategoryReplacements = [
   ['Gadgets', 'Gadgets'],
   ['FM Modulators', 'Gadgets > FM Modulators'],
   ['Gaming Products', 'Peripherals > Gaming'],
-  ['Laptop Chargers', 'Components > Notebook Chargers'],
+  ['Laptop Chargers', 'Power Solutions > Notebook Chargers'],
   ['Notebook PC', 'Accessories > Notebook Accessories'],
   ['Tablets PC', 'Tablets'],
   ['USB Peripherals', 'Peripherals > USB Devices']

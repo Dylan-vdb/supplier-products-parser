@@ -56593,7 +56593,7 @@
     },
     {
       "code": "MB-GX670E-AM+W",
-      "desc": "Gb X670E Aorus Master+Wifi",
+      "desc": "!!Gb X670E Aorus Master+Wifi",
       "created": "2022/07/10",
       "status": "",
       "bid": 17,
@@ -56602,7 +56602,7 @@
     },
     {
       "code": "MB-GX670E-AX+W",
-      "desc": "Gb X670E Aorus Xtreme+Wifi",
+      "desc": "!!Gb X670E Aorus Xtreme+Wifi",
       "created": "2022/07/10",
       "status": "",
       "bid": 17,
@@ -58932,17 +58932,8 @@
       "war": 12
     },
     {
-      "code": "SC-G4090-AM",
-      "desc": "Gb rtx4090 Aorus Master 24G",
-      "created": "2022/08/29",
-      "status": "",
-      "bid": 17,
-      "pid": 4,
-      "war": 36
-    },
-    {
       "code": "SC-G4090-AXW",
-      "desc": "Gb rtx4090 Aorus Xrteme Wate",
+      "desc": "!!Gb rtx4090 Aorus Xrteme Wate",
       "created": "2022/08/29",
       "status": "",
       "bid": 17,
@@ -60373,7 +60364,7 @@
     },
     {
       "code": "MB-GZ790AG+W",
-      "desc": "Gb Z790 Aero G +Wifi ddr5",
+      "desc": "!!Gb Z790 Aero G +Wifi ddr5",
       "created": "2022/09/26",
       "status": "",
       "bid": 17,
@@ -67537,7 +67528,7 @@
     },
     {
       "code": "MB-GZ790AEX+W",
-      "desc": "Gb Z790 Aorus Elite X +Wifi7",
+      "desc": "!!Gb Z790 Aorus Elite X +Wifi7",
       "created": "2023/09/09",
       "status": "",
       "bid": 17,
@@ -67546,7 +67537,7 @@
     },
     {
       "code": "MB-GZ790APX+W",
-      "desc": "Gb Z790 Aorus Pro X +Wifi",
+      "desc": "!!Gb Z790 Aorus Pro X +Wifi",
       "created": "2023/09/09",
       "status": "",
       "bid": 17,
@@ -67555,7 +67546,7 @@
     },
     {
       "code": "MB-GZ790AMX+W",
-      "desc": "Gb Z790 Aorus Master X +WiFi",
+      "desc": "!!Gb Z790 Aorus Master X +WiFi",
       "created": "2023/09/09",
       "status": "",
       "bid": 17,
@@ -67564,7 +67555,7 @@
     },
     {
       "code": "MB-GZ790AXX+WT",
-      "desc": "Gb Z790 Aorus XtremeX+WiFi+Tb",
+      "desc": "!!Gb Z790 Aorus XtremeX+WiFi+T",
       "created": "2023/09/09",
       "status": "",
       "bid": 17,
@@ -69624,15 +69615,6 @@
       "war": 36
     },
     {
-      "code": "MB-GX670E-API+W",
-      "desc": "Gb X670E Aorus Pro Whi/Ice+Wif",
-      "created": "2023/11/14",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
       "code": "MB-GB650AEI+W",
       "desc": "Gb B650 Aorus Elite Ice+Wifi",
       "created": "2023/11/14",
@@ -69985,7 +69967,7 @@
     },
     {
       "code": "SC-G4070TIS-AM",
-      "desc": "Gb 407TiSuper AORUS Master",
+      "desc": "!!Gb 407TiSuper AORUS Master",
       "created": "2023/12/19",
       "status": "",
       "bid": 17,
@@ -70021,7 +70003,7 @@
     },
     {
       "code": "SC-G4080S-AM",
-      "desc": "Gb 4080Super Aorus Master 16G",
+      "desc": "!!Gb 4080Super Aorus Master 16",
       "created": "2023/12/19",
       "status": "",
       "bid": 17,

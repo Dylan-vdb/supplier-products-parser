@@ -4,7 +4,7 @@ import {
   micropointAcronyms,
   micropointCategoryReplacements
 } from '@/helpers/constants'
-// To test the fix
+
 export function processMicropointStock(xmlData) {
   const products = xmlData.xml_data.items.item
   const wantedFields = removeUnwantedFields(products)
@@ -29,11 +29,7 @@ function fixCommaSquashing(title) {
 }
 
 function fixSquashedTitles(products) {
-  debugger
   return products.map((product) => {
-    // if (product.sku == '35290') {
-    //   debugger
-    // }
     return {
       ...product,
       name: fixCommaSquashing(product.name)
@@ -231,17 +227,13 @@ function removeUnwantedCategories(products) {
 
 function improveCategoryNames(products) {
   const replacements = micropointCategoryReplacements
+
   return products.map((product) => {
-    if (product.sku == 'BRACKET1') {
-      debugger
-    }
     let updatedCategoryTree = product.categories
     replacements.forEach(([find, replace]) => {
       updatedCategoryTree = updatedCategoryTree.replace(find, replace)
     })
-    if (product.sku == 'BRACKET1') {
-      debugger
-    }
+
     return { ...product, categories: updatedCategoryTree }
   })
 }

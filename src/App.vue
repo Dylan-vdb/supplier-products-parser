@@ -113,7 +113,8 @@ export default {
     }
 
     function outPutCsv(data) {
-      const csvRaw = Papa.unparse(data, {
+      const refinedCategories = refineCategories(data)
+      const csvRaw = Papa.unparse(refinedCategories, {
         delimiter: ';',
         quoteChars: '""'
       })
@@ -142,6 +143,66 @@ export default {
       link.click()
       document.body.removeChild(link)
       URL.revokeObjectURL(url)
+    }
+
+    function refineCategories(products) {
+      return products
+        .map((product) => {
+          const isFocus = product.categories.includes('Accessories > Notebook Accessories')
+          const isCharger = isFocus && product.description.toLowerCase().includes('charger')
+          const newCategories = isCharger
+            ? 'Power Solutions > Notebook Chargers'
+            : product.categories
+
+          return {
+            ...product,
+            categories: newCategories
+          }
+        })
+        .map((product) => {
+          const isFocus = product.categories.includes('Components > Power Supplies')
+
+          const newCategory = isFocus
+            ? `${product.categories.replace(
+                'Components > Power Supplies',
+                'Power Solutions > Computer Power Supplies'
+              )}, ${product.categories}`
+            : product.categories
+
+          return {
+            ...product,
+            categories: newCategory
+          }
+        })
+        .map((product) => {
+          const isFocus = product.categories.includes('Peripherals > Notebook Chargers')
+          const newCategory = isFocus ? 'Power Solutions > Notebook Chargers' : product.categories
+
+          return {
+            ...product,
+            categories: newCategory
+          }
+        })
+        .map((product) => {
+          const isFocus = product.categories.includes('Components > Internal Brackets and Adapters')
+          const newCategory = isFocus ? 'Power Solutions > Notebook Chargers' : product.categories
+
+          return {
+            ...product,
+            categories: newCategory
+          }
+        })
+        .map((product) => {
+          const isFocus = product.categories.includes('Convertors > Accessories')
+          const newCategory = isFocus
+            ? 'Connectors Adaptors and Converters > Converters'
+            : product.categories
+
+          return {
+            ...product,
+            categories: newCategory
+          }
+        })
     }
 
     return {
