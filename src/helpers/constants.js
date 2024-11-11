@@ -77,63 +77,63 @@ export const syntechCategoryReplacements = [
 export const syntechUnwantedSubstrings = [
   'Coming Soon',
   // 'On Promotion',
-  'Just Arrived', // GO
+  // 'Just Arrived', // GO
   'Unboxed',
   'Last Chance',
   'Apparel',
   'Hydroponics',
-  ' > Mounts and Brackets', // GO
-  ' > Screen Protectors', // GO
-  ' > Cables', // GO
-  ' > Tools', // GO
-  ' > Mobile Devices > Stylus',
-  ' > Smart Security', // GO
-  ' > Scooters and Bikes', // GO
-  ' > Wearables > Accessories', // GO
-  ' > Lifestyle Accessories' // GO
+  // ' > Mounts and Brackets', // GO
+  // ' > Screen Protectors', // GO
+  // ' > Cables', // GO
+  // ' > Tools', // GO
+  ' > Mobile Devices > Stylus'
+  // ' > Smart Security', // GO
+  // ' > Scooters and Bikes', // GO
+  // ' > Wearables > Accessories', // GO
+  // ' > Lifestyle Accessories' // GO
 ]
 // SM4447AE7L7
 export const micropointUnwantedSubstrings = [
   'PHABLETS',
   'MERCUSYS',
-  'ACCESS POINT', // GO
+  'ACCESS POINT', //  A mix of incorrect categories
   'AA STOCK CLEARANCE >',
-  'BATTERIES >', // GO
-  'BLUETOOTH DEVICES >', // GO
+  // 'BATTERIES >', // GO
+  // 'BLUETOOTH DEVICES >', // Only one product a bluetooth dongle
   'BUNDLES >',
   'CAMERAS >',
-  'CARTRIDGES >', // GO
-  'CASES >', // GO
-  'CCTV >', // GO
-  'CONSUMABLES >', // GO
+  // 'CARTRIDGES >', // GO
+  // 'CASES >', // GO
+  'CCTV >', // GO ISSUES come back to this
+  // 'CONSUMABLES >', // GO
   'CONVERTER BOXES >',
-  'DESKTOP MACHINE >', // GO
-  'DVI PRODUCTS >', // GO
-  'EXTENDERS >', // GO
-  'EXTERNAL ENCLOSURES >', // GO
-  'FANS >', // GO
+  // 'DESKTOP MACHINE >', // GO
+  'DVI PRODUCTS >', // GO Only one product probably a discontinued category
+  // 'EXTENDERS >', // GO
+  // 'EXTERNAL ENCLOSURES >', // GO
+  // 'FANS >', // GO
   'FLEA MARKET >',
   'FOR SUPPLIER STOCK PURPOSES >',
   'HARD DRIVES > NOTE BOOK DRIVE CADDY',
   'HARD DRIVES > REFURBISHED STOCK',
   'HARD DRIVES > SUPPLIER STOCK', // Look
-  'HARD DRIVES > 2.5" BRACKETS', // GO
-  'HEALTHCARE >', // GO
-  'KVM SWITCHES >', // GO
-  'LAN PRODUCTS >', // GO
+  'HARD DRIVES > 2.5" BRACKETS', // GO Just one product
+  // 'HEALTHCARE >', // GO
+  // 'KVM SWITCHES >', // GO
+  // 'LAN PRODUCTS >', // GO
   'LOGITECH >',
   'MEDIA PLAYERS >',
   'MINING >',
   'MT-VIKI >',
-  'MULTIPLUGS >', // GO Power Solutions
+  // 'MULTIPLUGS >', // GO Power Solutions
   'NETWORK CABLE >', // Look
   'NETWORKING > ADSL MODEMS / ROUTERS',
   'NETWORKING > CABLES',
   'NETWORKING > CAT6 CABLES',
-  'NETWORKING > KVM SWITCHES', // GO
-  'NETWORKING > MEDIA CONVERTERS', // GO
-  'NETWORKING > POWER OF ETHERNET', // GO
-  'NETWORKING > USB', // GO
+  // 'NETWORKING > KVM SWITCHES', // GO
+  'NETWORKING > MEDIA CONVERTERS', // GO Just one product
+  'NETWORKING > POWER OF ETHERNET', // GO Just one product
+  'NETWORKING > USB', // GO Just one product
   'NOT FOR LISTING >',
   'NOTEBOOK BAGS > CAMERA',
   'NOTEBOOKS > REFURBISHED STOCK',
@@ -142,30 +142,30 @@ export const micropointUnwantedSubstrings = [
   'ORICO ITEMS >',
   'PARTS >',
   'PARTS FOR REPAIRING >',
-  'POINT OF SALE >', // GO
-  'POWER SUPPLY >', // GO
-  'PRINTERS >', // GO
-  'PROCESSORS > THERMAL PASTE', // GO
-  'PROJECTORS >', // GO
+  // 'POINT OF SALE >', // GO
+  // 'POWER SUPPLY >', // GO
+  'PRINTERS >', // GO Just one product an accessory
+  // 'PROCESSORS > THERMAL PASTE', // GO
+  // 'PROJECTORS >', // GO
   'REFURBISHED >',
-  'ROUTERS >', // GO
+  // 'ROUTERS >', // GO
   'SANITIZER >',
-  'SERVERS >', // GO
-  'SLEEVE >', // GO
-  'SOLID STATE DRIVE >', // GO
+  'SERVERS >', // GO Just one product
+  // 'SLEEVE >', // GO
+  // 'SOLID STATE DRIVE >', // GO
   'TOOLS >',
   'TP-LINK >',
   'TRANSMITTERS >',
-  'TV >', // GO
+  'TV >', // GO Several really outdated products lots to do with DSTV decoders
   'WARRANTY >',
   'MICROSOFT > SERVER',
   'PHILIPS >',
   'PHONES >',
-  'PROCESSORS >', // GO
+  'PROCESSORS >', // GO Website has pages and pages of these already
   'UPS > ACCESSORIES',
-  'MOUSE > GAMING', // GO
-  'MOUSE > ACCESSORIES', // GO
-  'MEMORY > MEMORY' // GO
+  // 'MOUSE > GAMING', // GO
+  'MOUSE > ACCESSORIES', // GO Just one weird product
+  'MEMORY > MEMORY' // GO Just one product
   // /mouse > $/giu
 ]
 

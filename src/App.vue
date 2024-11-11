@@ -149,7 +149,7 @@ export default {
 
     function pullCategories() {
       const storedCategories = JSON.parse(localStorage.getItem('categories'))
-      debugger
+
       const csv = Papa.unparse(
         storedCategories.map((category) => {
           return {

@@ -12,7 +12,8 @@ export function processMicropointStock(xmlData) {
   const categoriesRemoved = removeUnwantedCategories(combinedCategories)
   const duplicatesRemoved = removeDuplicates(categoriesRemoved)
   const promotedProductsHandled = handlePromotedProducts(duplicatesRemoved)
-  const improvedCategoryNames = improveCategoryNames(promotedProductsHandled)
+  const newCategoriesIncluded = includeNewCategories(promotedProductsHandled)
+  const improvedCategoryNames = improveCategoryNames(newCategoriesIncluded)
   const improvedCategoryCapitalization = improveCategoryCapitalization(improvedCategoryNames)
   const commonFieldMapping = mapToCommonFields(improvedCategoryCapitalization)
   const leaflessCategoryTrees = removeLeaflessCategoryTrees(commonFieldMapping)
@@ -223,6 +224,160 @@ function removeUnwantedCategories(products) {
   })
 
   return filteredArray
+}
+
+function includeNewCategories(products) {
+  const watchCategories = []
+  const result = products.reduce((acc, product) => {
+    const updatedProduct = { ...product }
+
+    if (
+      product.categories.includes('BATTERIES > BATTERIES') ||
+      product.categories.includes('BATTERIES > AAA BATTERIES') ||
+      product.categories.includes('BATTERIES > AA BATTERIES') ||
+      product.categories.includes('BATTERIES > ACCESSORIES')
+    ) {
+      updatedProduct.categories = 'Power Solutions > Batteries'
+    }
+
+    if (product.categories.includes('BATTERIES > INVERTER')) {
+      updatedProduct.categories = 'Power Solutions > Inverters'
+    }
+
+    if (product.categories.includes('CARTRIDGES > INK CARTRIDGES')) {
+      updatedProduct.categories = 'Printers > Cartridges > Ink Cartridges'
+    }
+
+    if (product.categories.includes('CARTRIDGES > ACCESSORIES')) {
+      return acc
+    }
+
+    if (product.categories.includes('CASES > GAMING')) {
+      updatedProduct.categories = 'PC Cases > Gaming PC Cases'
+    }
+
+    if (product.categories.includes('CASES > MINING')) {
+      return acc
+    }
+
+    if (
+      product.categories.includes('CASES >') &&
+      product.categories.toLowerCase().includes('atx')
+    ) {
+      updatedProduct.categories = 'PC Cases > Office PC Cases'
+    }
+
+    if (product.categories === 'CONSUMABLES > ') {
+      updatedProduct.categories = 'Peripherals > Consumables'
+    }
+
+    if (product.categories.includes('CONSUMABLES > ACCESSORIES')) {
+      updatedProduct.categories = 'Peripherals > Consumables'
+    }
+
+    if (product.categories.includes(`CONSUMABLES > CD'S AND DVD'S`)) {
+      updatedProduct.categories = `Storage Media > CD's and DVD's`
+    }
+
+    if (product.categories.includes(`CONSUMABLES > HDMI`)) {
+      updatedProduct.categories = `Connectors Adaptors & Converters`
+    }
+
+    if (product.categories.includes(`DESKTOP MACHINE >`)) {
+      updatedProduct.categories = `Desktop Computers > Office Desktops`
+    }
+
+    if (product.categories.includes(`EXTENDERS >`)) {
+      updatedProduct.categories = `Networking & Wifi > Network Extenders`
+    }
+
+    if (product.categories.includes(`EXTERNAL ENCLOSURES >`)) {
+      updatedProduct.categories = `Storage Media > Enclosures`
+    }
+
+    if (product.categories.includes(`FANS >`)) {
+      updatedProduct.categories = `Desktop Components > Fans`
+    }
+
+    if (product.categories.includes(`HEALTHCARE >`)) {
+      updatedProduct.categories = `Gadgets > Healthcare`
+    }
+
+    if (product.categories.includes(`KVM SWITCHES >`)) {
+      updatedProduct.categories = `Networking > KVM Switches`
+    }
+
+    if (product.categories.includes(`LAN PRODUCTS >`)) {
+      updatedProduct.categories = `Connectors Adaptors & Converters`
+    }
+
+    if (product.categories.includes(`MULTIPLUGS >`)) {
+      updatedProduct.categories = `Power Solutions > Multiplugs`
+    }
+
+    if (product.categories.includes(`NETWORKING > KVM SWITCHES`)) {
+      updatedProduct.categories = `Networking > KVM Switches`
+    }
+
+    if (product.categories.includes(`POINT OF SALE >`)) {
+      updatedProduct.categories = `Peripherals > Point of Sale`
+    }
+
+    if (product.categories.includes(`POWER SUPPLY >`)) {
+      if (product.categories.includes(`POWER SUPPLY > GAMING`)) {
+        updatedProduct.categories = `Power Solutions > Computer Power Supplies > Gaming,Gaming > Power Supplies`
+      }
+
+      if (product.categories.includes(`POWER SUPPLY > MINING`)) {
+        return acc
+      }
+
+      if (product.categories.includes(`WATT PSU`)) {
+        updatedProduct.categories = `Power Solutions > Computer Power Supplies > Non-Modular Power Supplies`
+      }
+    }
+
+    if (product.categories.includes(`PROCESSORS > THERMAL PASTE`)) {
+      updatedProduct.categories = `Peripherals > Consumables`
+    }
+
+    if (product.categories.includes(`PROJECTORS >`)) {
+      updatedProduct.categories = `Gadgets > Media & Streaming > Projectors`
+    }
+
+    if (product.categories.includes(`ROUTERS >`)) {
+      updatedProduct.categories = `Networking & Wifi > Routers & Mesh`
+    }
+
+    if (product.categories.includes(`SLEEVE >`)) {
+      updatedProduct.categories = `Bags Cases & Covers > Sleeves`
+    }
+
+    if (product.categories.includes(`SOLID STATE DRIVE >`)) {
+      if (product.categories.includes(`2.5" SSD`)) {
+        updatedProduct.categories = `Storage Media > Solid State Drives`
+      }
+      if (product.categories.includes(`EXTERNAL 2.5"`)) {
+        updatedProduct.categories = `Storage Media > External SSDs`
+      }
+      if (product.categories.includes(`SOLID STATE DRIVE > GAMING`)) {
+        updatedProduct.categories = `Gaming > Solid State Drives`
+      }
+      if (product.categories.includes(`SOLID STATE DRIVE > ACCESSORIES`)) {
+        return acc
+      }
+    }
+
+    if (product.categories.includes(`MEMORY > MEMORY`)) {
+      watchCategories.push(product)
+      updatedProduct.categories = `Gaming > Mouses`
+    }
+
+    acc.push(updatedProduct)
+    return acc
+  }, [])
+  debugger
+  return result
 }
 
 function improveCategoryNames(products) {

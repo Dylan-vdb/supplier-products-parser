@@ -10,11 +10,69 @@ export function processSyntechStock(xmlData) {
   const filteredProducts = removeUnwantedCategories(cleanedProducts)
   const fixedImages = fixAllImagesField(filteredProducts)
   const fixedPipedNames = fixPipedNames(fixedImages)
-  const categorizedProducts = improveCategoryNames(fixedPipedNames)
+  const newCategoriesIncluded = includeNewCategories(fixedPipedNames)
+  const categorizedProducts = improveCategoryNames(newCategoriesIncluded)
   const combinedStocks = combineStocksField(categorizedProducts)
   const tidiedFields = tidyFields(combinedStocks)
   const finalProducts = saveSkuList(tidiedFields, 'syntech')
   return finalProducts
+}
+
+function includeNewCategories(products) {
+  let watchCategories = []
+  const result = products.map((product) => {
+    let newCategory = product.categorytree
+    if (product.categorytree.includes(' > Mounts and Brackets')) {
+      newCategory = 'Peripherals > Mounting Kits'
+    }
+
+    if (product.categorytree.includes(' > Screen Protectors')) {
+      newCategory = 'Peripherals > Screen Protectors'
+    }
+
+    if (product.categorytree.includes('Cables > Display Cables')) {
+      newCategory = 'Cables > Display Cables'
+    }
+
+    if (product.categorytree.includes('Cables > USB Cables')) {
+      newCategory = 'Cables > USB Cables'
+    }
+
+    if (product.categorytree.includes('> Tools')) {
+      newCategory = 'Tools'
+    }
+
+    if (product.categorytree.includes('Smart Security > IP Cameras')) {
+      newCategory = 'Smart Security > IP Cameras'
+    }
+
+    if (product.categorytree.includes('Smart Security > Controllers and Sensors')) {
+      newCategory = 'Smart Security > Controllers and Sensors'
+    }
+
+    if (product.categorytree.includes('Scooters and Bikes >')) {
+      newCategory = 'Gadgets > Scooters and Bikes'
+    }
+
+    if (product.categorytree.includes(' > Wearables > Accessories')) {
+      newCategory = 'Gadgets > Wearables'
+    }
+
+    if (product.categorytree.includes(' > Lifestyle Accessories')) {
+      if (product.name.toLowerCase().includes('writing tablet')) {
+        newCategory = 'Gadgets > Writing Tablets'
+      }
+      watchCategories.push(product)
+      newCategory = 'Gadgets'
+    }
+
+    return {
+      ...product,
+      categorytree: newCategory
+    }
+  })
+
+  return result
 }
 
 function addNormalCost(products) {
@@ -177,12 +235,17 @@ function removeUnwantedCategories(arr) {
         return false
       }
     })
+    // Recently included categories
     .map((product) => {
+      if (product.categorytree.includes('Just Arrived')) {
+        product.tags = product.tags ? product.tags + ',Just Arrived' : 'Just Arrived'
+      }
       product.categorytree = product.categorytree?.split('|')[0]
       return product
     })
     // For the case when the only category information is 'On Promotion'
     .filter((product) => !product.categorytree?.includes('On Promotion'))
+
   return filteredArray
 }
 

@@ -456,7 +456,6 @@ export function refineCategories(products) {
       }
 
       if (product.categories.includes('Notebook Accessories')) {
-        debugger
         if (
           product.name.toLowerCase().includes('cooler') ||
           product.name.toLowerCase().includes('cooling') ||
