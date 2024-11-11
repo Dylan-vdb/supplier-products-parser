@@ -77,63 +77,63 @@ export const syntechCategoryReplacements = [
 export const syntechUnwantedSubstrings = [
   'Coming Soon',
   // 'On Promotion',
-  'Just Arrived',
+  'Just Arrived', // GO
   'Unboxed',
   'Last Chance',
   'Apparel',
   'Hydroponics',
-  ' > Mounts and Brackets',
-  ' > Screen Protectors',
-  ' > Cables',
-  ' > Tools',
+  ' > Mounts and Brackets', // GO
+  ' > Screen Protectors', // GO
+  ' > Cables', // GO
+  ' > Tools', // GO
   ' > Mobile Devices > Stylus',
-  ' > Smart Security',
-  ' > Scooters and Bikes',
-  ' > Wearables > Accessories',
-  ' > Lifestyle Accessories'
+  ' > Smart Security', // GO
+  ' > Scooters and Bikes', // GO
+  ' > Wearables > Accessories', // GO
+  ' > Lifestyle Accessories' // GO
 ]
 // SM4447AE7L7
 export const micropointUnwantedSubstrings = [
   'PHABLETS',
   'MERCUSYS',
-  'ACCESS POINT',
+  'ACCESS POINT', // GO
   'AA STOCK CLEARANCE >',
-  'BATTERIES >',
-  'BLUETOOTH DEVICES >',
+  'BATTERIES >', // GO
+  'BLUETOOTH DEVICES >', // GO
   'BUNDLES >',
   'CAMERAS >',
-  'CARTRIDGES >',
-  'CASES >',
-  'CCTV >',
-  'CONSUMABLES >',
+  'CARTRIDGES >', // GO
+  'CASES >', // GO
+  'CCTV >', // GO
+  'CONSUMABLES >', // GO
   'CONVERTER BOXES >',
-  'DESKTOP MACHINE >',
-  'DVI PRODUCTS >',
-  'EXTENDERS >',
-  'EXTERNAL ENCLOSURES >',
-  'FANS >',
+  'DESKTOP MACHINE >', // GO
+  'DVI PRODUCTS >', // GO
+  'EXTENDERS >', // GO
+  'EXTERNAL ENCLOSURES >', // GO
+  'FANS >', // GO
   'FLEA MARKET >',
   'FOR SUPPLIER STOCK PURPOSES >',
   'HARD DRIVES > NOTE BOOK DRIVE CADDY',
   'HARD DRIVES > REFURBISHED STOCK',
-  'HARD DRIVES > SUPPLIER STOCK',
-  'HARD DRIVES > 2.5" BRACKETS',
-  'HEALTHCARE >',
-  'KVM SWITCHES >',
-  'LAN PRODUCTS >',
+  'HARD DRIVES > SUPPLIER STOCK', // Look
+  'HARD DRIVES > 2.5" BRACKETS', // GO
+  'HEALTHCARE >', // GO
+  'KVM SWITCHES >', // GO
+  'LAN PRODUCTS >', // GO
   'LOGITECH >',
   'MEDIA PLAYERS >',
   'MINING >',
   'MT-VIKI >',
-  'MULTIPLUGS >',
-  'NETWORK CABLE >',
+  'MULTIPLUGS >', // GO Power Solutions
+  'NETWORK CABLE >', // Look
   'NETWORKING > ADSL MODEMS / ROUTERS',
   'NETWORKING > CABLES',
   'NETWORKING > CAT6 CABLES',
-  'NETWORKING > KVM SWITCHES',
-  'NETWORKING > MEDIA CONVERTERS',
-  'NETWORKING > POWER OF ETHERNET',
-  'NETWORKING > USB',
+  'NETWORKING > KVM SWITCHES', // GO
+  'NETWORKING > MEDIA CONVERTERS', // GO
+  'NETWORKING > POWER OF ETHERNET', // GO
+  'NETWORKING > USB', // GO
   'NOT FOR LISTING >',
   'NOTEBOOK BAGS > CAMERA',
   'NOTEBOOKS > REFURBISHED STOCK',
@@ -142,30 +142,30 @@ export const micropointUnwantedSubstrings = [
   'ORICO ITEMS >',
   'PARTS >',
   'PARTS FOR REPAIRING >',
-  'POINT OF SALE >',
-  'POWER SUPPLY >',
-  'PRINTERS >',
-  'PROCESSORS > THERMAL PASTE',
-  'PROJECTORS >',
+  'POINT OF SALE >', // GO
+  'POWER SUPPLY >', // GO
+  'PRINTERS >', // GO
+  'PROCESSORS > THERMAL PASTE', // GO
+  'PROJECTORS >', // GO
   'REFURBISHED >',
-  'ROUTERS >',
+  'ROUTERS >', // GO
   'SANITIZER >',
-  'SERVERS >',
-  'SLEEVE >',
-  'SOLID STATE DRIVE >',
+  'SERVERS >', // GO
+  'SLEEVE >', // GO
+  'SOLID STATE DRIVE >', // GO
   'TOOLS >',
   'TP-LINK >',
   'TRANSMITTERS >',
-  'TV >',
+  'TV >', // GO
   'WARRANTY >',
   'MICROSOFT > SERVER',
   'PHILIPS >',
   'PHONES >',
-  'PROCESSORS >',
+  'PROCESSORS >', // GO
   'UPS > ACCESSORIES',
-  'MOUSE > GAMING',
-  'MOUSE > ACCESSORIES',
-  'MEMORY > MEMORY'
+  'MOUSE > GAMING', // GO
+  'MOUSE > ACCESSORIES', // GO
+  'MEMORY > MEMORY' // GO
   // /mouse > $/giu
 ]
 
@@ -218,7 +218,7 @@ export const micropointCategoryReplacements = [
   [/^MICROSOFT >.*/giu, 'Components > Software'],
   [/^SOFTWARE >.*/giu, 'Components > Software'],
   [/^MINI PC >.*/giu, 'Mini PCs > Complete Systems'],
-  [/^MONITORS >.*/giu, 'Components > Software'],
+  [/^MONITORS >.*/giu, 'Peripherals > Monitors'],
   ['MOTHERBOARDS >', 'Components > Motherboards >'],
   [/^MOUSE > GAMING.*$/giu, 'Peripherals > Mice > Gaming Mice'],
   ['MOUSE > CORDER', 'Peripherals > Mice > Gaming Mice'],
@@ -320,7 +320,7 @@ export const frontosaCategoryReplacements = [
   ['Flash Drives', 'Peripherals > Storage > Flash Drives'],
   ['Game Capture', 'Gaming > Game Video Capture'],
   ['Graphics', 'Components > Graphics Cards'],
-  ['Hard Drive', 'Components > Hard Drives'],
+  ['Hard Drive', 'Components > Storage Media > Hard Drives'],
   ['Keyboard', 'Peripherals > Keyboards'],
   ['Memory', 'Components > Memory'],
   ['Motherboard', 'Components > Motherboards'],

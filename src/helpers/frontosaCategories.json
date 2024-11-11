@@ -20556,15 +20556,6 @@
       "war": 24
     },
     {
-      "code": "CH-LV2130B",
-      "desc": "!!Lian-li pc-V2130 Black",
-      "created": "2014/04/28",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
       "code": "CH-LV2130WX",
       "desc": "!!Lian-li pc-V2130WX Win+all b",
       "created": "2014/04/28",
@@ -31429,7 +31420,7 @@
     },
     {
       "code": "HD-AN240SU650",
-      "desc": "!!Adata 2.5\" 240GB SU650 sata",
+      "desc": "Adata 2.5\" 240GB SU650 sata",
       "created": "2017/09/08",
       "status": "",
       "bid": 4,
@@ -32833,7 +32824,7 @@
     },
     {
       "code": "HD-AN480SU650",
-      "desc": "!!Adata 2.5\" 480GB SU650 sata",
+      "desc": "Adata 2.5\" 480GB SU650 sata",
       "created": "2018/01/28",
       "status": "",
       "bid": 4,
@@ -40150,7 +40141,7 @@
     },
     {
       "code": "SC-G710D5-2GL",
-      "desc": "Gb 710 Ddr5 2Gb +Low",
+      "desc": "!!Gb 710 Ddr5 2Gb +Low",
       "created": "2019/09/13",
       "status": "",
       "bid": 17,
@@ -40168,7 +40159,7 @@
     },
     {
       "code": "SC-G1030D5-L",
-      "desc": "Gb 1030 2G Ddr5+Low",
+      "desc": "!!Gb 1030 2G Ddr5+Low",
       "created": "2019/09/13",
       "status": "",
       "bid": 17,
@@ -40177,7 +40168,7 @@
     },
     {
       "code": "SC-G1030D5-IO",
-      "desc": "!Gb 1030 Ddr5 m-iTX Oc",
+      "desc": "!!Gb 1030 Ddr5 m-iTX Oc",
       "created": "2019/09/13",
       "status": "",
       "bid": 17,
@@ -44893,9 +44884,9 @@
     },
     {
       "code": "ME-KD43236P18X4",
-      "desc": "436C18P/RB?K4/128 D4 3600 32x4",
+      "desc": "*436C18P/RB?K4/128 D4 3600 32Q",
       "created": "2020/06/09",
-      "status": "",
+      "status": "R",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48942,15 +48933,6 @@
       "war": 24
     },
     {
-      "code": "WC-GAW360R+L",
-      "desc": "!!Gigabyte Aorus Wf 360 Rgb+lc",
-      "created": "2021/03/09",
-      "status": "",
-      "bid": 17,
-      "pid": 10,
-      "war": 36
-    },
-    {
       "code": "SY-I7TNH",
       "desc": "!!Intel nuc11-i7TNH m.2+2.5\"",
       "created": "2021/03/10",
@@ -49330,7 +49312,7 @@
     },
     {
       "code": "SC-G710D3-2GL",
-      "desc": "!!Gb 710 Ddr3 2Gb +Low",
+      "desc": "Gb 710 Ddr3 2Gb +Low",
       "created": "2021/03/30",
       "status": "",
       "bid": 17,
@@ -49339,7 +49321,7 @@
     },
     {
       "code": "SC-G1030D4-L",
-      "desc": "!!Gb 1030 2G D4+Low",
+      "desc": "Gb 1030 2G D4+Low",
       "created": "2021/03/30",
       "status": "",
       "bid": 17,
@@ -53398,7 +53380,7 @@
     },
     {
       "code": "SC-GX6500XT-GO",
-      "desc": "Gb rX6500XT Gaming Oc 4G d6",
+      "desc": "!!Gb rX6500XT Gaming Oc 4G d6",
       "created": "2021/12/20",
       "status": "",
       "bid": 17,
@@ -54621,15 +54603,6 @@
       "war": 12
     },
     {
-      "code": "ME-KD5848B38X2",
-      "desc": "!!KF548C38BBK2-16 D5-4800B 8x2",
-      "created": "2022/03/07",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-KD5852B40",
       "desc": "!!KF552C40BB-8 D5-5200 Beast 8",
       "created": "2022/03/07",
@@ -55235,15 +55208,6 @@
     {
       "code": "SC-GX6400-L",
       "desc": "Gb rX6400 4Gb d6 Low-profile",
-      "created": "2022/04/18",
-      "status": "",
-      "bid": 17,
-      "pid": 4,
-      "war": 36
-    },
-    {
-      "code": "SC-GX6650XT-GO",
-      "desc": "!!Gb rX6650XT Gaming Oc 8G d6",
       "created": "2022/04/18",
       "status": "",
       "bid": 17,
@@ -58627,7 +58591,7 @@
     },
     {
       "code": "HD-KG500NV2",
-      "desc": "Kingston nGff/m.2 500 NV2 G4x4",
+      "desc": "!!Kingston nGff/m.2 500 NV2 G4",
       "created": "2022/08/21",
       "status": "",
       "bid": 24,
@@ -58636,7 +58600,7 @@
     },
     {
       "code": "HD-KG1000NV2",
-      "desc": "Kingston nGff/m.2 1Tb NV2 G4x4",
+      "desc": "!!Kingston nGff/m.2 1Tb NV2 G4",
       "created": "2022/08/21",
       "status": "",
       "bid": 24,
@@ -68355,8 +68319,17 @@
       "war": 60
     },
     {
+      "code": "EH-A1000SC610",
+      "desc": "ADATA 1Tb SC610 eSSD u3 gen2",
+      "created": "2023/09/21",
+      "status": "",
+      "bid": 4,
+      "pid": 25,
+      "war": 60
+    },
+    {
       "code": "EH-A2000SC610",
-      "desc": "!!ADATA 2Tb SC610 eSSD u3 gen2",
+      "desc": "ADATA 2Tb SC610 eSSD u3 gen2",
       "created": "2023/09/21",
       "status": "",
       "bid": 4,
@@ -69922,7 +69895,7 @@
     },
     {
       "code": "SC-G4070S-AM",
-      "desc": "Gb 4070Super Aorus Master 12G",
+      "desc": "!!Gb 4070Super Aorus Master 12",
       "created": "2023/12/19",
       "status": "",
       "bid": 17,
@@ -72480,7 +72453,7 @@
       "code": "LC-L24GN60",
       "desc": "LG 24GN60R-B 144hz iPS",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 27,
       "pid": 37,
       "war": 24
@@ -72840,7 +72813,7 @@
       "code": "SC-PQA400+L",
       "desc": "Pny Quadro rtxA400 4G D6",
       "created": "2024/10/24",
-      "status": "C",
+      "status": "N",
       "bid": 36,
       "pid": 4,
       "war": 36
@@ -72849,7 +72822,7 @@
       "code": "SC-PQA1000+L",
       "desc": "Pny Quadro rtxA1000 8G D6",
       "created": "2024/10/24",
-      "status": "C",
+      "status": "N",
       "bid": 36,
       "pid": 4,
       "war": 36
@@ -72858,7 +72831,7 @@
       "code": "SC-PQA2000A+L",
       "desc": "Pny Quadro rtxA2000Ada 16G D6",
       "created": "2024/10/24",
-      "status": "C",
+      "status": "N",
       "bid": 36,
       "pid": 4,
       "war": 36
@@ -73024,6 +72997,42 @@
       "bid": 17,
       "pid": 7,
       "war": 36
+    },
+    {
+      "code": "KM-LWMXKS-C",
+      "desc": "*Logitech W/l MX Keys S Combo",
+      "created": "2024/11/07",
+      "status": "R",
+      "bid": 0,
+      "pid": 0,
+      "war": 24
+    },
+    {
+      "code": "EE-AEC600",
+      "desc": "Adata EC600 ip54 2.5\" usb3.0",
+      "created": "2024/11/07",
+      "status": "C",
+      "bid": 0,
+      "pid": 0,
+      "war": 12
+    },
+    {
+      "code": "BT-APR050P",
+      "desc": "Adata PR050 Pink Magnetic W/es",
+      "created": "2024/11/07",
+      "status": "C",
+      "bid": 0,
+      "pid": 0,
+      "war": 12
+    },
+    {
+      "code": "BT-APR050C",
+      "desc": "Adata PR050 Cyan Magnetic W/es",
+      "created": "2024/11/07",
+      "status": "C",
+      "bid": 0,
+      "pid": 0,
+      "war": 12
     }
   ]
 }

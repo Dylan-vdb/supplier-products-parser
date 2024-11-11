@@ -11,6 +11,9 @@
         </div>
       </div>
     </div>
+    <button @click="pullCategories">Pull Categories</button>
+    <br />
+    <button @click="testRegex">testRegex</button>
   </div>
 </template>
 
@@ -26,6 +29,7 @@ import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
+import { refineCategories } from './helpers/baseHelpers'
 
 export default {
   setup() {
@@ -112,8 +116,80 @@ export default {
       return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '').replaceAll('â€™', '')
     }
 
+    function testRegex() {
+      const isCategoryMatch = (str) => {
+        // Match either:
+        // 1. "Accessories > [Something]"
+        // 2. "[Something] > [Something],Accessories > [Something]"
+        const regex = /^(?:Accessories\s*>\s*[^,>]+|[^,>]+\s*>\s*[^,>]+,Accessories\s*>\s*[^,>]+)$/
+        return regex.test(str)
+      }
+
+      // Test cases
+      const testCases = [
+        // Should match
+        'Accessories > Cleaning Solutions',
+        'Accessories > Consumables',
+        'Accessories > Mounting Kits',
+        'Accessories > Mousepads',
+        'Accessories > Stands & Cooling',
+        'Cars > Bonnets,Accessories > Consumables',
+        'Peripherals > Mousepads,Accessories > Mousepads',
+
+        // Should not match
+        'Computers > Accessories > Stands & Cooling',
+        'Laptop > Accessories > Mousepads'
+      ]
+
+      // Run tests
+      testCases.forEach((test) => {
+        console.log(`"${test}": ${isCategoryMatch(test)}`)
+      })
+    }
+
+    function pullCategories() {
+      const storedCategories = JSON.parse(localStorage.getItem('categories'))
+      debugger
+      const csv = Papa.unparse(
+        storedCategories.map((category) => {
+          return {
+            category
+          }
+        }),
+        {
+          delimiter: ';',
+          quoteChars: '""'
+        }
+      )
+
+      const blob = new Blob([csv], {
+        type: 'text/csv'
+      })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      // get today's date in a simple format
+      const today = new Date().toISOString().slice(0, 10)
+      link.download = `categories-${today}.csv`
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    }
+
     function outPutCsv(data) {
-      const refinedCategories = refineCategories(data)
+      const noLowStocks = data.map((product) => {
+        let newStock = Number(product.stock)
+        const notFrontosa = !product.images.includes(
+          'https://ik.imagekit.io/ajwhrydzs/FlattenedImages'
+        )
+        if (notFrontosa && newStock <= 5) {
+          newStock = 0
+        }
+        return { ...product, stock: newStock }
+      })
+      const refinedCategories = refineCategories(noLowStocks)
       const csvRaw = Papa.unparse(refinedCategories, {
         delimiter: ';',
         quoteChars: '""'
@@ -145,69 +221,11 @@ export default {
       URL.revokeObjectURL(url)
     }
 
-    function refineCategories(products) {
-      return products
-        .map((product) => {
-          const isFocus = product.categories.includes('Accessories > Notebook Accessories')
-          const isCharger = isFocus && product.description.toLowerCase().includes('charger')
-          const newCategories = isCharger
-            ? 'Power Solutions > Notebook Chargers'
-            : product.categories
-
-          return {
-            ...product,
-            categories: newCategories
-          }
-        })
-        .map((product) => {
-          const isFocus = product.categories.includes('Components > Power Supplies')
-
-          const newCategory = isFocus
-            ? `${product.categories.replace(
-                'Components > Power Supplies',
-                'Power Solutions > Computer Power Supplies'
-              )}, ${product.categories}`
-            : product.categories
-
-          return {
-            ...product,
-            categories: newCategory
-          }
-        })
-        .map((product) => {
-          const isFocus = product.categories.includes('Peripherals > Notebook Chargers')
-          const newCategory = isFocus ? 'Power Solutions > Notebook Chargers' : product.categories
-
-          return {
-            ...product,
-            categories: newCategory
-          }
-        })
-        .map((product) => {
-          const isFocus = product.categories.includes('Components > Internal Brackets and Adapters')
-          const newCategory = isFocus ? 'Power Solutions > Notebook Chargers' : product.categories
-
-          return {
-            ...product,
-            categories: newCategory
-          }
-        })
-        .map((product) => {
-          const isFocus = product.categories.includes('Convertors > Accessories')
-          const newCategory = isFocus
-            ? 'Connectors Adaptors and Converters > Converters'
-            : product.categories
-
-          return {
-            ...product,
-            categories: newCategory
-          }
-        })
-    }
-
     return {
       dropzoneRef,
-      isDragActive
+      isDragActive,
+      pullCategories,
+      testRegex
     }
   }
 }
