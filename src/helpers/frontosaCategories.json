@@ -73012,8 +73012,8 @@
       "desc": "Adata EC600 ip54 2.5\" usb3.0",
       "created": "2024/11/07",
       "status": "C",
-      "bid": 0,
-      "pid": 0,
+      "bid": 4,
+      "pid": 24,
       "war": 12
     },
     {
@@ -73021,8 +73021,8 @@
       "desc": "Adata PR050 Pink Magnetic W/es",
       "created": "2024/11/07",
       "status": "C",
-      "bid": 0,
-      "pid": 0,
+      "bid": 4,
+      "pid": 16,
       "war": 12
     },
     {
@@ -73030,8 +73030,8 @@
       "desc": "Adata PR050 Cyan Magnetic W/es",
       "created": "2024/11/07",
       "status": "C",
-      "bid": 0,
-      "pid": 0,
+      "bid": 4,
+      "pid": 16,
       "war": 12
     }
   ]

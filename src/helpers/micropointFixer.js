@@ -253,7 +253,7 @@ function includeNewCategories(products) {
     }
 
     if (product.categories.includes('CASES > GAMING')) {
-      updatedProduct.categories = 'PC Cases > Gaming PC Cases'
+      updatedProduct.categories = 'Desktop Components > PC Cases > Gaming PC Cases'
     }
 
     if (product.categories.includes('CASES > MINING')) {
@@ -264,7 +264,7 @@ function includeNewCategories(products) {
       product.categories.includes('CASES >') &&
       product.categories.toLowerCase().includes('atx')
     ) {
-      updatedProduct.categories = 'PC Cases > Office PC Cases'
+      updatedProduct.categories = 'Desktop Components > PC Cases > Office PC Cases'
     }
 
     if (product.categories === 'CONSUMABLES > ') {
@@ -288,7 +288,7 @@ function includeNewCategories(products) {
     }
 
     if (product.categories.includes(`EXTENDERS >`)) {
-      updatedProduct.categories = `Networking & Wifi > Network Extenders`
+      updatedProduct.categories = `Networking > Network Extenders`
     }
 
     if (product.categories.includes(`EXTERNAL ENCLOSURES >`)) {
@@ -346,7 +346,7 @@ function includeNewCategories(products) {
     }
 
     if (product.categories.includes(`ROUTERS >`)) {
-      updatedProduct.categories = `Networking & Wifi > Routers & Mesh`
+      updatedProduct.categories = `Networking > Routers & Mesh`
     }
 
     if (product.categories.includes(`SLEEVE >`)) {
@@ -376,7 +376,7 @@ function includeNewCategories(products) {
     acc.push(updatedProduct)
     return acc
   }, [])
-  debugger
+
   return result
 }
 

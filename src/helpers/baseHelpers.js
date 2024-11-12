@@ -322,10 +322,11 @@ export function refineCategories(products) {
 
   result = result.reduce((acc, product) => {
     const updatedProduct = { ...product }
-    if (product.sku == 'FTSA-ME-KD54860RG32D') debugger
+
     if (
       product.categories.includes('Components >') &&
-      !product.categories.includes('Notebook Components')
+      !product.categories.includes('Notebook Components') &&
+      !product.categories.includes('Desktop Components')
     ) {
       updatedProduct.categories = product.categories.replace('Components >', 'Desktop Components >')
       if (updatedProduct.categories.includes('Desktop Components > Storage Media')) {
@@ -336,7 +337,10 @@ export function refineCategories(products) {
       }
     }
 
-    if (product.categories.includes('Computers >')) {
+    if (
+      product.categories.includes('Computers >') &&
+      !product.categories.includes('Desktop Computers >')
+    ) {
       updatedProduct.categories = product.categories.replace('Computers >', 'Desktop Computers >')
     }
 
@@ -346,14 +350,29 @@ export function refineCategories(products) {
 
   result = result
     .reduce((acc, product) => {
-      const updatedProduct = { ...product }
+      if (
+        product.categories.includes('Notebook Accessories') &&
+        product.name.toLowerCase().includes('pin accessory')
+      ) {
+        return acc
+      }
+
+      if (product.categories.includes('Cables > LDINO')) {
+        return acc
+      }
 
       if (product.categories.includes('Desktop Components > Graphics Cards > AMD Processors')) {
         return acc
       }
 
+      const updatedProduct = { ...product }
+
       if (product.categories.includes('Cables > Network > Antenna')) {
         updatedProduct.categories = 'Networking & Wifi > Antenna Cables'
+      }
+
+      if (product.categories.includes('Cables > Antenna')) {
+        updatedProduct.categories = 'Cables > Antenna Cables'
       }
 
       if (product.categories.includes('Cables > Network > CAT 5 Cables')) {
@@ -370,6 +389,10 @@ export function refineCategories(products) {
 
       if (product.categories.includes('Cables > Network > Fibre')) {
         updatedProduct.categories = 'Networking & Wifi > Fibre Cables'
+      }
+
+      if (product.categories.includes('Cables > Fibre')) {
+        updatedProduct.categories = 'Cables > Fibre Cables'
       }
 
       if (product.categories.includes('Cables > Network > Patch Cables')) {
@@ -498,13 +521,9 @@ export function refineCategories(products) {
             'Notebook Components > Screen Protectors, Peripherals > Screen Protectors'
         }
 
-        if (product.name.toLowerCase().includes('pin accessory')) {
-          return acc
+        if (product.name.toUpperCase().includes('60MM FANS')) {
+          updatedProduct.categories = 'Notebook Components > Stands & Cooling'
         }
-      }
-
-      if (product.categories.includes('Cables > LDINO')) {
-        return acc
       }
 
       acc.push(updatedProduct)
@@ -512,6 +531,32 @@ export function refineCategories(products) {
     }, [])
     .reduce((acc, product) => {
       const updatedProduct = { ...product }
+
+      if (
+        product.categories.includes(
+          'Cables > Media' && !product.categories.includes('Cables > Media Cables')
+        )
+      ) {
+        updatedProduct.categories = product.categories.replace(
+          'Cables > Media',
+          'Cables > Media Cables'
+        )
+      }
+
+      if (
+        product.categories.includes(
+          'Cables > Power' && !product.categories.includes('Cables > Power Cables')
+        )
+      ) {
+        updatedProduct.categories = product.categories.replace(
+          'Cables > Power',
+          'Cables > Power Cables'
+        )
+      }
+
+      if (product.categories.toLowerCase().includes('desktop components > pc cases')) {
+        updatedProduct.categories = product.categories.replaceAll(/pc cases/i, 'Desktop Cases')
+      }
 
       if (product.categories.includes('Accessories >')) {
         const regex = /^(?:Accessories\s*>\s*[^,>]+|[^,>]+\s*>\s*[^,>]+,Accessories\s*>\s*[^,>]+)$/

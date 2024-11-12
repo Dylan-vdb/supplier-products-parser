@@ -99,7 +99,7 @@ export const micropointUnwantedSubstrings = [
   'ACCESS POINT', //  A mix of incorrect categories
   'AA STOCK CLEARANCE >',
   // 'BATTERIES >', // GO
-  // 'BLUETOOTH DEVICES >', // Only one product a bluetooth dongle
+  'BLUETOOTH DEVICES >', // Only one product a bluetooth dongle
   'BUNDLES >',
   'CAMERAS >',
   // 'CARTRIDGES >', // GO

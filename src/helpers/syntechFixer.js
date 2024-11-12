@@ -43,11 +43,11 @@ function includeNewCategories(products) {
     }
 
     if (product.categorytree.includes('Smart Security > IP Cameras')) {
-      newCategory = 'Smart Security > IP Cameras'
+      newCategory = 'Gadgets > Smart Security > IP Cameras'
     }
 
     if (product.categorytree.includes('Smart Security > Controllers and Sensors')) {
-      newCategory = 'Smart Security > Controllers and Sensors'
+      newCategory = 'Gadgets > Smart Security > Controllers and Sensors'
     }
 
     if (product.categorytree.includes('Scooters and Bikes >')) {
