@@ -49,11 +49,13 @@ function setPricing(products) {
           brand: 'Astrum',
           'Visibility in catalog': 'visible',
           published: 1,
-          is_featured: 0
+          is_featured: 0,
+          tags: 'Black Friday Sale'
         }
       }
-    )
+    ) // Black Friday Sale
     .map((product) => {
+      if (product.sku === 'AST-A21131-B') debugger
       const recommended_retail = parseInt(product.SRP)
       const sale_price = calculateFullPrice({
         price: Number(product.normal_cost),
@@ -83,6 +85,7 @@ function setPricing(products) {
 function improveCategoryNames(products) {
   const replacements = astrumCategoryReplacements
   return products.map((product) => {
+    if (product.sku === 'AST-A21131-B') debugger
     let updatedCategoryTree = product.categories
     replacements.forEach(([find, replace]) => {
       updatedCategoryTree = updatedCategoryTree.replace(find, replace)

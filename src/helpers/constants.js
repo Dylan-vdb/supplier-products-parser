@@ -286,7 +286,7 @@ export const astrumCategoryReplacements = [
   ['Laptop Batteries', 'Power Solutions > Notebook Batteries,Components > Notebook Batteries'],
   ['Laptop Screens', 'Components > Notebook Screens'],
   ['Power Banks', 'Power Solutions > Power Banks'],
-  ['Laptop Bags', 'Accessories > Bags and Covers > Bags >'],
+  ['Laptop Bags', 'Accessories > Bags and Covers > Bags'],
   ['Mobile Chargers', 'Power Solutions > Mobile Chargers'],
   ['Smart Watches', 'Accessories > Wearables > Bands and Watches'],
   ['Mouse', 'Peripherals > Mice'],

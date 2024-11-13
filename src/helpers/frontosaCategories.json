@@ -60357,7 +60357,7 @@
       "code": "HD-S20000SA",
       "desc": "ST20000VE002 20Tb Surv Ai",
       "created": "2022/09/27",
-      "status": "C",
+      "status": "N",
       "bid": 42,
       "pid": 11,
       "war": 36
@@ -63390,7 +63390,7 @@
       "code": "ME-KD5856V46",
       "desc": "KVR56U46BS6-8 D5 8G 5600 C46",
       "created": "2023/01/30",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -63444,7 +63444,7 @@
       "code": "ME-KD53256V46",
       "desc": "KVR56U46BD8-32 D5 32G 5600 C46",
       "created": "2023/01/30",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -65118,7 +65118,7 @@
       "code": "ME-K5N16F64",
       "desc": "KF564S38iB-16 D5 Nb 16G Fu6400",
       "created": "2023/05/01",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -69204,7 +69204,7 @@
       "code": "ME-KD53264G32X2",
       "desc": "KF564C32RSK2-64 6400 reneG 32D",
       "created": "2023/11/06",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -69222,7 +69222,7 @@
       "code": "ME-KD53264RG32D",
       "desc": "KF564C32RSAK2-64 6400 RgbG 32D",
       "created": "2023/11/06",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -69231,7 +69231,7 @@
       "code": "ME-KD53264RGX2W",
       "desc": "KF564C32RWAK2-64 D5-6400 R 32D",
       "created": "2023/11/06",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -71868,7 +71868,7 @@
       "code": "ME-KD51660R30DW",
       "desc": "KF560C30BWAK2-32 D5-6000 R 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -71949,7 +71949,7 @@
       "code": "ME-KD51668R34DW",
       "desc": "KF568C34BWAK2-32 D5-6800 R 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72012,7 +72012,7 @@
       "code": "ME-KD53264B32X2",
       "desc": "KF564C32BBK2-64 D5-6400B 32Gx2",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72021,7 +72021,7 @@
       "code": "ME-KD53264R32X2",
       "desc": "KF564C32BBAK2-64 D5-6400 R 32D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72030,7 +72030,7 @@
       "code": "ME-KD53264B32DW",
       "desc": "KF564C32BWK2-64 D5-6400B 32Gx2",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72039,7 +72039,7 @@
       "code": "ME-KD53264R32DW",
       "desc": "KF564C32BWAK2-64 D5-6400 R 32D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -72732,7 +72732,7 @@
       "code": "CP-IR245K",
       "desc": "Intel aRrow u5 245K 14c",
       "created": "2024/10/10",
-      "status": "C",
+      "status": "N",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -72750,7 +72750,7 @@
       "code": "CP-IR265K",
       "desc": "Intel aRrow u7 265K 20c",
       "created": "2024/10/10",
-      "status": "C",
+      "status": "N",
       "bid": 20,
       "pid": 13,
       "war": 36

@@ -94,7 +94,7 @@ function handlePromotedProducts(products) {
       ? {
           ...product,
           categorytreealt: product.categorytreealt.replace('|On Promotion', ''),
-          tags: 'On Promotion',
+          tags: 'Black Friday Sale',
           is_featured: 1,
           sale_price: calculateFullPrice({
             price: Number(product.promo_price),

@@ -101,6 +101,7 @@ export function refineCategories(products) {
     }
 
     if (product.categories.includes('Accessories > Bags and Covers')) {
+      if (product.sku === 'AST-A21131-B') debugger
       updatedProduct.categories = product.categories.replace(
         'Accessories > Bags and Covers',
         'Bags Cases & Covers'
@@ -554,8 +555,19 @@ export function refineCategories(products) {
         )
       }
 
+      if (product.categories.includes('Dash Cameras')) {
+        updatedProduct.categories = 'Gadgets > Dash Cameras'
+      }
+
       if (product.categories.toLowerCase().includes('desktop components > pc cases')) {
-        updatedProduct.categories = product.categories.replaceAll(/pc cases/i, 'Desktop Cases')
+        updatedProduct.categories = product.categories.replaceAll(/pc cases/gi, 'Desktop Cases')
+      }
+
+      if (product.categories.toLowerCase().includes('storage media > external ssds')) {
+        updatedProduct.categories = product.categories.replaceAll(
+          /external ssds/gi,
+          'External SSDs'
+        )
       }
 
       if (product.categories.includes('Accessories >')) {
