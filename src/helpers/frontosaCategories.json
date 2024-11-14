@@ -70383,7 +70383,7 @@
       "code": "SC-G4060-L",
       "desc": "Gb rtx4060 Low-profile d6",
       "created": "2024/01/23",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 4,
       "war": 36
@@ -71632,9 +71632,9 @@
     },
     {
       "code": "LC-DS3221QSA-CS",
-      "desc": "*Dell S3221QSA 32\" Curved+Spea",
+      "desc": "Dell S3221QSA 32\" Curved+Spea",
       "created": "2024/06/11",
-      "status": "R",
+      "status": "",
       "bid": 65,
       "pid": 37,
       "war": 36
@@ -72237,7 +72237,7 @@
       "code": "MB-GZ890AG+W",
       "desc": "Gb Z890 Aero G +Wifi ddr5",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -72246,7 +72246,7 @@
       "code": "MB-GZ890AEXW+W",
       "desc": "Gb Z890 AorusElitX Whi/ice+Wif",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -72318,7 +72318,7 @@
       "code": "MB-GZ890MAEW+W",
       "desc": "Gb Z890M Aorus Elite + Wifi",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -72345,7 +72345,7 @@
       "code": "MB-GZ890IAU+W",
       "desc": "Gb Z890i Aorus Ultra+W itx",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -72363,7 +72363,7 @@
       "code": "MB-GX870E-APW+W",
       "desc": "Gb X870E AorusPro Whi/Ice+Wifi",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -72390,7 +72390,7 @@
       "code": "MB-GX870-AEW+W",
       "desc": "Gb X870 AorusElite Whi/ice+Wif",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36

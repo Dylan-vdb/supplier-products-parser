@@ -101,7 +101,6 @@ export function refineCategories(products) {
     }
 
     if (product.categories.includes('Accessories > Bags and Covers')) {
-      if (product.sku === 'AST-A21131-B') debugger
       updatedProduct.categories = product.categories.replace(
         'Accessories > Bags and Covers',
         'Bags Cases & Covers'
@@ -562,12 +561,21 @@ export function refineCategories(products) {
       if (product.categories.toLowerCase().includes('desktop components > pc cases')) {
         updatedProduct.categories = product.categories.replaceAll(/pc cases/gi, 'Desktop Cases')
       }
+      // if (product.sku == '4902030786700') debugger
+      if (product.categories.toLowerCase().includes(`cd's & dvd's`)) {
+        updatedProduct.categories = product.categories.replaceAll(/cd's & dvd's/gi, `CD's & DVD's`)
+      }
+      // if (product.sku == '4902030786700') debugger
 
       if (product.categories.toLowerCase().includes('storage media > external ssds')) {
         updatedProduct.categories = product.categories.replaceAll(
           /external ssds/gi,
           'External SSDs'
         )
+      }
+
+      if (product.categories.includes('Peripherals > Switches')) {
+        updatedProduct.categories = 'Peripherals > Switches'
       }
 
       if (product.categories.includes('Accessories >')) {
