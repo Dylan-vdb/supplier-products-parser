@@ -78,7 +78,7 @@ function setPricing(products) {
         }
       }
     })
-    .filter((product) => !product.stock.includes('N/A'))
+    .filter((product) => !product?.stock?.includes('N/A'))
 }
 
 function improveCategoryNames(products) {
