@@ -13,7 +13,7 @@
     </div>
     <button @click="pullCategories">Pull Categories</button>
     <br />
-    <button @click="testRegex">testRegex</button>
+    <button @click="processEsquireStock">PROCESS ESQUIRE</button>
   </div>
 </template>
 
@@ -27,6 +27,8 @@ import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
+import { processEsquireStock } from './helpers/esquireFixer'
+
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
 import { refineCategories } from './helpers/baseHelpers'
@@ -225,7 +227,8 @@ export default {
       dropzoneRef,
       isDragActive,
       pullCategories,
-      testRegex
+      testRegex,
+      processEsquireStock
     }
   }
 }
