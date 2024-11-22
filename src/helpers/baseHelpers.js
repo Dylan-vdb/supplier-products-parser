@@ -561,11 +561,10 @@ export function refineCategories(products) {
       if (product.categories.toLowerCase().includes('desktop components > pc cases')) {
         updatedProduct.categories = product.categories.replaceAll(/pc cases/gi, 'Desktop Cases')
       }
-      // if (product.sku == '4902030786700') debugger
+
       if (product.categories.toLowerCase().includes(`cd's & dvd's`)) {
         updatedProduct.categories = product.categories.replaceAll(/cd's & dvd's/gi, `CD's & DVD's`)
       }
-      // if (product.sku == '4902030786700') debugger
 
       if (product.categories.toLowerCase().includes('storage media > external ssds')) {
         updatedProduct.categories = product.categories.replaceAll(

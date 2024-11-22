@@ -15,8 +15,7 @@ export function processEsquireStock() {
     const categorizedProducts = improveCategoryNames(tidiedProducts)
     const pricedProducts = priceProducts(categorizedProducts)
     const finalProducts = saveSkuList(pricedProducts, 'esquire')
-    const toFix = finalProducts.filter(product => product.categoriesOld === "Ink and Toners-Generic")
-    debugger
+
     // downloadCategories();
     return finalProducts
 }
@@ -24,15 +23,16 @@ export function processEsquireStock() {
 function tidyFields(products) {
     return products.map(product => {
         // Destructure the fields we want to rename, collecting the rest
-        const { productCode, price, imgURL, productName, groupName, ...rest } = product
+        const { productCode, price, imgURL, productName, groupName, description, url, ...rest } = product
         
         // Return new object with renamed fields and remaining fields
         return {
             ...rest,
-            sku: productCode,
+            sku: `SQR-${productCode}`,
             normal_cost: price,
             images: imgURL,
             name: productName,
+            description: description.replaceAll(', ', '\n'),
             categoriesOld: groupName?.trim().replace(/\s+/g, ' ') // Replace multiple spaces with single space
         }
     }).filter(product => product.images !== "")

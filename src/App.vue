@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import { useDropZone } from '@vueuse/core'
 import { XMLParser } from 'fast-xml-parser'
@@ -33,216 +33,201 @@ import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
 import { refineCategories } from './helpers/baseHelpers'
 
-export default {
-  setup() {
-    const dropzoneRef = ref(null)
-    const { isDragActive } = useDropZone(dropzoneRef, onDrop)
-    const syntechData = ref([])
-    const micropointData = ref([])
-    const frontosaData = ref([])
-    const astrumData = ref([])
-    const esquireData = ref([])
-    const discontinuedStock = ref([])
+const dropzoneRef = ref(null)
+const { isDragActive } = useDropZone(dropzoneRef, onDrop)
+const syntechData = ref([])
+const micropointData = ref([])
+const frontosaData = ref([])
+const astrumData = ref([])
+const esquireData = ref([])
+const discontinuedStock = ref([])
 
-    async function onDrop(files) {
-      if (files[0].name.includes('Astrum')) {
-        const rawData = await Promise.all(files.map((file) => parseCsv(file)))
+async function onDrop(files) {
+  if (files[0].name.includes('Astrum')) {
+    const rawData = await Promise.all(files.map((file) => parseCsv(file)))
+    astrumData.value = processAstrumStock(rawData)
+    outPutCsv(astrumData.value)
+    return
+  }
+  if (files[0].name.includes('Frontosa')) {
+    const rawData = await parseCsv(files[0])
+    frontosaData.value = processFrontosaStock(rawData.result.data)
+    outPutCsv(frontosaData.value)
+    return
+  }
+  if (files[0].name.includes('wc-product-export')) {
+    const rawData = await parseCsv(files[0])
+    discontinuedStock.value = processDiscontinuedStock(rawData.result.data)
+    outPutCsv(discontinuedStock.value)
+    return
+  }
+  const file = files[0]
+  if (file.type == 'text/csv') {
+    parseCsv(file)
+  } else {
+    parseXml(file)
+  }
+}
 
-        astrumData.value = processAstrumStock(rawData)
-        outPutCsv(astrumData.value)
-        return
+function parseCsv(csvFile) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(csvFile, {
+      header: true,
+      complete: (results) => {
+        resolve({ name: csvFile.name, result: results })
+      },
+      error: (error) => {
+        reject(error)
       }
-      if (files[0].name.includes('Frontosa')) {
-        const rawData = await parseCsv(files[0])
-        frontosaData.value = processFrontosaStock(rawData.result.data)
-        outPutCsv(frontosaData.value)
-        return
-      }
-      if (files[0].name.includes('wc-product-export')) {
-        const rawData = await parseCsv(files[0])
-        discontinuedStock.value = processDiscontinuedStock(rawData.result.data)
-        outPutCsv(discontinuedStock.value)
-        return
-      }
-      const file = files[0]
-      if (file.type == 'text/csv') {
-        parseCsv(file)
-      } else {
-        parseXml(file)
-      }
+    })
+  })
+}
+
+function processEsquire() {
+  esquireData.value = processEsquireStock()
+  outPutCsv(esquireData.value)
+}
+
+function parseXml(xmlFile) {
+  const reader = new FileReader()
+  reader.onload = async (event) => {
+    const xmlRaw = event.target.result
+    const parser = new XMLParser()
+    const parsedXml = parser.parse(xmlRaw)
+
+    if (xmlFile.name.includes('micropoint')) {
+      micropointData.value = processMicropointStock(parsedXml)
+      outPutCsv(micropointData.value)
     }
 
-    function parseCsv(csvFile) {
-      return new Promise((resolve, reject) => {
-        Papa.parse(csvFile, {
-          header: true,
-          complete: (results) => {
-            resolve({ name: csvFile.name, result: results })
-          },
-          error: (error) => {
-            reject(error)
-          }
-        })
-      })
+    if (xmlFile.name.includes('syntech')) {
+      syntechData.value = processSyntechStock(parsedXml)
+      outPutCsv(syntechData.value)
     }
+  }
+  reader.readAsText(xmlFile)
+}
 
-    function processEsquire() {
-      esquireData.value = processEsquireStock()
-      debugger
-      outPutCsv(esquireData.value)
-    }
+function removeSymbols(text) {
+  let cleanedText = text
+  for (const symbol in symbolMap) {
+    const replacement = symbolMap[symbol]
+    cleanedText = cleanedText.replaceAll(symbol, replacement)
+  }
+  return cleanedText.replaceAll(`â€"`, ' ').replaceAll(/Â/giu, '').replaceAll('â€™', '')
+}
 
-    function parseXml(xmlFile) {
-      const reader = new FileReader()
-      reader.onload = async (event) => {
-        const xmlRaw = event.target.result
-        // const xmlNoSymbols = removeSymbols(xmlRaw)
-        const parser = new XMLParser()
-        const parsedXml = parser.parse(xmlRaw)
+function testRegex() {
+  const isCategoryMatch = (str) => {
+    const regex = /^(?:Accessories\s*>\s*[^,>]+|[^,>]+\s*>\s*[^,>]+,Accessories\s*>\s*[^,>]+)$/
+    return regex.test(str)
+  }
 
-        if (xmlFile.name.includes('micropoint')) {
-          micropointData.value = processMicropointStock(parsedXml)
+  const testCases = [
+    'Accessories > Cleaning Solutions',
+    'Accessories > Consumables',
+    'Accessories > Mounting Kits',
+    'Accessories > Mousepads',
+    'Accessories > Stands & Cooling',
+    'Cars > Bonnets,Accessories > Consumables',
+    'Peripherals > Mousepads,Accessories > Mousepads',
+    'Computers > Accessories > Stands & Cooling',
+    'Laptop > Accessories > Mousepads'
+  ]
 
-          // TODO, first combine the two tables
-          outPutCsv(micropointData.value)
-        }
+  testCases.forEach((test) => {
+    console.log(`"${test}": ${isCategoryMatch(test)}`)
+  })
+}
 
-        if (xmlFile.name.includes('syntech')) {
-          syntechData.value = processSyntechStock(parsedXml)
-          // TODO, first combine the two tables
-          outPutCsv(syntechData.value)
-        }
+function pullCategories() {
+  const storedCategories = JSON.parse(localStorage.getItem('categories'))
+
+  const csv = Papa.unparse(
+    storedCategories.map((category) => {
+      return {
+        category
       }
-      reader.readAsText(xmlFile)
+    }),
+    {
+      delimiter: ';',
+      quoteChars: '""'
     }
+  )
 
-    function removeSymbols(text) {
-      let cleanedText = text
-      for (const symbol in symbolMap) {
-        const replacement = symbolMap[symbol]
-        cleanedText = cleanedText.replaceAll(symbol, replacement)
-      }
-      return cleanedText.replaceAll(`â€”`, ' ').replaceAll(/Â/giu, '').replaceAll('â€™', '')
-    }
+  const blob = new Blob([csv], {
+    type: 'text/csv'
+  })
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  const today = new Date().toISOString().slice(0, 10)
+  link.download = `categories-${today}.csv`
+  link.style.display = 'none'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  URL.revokeObjectURL(url)
+}
 
-    function testRegex() {
-      const isCategoryMatch = (str) => {
-        // Match either:
-        // 1. "Accessories > [Something]"
-        // 2. "[Something] > [Something],Accessories > [Something]"
-        const regex = /^(?:Accessories\s*>\s*[^,>]+|[^,>]+\s*>\s*[^,>]+,Accessories\s*>\s*[^,>]+)$/
-        return regex.test(str)
-      }
+function outPutCsv(data) {
+  const noLowStocks = data.map((product) => {
+    let newStock = Number(product.stock)
 
-      // Test cases
-      const testCases = [
-        // Should match
-        'Accessories > Cleaning Solutions',
-        'Accessories > Consumables',
-        'Accessories > Mounting Kits',
-        'Accessories > Mousepads',
-        'Accessories > Stands & Cooling',
-        'Cars > Bonnets,Accessories > Consumables',
-        'Peripherals > Mousepads,Accessories > Mousepads',
-
-        // Should not match
-        'Computers > Accessories > Stands & Cooling',
-        'Laptop > Accessories > Mousepads'
-      ]
-
-      // Run tests
-      testCases.forEach((test) => {
-        console.log(`"${test}": ${isCategoryMatch(test)}`)
-      })
-    }
-
-    function pullCategories() {
-      const storedCategories = JSON.parse(localStorage.getItem('categories'))
-
-      const csv = Papa.unparse(
-        storedCategories.map((category) => {
-          return {
-            category
-          }
-        }),
-        {
-          delimiter: ';',
-          quoteChars: '""'
-        }
-      )
-
-      const blob = new Blob([csv], {
-        type: 'text/csv'
-      })
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      // get today's date in a simple format
-      const today = new Date().toISOString().slice(0, 10)
-      link.download = `categories-${today}.csv`
-      link.style.display = 'none'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      URL.revokeObjectURL(url)
-    }
-
-    function outPutCsv(data) {
-      const noLowStocks = data.map((product) => {
-        let newStock = Number(product.stock)
-  
-        const notFrontosa = !product.images.includes(
-          'https://ik.imagekit.io/ajwhrydzs/FlattenedImages'
-        )
-        const notEsquire = !product.images.includes(
-          'www.xyz.co.za'
-        )
-        if (notFrontosa && notEsquire && newStock <= 5) {
-          newStock = 0
-        }
-        return { ...product, stock: newStock }
-      })
-      const refinedCategories = refineCategories(noLowStocks)
-      const csvRaw = Papa.unparse(refinedCategories, {
-        delimiter: ';',
-        quoteChars: '""'
-      })
-
-      const csv = removeSymbols(csvRaw)
-
-      const blob = new Blob(
-        [
-          csv
-            .replaceAll(/\u00a0/giu, ' ')
-            .replaceAll('â€”', ' ')
-            .replaceAll('â€‹', '')
-        ],
-        {
-          type: 'text/csv'
-        }
-      )
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      // get today's date in a simple format
-      const today = new Date().toISOString().slice(0, 10)
-      link.download = `computer-gadgets-woocommerce-products-${today}.csv`
-      link.style.display = 'none'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      URL.revokeObjectURL(url)
+    const notFrontosa = !product.images.includes(
+      'https://ik.imagekit.io/ajwhrydzs/FlattenedImages'
+    )
+    const notEsquire = !product.images.includes(
+      'www.xyz.co.za'
+    )
+    if (notFrontosa && notEsquire && newStock <= 5) {
+      newStock = 0
     }
 
     return {
-      dropzoneRef,
-      isDragActive,
-      pullCategories,
-      testRegex,
-      processEsquire
+      ...product,
+      stock: newStock
     }
-  }
+  })
+
+  const refinedCategories = refineCategories(noLowStocks)
+  const csvRaw = Papa.unparse(refinedCategories, {
+    delimiter: ';',
+    quoteChars: '""'
+  })
+
+  const csv = removeSymbols(csvRaw)
+
+  const blob = new Blob(
+    [
+      csv
+        .replaceAll(/\u00a0/giu, ' ')
+        .replaceAll('â€”', ' ')
+        .replaceAll('â€‹', '')
+    ],
+    {
+      type: 'text/csv'
+    }
+  )
+  const url = URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = url
+  const today = new Date().toISOString().slice(0, 10)
+  link.download = `computer-gadgets-woocommerce-products-${today}.csv`
+  link.style.display = 'none'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+  URL.revokeObjectURL(url)
 }
+
+defineExpose({
+  dropzoneRef,
+  isDragActive,
+  pullCategories,
+  testRegex,
+  processEsquire
+})
 </script>
 
 <style scoped>
@@ -275,6 +260,4 @@ export default {
   font-size: 14px;
   color: #999;
 }
-
-/* .dropzone__inner div  */
 </style>
