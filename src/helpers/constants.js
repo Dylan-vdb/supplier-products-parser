@@ -74,91 +74,6 @@ export const syntechCategoryReplacements = [
   ['Networking & Security > ', 'Networking > ']
 ]
 
-/** TODO
-Apple Sync and Charge	-- replace with --	Apple > Cables
-Apple iPad  Screen Protectors	-- replace with --	Apple > Apple Accessories
-Apple iPad Accessories	-- replace with --	Apple > Apple Accessories
-Apple iPad Covers	-- replace with --	Apple > Apple Accessories,Bags Cases & Covers 
-Apple iPad Mini Accessories	-- replace with --	Apple > Apple Accessories
-Apple iPad Mini Covers	-- replace with --	Apple > Apple Accessories,Bags Cases & Covers 
-Apple iPad Mini Scrn Protect	-- replace with --	Apple > Apple Accessories
-Bluetooth Adaptors	-- replace with --	Peripherals > USB Devices
-Bluetooth Car Kits	-- replace with --	Gadgets > FM Modulators
-Bluetooth Earphones	-- replace with --	Peripherals > Computer Audio > Headsets > In-Ears 
-Bluetooth Gadgets 	-- replace with --	Gadgets
-Bluetooth Headset	-- replace with --	Peripherals > Computer Audio > Headsets > Over-Ears 
-Bluetooth Hi-Fi Systems	-- replace with --	Peripherals > Computer Audio > Bluetooth Hi-Fi’s
-Bluetooth Keyboards	-- replace with --	Peripherals > Keyboards > Office Keyboards
-Bluetooth Mouse	-- replace with --	Peripherals > Mouses > Office Mouses
-Bluetooth Party Speakers	-- replace with --	Peripherals > Computer Audio > Speakers
-Bluetooth SoundBars	-- replace with --	Peripherals > Computer Audio > Sound Bars
-Bluetooth Speakers	-- replace with --	Peripherals > Computer Audio > Speakers
-Broadband Routers -3G/LTE	-- replace with --	Networking & Wifi > Routers & Mesh
-Broadband Routers -Gigabit	-- replace with --	Networking & Wifi > Routers & Mesh
-Business Range Notebook 	-- replace with --	Notebooks > Office Notebooks
-CCTV (Accessories)	-- replace with --	CCTV > Accessories
-CCTV (Bullet Type Camera)	-- replace with --	CCTV > Bullet Cameras
-CCTV (CCD Camera)	-- replace with --	CCTV > CCD Cameras
-CCTV (Camera Housings)	-- replace with --	CCTV > Camera Housings
-CCTV (Camera Lenses)	-- replace with --	CCTV > Camera Lenses
-CCTV (Camera brackets)	-- replace with --	CCTV > Camera Brackets
-CCTV (DVR Microphone)	-- replace with --	CCTV > DVR Microphones
-CCTV (DVR) DIY Combo Kit	-- replace with --	CCTV > DIY Combo Kits
-CCTV (DVR) Stand Alone	-- replace with --	CCTV > Stand Alone Systems
-CCTV (Dome Camera)	-- replace with --	CCTV > Dome Cameras
-CCTV (Embedded DVR's)	-- replace with --	CCTV > Embedded DVR’s
-CCTV (Ground Loop Isolator)	-- replace with --	CCTV > Ground Loop Isolators
-CCTV (PC Based DVR Cards)	-- replace with --	CCTV > PC Based DVR Cards
-CCTV (PTZ Camera)	-- replace with --	CCTV > PTZ Camera
-CCTV (Software)	-- replace with --	CCTV > Software, Software
-CCTV Accessories	-- replace with --	CCTV > Accessories
-CCTV BNC Connector	-- replace with --	CCTV > BNC Connectors
-CCTV Cables	-- replace with --	CCTV > Cables
-CCTV IP Server	-- replace with --	CCTV > IP Servers
-CCTV Video Baluns	-- replace with --	CCTV > Video Baluns
-CCTV(Power Supplies)	-- replace with --	CCTV > Power Supplies
-CD / DVD Cases	-- replace with --	Storage Media > CD's & DVD's
-CD/DVD Wallet 	-- replace with --	Storage Media > CD's & DVD's
-CPU Heat sink and Fan-AMD	-- replace with --	Desktop Components > Cooling > CPU Cooling
-CPU Heat sink and Fan-Hybrid	-- replace with --	Desktop Components > Cooling > CPU Cooling
-CPU Heat sink and Fan-Intel	-- replace with --	Desktop Components > Cooling > CPU Cooling
-CPU Mobile	-- replace with --	Notebook Components > CPU
-CPU Thermal Paste	-- replace with --	Peripherals > Consumables
-CPU-AMD Ryzen 5	-- replace with --	Desktop Components >CPU > AMD CPU
-Cable Clips 	-- replace with --	Cables > Accessories
-Cable Management 	-- replace with --	Cables > Accessories
-Cable Ties	-- replace with --	Cables > Accessories
-Cable: Adaptors & Convertors	-- replace with --	Connectors Adaptors & Converters
-Cable: Audio Visual 	-- replace with --	Connectors Adaptors & Converters
-Cable: DVI	-- replace with --	Cables > DVI Cable
-Cable: HDMI	-- replace with --	Cables > HDMI Cables
-Cable: IDE/EIDE	-- replace with --	Cables > IDE Cables
-Cable: Monitor 	-- replace with --	Cables > Monitor Cables
-Cable: OTG	-- replace with --	Cables > OTG
-Cable: Power	-- replace with --	Cables > Power,Power Solutions > Power Cables
-Cable: Printer	-- replace with --	Cables > Printer Cables
-Cable: SCSI	-- replace with --	Cables > SCSI Cables
-Cable: Serial ATA	-- replace with --	Cables > Sata Data + Power
-Cable: USB	-- replace with --	Cables > USB Cables
-Cable: USB 3.1	-- replace with --	Cables > USB Cables
-Cable: USB Extension 	-- replace with --	Cables > USB Cables
-Cable: VGA	-- replace with --	Cables > VGA Cables
-Cable: VGA Extension	-- replace with --	Cables > VGA Cables
-Computer Case	-- replace with --	Desktop Cases > Office Desktop Cases
-Computer Case (Chassis)	-- replace with --	Desktop Cases > Office Desktop Cases
-Computer Case (Mid-Tower)	-- replace with --	Desktop Cases > Office Desktop Cases
-Controller (RAID)	-- replace with --	Desktop Components > Expansion & Pcie Adapters
-Controller (SATA)	-- replace with --	Desktop Components > Expansion & Pcie Adapters
-Controller (USB 3.1)	-- replace with --	Desktop Components > Expansion & Pcie Adapters > USB
-Controller (USB)	-- replace with --	Desktop Components > Expansion & Pcie Adapters > USB
-Desktop Microphone	-- replace with --	Peripherals > Computer Audio > Microphones
-Desktop Systems- All in One	-- replace with --	Desktop Computers > Office Desktops
-Desktop Systems-Branded	-- replace with --	Desktop Computers > Office Desktops
-Desktop Systems-Mini PC’s	-- replace with --	Mini PC’s > Complete Systems
-
- */
-
-
 
 export const syntechUnwantedSubstrings = [
   'Coming Soon',
@@ -367,9 +282,9 @@ export const esquireCategoryReplacements = [
   ['Apple Sync and Charge', 'Apple > Cables'],
   ['Apple iPad Screen Protectors', 'Apple > Apple Accessories'],
   ['Apple iPad Accessories', 'Apple > Apple Accessories'],
-  ['Apple iPad Covers', 'Apple > Apple Accessories, Bags Cases & Covers'],
+  ['Apple iPad Covers', 'Apple > Apple Accessories,Bags Cases & Covers'],
   ['Apple iPad Mini Accessories', 'Apple > Apple Accessories'],
-  ['Apple iPad Mini Covers', 'Apple > Apple Accessories, Bags Cases & Covers'],
+  ['Apple iPad Mini Covers', 'Apple > Apple Accessories,Bags Cases & Covers'],
   ['Apple iPad Mini Scrn Protect', 'Apple > Apple Accessories'],
   ['Bluetooth Adaptors', 'Peripherals > USB Devices'],
   ['Bluetooth Car Kits', 'Gadgets > FM Modulators'],
@@ -399,7 +314,7 @@ export const esquireCategoryReplacements = [
   ['CCTV (Ground Loop Isolator)', 'CCTV > Ground Loop Isolators'],
   ['CCTV (PC Based DVR Cards)', 'CCTV > PC Based DVR Cards'],
   ['CCTV (PTZ Camera)', 'CCTV > PTZ Camera'],
-  ['CCTV (Software)', 'CCTV > Software, Software'],
+  ['CCTV (Software)', 'CCTV > Software,Software'],
   ['CCTV Accessories', 'CCTV > Accessories'],
   ['CCTV BNC Connector', 'CCTV > BNC Connectors'],
   ['CCTV Cables', 'CCTV > Cables'],
@@ -496,7 +411,7 @@ export const esquireCategoryReplacements = [
   ['Lady Shavers', 'Gadgets > Personal Care'],
   ['Laminating Pouches', 'Gadgets > Office'],
   ['Laminators', 'Gadgets > Office'],
-  ['Laptop Batteries', 'Power Solutions > Notebook Batteries, Notebook Components > Batteries'],
+  ['Laptop Batteries', 'Power Solutions > Notebook Batteries,Notebook Components > Batteries'],
   ['Lithium Battery Charger', 'Power Solutions > Lithium Battery Chargers'],
   ['Media (CD/DVD/Blu-ray)', 'Storage Media > CD\'s & DVD\'s'],
   ['Media Players', 'Gadgets > Media & Streaming > Media Players'],
@@ -535,8 +450,8 @@ export const esquireCategoryReplacements = [
   ['Notebook Accessories', 'Notebook Accessories'],
   ['Notebook Backpacks', 'Bags Cases & Covers > Backpacks'],
   ['Notebook Bags and Cases', 'Bags Cases & Covers'],
-  ['Notebook Batteries', 'Notebook Components > Batteries, Power Solutions > Notebook Batteries'],
-  ['Notebook Power Adapters', 'Notebook Components > Chargers, Power Solutions > Notebook Chargers'],
+  ['Notebook Batteries', 'Notebook Components > Batteries,Power Solutions > Notebook Batteries'],
+  ['Notebook Power Adapters', 'Notebook Components > Chargers,Power Solutions > Notebook Chargers'],
   ['Notebook Stand', 'Notebook Components > Stands & Cooling'],
   ['Notebook Trolley Bags', 'Bags Cases & Covers > Trolley Bags'],
   ['OTG (Card Reader)', 'Storage Media > Memory Card Readers'],
@@ -617,7 +532,7 @@ export const esquireCategoryReplacements = [
   ['USB Charger', 'Power Solutions > Mobile Chargers'],
   ['USB Ethernet Adaptor', 'Connectors Adaptors & Converters'],
   ['USB Extenders', 'Cables > Extension Cables'],
-  ['USB Gadgets', 'Dylan to fix'],
+  ['USB Gadgets', 'USB Gadgets: Needs Name Based Fixing'],
   ['USB Mini Cables', 'Cables > USB Cables'],
   ['Universal Tablet Case', 'Bags Cases & Covers > Cases'],
   ['VGA & RGB Extenders', 'Connectors Adaptors & Converters'],

@@ -14,10 +14,11 @@ export function processEsquireStock() {
     const unmappedCategories = findUnmappedCategories(tidiedProducts)
     const categorizedProducts = improveCategoryNames(tidiedProducts)
     const pricedProducts = priceProducts(categorizedProducts)
+    const finalProducts = saveSkuList(pricedProducts, 'esquire')
+    const toFix = finalProducts.filter(product => product.categoriesOld === "Ink and Toners-Generic")
     debugger
-    console.log(`Found ${unmappedCategories.totalUnmapped} products with unmapped categories:`, 
-        unmappedCategories.unmappedCategories)
     // downloadCategories();
+    return finalProducts
 }
 
 function tidyFields(products) {
@@ -30,11 +31,11 @@ function tidyFields(products) {
             ...rest,
             sku: productCode,
             normal_cost: price,
-            image_url: imgURL,
+            images: imgURL,
             name: productName,
             categoriesOld: groupName?.trim().replace(/\s+/g, ' ') // Replace multiple spaces with single space
         }
-    }).filter(product => product.image_url !== "")
+    }).filter(product => product.images !== "")
 }
 
 function findUnmappedCategories(products) {
@@ -92,10 +93,99 @@ function removeDuplicates(products) {
     return uniqueProducts
 }
 
+function getCategoryFromName(name) {
+    const lowerName = name.toLowerCase()
+    if (lowerName.includes('adapter cable') || lowerName.includes('printer converter')) {
+        return 'Connectors Adaptors & Converters'
+    }
+    if (lowerName.includes('dream cheeky')) {
+        return 'Gadgets > Fun'
+    }
+    if (lowerName.includes('selfie led ring')) {
+        return 'Gadgets > Media & Streaming > Ring Lights'
+    }
+    return null
+}
+
+function getBagCategoryFromDescription(description = '') {
+    const lowerDesc = description.toLowerCase()
+    
+    if (lowerDesc.includes('backpack')) {
+        return 'Bags Cases & Covers > Backpacks'
+    }
+    if (lowerDesc.includes('trolley')) {
+        return 'Bags Cases & Covers > Trolleys'
+    }
+    if (lowerDesc.includes('notebook bag') || lowerDesc.includes('sling-style carrier')) {
+        return 'Bags Cases & Covers > Bags'
+    }
+    if (lowerDesc.includes('case') || lowerDesc.includes('briefcase')) {
+        return 'Bags Cases & Covers > Cases'
+    }
+    if (lowerDesc.includes('anti-theft luggage zipper strap')) {
+        return 'Notebook Components > Locks'
+    }
+    if (lowerDesc.includes('sleeve')) {
+        return 'Bags Cases & Covers > Sleeves'
+    }
+    return null
+}
+
+function getCartridgeCategoryFromDescription(description = '') {
+    const lowerDesc = description.toLowerCase()
+    
+    // Check for ink cartridges first
+    if (lowerDesc.includes('ink cartridge') || lowerDesc.includes('inkjet cartridge')) {
+        return 'Printers > Cartridges > Ink Cartridges'
+    }
+    
+    // Check for toner cartridges
+    if (lowerDesc.includes('drum unit') || 
+        lowerDesc.includes('black cartridge') || 
+        lowerDesc.includes('toner')) {
+        return 'Printers > Cartridges > Toner Cartridges'
+    }
+    
+    return null
+}
+
 function improveCategoryNames(products) {
     return products.map(product => {
         // Get the old category and clean it up
         const oldCategory = product.categoriesOld?.trim() || ''
+        
+        // Special case for USB Gadgets
+        if (oldCategory === 'USB Gadgets') {
+            const specialCategory = getCategoryFromName(product.name)
+            if (specialCategory) {
+                return {
+                    ...product,
+                    categories: specialCategory
+                }
+            }
+        }
+
+        // Special case for Notebook Bags and Cases
+        if (oldCategory === 'Notebook Bags and Cases') {
+            const bagCategory = getBagCategoryFromDescription(product.description)
+            if (bagCategory) {
+                return {
+                    ...product,
+                    categories: bagCategory
+                }
+            }
+        }
+
+        // Special case for Ink and Toners
+        if (oldCategory === 'Ink and Toners-Generic' || oldCategory === 'Ink and Toners-Original') {
+            const cartridgeCategory = getCartridgeCategoryFromDescription(product.description)
+            if (cartridgeCategory) {
+                return {
+                    ...product,
+                    categories: cartridgeCategory
+                }
+            }
+        }
         
         // Find a matching replacement
         const replacement = esquireCategoryReplacements.find(([source]) => source === oldCategory)
@@ -115,13 +205,25 @@ function priceProducts(products) {
             console.warn(`Invalid price for product ${product.sku}: ${product.normal_cost}`)
             return product
         }
+
+        const isOnSpecial = product.status === 1
+        
+        const regularPrice = calculateFullPrice({
+            price: cost,
+            margin: isOnSpecial ? 25 : 16,
+            vat: 15
+        })
+
         return {
             ...product,
-            price: calculateFullPrice({
+            price: regularPrice,
+            sale_price: isOnSpecial ? calculateFullPrice({
                 price: cost,
                 margin: 16,
                 vat: 15
-            })
+            }) : null,
+            tags: isOnSpecial ? 'Black Friday Sale' : null,
+            is_featured: isOnSpecial ? 1 : 0
         }
     })
 }

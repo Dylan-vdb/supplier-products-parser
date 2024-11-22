@@ -585,6 +585,10 @@ export function refineCategories(products) {
         }
       }
 
+      if (product.categories.includes('Printers > Toner Cartridges')) {
+        updatedProduct.categories = 'Printers > Cartridges > Toner Cartridges'
+      }
+
       acc.push(updatedProduct)
       return acc
     }, [])

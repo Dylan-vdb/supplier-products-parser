@@ -13,7 +13,7 @@
     </div>
     <button @click="pullCategories">Pull Categories</button>
     <br />
-    <button @click="processEsquireStock">PROCESS ESQUIRE</button>
+    <button @click="processEsquire">PROCESS ESQUIRE</button>
   </div>
 </template>
 
@@ -41,6 +41,7 @@ export default {
     const micropointData = ref([])
     const frontosaData = ref([])
     const astrumData = ref([])
+    const esquireData = ref([])
     const discontinuedStock = ref([])
 
     async function onDrop(files) {
@@ -83,6 +84,12 @@ export default {
           }
         })
       })
+    }
+
+    function processEsquire() {
+      esquireData.value = processEsquireStock()
+      debugger
+      outPutCsv(esquireData.value)
     }
 
     function parseXml(xmlFile) {
@@ -183,10 +190,14 @@ export default {
     function outPutCsv(data) {
       const noLowStocks = data.map((product) => {
         let newStock = Number(product.stock)
+  
         const notFrontosa = !product.images.includes(
           'https://ik.imagekit.io/ajwhrydzs/FlattenedImages'
         )
-        if (notFrontosa && newStock <= 5) {
+        const notEsquire = !product.images.includes(
+          'www.xyz.co.za'
+        )
+        if (notFrontosa && notEsquire && newStock <= 5) {
           newStock = 0
         }
         return { ...product, stock: newStock }
@@ -228,7 +239,7 @@ export default {
       isDragActive,
       pullCategories,
       testRegex,
-      processEsquireStock
+      processEsquire
     }
   }
 }
