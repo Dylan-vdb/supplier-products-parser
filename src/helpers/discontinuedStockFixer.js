@@ -1,16 +1,18 @@
 export function processDiscontinuedStock(products) {
   const wpSkus = products.map((product) => product.SKU)
 
-  const syntechSkuListNew = getSyntechSkuListNew('syntechSkuListNew')
-  const frontosaSkuListNew = getSyntechSkuListNew('frontosaSkuListNew')
-  const astrumSkuListNew = getSyntechSkuListNew('astrumSkuListNew')
-  const micropointSkuListNew = getSyntechSkuListNew('micropointSkuListNew')
-
+  const syntechSkuListNew = getSkuListNew('syntechSkuListNew')
+  const frontosaSkuListNew = getSkuListNew('frontosaSkuListNew')
+  const astrumSkuListNew = getSkuListNew('astrumSkuListNew')
+  const micropointSkuListNew = getSkuListNew('micropointSkuListNew')
+  const esquireSkuListNew = getSkuListNew('esquireSkuListNew')
+  
   const activeSkus = [
     ...syntechSkuListNew,
     ...frontosaSkuListNew,
     ...astrumSkuListNew,
-    ...micropointSkuListNew
+    ...micropointSkuListNew,
+    ...esquireSkuListNew
   ]
 
   const discontinuedSkus = wpSkus.filter((sku) => !activeSkus.includes(sku))
@@ -38,6 +40,6 @@ export function processDiscontinuedStock(products) {
   return outputArray
 }
 
-const getSyntechSkuListNew = (syntechSkuListNewString) => {
-  return JSON.parse(localStorage.getItem(syntechSkuListNewString)) || []
+const getSkuListNew = (skuListName) => {
+  return JSON.parse(localStorage.getItem(skuListName)) || []
 }

@@ -31,7 +31,7 @@ import { processEsquireStock } from './helpers/esquireFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
-import { refineCategories } from './helpers/baseHelpers'
+import { refineCategories, refineFeaturedItems } from './helpers/baseHelpers'
 
 const dropzoneRef = ref(null)
 const { isDragActive } = useDropZone(dropzoneRef, onDrop)
@@ -184,6 +184,7 @@ function outPutCsv(data) {
       newStock = 0
     }
 
+    
     return {
       ...product,
       stock: newStock
@@ -191,7 +192,8 @@ function outPutCsv(data) {
   })
 
   const refinedCategories = refineCategories(noLowStocks)
-  const csvRaw = Papa.unparse(refinedCategories, {
+  const refinedIsFeatured = refineFeaturedItems(refinedCategories)
+  const csvRaw = Papa.unparse(refinedIsFeatured, {
     delimiter: ';',
     quoteChars: '""'
   })

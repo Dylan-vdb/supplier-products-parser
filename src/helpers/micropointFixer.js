@@ -296,7 +296,7 @@ function includeNewCategories(products) {
     }
 
     if (product.categories.includes(`FANS >`)) {
-      updatedProduct.categories = `Desktop Components > Fans`
+      updatedProduct.categories = `Desktop Components > Cooling > Fans`
     }
 
     if (product.categories.includes(`HEALTHCARE >`)) {

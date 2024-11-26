@@ -19863,15 +19863,6 @@
             "war": 0
         },
         {
-            "code": "CH-LA61B",
-            "desc": "!!Lian-li pc-A61 Black",
-            "created": "2014/02/20",
-            "status": "",
-            "bid": 28,
-            "pid": 7,
-            "war": 6
-        },
-        {
             "code": "CH-LA61S",
             "desc": "!!Lian-li pc-A61 Silver",
             "created": "2014/02/20",
@@ -73039,8 +73030,8 @@
             "desc": "Logitech M196 Silent blacK BT",
             "created": "2024/11/21",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 30,
+            "pid": 41,
             "war": 12
         },
         {
@@ -73048,8 +73039,8 @@
             "desc": "Adata 64Gb UC310 Eco swivel U3",
             "created": "2024/11/21",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 2,
             "war": 60
         },
         {
@@ -73057,8 +73048,8 @@
             "desc": "Adata 128G UC310 Eco swivel U3",
             "created": "2024/11/21",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 2,
             "war": 60
         },
         {
@@ -73066,8 +73057,8 @@
             "desc": "Adata 256G UC310 Eco swivel U3",
             "created": "2024/11/21",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 2,
             "war": 60
         },
         {
@@ -73075,8 +73066,8 @@
             "desc": "Adata 64Gb UC320 slide U3",
             "created": "2024/11/21",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 2,
             "war": 60
         },
         {
@@ -73084,8 +73075,8 @@
             "desc": "Adata 128Gb UC320 slide U3",
             "created": "2024/11/21",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 2,
             "war": 60
         },
         {
@@ -73093,9 +73084,162 @@
             "desc": "Adata 256Gb UC320 slide U3",
             "created": "2024/11/21",
             "status": "C",
+            "bid": 4,
+            "pid": 2,
+            "war": 60
+        },
+        {
+            "code": "ME-AD51664C32",
+            "desc": "AX5U6400C3216G 6400 Caster",
+            "created": "2024/11/22",
+            "status": "C",
             "bid": 0,
             "pid": 0,
-            "war": 60
+            "war": 12
+        },
+        {
+            "code": "ME-AD51664L32",
+            "desc": "AX5U6400C3216G-CLABK Lancer 16",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51668RL34",
+            "desc": "AX5U6800C3416G 6800 Rgb Lancer",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51668RL34W",
+            "desc": "AX5U6800C3416G 6800 Rgb Lan Wh",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51672RL34",
+            "desc": "AX5U7200C3416G 7200 Rgb Lancer",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51672RL34W",
+            "desc": "AX5U7200C3416G 7200 Rgb Lan Wh",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53256L36",
+            "desc": "AX5U5600C3632G-CLABK Lancer 32",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53256L36W",
+            "desc": "AX5U5600C3632G-CLAWH Lancer 32",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53256RL36",
+            "desc": "AX5U5600C3632G 5600 Rgb Lancer",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53256RL36W",
+            "desc": "AX5U5600C3632G 5600 Rgb Lan Wh",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53260L30",
+            "desc": "AX5U6000C3032G-CLABK Lancer 32",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53260L30W",
+            "desc": "AX5U6000C3032G-CLAWH Lancer 32",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53264L32",
+            "desc": "AX5U6400C3232G-CLABK Lancer 32",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53264L32W",
+            "desc": "AX5U6400C3232G-CLAWH Lancer 32",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53264RC32",
+            "desc": "AX5U6400C3232G 6400 Rgb Caster",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53264RL32",
+            "desc": "AX5U6400C3232G 6400 Rgb Lancer",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53264RL32W",
+            "desc": "AX5U6400C3232G 6400 Rgb Lan Wh",
+            "created": "2024/11/22",
+            "status": "C",
+            "bid": 0,
+            "pid": 0,
+            "war": 12
         }
     ]
 }

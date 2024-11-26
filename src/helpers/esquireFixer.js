@@ -93,19 +93,7 @@ function removeDuplicates(products) {
     return uniqueProducts
 }
 
-function getCategoryFromName(name) {
-    const lowerName = name.toLowerCase()
-    if (lowerName.includes('adapter cable') || lowerName.includes('printer converter')) {
-        return 'Connectors Adaptors & Converters'
-    }
-    if (lowerName.includes('dream cheeky')) {
-        return 'Gadgets > Fun'
-    }
-    if (lowerName.includes('selfie led ring')) {
-        return 'Gadgets > Media & Streaming > Ring Lights'
-    }
-    return null
-}
+
 
 function getBagCategoryFromDescription(description = '') {
     const lowerDesc = description.toLowerCase()
@@ -156,11 +144,55 @@ function improveCategoryNames(products) {
         
         // Special case for USB Gadgets
         if (oldCategory === 'USB Gadgets') {
-            const specialCategory = getCategoryFromName(product.name)
-            if (specialCategory) {
+            const description = product.description
+            const lowerName = description.toLowerCase()
+            let category = 'Gadgets'
+            if (lowerName.includes('adapter cable') || lowerName.includes('printer converter')) {
+                category = 'Connectors Adaptors & Converters'
+            }
+            if (lowerName.includes('dream cheeky')) {
+                category = 'Gadgets > Fun'
+            }
+            if (lowerName.includes('selfie led ring')) {
+                category = 'Gadgets > Media & Streaming > Ring Lights'
+            }
+            return {
+                ...product,
+                categories: category
+            }
+        }
+
+        if (oldCategory === 'Notebook Accessories') {
+            const description = product.description
+            if (description.includes('AirBar Touchscreen Sensor')) {
                 return {
                     ...product,
-                    categories: specialCategory
+                    categories: 'Notebook Components > Screens'
+                }
+            }
+
+            if (description.includes('USB 3.1 Type')) {
+                return {
+                    ...product,
+                    categories: 'Peripherals > USB Devices'
+                }
+            }
+            if (description.includes('Legion') || description.includes('Briefcase Alarm')) {
+                return {
+                    ...product,
+                    categories: 'Notebook Components > Locks'
+                }
+            }
+            if (description.includes('PCMCIA')) {
+                return {
+                    ...product,
+                    categories: 'Desktop Components > Expansion & Pcie Adapters > PCMCIA'
+                }
+            }
+            if (description.includes('PCMCIA')) {
+                return {
+                    ...product,
+                    categories: 'Desktop Components > Expansion & Pcie Adapters > PCMCIA'
                 }
             }
         }
@@ -223,7 +255,8 @@ function priceProducts(products) {
                 vat: 15
             }) : null,
             tags: isOnSpecial ? 'Black Friday Sale' : null,
-            is_featured: isOnSpecial ? 1 : 0
+            // is_featured: isOnSpecial ? 1 : 0
+            is_featured: 0
         }
     })
 }

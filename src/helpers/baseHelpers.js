@@ -1,3 +1,5 @@
+import { featuredCategories } from './constants'
+
 export function calculateFullPrice({ price, margin, vat }) {
   const marginPercentage = margin / 100
   const vatPercentage = vat / 100
@@ -26,13 +28,34 @@ export function saveSkuList(products, supplier) {
   return products
 }
 
+export function refineFeaturedItems(products) {
+  return products.map((product) => {
+    const updatedProduct = { ...product };
+    
+    // Only check categories if the product was previously featured
+    if (product.is_featured === 1) {
+      // Check if any of the product's categories include any of the featured categories
+      const isFeatured = featuredCategories.some(featuredCategory => 
+        product.categories.includes(featuredCategory)
+      );
+      
+      // Only update is_featured if the categories don't match (un-featuring the product)
+      if (!isFeatured) {
+        updatedProduct.is_featured = 0;
+      }
+    }
+    
+    return updatedProduct;
+  });
+}
+
 export function refineCategories(products) {
-  const allCategories = new Set(
-    products
-      .map((product) => product.categories)
-      .flat()
-      .sort()
-  )
+  // const allCategories = new Set(
+  //   products
+  //     .map((product) => product.categories)
+  //     .flat()
+  //     .sort()
+  // )
 
   let result = products.reduce((acc, product) => {
     const updatedProduct = { ...product }
@@ -257,7 +280,10 @@ export function refineCategories(products) {
       updatedProduct.categories = 'Gaming > Solid State Drives'
     }
 
-    if (product.categories.startsWith('Networking')) {
+    if (product.categories.startsWith('Networking') 
+      && !product.categories.includes('Networking and Wifi')
+      && !product.categories.includes('Networking & Wifi')
+    ) {
       updatedProduct.categories = product.categories.replace('Networking', 'Networking and Wifi')
 
       if (updatedProduct.categories.includes('Networking and Wifi > Routers And Mesh')) {
@@ -404,7 +430,7 @@ export function refineCategories(products) {
       }
 
       if (product.categories.includes('Cables > Cable Locks')) {
-        updatedProduct.categories = 'Notebook Components > Cable Locks'
+        updatedProduct.categories = 'Notebook Components > Locks'
       }
 
       if (product.categories.includes('Cables > Apple')) {
@@ -556,6 +582,10 @@ export function refineCategories(products) {
 
       if (product.categories.includes('Dash Cameras')) {
         updatedProduct.categories = 'Gadgets > Dash Cameras'
+      }
+
+      if (product.categories.includes('Gadgets > CPU Fans')) {
+        updatedProduct.categories = 'Desktop Components > Cooling > CPU Cooling'
       }
 
       if (product.categories.toLowerCase().includes('desktop components > pc cases')) {
