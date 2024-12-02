@@ -50,10 +50,10 @@ function setPricing(products) {
           'Visibility in catalog': 'visible',
           published: 1,
           is_featured: 0,
-          tags: 'Black Friday Sale'
+          tags: 'On Sale'
         }
       }
-    ) // Black Friday Sale
+    )
     .map((product) => {
       const recommended_retail = parseInt(product.SRP)
       const sale_price = calculateFullPrice({

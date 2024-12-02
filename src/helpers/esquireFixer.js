@@ -254,7 +254,7 @@ function priceProducts(products) {
                 margin: 16,
                 vat: 15
             }) : null,
-            tags: isOnSpecial ? 'Black Friday Sale' : null,
+            tags: isOnSpecial ? 'On Sale' : null,
             // is_featured: isOnSpecial ? 1 : 0
             is_featured: 0
         }

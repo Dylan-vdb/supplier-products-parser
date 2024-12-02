@@ -188,7 +188,7 @@ function handlePromotedProducts(products) {
     return isPromoted
       ? {
           ...product,
-          tags: 'Black Friday Sale',
+          tags: 'On Sale',
           sale_price: calculateFullPrice({
             price: Number(product.promo_cost),
             margin: 17,
