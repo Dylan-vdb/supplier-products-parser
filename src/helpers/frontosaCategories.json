@@ -32571,6 +32571,15 @@
             "war": 6
         },
         {
+            "code": "ME-CD41630L16K",
+            "desc": "CMK16GX4M1?3000C16 D4 Lp 16G",
+            "created": "2017/11/22",
+            "status": "",
+            "bid": 13,
+            "pid": 5,
+            "war": 12
+        },
+        {
             "code": "ME-C4N8G24C16",
             "desc": "CMSX8GX4M1A2400C16 d4 Nb 8G",
             "created": "2017/11/22",
@@ -52407,24 +52416,6 @@
             "war": 60
         },
         {
-            "code": "ME-AD51652L38D",
-            "desc": "5U5200C3816G-DCR D5 520016x2",
-            "created": "2021/10/28",
-            "status": "",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51652RL38D",
-            "desc": "5U5200C3816G-DCLA D5 5200R 16d",
-            "created": "2021/10/28",
-            "status": "",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "KM-L295C",
             "desc": "Logitech mk295 Cordless",
             "created": "2021/10/29",
@@ -52875,6 +52866,15 @@
             "war": 24
         },
         {
+            "code": "ME-AD51660L40",
+            "desc": "AX5U6000C4016G-CLABK Lancer 16",
+            "created": "2021/12/01",
+            "status": "",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
             "code": "ME-AD51660L40D",
             "desc": "AX5U6000C4016G-DCLABK 16x2",
             "created": "2021/12/01",
@@ -53074,7 +53074,7 @@
         },
         {
             "code": "ME-AD51648V40X2",
-            "desc": "AD5U480016G-DT D5 4800 C40 162",
+            "desc": "!!AD5U480016G-DT D5 4800 16Gx2",
             "created": "2021/12/08",
             "status": "",
             "bid": 4,
@@ -53433,17 +53433,8 @@
             "war": 12
         },
         {
-            "code": "ME-AD51660C40",
-            "desc": "AX5U6000C4016G 6000 Caster",
-            "created": "2021/12/27",
-            "status": "",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "ME-AD51660C40D",
-            "desc": "AX5U6000C4016G-D 6000 Cas 16x2",
+            "desc": "!!AX5U6000C4016G-D 6000 Ca 16D",
             "created": "2021/12/27",
             "status": "",
             "bid": 4,
@@ -53452,18 +53443,9 @@
         },
         {
             "code": "ME-AD51660RC40",
-            "desc": "AX5U6000C4016G 6000 Rgb Caster",
+            "desc": "!!AX5U6000C4016G 6000 Rgb Cast",
             "created": "2021/12/27",
             "status": "",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660RC40D",
-            "desc": "5U6000C4016G-D 6000 R Cas 16x2",
-            "created": "2021/12/27",
-            "status": "C",
             "bid": 4,
             "pid": 5,
             "war": 12
@@ -54522,17 +54504,8 @@
             "war": 12
         },
         {
-            "code": "ME-AD51664RC40",
-            "desc": "AX5U6400C4016G 6400 Rgb Caster",
-            "created": "2022/03/09",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "ME-AD51664RC40D",
-            "desc": "5U6400C4016G-D 6400 R Cas 16x2",
+            "desc": "!!5U6400C4016G-D 6400 R Ca 16D",
             "created": "2022/03/09",
             "status": "",
             "bid": 4,
@@ -54990,26 +54963,8 @@
             "war": 12
         },
         {
-            "code": "ME-AD51652L38WD",
-            "desc": "AX5U5200C3816G-DCLAWH 16x2",
-            "created": "2022/04/12",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "ME-AD51660L40W",
             "desc": "AX5U6000C4016G-CLAWH 16x1",
-            "created": "2022/04/12",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660L40WD",
-            "desc": "AX5U6000C4016G-DCLAWH 16x2",
             "created": "2022/04/12",
             "status": "C",
             "bid": 4,
@@ -59736,7 +59691,7 @@
             "code": "LC-DP2722",
             "desc": "Dell P2722h 27-dsub+dp+HDMi+hu",
             "created": "2022/09/18",
-            "status": "C",
+            "status": "N",
             "bid": 65,
             "pid": 37,
             "war": 36
@@ -61956,15 +61911,6 @@
             "war": 12
         },
         {
-            "code": "ME-AD5852L38X2",
-            "desc": "AX5U5200C388G-D Lancer 8Gx2",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "ME-AD51660L30",
             "desc": "AX5U6000C3016G-CLABK Lancer 16",
             "created": "2022/12/07",
@@ -61992,62 +61938,8 @@
             "war": 12
         },
         {
-            "code": "ME-AD51660L30WD",
-            "desc": "AX5U6000C3016G-DCLAWH Lan 16x2",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660C30",
-            "desc": "AX5U6000C3016G 6000 Caster",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660C30D",
-            "desc": "AX5U6000C3016G-D 6000 Cas 16x2",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660RC30",
-            "desc": "AX5U6000C3016G 6000 Rgb Caster",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660RC30D",
-            "desc": "5U6000C3016G-D 6000 R Cas 16x2",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "ME-AD51660RL30",
             "desc": "AX5U6000C3016G-CLARBK Rgb 16g",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51660RL30D",
-            "desc": "AX5U6000C3016G-DCLAR Rgb 16x2",
             "created": "2022/12/07",
             "status": "C",
             "bid": 4,
@@ -62082,44 +61974,8 @@
             "war": 12
         },
         {
-            "code": "ME-AD51664RL32D",
-            "desc": "AX5U6400C3216G-DCLAR Rgb 16x2",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51664RC32",
-            "desc": "AX5U6400C3216G 6400 Rgb Caster",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD51664RC32D",
-            "desc": "5U6400C3216G-D 6400 R Cas 16x2",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
             "code": "ME-AD53260RL30",
             "desc": "AX5U6000C3032G-CLARBK Rgb 32g",
-            "created": "2022/12/07",
-            "status": "C",
-            "bid": 4,
-            "pid": 5,
-            "war": 12
-        },
-        {
-            "code": "ME-AD53260RL30D",
-            "desc": "AX5U6000C3032G-DCLAR Rgb 32x2",
             "created": "2022/12/07",
             "status": "C",
             "bid": 4,
@@ -73029,7 +72885,7 @@
             "code": "MO-LM196SK",
             "desc": "Logitech M196 Silent blacK BT",
             "created": "2024/11/21",
-            "status": "C",
+            "status": "N",
             "bid": 30,
             "pid": 41,
             "war": 12
@@ -73089,21 +72945,12 @@
             "war": 60
         },
         {
-            "code": "ME-AD51664C32",
-            "desc": "AX5U6400C3216G 6400 Caster",
-            "created": "2024/11/22",
-            "status": "C",
-            "bid": 0,
-            "pid": 0,
-            "war": 12
-        },
-        {
             "code": "ME-AD51664L32",
             "desc": "AX5U6400C3216G-CLABK Lancer 16",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73111,8 +72958,8 @@
             "desc": "AX5U6800C3416G 6800 Rgb Lancer",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73120,8 +72967,8 @@
             "desc": "AX5U6800C3416G 6800 Rgb Lan Wh",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73129,8 +72976,8 @@
             "desc": "AX5U7200C3416G 7200 Rgb Lancer",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73138,8 +72985,8 @@
             "desc": "AX5U7200C3416G 7200 Rgb Lan Wh",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73147,8 +72994,8 @@
             "desc": "AX5U5600C3632G-CLABK Lancer 32",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73156,8 +73003,8 @@
             "desc": "AX5U5600C3632G-CLAWH Lancer 32",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73165,8 +73012,8 @@
             "desc": "AX5U5600C3632G 5600 Rgb Lancer",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73174,8 +73021,8 @@
             "desc": "AX5U5600C3632G 5600 Rgb Lan Wh",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73183,8 +73030,8 @@
             "desc": "AX5U6000C3032G-CLABK Lancer 32",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73192,8 +73039,8 @@
             "desc": "AX5U6000C3032G-CLAWH Lancer 32",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73201,8 +73048,8 @@
             "desc": "AX5U6400C3232G-CLABK Lancer 32",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73210,17 +73057,8 @@
             "desc": "AX5U6400C3232G-CLAWH Lancer 32",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
-            "war": 12
-        },
-        {
-            "code": "ME-AD53264RC32",
-            "desc": "AX5U6400C3232G 6400 Rgb Caster",
-            "created": "2024/11/22",
-            "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73228,8 +73066,8 @@
             "desc": "AX5U6400C3232G 6400 Rgb Lancer",
             "created": "2024/11/22",
             "status": "C",
-            "bid": 0,
-            "pid": 0,
+            "bid": 4,
+            "pid": 5,
             "war": 12
         },
         {
@@ -73237,8 +73075,161 @@
             "desc": "AX5U6400C3232G 6400 Rgb Lan Wh",
             "created": "2024/11/22",
             "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "CC-CPU002",
+            "desc": "Thermal Paste Syringe",
+            "created": "2024/11/25",
+            "status": "C",
             "bid": 0,
             "pid": 0,
+            "war": 0
+        },
+        {
+            "code": "MO-LM240SK",
+            "desc": "Logitech M240 Silent blacK",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 30,
+            "pid": 41,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51664L32W",
+            "desc": "AX5U6400C3216G-CLAWH Lancer 16",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD5856B46",
+            "desc": "AX5U5600C468G d5-5600 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD5856B46W",
+            "desc": "AX5U5600C468G d5-5600 Blade Wh",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51656B46",
+            "desc": "AX5U5600C4616G d5-5600 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51656B46W",
+            "desc": "AX5U5600C4616G d5-5600 Blade W",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51660B48",
+            "desc": "AX5U6000C4816G d5-6000 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51660B48W",
+            "desc": "AX5U6000C4816G d5-6000 Blade W",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51660B30",
+            "desc": "AX5U6000C3016G d5-6000 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51660B30W",
+            "desc": "AX5U6000C3016G d5-6000 Blade W",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51664B32",
+            "desc": "AX5U6400C3216G d5-6400 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD51664B32W",
+            "desc": "AX5U6400C3216G d5-6400 Blade W",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53256B46",
+            "desc": "AX5U5600C4632G d5-5600 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53256B46W",
+            "desc": "AX5U5600C4632G d5-5600 Blade W",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53260B30",
+            "desc": "AX5U6000C3032G d5-6000 Blade",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
+            "war": 12
+        },
+        {
+            "code": "ME-AD53260B30W",
+            "desc": "AX5U6000C3032G d5-6000 Blade W",
+            "created": "2024/11/26",
+            "status": "C",
+            "bid": 4,
+            "pid": 5,
             "war": 12
         }
     ]

@@ -50,12 +50,6 @@ export function refineFeaturedItems(products) {
 }
 
 export function refineCategories(products) {
-  // const allCategories = new Set(
-  //   products
-  //     .map((product) => product.categories)
-  //     .flat()
-  //     .sort()
-  // )
 
   let result = products.reduce((acc, product) => {
     const updatedProduct = { ...product }
@@ -557,7 +551,9 @@ export function refineCategories(products) {
     }, [])
     .reduce((acc, product) => {
       const updatedProduct = { ...product }
-
+      
+      if (product.categories === 'Cables > Network') return acc
+      
       if (
         product.categories.includes(
           'Cables > Media' && !product.categories.includes('Cables > Media Cables')
@@ -616,6 +612,10 @@ export function refineCategories(products) {
 
       if (product.categories.includes('Printers > Toner Cartridges')) {
         updatedProduct.categories = 'Printers > Cartridges > Toner Cartridges'
+      }
+
+      if (product.categories.includes('Gaming > Gaming')) {
+        updatedProduct.categories = product.categories.replace('Gaming > Gaming', 'Gaming')
       }
 
       acc.push(updatedProduct)
