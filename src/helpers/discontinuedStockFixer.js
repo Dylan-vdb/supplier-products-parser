@@ -6,7 +6,7 @@ export function processDiscontinuedStock(products) {
   const astrumSkuListNew = getSkuListNew('astrumSkuListNew')
   const micropointSkuListNew = getSkuListNew('micropointSkuListNew')
   const esquireSkuListNew = getSkuListNew('esquireSkuListNew')
-  
+
   const activeSkus = [
     ...syntechSkuListNew,
     ...frontosaSkuListNew,
@@ -17,9 +17,6 @@ export function processDiscontinuedStock(products) {
 
   const discontinuedSkus = wpSkus.filter((sku) => !activeSkus.includes(sku))
   const discontinuedProducts = products.filter((product) => discontinuedSkus.includes(product.SKU))
-  const discontinuedProductsNoUncategorized = discontinuedProducts.filter(
-    (product) => product.Categories !== 'Uncategorized'
-  )
 
   const outputArray = discontinuedProducts.map((product) => {
     return {

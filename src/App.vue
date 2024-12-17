@@ -173,18 +173,12 @@ function pullCategories() {
 function outPutCsv(data) {
   const noLowStocks = data.map((product) => {
     let newStock = Number(product.stock)
-
-    const notFrontosa = !product.images.includes(
-      'https://ik.imagekit.io/ajwhrydzs/FlattenedImages'
-    )
-    const notEsquire = !product.images.includes(
-      'www.xyz.co.za'
-    )
+    const notFrontosa = !product.images.includes('https://ik.imagekit.io/ajwhrydzs/FlattenedImages')
+    const notEsquire = !product.images.includes('www.xyz.co.za')
     if (notFrontosa && notEsquire && newStock <= 5) {
       newStock = 0
     }
 
-    
     return {
       ...product,
       stock: newStock
