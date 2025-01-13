@@ -1782,15 +1782,6 @@
       "war": 12
     },
     {
-      "code": "BT-AP5000S",
-      "desc": "!!Adata P5000 Silver 5000mah",
-      "created": "2018/10/14",
-      "status": "",
-      "bid": 4,
-      "pid": 16,
-      "war": 12
-    },
-    {
       "code": "BT-APC100K",
       "desc": "Adata PC100 10000mAh blacK",
       "created": "2024/04/18",
@@ -1846,7 +1837,7 @@
     },
     {
       "code": "BT-AT10000K",
-      "desc": "Adata T10000 10000mAh blacK",
+      "desc": "!!Adata T10000 10000mAh blacK",
       "created": "2019/10/01",
       "status": "",
       "bid": 4,
@@ -1855,7 +1846,7 @@
     },
     {
       "code": "BT-AT10000W",
-      "desc": "Adata T10000 10000mAh White",
+      "desc": "!!Adata T10000 10000mAh White",
       "created": "2019/10/01",
       "status": "",
       "bid": 4,
@@ -6859,7 +6850,7 @@
     },
     {
       "code": "CH-C05W",
-      "desc": "!!Corsair spec-05 Windowed",
+      "desc": "Corsair spec-05 Windowed",
       "created": "2018/03/06",
       "status": "",
       "bid": 13,
@@ -6879,15 +6870,6 @@
       "code": "CH-C1000DW",
       "desc": "Corsair obsidian 1000D Window",
       "created": "2018/04/14",
-      "status": "",
-      "bid": 13,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-C100RW",
-      "desc": "!!Corsair carbide 100R Windowe",
-      "created": "2015/01/04",
       "status": "",
       "bid": 13,
       "pid": 7,
@@ -9180,15 +9162,6 @@
       "war": 6
     },
     {
-      "code": "CH-L7HS",
-      "desc": "!!Lian-li pc-7H Silver no psu",
-      "created": "2012/09/29",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
       "code": "CH-L7HWX",
       "desc": "!!Lian-li pc-7HWX Win all blk",
       "created": "2013/04/25",
@@ -9657,15 +9630,6 @@
       "war": 1
     },
     {
-      "code": "CH-LATS02B",
-      "desc": "!!Lian-li TS-02 Blk thumb scre",
-      "created": "2016/03/06",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 1
-    },
-    {
       "code": "CH-LATS02S",
       "desc": "!!Lian-li TS-02 Sil thumb scre",
       "created": "2016/03/06",
@@ -9939,24 +9903,6 @@
       "code": "CH-LLC2-X",
       "desc": "Lian-li LanCool-2(ii) black",
       "created": "2020/02/24",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-LLC205-K",
-      "desc": "Lian-li LanCool-205 blacK",
-      "created": "2020/08/24",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-LLC205-W",
-      "desc": "Lian-li LanCool-205 White",
-      "created": "2020/08/24",
       "status": "",
       "bid": 28,
       "pid": 7,
@@ -12405,7 +12351,7 @@
       "code": "CP-IR245KFO",
       "desc": "Intel aRrow u5 245KF Oem",
       "created": "2024/11/20",
-      "status": "C",
+      "status": "N",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -12414,7 +12360,7 @@
       "code": "CP-IR245KO",
       "desc": "Intel aRrow u5 245K Oem",
       "created": "2024/11/20",
-      "status": "C",
+      "status": "N",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -12441,7 +12387,7 @@
       "code": "CP-IR265KFO",
       "desc": "Intel aRrow u7 265KF Oem",
       "created": "2024/11/20",
-      "status": "C",
+      "status": "N",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -12450,7 +12396,7 @@
       "code": "CP-IR265KO",
       "desc": "Intel aRrow u7 265K Oem",
       "created": "2024/11/20",
-      "status": "C",
+      "status": "N",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -14776,6 +14722,15 @@
       "bid": 9,
       "pid": 19,
       "war": 3
+    },
+    {
+      "code": "CT-CMC-G01",
+      "desc": "*Canon MC-G01 maintenance cart",
+      "created": "2025/01/07",
+      "status": "R",
+      "bid": 9,
+      "pid": 19,
+      "war": 0
     },
     {
       "code": "CT-CQY6-8002",
@@ -27603,15 +27558,6 @@
       "war": 60
     },
     {
-      "code": "HD-KG250NV2",
-      "desc": "!!Kingston nGff/m.2 250 NV2 G4",
-      "created": "2022/08/21",
-      "status": "",
-      "bid": 24,
-      "pid": 11,
-      "war": 36
-    },
-    {
       "code": "HD-KG4000FYR",
       "desc": "Kingston nGff 4T FurY Renegade",
       "created": "2021/10/18",
@@ -27883,9 +27829,9 @@
     },
     {
       "code": "HD-KN7680DC600M",
-      "desc": "*Kingston 2.5\" 7680Gb DC600M",
+      "desc": "Kingston 2.5\" 7680Gb DC600M",
       "created": "2023/05/08",
-      "status": "R",
+      "status": "",
       "bid": 24,
       "pid": 11,
       "war": 60
@@ -28684,9 +28630,9 @@
     },
     {
       "code": "HD-SN1920-B",
-      "desc": "*ZA1920CV1A002 1920Gb Bar 2.5",
+      "desc": "ZA1920CV1A002 1920Gb Bar 2.5",
       "created": "2024/08/30",
-      "status": "R",
+      "status": "",
       "bid": 42,
       "pid": 11,
       "war": 36
@@ -33033,7 +32979,7 @@
       "code": "LC-DE2223",
       "desc": "Dell E2223hn 22\" -FHD",
       "created": "2022/10/06",
-      "status": "N",
+      "status": "",
       "bid": 65,
       "pid": 37,
       "war": 36
@@ -34491,7 +34437,7 @@
       "code": "LP-H3003DN",
       "desc": "Hp 3G653A LaserPro 3003DN",
       "created": "2024/07/15",
-      "status": "N",
+      "status": "",
       "bid": 18,
       "pid": 1,
       "war": 12
@@ -38098,7 +38044,7 @@
     },
     {
       "code": "MB-GA620MDS3H",
-      "desc": "Gb A620M DS3H matx",
+      "desc": "!!Gb A620M DS3H matx",
       "created": "2023/04/12",
       "status": "",
       "bid": 17,
@@ -38107,7 +38053,7 @@
     },
     {
       "code": "MB-GA620MGX",
-      "desc": "Gb A620M Gaming X matx",
+      "desc": "!!Gb A620M Gaming X matx",
       "created": "2023/03/08",
       "status": "",
       "bid": 17,
@@ -38116,7 +38062,7 @@
     },
     {
       "code": "MB-GA620MGX+W",
-      "desc": "Gb A620M Gaming X+Wifi matx",
+      "desc": "!!Gb A620M Gaming X+Wifi matx",
       "created": "2023/04/12",
       "status": "",
       "bid": 17,
@@ -38125,7 +38071,7 @@
     },
     {
       "code": "MB-GA620MH",
-      "desc": "!!Gb A620M H matx",
+      "desc": "Gb A620M H matx",
       "created": "2023/04/12",
       "status": "",
       "bid": 17,
@@ -38134,7 +38080,7 @@
     },
     {
       "code": "MB-GA620MS2H",
-      "desc": "!!Gb A620M S2H matx",
+      "desc": "Gb A620M S2H matx",
       "created": "2023/04/12",
       "status": "",
       "bid": 17,
@@ -38197,7 +38143,7 @@
     },
     {
       "code": "MB-GB550AE+W",
-      "desc": "!!Gb B550 Aorus Elite+Wifi",
+      "desc": "Gb B550 Aorus Elite+Wifi",
       "created": "2020/09/04",
       "status": "",
       "bid": 17,
@@ -38241,6 +38187,24 @@
       "war": 36
     },
     {
+      "code": "MB-GB550E",
+      "desc": "Gb B550 Eagle",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB550E+W",
+      "desc": "Gb B550 Eagle+Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
       "code": "MB-GB550GX",
       "desc": "Gb B550 Gaming X",
       "created": "2020/05/25",
@@ -38268,27 +38232,9 @@
       "war": 36
     },
     {
-      "code": "MB-GB550MDS3H+W",
-      "desc": "!!Gb B550M DS3H+Wifi matx",
-      "created": "2021/03/22",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
       "code": "MB-GB550MK",
       "desc": "Gb B550M-K matx",
       "created": "2023/05/07",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
-      "code": "MB-GB550VDP+WT",
-      "desc": "Gb B550 Vision D-P +Wifi+Tb3",
-      "created": "2021/03/11",
       "status": "",
       "bid": 17,
       "pid": 3,
@@ -38305,7 +38251,7 @@
     },
     {
       "code": "MB-GB650AE",
-      "desc": "Gb B650 Aorus Elite",
+      "desc": "!!Gb B650 Aorus Elite",
       "created": "2022/09/12",
       "status": "",
       "bid": 17,
@@ -38314,7 +38260,7 @@
     },
     {
       "code": "MB-GB650AE+W",
-      "desc": "Gb B650 Aorus Elite+Wifi",
+      "desc": "!!Gb B650 Aorus Elite+Wifi",
       "created": "2022/09/12",
       "status": "",
       "bid": 17,
@@ -38322,8 +38268,8 @@
       "war": 36
     },
     {
-      "code": "MB-GB650AEI+W",
-      "desc": "Gb B650 Aorus Elite Ice+Wifi",
+      "code": "MB-GB650AEW+W",
+      "desc": "Gb B650 Aorus Elite Wht/ice+WL",
       "created": "2023/11/14",
       "status": "",
       "bid": 17,
@@ -38341,16 +38287,7 @@
     },
     {
       "code": "MB-GB650AP+W",
-      "desc": "Gb B650 Aorus Pro +Wifi",
-      "created": "2022/09/12",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
-      "code": "MB-GB650AUI+W",
-      "desc": "Gb B650i AorusUltra+Wifi -Itx",
+      "desc": "!!Gb B650 Aorus Pro +Wifi",
       "created": "2022/09/12",
       "status": "",
       "bid": 17,
@@ -38359,9 +38296,18 @@
     },
     {
       "code": "MB-GB650E+W",
-      "desc": "Gb B650 Eagle + Wifi",
+      "desc": "!!Gb B650 Eagle + Wifi",
       "created": "2024/01/23",
       "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB650EAEW+W",
+      "desc": "Gb B650E Aorus Elite Whi +Wifi",
+      "created": "2025/01/02",
+      "status": "C",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38371,6 +38317,24 @@
       "desc": "Gb B650E Aorus Maste +Wifi",
       "created": "2022/09/12",
       "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB650EAPX+W",
+      "desc": "Gb B650E Aorus Pro X +Wifi",
+      "created": "2025/01/02",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB650EASW+W",
+      "desc": "Gb B650E AorusStealth Wh +Wifi",
+      "created": "2025/01/02",
+      "status": "C",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38388,6 +38352,15 @@
       "code": "MB-GB650I+W",
       "desc": "Gb B650i +Wifi - itx",
       "created": "2023/11/14",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB650IAU+W",
+      "desc": "!!Gb B650i AorusUltra+Wifi",
+      "created": "2022/09/12",
       "status": "",
       "bid": 17,
       "pid": 3,
@@ -38412,8 +38385,8 @@
       "war": 36
     },
     {
-      "code": "MB-GB650MAEI+W",
-      "desc": "Gb B650M Aorus Elite Ice+Wifi",
+      "code": "MB-GB650MAEW+W",
+      "desc": "Gb B650M Aorus Elite Wh/ice+WL",
       "created": "2023/11/14",
       "status": "",
       "bid": 17,
@@ -38430,8 +38403,26 @@
       "war": 36
     },
     {
+      "code": "MB-GB650MD3HP",
+      "desc": "Gb B650M D3HP matx",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB650MD3HP+W",
+      "desc": "Gb B650M D3HP+Wifi matx",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
       "code": "MB-GB650MDS3H",
-      "desc": "Gb B650M DS3H matx",
+      "desc": "!!Gb B650M DS3H matx",
       "created": "2022/09/12",
       "status": "",
       "bid": 17,
@@ -38439,8 +38430,26 @@
       "war": 36
     },
     {
+      "code": "MB-GB650MG+W",
+      "desc": "Gb B650M Gaming Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB650MGP+W",
+      "desc": "Gb B650M Gaming Plus Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
       "code": "MB-GB650MGX+W",
-      "desc": "Gb B650M Gaming X matx",
+      "desc": "!!Gb B650M Gaming X matx",
       "created": "2022/09/12",
       "status": "",
       "bid": 17,
@@ -38673,6 +38682,24 @@
       "war": 36
     },
     {
+      "code": "MB-GB760MD3HP+W",
+      "desc": "Gb B760M D3HP Wifi6 lga1700",
+      "created": "2024/12/24",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB760MDS3H+W",
+      "desc": "Gb B760M DS3H+Wifi lga1700 d5",
+      "created": "2024/12/24",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
       "code": "MB-GB760MDS3HD4",
       "desc": "Gb B760M DS3H D4 lga1700",
       "created": "2022/11/10",
@@ -38686,6 +38713,15 @@
       "desc": "Gb B760M DS3H lga1700 ddr5",
       "created": "2022/12/16",
       "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB760MG+W",
+      "desc": "Gb B760M Gaming Wifi lga1700",
+      "created": "2024/12/24",
+      "status": "C",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38727,9 +38763,126 @@
       "war": 36
     },
     {
-      "code": "MB-GB760MKD4",
-      "desc": "Gb B760M-K D4 lga1700",
-      "created": "2023/03/08",
+      "code": "MB-GB840MAE+W",
+      "desc": "Gb B840M Aorus Elite +Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB840MD2H",
+      "desc": "Gb B840M D2H matx",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB840MDS3H",
+      "desc": "Gb B840M DS3H matx",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB840ME+W",
+      "desc": "Gb B840M Eagle + Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850AE+W",
+      "desc": "Gb B850 Aorus Elite +Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850AEW+W",
+      "desc": "Gb B850 Aorus Elite Whi+Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850E+W",
+      "desc": "Gb B850 Eagle + Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850G+W",
+      "desc": "Gb B850 Gaming + Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850GX+W",
+      "desc": "Gb B850 Gaming X + Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850IAP+W",
+      "desc": "Gb B850i Aorus Pro+Wifi -Itx",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850MAEW+W",
+      "desc": "Gb B850M Aorus Elite Whi+Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850MD3HP",
+      "desc": "Gb B850M D3HP matx",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850MDS3H",
+      "desc": "Gb B850M DS3H matx",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB850MGX+W",
+      "desc": "Gb B850M Gaming X matx",
+      "created": "2024/11/12",
       "status": "C",
       "bid": 17,
       "pid": 3,
@@ -38817,6 +38970,15 @@
       "war": 36
     },
     {
+      "code": "MB-GH610MD3WD4",
+      "desc": "Gb H610M D3W D4 lga1700",
+      "created": "2024/12/24",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
       "code": "MB-GH610MHD4",
       "desc": "Gb H610M H D4 lga1700",
       "created": "2021/12/05",
@@ -38899,7 +39061,7 @@
     },
     {
       "code": "MB-GX670-AE+W",
-      "desc": "Gb X670 Aorus Elite + Wifi",
+      "desc": "!!Gb X670 Aorus Elite + Wifi",
       "created": "2022/07/10",
       "status": "",
       "bid": 17,
@@ -38908,7 +39070,7 @@
     },
     {
       "code": "MB-GX670-GX+W",
-      "desc": "Gb X670 Gaming X+Wifi",
+      "desc": "!!Gb X670 Gaming X+Wifi",
       "created": "2022/09/23",
       "status": "",
       "bid": 17,
@@ -38918,15 +39080,6 @@
     {
       "code": "MB-GX670E-AM+W",
       "desc": "!!Gb X670E Aorus Master+Wifi",
-      "created": "2022/07/10",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
-      "code": "MB-GX670E-AX+W",
-      "desc": "!!Gb X670E Aorus Xtreme+Wifi",
       "created": "2022/07/10",
       "status": "",
       "bid": 17,
@@ -38964,16 +39117,7 @@
       "code": "MB-GX870-G+W",
       "desc": "Gb X870 Gaming +Wifi",
       "created": "2024/11/05",
-      "status": "C",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
-      "code": "MB-GX870-GP+W",
-      "desc": "Gb X870 Gaming Plus+Wifi",
-      "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39000,7 +39144,7 @@
       "code": "MB-GX870E-AM+W",
       "desc": "Gb X870E Aorus Master+Wifi",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39009,7 +39153,7 @@
       "code": "MB-GX870E-AP+W",
       "desc": "Gb X870E Aorus Pro +Wifi",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39486,7 +39630,7 @@
       "code": "MB-GZ890E",
       "desc": "Gb Z890 Eagle",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39522,7 +39666,7 @@
       "code": "MB-GZ890MAE+W",
       "desc": "Gb Z890M Aorus Elite + Wifi",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39540,7 +39684,7 @@
       "code": "MB-GZ890MGX",
       "desc": "Gb Z890M Gaming X",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39558,7 +39702,7 @@
       "code": "MB-GZ890UD+W",
       "desc": "Gb Z890 UD +Wifi",
       "created": "2024/09/04",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39873,15 +40017,6 @@
       "code": "ME-A4N4V26C19",
       "desc": "AD4S2666W/J4G19 D4 Nb 4G 2666",
       "created": "2018/03/09",
-      "status": "",
-      "bid": 4,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-A4N8F26C18",
-      "desc": "!!AX4S266638G18 Nb8G Flam 2666",
-      "created": "2018/10/24",
       "status": "",
       "bid": 4,
       "pid": 5,
@@ -40269,15 +40404,6 @@
       "code": "ME-AD43232D45",
       "desc": "AX4U320032G16A d4-3200D 45 32G",
       "created": "2021/07/21",
-      "status": "",
-      "bid": 4,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-AD43232H16",
-      "desc": "!!AX4U3200?32G16A 32G 3200 Hun",
-      "created": "2020/05/11",
       "status": "",
       "bid": 4,
       "pid": 5,
@@ -40799,15 +40925,6 @@
     {
       "code": "ME-AD51660L30",
       "desc": "AX5U6000C3016G-CLABK Lancer 16",
-      "created": "2022/12/07",
-      "status": "C",
-      "bid": 4,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-AD51660L30D",
-      "desc": "AX5U6000C3016G-D Lancer 16x2",
       "created": "2022/12/07",
       "status": "C",
       "bid": 4,
@@ -43210,9 +43327,9 @@
     },
     {
       "code": "ME-CD4826L16X2W",
-      "desc": "*CMK16GX4M2A2666C16W D4Lp 8x2",
+      "desc": "CMK16GX4M2A2666C16W D4Lp 8x2",
       "created": "2016/04/19",
-      "status": "R",
+      "status": "",
       "bid": 13,
       "pid": 5,
       "war": 12
@@ -45937,7 +46054,7 @@
     },
     {
       "code": "ME-K4N16V26C19",
-      "desc": "KVR26S19?8/16 d4 Nb 16Gb 2666",
+      "desc": "!!KVR26S19?8/16 d4 Nb 16Gb 266",
       "created": "2018/05/28",
       "status": "",
       "bid": 24,
@@ -45991,7 +46108,7 @@
     },
     {
       "code": "ME-K4N32V26C19",
-      "desc": "KVR26S19D8/32 d4 Nb 32Gb 2666",
+      "desc": "!!KVR26S19D8/32 d4 Nb 32G 2666",
       "created": "2019/12/09",
       "status": "",
       "bid": 24,
@@ -46018,7 +46135,7 @@
     },
     {
       "code": "ME-K4N32X26",
-      "desc": "HX/KF426S16IB/32 d4 Nb 2666 c1",
+      "desc": "!!HX/KF426S16IB/32 d4 Nb 2666",
       "created": "2020/02/03",
       "status": "",
       "bid": 24,
@@ -46027,7 +46144,7 @@
     },
     {
       "code": "ME-K4N32X26X2",
-      "desc": "HX/KF426S16IBK2/64 d4 Nb 16x2",
+      "desc": "!!HX/KF426S16IBK2/64 d4 N 16x2",
       "created": "2020/02/03",
       "status": "",
       "bid": 24,
@@ -46108,7 +46225,7 @@
     },
     {
       "code": "ME-K4N8X26I15",
-      "desc": "426S15IB?/8 d4 Nb 2666 c15??",
+      "desc": "!!426S15IB?/8 d4 Nb 2666 c15??",
       "created": "2017/01/16",
       "status": "",
       "bid": 24,
@@ -46117,7 +46234,7 @@
     },
     {
       "code": "ME-K4N8X26I15X2",
-      "desc": "HX/KF426S15IB?K2/16 d4 Nb 8x2",
+      "desc": "!!HX/KF426S15IB?K2/16 d4Nb 8x2",
       "created": "2017/01/16",
       "status": "",
       "bid": 24,
@@ -46433,6 +46550,15 @@
     {
       "code": "ME-K5N32V56",
       "desc": "KVR56S46BD8-32 D5 Nb 32G 5600",
+      "created": "2023/02/27",
+      "status": "",
+      "bid": 24,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-K5N32V56X2",
+      "desc": "KVR56S46BD8K2-64 Nb5600 32x2",
       "created": "2023/02/27",
       "status": "",
       "bid": 24,
@@ -47440,9 +47566,9 @@
     },
     {
       "code": "ME-KD43232F16QK",
-      "desc": "432C16F/BB?K4/128 D4 Fu 32Gx4",
+      "desc": "*432C16F/BB?K4/128 D4 Fu 32x4",
       "created": "2020/01/14",
-      "status": "",
+      "status": "R",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48682,9 +48808,9 @@
     },
     {
       "code": "ME-KD51656V46",
-      "desc": "*KVR56U46BS8-16 D5 16G 5600C46",
+      "desc": "KVR56U46BS8-16 D5 16G 5600C46",
       "created": "2023/01/30",
-      "status": "R",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48819,7 +48945,7 @@
       "code": "ME-KD51664B32DW",
       "desc": "KF564C32BWK2-32 D5-6400 Be 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48828,7 +48954,7 @@
       "code": "ME-KD51664B32X2",
       "desc": "KF564C32BBK2-32 D5-6400 Be 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48864,7 +48990,7 @@
       "code": "ME-KD51664R32DW",
       "desc": "KF564C32BWAK2-32 D5-6400 R 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48873,7 +48999,7 @@
       "code": "ME-KD51664R32X2",
       "desc": "KF564C32BBAK2-32 D5-6400 R 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49195,9 +49321,9 @@
     },
     {
       "code": "ME-KD53252V42",
-      "desc": "*KVR52U42BD8-32 D5 32G 5200C42",
+      "desc": "KVR52U42BD8-32 D5 32G 5200C42",
       "created": "2023/01/30",
-      "status": "R",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49231,9 +49357,9 @@
     },
     {
       "code": "ME-KD53256R36",
-      "desc": "*KF556C36BBEA-32 D5-5600 bR 32",
+      "desc": "KF556C36BBEA-32 D5-5600 bR 32",
       "created": "2023/01/30",
-      "status": "R",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49278,7 +49404,7 @@
       "code": "ME-KD53260B30DW",
       "desc": "KF560C30BWK2-64 D5-6000B 32Gx2",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49323,7 +49449,7 @@
       "code": "ME-KD53260R30DW",
       "desc": "KF560C30BWAK2-64 D5-6000 R 32D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49332,7 +49458,7 @@
       "code": "ME-KD53260R30X2",
       "desc": "KF560C30BBAK2-64 D5-6000 R 32D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -52785,6 +52911,15 @@
       "war": 12
     },
     {
+      "code": "NB-AE410-CD42P",
+      "desc": "E410MA-C42P4W Cel-D+4+256 Pink",
+      "created": "2025/01/07",
+      "status": "N",
+      "bid": 7,
+      "pid": 9,
+      "war": 12
+    },
+    {
       "code": "NB-AE410-CD4SL",
       "desc": "E410ma-C4128BL Cel-D+8g+128S",
       "created": "2021/01/07",
@@ -54384,6 +54519,15 @@
       "status": "R",
       "bid": 62,
       "pid": 9,
+      "war": 0
+    },
+    {
+      "code": "NB-LAL16M2PB2",
+      "desc": "*Lenovo L16M2PB2 7.5V35Wh2cell",
+      "created": "2025/01/09",
+      "status": "R",
+      "bid": 0,
+      "pid": 0,
       "war": 0
     },
     {
@@ -56313,27 +56457,9 @@
       "war": 0
     },
     {
-      "code": "PR-CMM100S",
-      "desc": "Corsair MM100 Standard(medium)",
-      "created": "2017/02/03",
-      "status": "",
-      "bid": 13,
-      "pid": 46,
-      "war": 0
-    },
-    {
       "code": "PR-CMM200P-XL",
       "desc": "Corsair MM200 Pro XL",
       "created": "2020/08/17",
-      "status": "",
-      "bid": 13,
-      "pid": 46,
-      "war": 0
-    },
-    {
-      "code": "PR-CMM200S",
-      "desc": "!!corsair MM200 Standard/Mediu",
-      "created": "2012/10/12",
       "status": "",
       "bid": 13,
       "pid": 46,
@@ -56853,15 +56979,6 @@
       "war": 120
     },
     {
-      "code": "PS-C1200HXM",
-      "desc": "!!Corsair 1200w HX Modular",
-      "created": "2016/12/10",
-      "status": "",
-      "bid": 13,
-      "pid": 47,
-      "war": 120
-    },
-    {
       "code": "PS-C1200RMXS",
       "desc": "Corsair 1200w RMX Shift-modul",
       "created": "2022/12/19",
@@ -57042,15 +57159,6 @@
       "war": 60
     },
     {
-      "code": "PS-C650CXM",
-      "desc": "!!Corsair 9020103 650w CX Modu",
-      "created": "2016/02/20",
-      "status": "",
-      "bid": 13,
-      "pid": 47,
-      "war": 60
-    },
-    {
       "code": "PS-C650MWE",
       "desc": "CM 650W MWE 80+white",
       "created": "2020/07/15",
@@ -57117,15 +57225,6 @@
       "code": "PS-C750CX",
       "desc": "Corsair 750w CX series",
       "created": "2012/09/14",
-      "status": "",
-      "bid": 13,
-      "pid": 47,
-      "war": 60
-    },
-    {
-      "code": "PS-C750CXFMRW",
-      "desc": "!!Corsair 750 CX F.Modul+Rgb-W",
-      "created": "2020/08/17",
       "status": "",
       "bid": 13,
       "pid": 47,
@@ -59319,15 +59418,6 @@
       "war": 36
     },
     {
-      "code": "SC-G1030D5-IO",
-      "desc": "!!Gb 1030 Ddr5 m-iTX Oc",
-      "created": "2019/09/13",
-      "status": "",
-      "bid": 17,
-      "pid": 4,
-      "war": 36
-    },
-    {
       "code": "SC-G2060",
       "desc": "!!Gb N2060D6-6GD - 2 fans",
       "created": "2021/03/30",
@@ -60004,7 +60094,7 @@
     },
     {
       "code": "SC-G4090-AGB",
-      "desc": "Gb rtx4090 Aorus Gaming Box",
+      "desc": "!!Gb rtx4090 Aorus Gaming Box",
       "created": "2023/11/19",
       "status": "",
       "bid": 17,
@@ -60013,7 +60103,7 @@
     },
     {
       "code": "SC-G4090-AO",
-      "desc": "Gb rtx4090 Aero Oc 24G",
+      "desc": "!!Gb rtx4090 Aero Oc 24G",
       "created": "2023/02/12",
       "status": "",
       "bid": 17,
@@ -60022,17 +60112,8 @@
     },
     {
       "code": "SC-G4090-GO",
-      "desc": "Gb rtx4090 Gaming Oc 24G d6",
+      "desc": "!!Gb rtx4090 Gaming Oc 24G d6",
       "created": "2022/08/26",
-      "status": "",
-      "bid": 17,
-      "pid": 4,
-      "war": 36
-    },
-    {
-      "code": "SC-G4090-W",
-      "desc": "Gb rtx4090 Windforce 24G",
-      "created": "2022/09/26",
       "status": "",
       "bid": 17,
       "pid": 4,
@@ -60202,7 +60283,7 @@
     },
     {
       "code": "SC-GX7900GRE-GO",
-      "desc": "Gb rX7900GRE 16G 256bit d6",
+      "desc": "!!Gb rX7900GRE 16G 256bit d6",
       "created": "2024/01/30",
       "status": "",
       "bid": 17,
@@ -60211,7 +60292,7 @@
     },
     {
       "code": "SC-GX7900XT-GO",
-      "desc": "Gb rX7900XT Gaming Oc 20G 320b",
+      "desc": "!!Gb rX7900XT Gaming Oc 20G 32",
       "created": "2022/12/11",
       "status": "",
       "bid": 17,
@@ -60609,7 +60690,7 @@
       "code": "SC-PQA1000+L",
       "desc": "Pny Quadro rtxA1000 8G D6",
       "created": "2024/10/24",
-      "status": "N",
+      "status": "",
       "bid": 36,
       "pid": 4,
       "war": 36
@@ -60627,7 +60708,7 @@
       "code": "SC-PQA2000A+L",
       "desc": "Pny Quadro rtxA2000Ada 16G D6",
       "created": "2024/10/24",
-      "status": "N",
+      "status": "",
       "bid": 36,
       "pid": 4,
       "war": 36
@@ -60636,7 +60717,7 @@
       "code": "SC-PQA400+L",
       "desc": "Pny Quadro rtxA400 4G D6",
       "created": "2024/10/24",
-      "status": "N",
+      "status": "",
       "bid": 36,
       "pid": 4,
       "war": 36
@@ -66637,27 +66718,27 @@
     },
     {
       "code": "TO-H216C",
-      "desc": "*HP w2411a no.216a Cyan 850P",
+      "desc": "HP w2411a no.216a Cyan 850P",
       "created": "2020/06/03",
-      "status": "R",
+      "status": "",
       "bid": 18,
       "pid": 19,
       "war": 3
     },
     {
       "code": "TO-H216M",
-      "desc": "*HP w2413a no.216a Magenta 850",
+      "desc": "HP w2413a no.216a Magenta 850",
       "created": "2020/06/03",
-      "status": "R",
+      "status": "",
       "bid": 18,
       "pid": 19,
       "war": 3
     },
     {
       "code": "TO-H216Y",
-      "desc": "*HP w2412a no.216a Yellow 850P",
+      "desc": "HP w2412a no.216a Yellow 850P",
       "created": "2020/06/03",
-      "status": "R",
+      "status": "",
       "bid": 18,
       "pid": 19,
       "war": 3
@@ -72619,15 +72700,6 @@
       "bid": 21,
       "pid": 10,
       "war": 60
-    },
-    {
-      "code": "WC-ISR36",
-      "desc": "!!In-win SR36 watercool",
-      "created": "2020/02/15",
-      "status": "",
-      "bid": 21,
-      "pid": 10,
-      "war": 36
     },
     {
       "code": "WC-ISR36P",

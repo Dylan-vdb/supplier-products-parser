@@ -13,10 +13,6 @@ export function processEsquireStock() {
   const tidiedProducts = tidyFields(duplicatesRemoved)
   const unmappedCategories = findUnmappedCategories(tidiedProducts)
 
-  unmappedCategories.unmappedCategories.forEach((category) => {
-    console.log(category)
-  })
-  debugger
   const categorizedProducts = improveCategoryNames(tidiedProducts)
   const pricedProducts = priceProducts(categorizedProducts)
   const finalProducts = saveSkuList(pricedProducts, 'esquire')

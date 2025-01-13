@@ -30,27 +30,26 @@ export function saveSkuList(products, supplier) {
 
 export function refineFeaturedItems(products) {
   return products.map((product) => {
-    const updatedProduct = { ...product };
-    
+    const updatedProduct = { ...product }
+
     // Only check categories if the product was previously featured
     if (product.is_featured === 1) {
       // Check if any of the product's categories include any of the featured categories
-      const isFeatured = featuredCategories.some(featuredCategory => 
+      const isFeatured = featuredCategories.some((featuredCategory) =>
         product.categories.includes(featuredCategory)
-      );
-      
+      )
+
       // Only update is_featured if the categories don't match (un-featuring the product)
       if (!isFeatured) {
-        updatedProduct.is_featured = 0;
+        updatedProduct.is_featured = 0
       }
     }
-    
-    return updatedProduct;
-  });
+
+    return updatedProduct
+  })
 }
 
 export function refineCategories(products) {
-
   let result = products.reduce((acc, product) => {
     const updatedProduct = { ...product }
 
@@ -250,7 +249,8 @@ export function refineCategories(products) {
     }
 
     if (product.categories.includes('Peripherals > Gaming Controllers')) {
-      updatedProduct.categories = `Gaming > Gaming Controllers,Peripherals > Gaming`
+      if (product.sku === 'RD-G808') debugger
+      updatedProduct.categories = `Gaming > Controllers,Peripherals > Gaming`
     }
 
     if (product.categories.includes('Peripherals > Keyboards > Gaming Keyboards')) {
@@ -274,9 +274,10 @@ export function refineCategories(products) {
       updatedProduct.categories = 'Gaming > Solid State Drives'
     }
 
-    if (product.categories.startsWith('Networking') 
-      && !product.categories.includes('Networking and Wifi')
-      && !product.categories.includes('Networking & Wifi')
+    if (
+      product.categories.startsWith('Networking') &&
+      !product.categories.includes('Networking and Wifi') &&
+      !product.categories.includes('Networking & Wifi')
     ) {
       updatedProduct.categories = product.categories.replace('Networking', 'Networking and Wifi')
 
@@ -519,7 +520,10 @@ export function refineCategories(products) {
           updatedProduct.categories = 'Notebook Components > Stickers'
         }
 
-        if (product.name.toLowerCase().includes('mouse pad')) {
+        if (
+          product.name.toLowerCase().includes('mouse pad') ||
+          product.name.toLowerCase().includes('mousepad')
+        ) {
           updatedProduct.categories = 'Accessories > Mousepads'
         }
 
@@ -551,9 +555,9 @@ export function refineCategories(products) {
     }, [])
     .reduce((acc, product) => {
       const updatedProduct = { ...product }
-      
+
       if (product.categories === 'Cables > Network') return acc
-      
+
       if (
         product.categories.includes(
           'Cables > Media' && !product.categories.includes('Cables > Media Cables')
