@@ -575,7 +575,7 @@ export const esquireCategoryReplacements = [
   ['A5 Invoice Books', 'Stationery > Paper Books & Covers > A5 Invoice Books'],
   ['A5 Manuscript Books', 'Stationery > Paper Books & Covers > A5 Manuscript Books'],
   ['A5 Quad Margin Books', 'Stationery > Paper Books & Covers > A5 Quad Margin Books'],
-  ['Adhesive – Craft Glue', 'Stationery > Glues > Adhesive – Craft Glue'],
+  ['Adhesive – Craft Glue', 'Stationery > Glues > Adhesive - Craft Glue'],
   ['Adhesive Note Pads', 'Stationery > Paper Books & Covers > Adhesive Note Pads'],
   ['Ballpoint Pens', 'Stationery > Writing Implements > Ballpoint Pens'],
   ['Book Covers - Brown Kraft', 'Stationery > Paper Books & Covers > Book Covers - Brown Kraft'],

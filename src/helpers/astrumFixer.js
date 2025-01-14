@@ -14,7 +14,7 @@ function prefixTonerTitles(products) {
   const result = products.map((product) => {
     return {
       ...product,
-      name: product.categories.includes('Toner ') ? 'GENERIC ' + product.name : product.name
+      name: product.categories.includes('Toner ') ? 'ASTRUM GENERIC ' + product.name : product.name
     }
   })
 

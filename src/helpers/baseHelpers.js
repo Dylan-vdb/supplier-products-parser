@@ -70,7 +70,7 @@ export function refineCategories(products) {
     if (updatedProduct.categories.includes('Accessories > Notebook Accessories')) {
       updatedProduct.categories = updatedProduct.categories.replace(
         'Accessories > Notebook Accessories',
-        'Notebook Accessories'
+        'Notebook Components > Accessories'
       )
     }
 
@@ -249,7 +249,6 @@ export function refineCategories(products) {
     }
 
     if (product.categories.includes('Peripherals > Gaming Controllers')) {
-      if (product.sku === 'RD-G808') debugger
       updatedProduct.categories = `Gaming > Controllers,Peripherals > Gaming`
     }
 

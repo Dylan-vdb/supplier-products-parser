@@ -173,9 +173,13 @@ function pullCategories() {
 function outPutCsv(data) {
   const noLowStocks = data.map((product) => {
     let newStock = Number(product.stock)
-    const notFrontosa = !product.images.includes('https://ik.imagekit.io/ajwhrydzs/FlattenedImages')
-    const notEsquire = !product.images.includes('www.xyz.co.za')
-    if (notFrontosa && notEsquire && newStock <= 5) {
+    const isFrontosa = product.images.includes('https://ik.imagekit.io/ajwhrydzs/FlattenedImages')
+    const isEsquire = product.images.includes('www.xyz.co.za')
+    if (!isFrontosa && !isEsquire && newStock <= 5) {
+      newStock = 0
+    }
+
+    if (isEsquire && newStock <= 3) {
       newStock = 0
     }
 

@@ -90,7 +90,7 @@ function removeUnwantedFields(products) {
 }
 
 function combineCategoriesField(products) {
-  // Merge the two columns into one with the same '>' separator as symtech stock.
+  // Merge the two columns into one with the same '>' separator as syntech stock.
   return products.map((product) => {
     const combinedCategories = `${product.category_description} > ${product.group_description}`
     return { ...product, categories: combinedCategories }

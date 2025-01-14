@@ -12333,7 +12333,7 @@
       "code": "CP-IR245K",
       "desc": "Intel aRrow u5 245K 14c",
       "created": "2024/10/10",
-      "status": "N",
+      "status": "",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -12369,7 +12369,7 @@
       "code": "CP-IR265K",
       "desc": "Intel aRrow u7 265K 20c",
       "created": "2024/10/10",
-      "status": "N",
+      "status": "",
       "bid": 20,
       "pid": 13,
       "war": 36
@@ -28164,7 +28164,7 @@
       "code": "HD-S20000SA",
       "desc": "ST20000VE002 20Tb Surv Ai",
       "created": "2022/09/27",
-      "status": "N",
+      "status": "",
       "bid": 42,
       "pid": 11,
       "war": 36
@@ -39099,7 +39099,7 @@
       "code": "MB-GX870-AEW+W",
       "desc": "Gb X870 AorusElite Whi/ice+Wif",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39162,7 +39162,7 @@
       "code": "MB-GX870E-APW+W",
       "desc": "Gb X870E AorusPro Whi/Ice+Wifi",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39358,7 +39358,7 @@
     },
     {
       "code": "MB-GZ790AE",
-      "desc": "!!Gb Z790 Aorus Elite ddr5",
+      "desc": "Gb Z790 Aorus Elite ddr5",
       "created": "2022/10/08",
       "status": "",
       "bid": 17,
@@ -39367,7 +39367,7 @@
     },
     {
       "code": "MB-GZ790AE+W",
-      "desc": "!!Gb Z790 Aorus Elite+Wifi (ax",
+      "desc": "Gb Z790 Aorus Elite+Wifi (ax",
       "created": "2022/09/26",
       "status": "",
       "bid": 17,
@@ -39594,7 +39594,7 @@
       "code": "MB-GZ890AEXW+W",
       "desc": "Gb Z890 AorusElitX Whi/ice+Wif",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39603,7 +39603,7 @@
       "code": "MB-GZ890AG+W",
       "desc": "Gb Z890 Aero G +Wifi ddr5",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39657,7 +39657,7 @@
       "code": "MB-GZ890IAU+W",
       "desc": "Gb Z890i Aorus Ultra+W itx",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -39675,7 +39675,7 @@
       "code": "MB-GZ890MAEW+W",
       "desc": "Gb Z890M Aorus Elite + Wifi",
       "created": "2024/09/04",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -46452,7 +46452,7 @@
       "code": "ME-K5N16F64",
       "desc": "KF564S38iB-16 D5 Nb 16G Fu6400",
       "created": "2023/05/01",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48882,7 +48882,7 @@
       "code": "ME-KD51660R30DW",
       "desc": "KF560C30BWAK2-32 D5-6000 R 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49053,7 +49053,7 @@
       "code": "ME-KD51668R34DW",
       "desc": "KF568C34BWAK2-32 D5-6800 R 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49386,7 +49386,7 @@
       "code": "ME-KD53256V46",
       "desc": "KVR56U46BD8-32 D5 32G 5600 C46",
       "created": "2023/01/30",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49521,7 +49521,7 @@
       "code": "ME-KD53264B32DW",
       "desc": "KF564C32BWK2-64 D5-6400B 32Gx2",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49530,7 +49530,7 @@
       "code": "ME-KD53264B32X2",
       "desc": "KF564C32BBK2-64 D5-6400B 32Gx2",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49548,7 +49548,7 @@
       "code": "ME-KD53264G32X2",
       "desc": "KF564C32RSK2-64 6400 reneG 32D",
       "created": "2023/11/06",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49557,7 +49557,7 @@
       "code": "ME-KD53264R32DW",
       "desc": "KF564C32BWAK2-64 D5-6400 R 32D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49566,7 +49566,7 @@
       "code": "ME-KD53264R32X2",
       "desc": "KF564C32BBAK2-64 D5-6400 R 32D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49575,7 +49575,7 @@
       "code": "ME-KD53264RG32D",
       "desc": "KF564C32RSAK2-64 6400 RgbG 32D",
       "created": "2023/11/06",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49584,7 +49584,7 @@
       "code": "ME-KD53264RGX2W",
       "desc": "KF564C32RWAK2-64 D5-6400 R 32D",
       "created": "2023/11/06",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49782,7 +49782,7 @@
       "code": "ME-KD5856V46",
       "desc": "KVR56U46BS6-8 D5 8G 5600 C46",
       "created": "2023/01/30",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -54526,8 +54526,8 @@
       "desc": "*Lenovo L16M2PB2 7.5V35Wh2cell",
       "created": "2025/01/09",
       "status": "R",
-      "bid": 0,
-      "pid": 0,
+      "bid": 62,
+      "pid": 9,
       "war": 0
     },
     {
@@ -59709,7 +59709,7 @@
       "code": "SC-G4060-L",
       "desc": "Gb rtx4060 Low-profile d6",
       "created": "2024/01/23",
-      "status": "N",
+      "status": "",
       "bid": 17,
       "pid": 4,
       "war": 36
