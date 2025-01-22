@@ -31,7 +31,13 @@ import { processEsquireStock } from './helpers/esquireFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
-import { refineCategories, refineFeaturedItems } from './helpers/baseHelpers'
+import {
+  handleLowStocks,
+  adjustAdaptersAndConnectorsPricing,
+  adjustCablesPricing,
+  refineCategories,
+  refineFeaturedItems
+} from './helpers/baseHelpers'
 
 const dropzoneRef = ref(null)
 const { isDragActive } = useDropZone(dropzoneRef, onDrop)
@@ -171,26 +177,11 @@ function pullCategories() {
 }
 
 function outPutCsv(data) {
-  const noLowStocks = data.map((product) => {
-    let newStock = Number(product.stock)
-    const isFrontosa = product.images.includes('https://ik.imagekit.io/ajwhrydzs/FlattenedImages')
-    const isEsquire = product.images.includes('www.xyz.co.za')
-    if (!isFrontosa && !isEsquire && newStock <= 5) {
-      newStock = 0
-    }
-
-    if (isEsquire && newStock <= 3) {
-      newStock = 0
-    }
-
-    return {
-      ...product,
-      stock: newStock
-    }
-  })
-
+  const noLowStocks = handleLowStocks(data)
   const refinedCategories = refineCategories(noLowStocks)
-  const refinedIsFeatured = refineFeaturedItems(refinedCategories)
+  let adjustedPrices = adjustAdaptersAndConnectorsPricing(refinedCategories)
+  adjustedPrices = adjustCablesPricing(adjustedPrices)
+  const refinedIsFeatured = refineFeaturedItems(adjustedPrices)
   const csvRaw = Papa.unparse(refinedIsFeatured, {
     delimiter: ';',
     quoteChars: '""'

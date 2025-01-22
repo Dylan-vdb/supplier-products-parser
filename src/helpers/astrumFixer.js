@@ -4,20 +4,21 @@ import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
 export function processAstrumStock(productsRaw) {
   const tablesJoined = combineTables(productsRaw)
   const pricing = setPricing(tablesJoined)
-  const prefixedTonerTitles = prefixTonerTitles(pricing)
+  const prefixedTonerTitles = prefixTonerAndBatteryTitles(pricing)
   const improvedCategoryNames = improveCategoryNames(prefixedTonerTitles)
   const products = saveSkuList(improvedCategoryNames, 'astrum')
   return products
 }
 
-function prefixTonerTitles(products) {
+function prefixTonerAndBatteryTitles(products) {
   const result = products.map((product) => {
     return {
       ...product,
-      name: product.categories.includes('Toner ') ? 'ASTRUM GENERIC ' + product.name : product.name
+      name: product.categories.includes('Toner ' || ' Batteries')
+        ? 'ASTRUM GENERIC ' + product.name
+        : product.name
     }
   })
-
   return result
 }
 

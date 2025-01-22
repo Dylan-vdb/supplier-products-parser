@@ -457,7 +457,7 @@ export const esquireCategoryReplacements = [
   ['OTG (Card Reader)', 'Storage Media > Memory Card Readers'],
   ['Optical Drives CD/DVD/Blu-Ray', 'Storage Media > Optical Drives'],
   ['PC Fan Controllers', 'Desktop Components > Cooling > Fans'],
-  ['PCs: Tablet PC', 'Tablets > Accessories'],
+  ['PCs: Tablet PC', 'Tablets > Assorted Sizes'],
   ['PCs: Tablet PC Accessories', 'Tablets > Accessories'],
   ['PCs: Tablet Screen Protectors', 'Tablets > Accessories'],
   ['POS Accessories', 'Point of Sale > Accessories'],

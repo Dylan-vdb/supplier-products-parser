@@ -18,8 +18,7 @@ export function processMicropointStock(xmlData) {
   const commonFieldMapping = mapToCommonFields(improvedCategoryCapitalization)
   const leaflessCategoryTrees = removeLeaflessCategoryTrees(commonFieldMapping)
   const notebooksSpecialPrice = giveNotebooksSpecialPrice(leaflessCategoryTrees)
-  const cablesSpecialPrice = giveCablesSpecialPrice(notebooksSpecialPrice)
-  const fixedSquashedTitles = fixSquashedTitles(cablesSpecialPrice)
+  const fixedSquashedTitles = fixSquashedTitles(notebooksSpecialPrice)
   const finalProducts = saveSkuList(fixedSquashedTitles, 'micropoint')
 
   return finalProducts
@@ -416,26 +415,26 @@ function removeDuplicates(products) {
   return uniqueObjects
 }
 
-function giveCablesSpecialPrice(products) {
-  const result = products.map((product) => {
-    if (product.categories.includes('Peripherals > Cables')) {
-      const newFullPrice = calculateFullPrice({
-        price: product.normal_cost,
-        margin: 35,
-        vat: 15
-      })
-      const newSalePrice = product.sale_price
-        ? calculateFullPrice({
-            price: product.promo_cost,
-            margin: 35,
-            vat: 15
-          })
-        : null
+// function giveCablesSpecialPrice(products) {
+//   const result = products.map((product) => {
+//     if (product.categories.includes('Peripherals > Cables')) {
+//       const newFullPrice = calculateFullPrice({
+//         price: product.normal_cost,
+//         margin: 35,
+//         vat: 15
+//       })
+//       const newSalePrice = product.sale_price
+//         ? calculateFullPrice({
+//             price: product.promo_cost,
+//             margin: 35,
+//             vat: 15
+//           })
+//         : null
 
-      return { ...product, price: newFullPrice, sale_price: newSalePrice }
-    } else {
-      return product
-    }
-  })
-  return result
-}
+//       return { ...product, price: newFullPrice, sale_price: newSalePrice }
+//     } else {
+//       return product
+//     }
+//   })
+//   return result
+// }

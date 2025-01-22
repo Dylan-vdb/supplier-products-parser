@@ -577,7 +577,7 @@
     },
     {
       "code": "AA-JLA160B",
-      "desc": "J5 JLA160B Lightning->3.5mm Bk",
+      "desc": "J5 JLA160B Lightning-\u003E3.5mm Bk",
       "created": "2019/03/13",
       "status": "",
       "bid": 22,
@@ -586,7 +586,7 @@
     },
     {
       "code": "AA-JLA160W",
-      "desc": "J5 JLA160W Lightning->3.5mm Wh",
+      "desc": "J5 JLA160W Lightning-\u003E3.5mm Wh",
       "created": "2020/01/20",
       "status": "",
       "bid": 22,
@@ -640,7 +640,7 @@
     },
     {
       "code": "AC-I840M2P",
-      "desc": "Icydock mb840M2P m.2->pcie3x4",
+      "desc": "Icydock mb840M2P m.2-\u003Epcie3x4",
       "created": "2021/05/02",
       "status": "",
       "bid": 19,
@@ -649,7 +649,7 @@
     },
     {
       "code": "AC-I987M2P",
-      "desc": "Icydock 987M2P-b m.2->pcie4x4",
+      "desc": "Icydock 987M2P-b m.2-\u003Epcie4x4",
       "created": "2022/05/29",
       "status": "",
       "bid": 19,
@@ -1126,7 +1126,7 @@
     },
     {
       "code": "AC-SICDSX02D00",
-      "desc": "*Sunix CDSX02D00 UTP->2xserial",
+      "desc": "*Sunix CDSX02D00 UTP-\u003E2xserial",
       "created": "2019/09/05",
       "status": "R",
       "bid": 45,
@@ -1135,7 +1135,7 @@
     },
     {
       "code": "AC-SIDP200D00",
-      "desc": "Sunix iDP200D00 utp->2xser iOS",
+      "desc": "Sunix iDP200D00 utp-\u003E2xser iOS",
       "created": "2019/11/17",
       "status": "",
       "bid": 45,
@@ -1144,7 +1144,7 @@
     },
     {
       "code": "AC-SIDP220D00",
-      "desc": "*Sunix iDP220D00 utp>2S+2U iOS",
+      "desc": "*Sunix iDP220D00 utp\u003E2S+2U iOS",
       "created": "2019/11/17",
       "status": "R",
       "bid": 45,
@@ -1153,7 +1153,7 @@
     },
     {
       "code": "AC-SIDPA301D00",
-      "desc": "Sunix DPA301D00 UTP->1xserial",
+      "desc": "Sunix DPA301D00 UTP-\u003E1xserial",
       "created": "2018/03/21",
       "status": "",
       "bid": 45,
@@ -1171,7 +1171,7 @@
     },
     {
       "code": "AC-SIDPAS02H00",
-      "desc": "Sunix DPAS02H00 utp->2xserial",
+      "desc": "Sunix DPAS02H00 utp-\u003E2xserial",
       "created": "2015/03/23",
       "status": "",
       "bid": 45,
@@ -1180,7 +1180,7 @@
     },
     {
       "code": "AC-SIDPAS04H00",
-      "desc": "Sunix DPAS04H00 utp->4xserial",
+      "desc": "Sunix DPAS04H00 utp-\u003E4xserial",
       "created": "2015/03/23",
       "status": "",
       "bid": 45,
@@ -1189,7 +1189,7 @@
     },
     {
       "code": "AC-SIDPAS04HP0",
-      "desc": "Sunix DPAS04HP0 utp->4xser Pow",
+      "desc": "Sunix DPAS04HP0 utp-\u003E4xser Pow",
       "created": "2015/07/04",
       "status": "",
       "bid": 45,
@@ -1198,7 +1198,7 @@
     },
     {
       "code": "AC-SIDPAS08H00",
-      "desc": "Sunix DPAS08H00 utp->8xserial",
+      "desc": "Sunix DPAS08H00 utp-\u003E8xserial",
       "created": "2015/03/23",
       "status": "",
       "bid": 45,
@@ -1207,7 +1207,7 @@
     },
     {
       "code": "AC-SIDPKM11H00",
-      "desc": "Sunix DPKM11H00 utp->1s+1p",
+      "desc": "Sunix DPKM11H00 utp-\u003E1s+1p",
       "created": "2014/03/13",
       "status": "",
       "bid": 45,
@@ -1216,7 +1216,7 @@
     },
     {
       "code": "AC-SIDPKM21H00",
-      "desc": "Sunix DPKM21H00 utp->2s+1p",
+      "desc": "Sunix DPKM21H00 utp-\u003E2s+1p",
       "created": "2014/03/13",
       "status": "",
       "bid": 45,
@@ -1225,7 +1225,7 @@
     },
     {
       "code": "AC-SIDPKP01H00",
-      "desc": "Sunix DPKP01H00 utp->1xLpt",
+      "desc": "Sunix DPKP01H00 utp-\u003E1xLpt",
       "created": "2014/03/13",
       "status": "",
       "bid": 45,
@@ -1234,7 +1234,7 @@
     },
     {
       "code": "AC-SIDPKS02H00",
-      "desc": "Sunix DPKS02H00 utp->2xserial",
+      "desc": "Sunix DPKS02H00 utp-\u003E2xserial",
       "created": "2014/03/13",
       "status": "",
       "bid": 45,
@@ -1243,7 +1243,7 @@
     },
     {
       "code": "AC-SIDPKS02HP0",
-      "desc": "Sunix DPKS02HP0 utp->2xSer Po",
+      "desc": "Sunix DPKS02HP0 utp-\u003E2xSer Po",
       "created": "2015/03/29",
       "status": "",
       "bid": 45,
@@ -1252,7 +1252,7 @@
     },
     {
       "code": "AC-SIDPKS04H00",
-      "desc": "Sunix DPKS04H00 utp->4xserial",
+      "desc": "Sunix DPKS04H00 utp-\u003E4xserial",
       "created": "2014/03/13",
       "status": "",
       "bid": 45,
@@ -1261,7 +1261,7 @@
     },
     {
       "code": "AC-SIDPKS08H00",
-      "desc": "Sunix DPKS08H00 utp->8x serial",
+      "desc": "Sunix DPKS08H00 utp-\u003E8x serial",
       "created": "2015/01/10",
       "status": "",
       "bid": 45,
@@ -1270,7 +1270,7 @@
     },
     {
       "code": "AC-SIDPKX02H00",
-      "desc": "Sunix DPKX02H00 utp->2xserial",
+      "desc": "Sunix DPKX02H00 utp-\u003E2xserial",
       "created": "2015/03/29",
       "status": "",
       "bid": 45,
@@ -1279,7 +1279,7 @@
     },
     {
       "code": "AC-SIDPKX04H00",
-      "desc": "Sunix DPKX04H00 utp->4xserial",
+      "desc": "Sunix DPKX04H00 utp-\u003E4xserial",
       "created": "2015/03/29",
       "status": "",
       "bid": 45,
@@ -1288,7 +1288,7 @@
     },
     {
       "code": "AC-SIDPSS02H00",
-      "desc": "Sunix DPSS02H00 utp->2xser Sha",
+      "desc": "Sunix DPSS02H00 utp-\u003E2xser Sha",
       "created": "2015/07/04",
       "status": "",
       "bid": 45,
@@ -1297,7 +1297,7 @@
     },
     {
       "code": "AC-SIDPSS04H00",
-      "desc": "Sunix DPSS04H00 utp->4xser Sha",
+      "desc": "Sunix DPSS04H00 utp-\u003E4xser Sha",
       "created": "2015/07/04",
       "status": "",
       "bid": 45,
@@ -1450,7 +1450,7 @@
     },
     {
       "code": "AC-SIUTM1925",
-      "desc": "SUNIX UTM1925B USB->SERIAL+LPT",
+      "desc": "SUNIX UTM1925B USB-\u003ESERIAL+LPT",
       "created": "2006/01/21",
       "status": "",
       "bid": 45,
@@ -1459,7 +1459,7 @@
     },
     {
       "code": "AC-SIUTP1025",
-      "desc": "SUNIX UTP1025B usb->1xLPT",
+      "desc": "SUNIX UTP1025B usb-\u003E1xLPT",
       "created": "2005/11/28",
       "status": "",
       "bid": 45,
@@ -1468,7 +1468,7 @@
     },
     {
       "code": "AC-SIUTS1009",
-      "desc": "SUNIX UTS1009 USB->1xSERIAL",
+      "desc": "SUNIX UTS1009 USB-\u003E1xSERIAL",
       "created": "2005/10/21",
       "status": "",
       "bid": 45,
@@ -1477,7 +1477,7 @@
     },
     {
       "code": "AC-SIUTS2009",
-      "desc": "SUNIX UTS2009 USB->2xSERIAL",
+      "desc": "SUNIX UTS2009 USB-\u003E2xSERIAL",
       "created": "2005/11/08",
       "status": "",
       "bid": 45,
@@ -1504,7 +1504,7 @@
     },
     {
       "code": "AC-SPTE1414",
-      "desc": "!!SUNIX PTE1414 PCI-E->34/54",
+      "desc": "!!SUNIX PTE1414 PCI-E-\u003E34/54",
       "created": "2007/03/07",
       "status": "",
       "bid": 45,
@@ -2071,7 +2071,7 @@
     },
     {
       "code": "CA-35MRCAF",
-      "desc": "3.5mm(M)->RCA(L+R) Female 20cm",
+      "desc": "3.5mm(M)-\u003ERCA(L+R) Female 20cm",
       "created": "2018/07/12",
       "status": "",
       "bid": 71,
@@ -2260,7 +2260,7 @@
     },
     {
       "code": "CA-CCG2-J",
-      "desc": "J5 JUCX03 Type-C->type-C Gen2",
+      "desc": "J5 JUCX03 Type-C-\u003Etype-C Gen2",
       "created": "2015/09/07",
       "status": "",
       "bid": 22,
@@ -2278,7 +2278,7 @@
     },
     {
       "code": "CA-CCU2-J",
-      "desc": "J5 JUCX04/24 type-C->t-C Usb2",
+      "desc": "J5 JUCX04/24 type-C-\u003Et-C Usb2",
       "created": "2019/10/06",
       "status": "",
       "bid": 22,
@@ -2287,7 +2287,7 @@
     },
     {
       "code": "CA-CCU2-J+O",
-      "desc": "J5 JUCP14 t-C->t-C u2 + OLED",
+      "desc": "J5 JUCP14 t-C-\u003Et-C u2 + OLED",
       "created": "2019/11/08",
       "status": "",
       "bid": 22,
@@ -2296,7 +2296,7 @@
     },
     {
       "code": "CA-CCU2-J2",
-      "desc": "J5 JUCX25L18 t-C->t-C U2-2m",
+      "desc": "J5 JUCX25L18 t-C-\u003Et-C U2-2m",
       "created": "2022/06/16",
       "status": "",
       "bid": 22,
@@ -2305,7 +2305,7 @@
     },
     {
       "code": "CA-CCU2-J3",
-      "desc": "J5 JUCX25L30 t-C->t-C U2-3m",
+      "desc": "J5 JUCX25L30 t-C-\u003Et-C U2-3m",
       "created": "2022/06/16",
       "status": "",
       "bid": 22,
@@ -2314,7 +2314,7 @@
     },
     {
       "code": "CA-CCU2R-J+O",
-      "desc": "J5 JUCP15 t-C->t-C u2 + OLED",
+      "desc": "J5 JUCP15 t-C-\u003Et-C u2 + OLED",
       "created": "2019/11/10",
       "status": "",
       "bid": 22,
@@ -2476,7 +2476,7 @@
     },
     {
       "code": "CA-CU2A-J+O",
-      "desc": "J5 JUCP13 t-C->U2-typeA + OLED",
+      "desc": "J5 JUCP13 t-C-\u003EU2-typeA + OLED",
       "created": "2019/08/25",
       "status": "",
       "bid": 22,
@@ -2485,7 +2485,7 @@
     },
     {
       "code": "CA-CU2B-J",
-      "desc": "J5 JUCX11 type-C->U2-typeB-1m",
+      "desc": "J5 JUCX11 type-C-\u003EU2-typeB-1m",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -2494,7 +2494,7 @@
     },
     {
       "code": "CA-CU2C-J",
-      "desc": "J5 JUCX09 type-C->U2-miCro-1m",
+      "desc": "J5 JUCX09 type-C-\u003EU2-miCro-1m",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -2503,7 +2503,7 @@
     },
     {
       "code": "CA-CU2M-J",
-      "desc": "J5 JUCX10 type-C->U2-Mini-1m",
+      "desc": "J5 JUCX10 type-C-\u003EU2-Mini-1m",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -2512,7 +2512,7 @@
     },
     {
       "code": "CA-CU3A-A",
-      "desc": "Adata ACA3AL type-C->U3-typeA",
+      "desc": "Adata ACA3AL type-C-\u003EU3-typeA",
       "created": "2016/11/08",
       "status": "",
       "bid": 4,
@@ -2521,7 +2521,7 @@
     },
     {
       "code": "CA-CU3A-J",
-      "desc": "J5 JUCX06 type-C->U3-typeA-1m",
+      "desc": "J5 JUCX06 type-C-\u003EU3-typeA-1m",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -2530,7 +2530,7 @@
     },
     {
       "code": "CA-CU3M-J",
-      "desc": "!!J5 JUCX07 type-C->U3-Micro-b",
+      "desc": "!!J5 JUCX07 type-C-\u003EU3-Micro-b",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -2620,7 +2620,7 @@
     },
     {
       "code": "CA-DPH4K-J",
-      "desc": "J5 jdc158 DP->HDMi4K CAble",
+      "desc": "J5 jdc158 DP-\u003EHDMi4K CAble",
       "created": "2019/05/25",
       "status": "",
       "bid": 22,
@@ -2755,7 +2755,7 @@
     },
     {
       "code": "CA-HV+A-J",
-      "desc": "J5create JDA213s HDMi->Vga+Au",
+      "desc": "J5create JDA213s HDMi-\u003EVga+Au",
       "created": "2014/12/02",
       "status": "",
       "bid": 22,
@@ -2764,7 +2764,7 @@
     },
     {
       "code": "CA-HV-S",
-      "desc": "Sunix H2V97C0 Hdmi->Vga 80mm",
+      "desc": "Sunix H2V97C0 Hdmi-\u003EVga 80mm",
       "created": "2018/03/21",
       "status": "",
       "bid": 45,
@@ -2809,7 +2809,7 @@
     },
     {
       "code": "CA-JALC15-K",
-      "desc": "!!J5 JALC15 t-C->Lightning blK",
+      "desc": "!!J5 JALC15 t-C-\u003ELightning blK",
       "created": "2020/08/13",
       "status": "",
       "bid": 22,
@@ -2836,7 +2836,7 @@
     },
     {
       "code": "CA-JML11-K",
-      "desc": "!!J5 U3->microU+Lightning Alu",
+      "desc": "!!J5 U3-\u003EmicroU+Lightning Alu",
       "created": "2018/07/02",
       "status": "",
       "bid": 22,
@@ -2845,7 +2845,7 @@
     },
     {
       "code": "CA-JML11-R",
-      "desc": "!!J5 U3->microU+Lightning Alu",
+      "desc": "!!J5 U3-\u003EmicroU+Lightning Alu",
       "created": "2018/07/02",
       "status": "",
       "bid": 22,
@@ -2899,7 +2899,7 @@
     },
     {
       "code": "CA-MDPD",
-      "desc": "MiniDisplayPort->Dvi",
+      "desc": "MiniDisplayPort-\u003EDvi",
       "created": "2009/12/02",
       "status": "",
       "bid": 71,
@@ -2908,7 +2908,7 @@
     },
     {
       "code": "CA-MDPD+A",
-      "desc": "Sapphire Mini Dp->Dvi -Active",
+      "desc": "Sapphire Mini Dp-\u003EDvi -Active",
       "created": "2011/04/20",
       "status": "",
       "bid": 41,
@@ -2926,7 +2926,7 @@
     },
     {
       "code": "CA-MDPDP",
-      "desc": "Mini DisplayPort->DisplayPort",
+      "desc": "Mini DisplayPort-\u003EDisplayPort",
       "created": "2010/08/16",
       "status": "",
       "bid": 71,
@@ -2935,7 +2935,7 @@
     },
     {
       "code": "CA-MDPDP4KX2-J",
-      "desc": "J5 JDA146 MiniDP->DP(4K)x2",
+      "desc": "J5 JDA146 MiniDP-\u003EDP(4K)x2",
       "created": "2017/09/03",
       "status": "",
       "bid": 22,
@@ -2944,7 +2944,7 @@
     },
     {
       "code": "CA-MDPDPDH-J",
-      "desc": "J5 JDA173 MiniDP ->DP/Dvi/Hdmi",
+      "desc": "J5 JDA173 MiniDP -\u003EDP/Dvi/Hdmi",
       "created": "2016/09/27",
       "status": "",
       "bid": 22,
@@ -2971,7 +2971,7 @@
     },
     {
       "code": "CA-MDPH4K+V-J",
-      "desc": "J5 JDA172 mDP->HDMi+D-sub",
+      "desc": "J5 JDA172 mDP-\u003EHDMi+D-sub",
       "created": "2019/08/25",
       "status": "",
       "bid": 22,
@@ -2989,7 +2989,7 @@
     },
     {
       "code": "CA-MDPH4KX2-J",
-      "desc": "!!J5 JDA156 MiniDP->Hdmi(4K)x2",
+      "desc": "!!J5 JDA156 MiniDP-\u003EHdmi(4K)x2",
       "created": "2017/01/04",
       "status": "",
       "bid": 22,
@@ -2998,7 +2998,7 @@
     },
     {
       "code": "CA-MDPV",
-      "desc": "!MiniDisplayPort->Vga",
+      "desc": "!MiniDisplayPort-\u003EVga",
       "created": "2009/12/02",
       "status": "",
       "bid": 71,
@@ -3385,7 +3385,7 @@
     },
     {
       "code": "CA-SDPD2001",
-      "desc": "Sunix DPD2001 DP->2xDP",
+      "desc": "Sunix DPD2001 DP-\u003E2xDP",
       "created": "2015/07/04",
       "status": "",
       "bid": 45,
@@ -3412,7 +3412,7 @@
     },
     {
       "code": "CA-SFF8643-SATA",
-      "desc": "SFF8643->4xSATA - 90cm",
+      "desc": "SFF8643-\u003E4xSATA - 90cm",
       "created": "2016/12/12",
       "status": "",
       "bid": 7,
@@ -3421,7 +3421,7 @@
     },
     {
       "code": "CA-SFF8643MSAS",
-      "desc": "Intel AXXCBLxx0HDMS 8643->mSAS",
+      "desc": "Intel AXXCBLxx0HDMS 8643-\u003EmSAS",
       "created": "2015/02/05",
       "status": "",
       "bid": 20,
@@ -3502,7 +3502,7 @@
     },
     {
       "code": "CA-U2C",
-      "desc": "!!Usb2.0 -> miCro usb",
+      "desc": "!!Usb2.0 -\u003E miCro usb",
       "created": "2013/05/08",
       "status": "",
       "bid": 71,
@@ -3520,7 +3520,7 @@
     },
     {
       "code": "CA-U2M",
-      "desc": "Usb2.0 -> Mini usb 2m",
+      "desc": "Usb2.0 -\u003E Mini usb 2m",
       "created": "2007/01/09",
       "status": "",
       "bid": 71,
@@ -6876,15 +6876,6 @@
       "war": 6
     },
     {
-      "code": "CH-C175R-RTG",
-      "desc": "!!Corsair 175R RGB Tempered gl",
-      "created": "2019/02/21",
-      "status": "",
-      "bid": 13,
-      "pid": 7,
-      "war": 6
-    },
-    {
       "code": "CH-C2000DA-K",
       "desc": "Corsair 2000D Air blK mITX",
       "created": "2023/03/27",
@@ -8811,15 +8802,6 @@
       "war": 1
     },
     {
-      "code": "CH-IAAXX3U5UPR",
-      "desc": "Intel AXX3U5UPRAIL rail kit",
-      "created": "2013/04/24",
-      "status": "C",
-      "bid": 20,
-      "pid": 0,
-      "war": 6
-    },
-    {
       "code": "CH-IAAXXELVRAIL",
       "desc": "Intel AXXELVRAIL value rail",
       "created": "2015/07/23",
@@ -9171,27 +9153,9 @@
       "war": 6
     },
     {
-      "code": "CH-L7NS",
-      "desc": "!!Lian-li pc-7N Silver",
-      "created": "2016/03/12",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
       "code": "CH-L8ES",
       "desc": "!!Lian-li pc-8E Silver",
       "created": "2014/04/28",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-L9NB",
-      "desc": "!!Lian-li pc-9N Black",
-      "created": "2013/01/17",
       "status": "",
       "bid": 28,
       "pid": 7,
@@ -9406,7 +9370,7 @@
     },
     {
       "code": "CH-LABZ516X",
-      "desc": "!!BZ-516X for LT-LLRGB+C->5.25",
+      "desc": "!!BZ-516X for LT-LLRGB+C-\u003E5.25",
       "created": "2017/03/19",
       "status": "",
       "bid": 28,
@@ -9434,15 +9398,6 @@
     {
       "code": "CH-LAC02B",
       "desc": "!!Lian-li C-02 Black 5.25\" bez",
-      "created": "2009/02/04",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 1
-    },
-    {
-      "code": "CH-LAC02S",
-      "desc": "!!Lian-li C-02 Sil. 5.25\" beze",
       "created": "2009/02/04",
       "status": "",
       "bid": 28,
@@ -9750,15 +9705,6 @@
       "code": "CH-LB10BN",
       "desc": "!!Lian-li pc-B10 Blk No psu",
       "created": "2009/07/03",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-LB12B",
-      "desc": "!!Lian-li pc-B12 Black",
-      "created": "2012/06/25",
       "status": "",
       "bid": 28,
       "pid": 7,
@@ -10512,15 +10458,6 @@
       "war": 6
     },
     {
-      "code": "CH-LV33S",
-      "desc": "!!Lian-li pc-V33 Silver no psu",
-      "created": "2015/07/13",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
       "code": "CH-LV33WX",
       "desc": "!!Lian-li pc-V33WX Windowed",
       "created": "2015/07/13",
@@ -10533,15 +10470,6 @@
       "code": "CH-LV351L",
       "desc": "!!Lian-li V351 bLue cube",
       "created": "2010/01/28",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-LV351U3S",
-      "desc": "!!Lian-li V351 Usb3 Silver cub",
-      "created": "2016/01/01",
       "status": "",
       "bid": 28,
       "pid": 7,
@@ -10791,15 +10719,6 @@
       "war": 12
     },
     {
-      "code": "CH-YK01",
-      "desc": "Yama K01+400w 2x USB2 atx",
-      "created": "2019/04/12",
-      "status": "",
-      "bid": 70,
-      "pid": 7,
-      "war": 12
-    },
-    {
       "code": "CH-YK4U450",
       "desc": "Yama K4U450 4U rackmount atx",
       "created": "2019/07/09",
@@ -10855,7 +10774,7 @@
     },
     {
       "code": "CO-CHH",
-      "desc": "miCro-HDMI->HDMI connecter/ca",
+      "desc": "miCro-HDMI-\u003EHDMI connecter/ca",
       "created": "2013/01/16",
       "status": "",
       "bid": 71,
@@ -10882,7 +10801,7 @@
     },
     {
       "code": "CO-CU2M-A",
-      "desc": "!!Adata ACM2ADPPL t-C->U2 Micr",
+      "desc": "!!Adata ACM2ADPPL t-C-\u003EU2 Micr",
       "created": "2018/09/20",
       "status": "",
       "bid": 4,
@@ -10891,7 +10810,7 @@
     },
     {
       "code": "CO-CU3AF-J",
-      "desc": "J5 JUCX05 type-C->U3-typeA/Fem",
+      "desc": "J5 JUCX05 type-C-\u003EU3-typeA/Fem",
       "created": "2015/09/07",
       "status": "",
       "bid": 22,
@@ -10936,7 +10855,7 @@
     },
     {
       "code": "CO-DPH-S",
-      "desc": "Sunix D2H13N0 DP->Hdmi",
+      "desc": "Sunix D2H13N0 DP-\u003EHdmi",
       "created": "2020/10/12",
       "status": "",
       "bid": 45,
@@ -10945,7 +10864,7 @@
     },
     {
       "code": "CO-DPH4K-J",
-      "desc": "J5 jda158 DP->HDMi4K COnverter",
+      "desc": "J5 jda158 DP-\u003EHDMi4K COnverter",
       "created": "2015/09/07",
       "status": "",
       "bid": 22,
@@ -10954,7 +10873,7 @@
     },
     {
       "code": "CO-DPH4K-SA",
-      "desc": "Sunix D2H13MD DP->Hdmi4K Activ",
+      "desc": "Sunix D2H13MD DP-\u003EHdmi4K Activ",
       "created": "2018/03/25",
       "status": "",
       "bid": 45,
@@ -10963,7 +10882,7 @@
     },
     {
       "code": "CO-DPV",
-      "desc": "Sunix D2V17C0 DisplayPort->Vga",
+      "desc": "Sunix D2V17C0 DisplayPort-\u003EVga",
       "created": "2013/12/19",
       "status": "",
       "bid": 45,
@@ -11008,7 +10927,7 @@
     },
     {
       "code": "CO-HDMIDSUB",
-      "desc": "!HDMi->D-SUB (VGA) CONVERTER",
+      "desc": "!HDMi-\u003ED-SUB (VGA) CONVERTER",
       "created": "2012/07/23",
       "status": "",
       "bid": 71,
@@ -11017,7 +10936,7 @@
     },
     {
       "code": "CO-HDMIDSUB+A",
-      "desc": "HDMi->D-SUB(VGA) + Audio",
+      "desc": "HDMi-\u003ED-SUB(VGA) + Audio",
       "created": "2013/12/02",
       "status": "",
       "bid": 71,
@@ -11053,7 +10972,7 @@
     },
     {
       "code": "CO-HV",
-      "desc": "Sunix H2V37C0 HDMi->VGA RETAIL",
+      "desc": "Sunix H2V37C0 HDMi-\u003EVGA RETAIL",
       "created": "2013/12/19",
       "status": "",
       "bid": 45,
@@ -11062,7 +10981,7 @@
     },
     {
       "code": "CO-HV+A-J",
-      "desc": "J5 JDA203 HDMi->Vga+Au COnvert",
+      "desc": "J5 JDA203 HDMi-\u003EVga+Au COnvert",
       "created": "2020/07/20",
       "status": "",
       "bid": 22,
@@ -11089,7 +11008,7 @@
     },
     {
       "code": "CO-MDPH4K-S",
-      "desc": "Sunix D2H23N0 MiniDP->HDMi 4K",
+      "desc": "Sunix D2H23N0 MiniDP-\u003EHDMi 4K",
       "created": "2014/03/05",
       "status": "",
       "bid": 45,
@@ -11098,7 +11017,7 @@
     },
     {
       "code": "CO-MDPH4K-SA",
-      "desc": "Sunix D2H23MD MDP->Hdmi4K Acti",
+      "desc": "Sunix D2H23MD MDP-\u003EHdmi4K Acti",
       "created": "2018/03/25",
       "status": "",
       "bid": 45,
@@ -11107,7 +11026,7 @@
     },
     {
       "code": "CO-MDPV",
-      "desc": "Sunix D2V27C0 MiniDP->Vga",
+      "desc": "Sunix D2V27C0 MiniDP-\u003EVga",
       "created": "2013/12/19",
       "status": "",
       "bid": 45,
@@ -11116,7 +11035,7 @@
     },
     {
       "code": "CO-MHH",
-      "desc": "Mini-Hdmi->HDMI connector/cabl",
+      "desc": "Mini-Hdmi-\u003EHDMI connector/cabl",
       "created": "2012/11/05",
       "status": "",
       "bid": 71,
@@ -11125,7 +11044,7 @@
     },
     {
       "code": "CO-PIDK",
-      "desc": "Pqi iDongle miCro-usb->apple",
+      "desc": "Pqi iDongle miCro-usb-\u003Eapple",
       "created": "2015/12/13",
       "status": "",
       "bid": 37,
@@ -11134,7 +11053,7 @@
     },
     {
       "code": "CO-PIDW",
-      "desc": "Pqi iDongle miCro-usb->apple",
+      "desc": "Pqi iDongle miCro-usb-\u003Eapple",
       "created": "2015/12/13",
       "status": "",
       "bid": 37,
@@ -11152,7 +11071,7 @@
     },
     {
       "code": "CO-U2M",
-      "desc": "Usb2.0-> Mini usb 20cm",
+      "desc": "Usb2.0-\u003E Mini usb 20cm",
       "created": "2014/10/15",
       "status": "",
       "bid": 71,
@@ -11161,7 +11080,7 @@
     },
     {
       "code": "CO-VAH",
-      "desc": "J5 JDA214 VGA+usb/audio->HDMi",
+      "desc": "J5 JDA214 VGA+usb/audio-\u003EHDMi",
       "created": "2015/10/22",
       "status": "",
       "bid": 22,
@@ -12844,7 +12763,7 @@
     },
     {
       "code": "CR-PC203-K",
-      "desc": "Pqi C203 miCroSDXC->miCroU+USB",
+      "desc": "Pqi C203 miCroSDXC-\u003EmiCroU+USB",
       "created": "2016/03/12",
       "status": "",
       "bid": 37,
@@ -12853,7 +12772,7 @@
     },
     {
       "code": "CR-PC203-L",
-      "desc": "Pqi C203 miCroSDXC->miCroU+USB",
+      "desc": "Pqi C203 miCroSDXC-\u003EmiCroU+USB",
       "created": "2016/03/12",
       "status": "",
       "bid": 37,
@@ -12862,7 +12781,7 @@
     },
     {
       "code": "CR-PC208",
-      "desc": "Pqi C208 SD+miCroS->miCroU+USB",
+      "desc": "Pqi C208 SD+miCroS-\u003EmiCroU+USB",
       "created": "2016/03/12",
       "status": "",
       "bid": 37,
@@ -18496,7 +18415,7 @@
     },
     {
       "code": "DU-UP507D",
-      "desc": "!!U-REACH 1->7 controller pane",
+      "desc": "!!U-REACH 1-\u003E7 controller pane",
       "created": "2011/05/23",
       "status": "",
       "bid": 0,
@@ -18685,7 +18604,7 @@
     },
     {
       "code": "EE-C350SSUBB",
-      "desc": "!! xc350 Sata->eSata+U Back",
+      "desc": "!! xc350 Sata-\u003EeSata+U Back",
       "created": "2007/07/16",
       "status": "",
       "bid": 12,
@@ -18694,7 +18613,7 @@
     },
     {
       "code": "EE-C350SSUBS",
-      "desc": "!!!CM xc350 Sata->eSata+U Bac",
+      "desc": "!!!CM xc350 Sata-\u003EeSata+U Bac",
       "created": "2007/04/30",
       "status": "",
       "bid": 12,
@@ -18739,7 +18658,7 @@
     },
     {
       "code": "EE-I031U",
-      "desc": "Icydock 031U m.2+2.5\" ->type-A",
+      "desc": "Icydock 031U m.2+2.5\" -\u003Etype-A",
       "created": "2022/05/29",
       "status": "",
       "bid": 19,
@@ -18748,7 +18667,7 @@
     },
     {
       "code": "EE-I104U",
-      "desc": "Icydock 104U m.2+2.5\" ->type-C",
+      "desc": "Icydock 104U m.2+2.5\" -\u003Etype-C",
       "created": "2022/09/07",
       "status": "",
       "bid": 19,
@@ -18757,7 +18676,7 @@
     },
     {
       "code": "EE-I452IU",
-      "desc": "!!Icydock MB452UK-B Ide->Usb",
+      "desc": "!!Icydock MB452UK-B Ide-\u003EUsb",
       "created": "2006/09/20",
       "status": "",
       "bid": 19,
@@ -18766,7 +18685,7 @@
     },
     {
       "code": "EE-I452SUSS",
-      "desc": "!!Icydock 452MK-S Sata->U+eSAT",
+      "desc": "!!Icydock 452MK-S Sata-\u003EU+eSAT",
       "created": "2008/05/13",
       "status": "",
       "bid": 19,
@@ -18775,7 +18694,7 @@
     },
     {
       "code": "EE-I559SUF",
-      "desc": "!!ICYDOCK MB559UEA SATA->U+139",
+      "desc": "!!ICYDOCK MB559UEA SATA-\u003EU+139",
       "created": "2006/09/20",
       "status": "",
       "bid": 19,
@@ -18784,7 +18703,7 @@
     },
     {
       "code": "EE-I559SUFBK",
-      "desc": "!!ICYDOCK MB559UEB SATA->U+139",
+      "desc": "!!ICYDOCK MB559UEB SATA-\u003EU+139",
       "created": "2007/08/10",
       "status": "",
       "bid": 19,
@@ -18793,7 +18712,7 @@
     },
     {
       "code": "EE-I559SUFK",
-      "desc": "!!ICYDOCK MB559UEA SATA->U+139",
+      "desc": "!!ICYDOCK MB559UEA SATA-\u003EU+139",
       "created": "2008/05/29",
       "status": "",
       "bid": 19,
@@ -18928,7 +18847,7 @@
     },
     {
       "code": "EE-V525UF",
-      "desc": "!!Vantec NST525UF IDE->U+Firew",
+      "desc": "!!Vantec NST525UF IDE-\u003EU+Firew",
       "created": "2004/11/25",
       "status": "",
       "bid": 51,
@@ -23544,15 +23463,6 @@
       "war": 60
     },
     {
-      "code": "FD-A32GUC310W",
-      "desc": "!!Adata 32Gb UC310 usb3 Whi",
-      "created": "2023/08/02",
-      "status": "",
-      "bid": 4,
-      "pid": 2,
-      "war": 60
-    },
-    {
       "code": "FD-A32GUD330R",
       "desc": "Adata 32Gb UD330 Red U3",
       "created": "2018/08/04",
@@ -26407,7 +26317,7 @@
     },
     {
       "code": "HD-AABRKT",
-      "desc": "Adata 2.5\"->3.5\" bracket bulk",
+      "desc": "Adata 2.5\"-\u003E3.5\" bracket bulk",
       "created": "2018/10/16",
       "status": "",
       "bid": 4,
@@ -26794,7 +26704,7 @@
     },
     {
       "code": "HD-CABRKT1",
-      "desc": "Corsair 2.5\"->3.5\" bracket",
+      "desc": "Corsair 2.5\"-\u003E3.5\" bracket",
       "created": "2013/01/08",
       "status": "",
       "bid": 13,
@@ -26803,7 +26713,7 @@
     },
     {
       "code": "HD-CABRKT2",
-      "desc": "Corsair 2x2.5\"->1x3.5\" bracket",
+      "desc": "Corsair 2x2.5\"-\u003E1x3.5\" bracket",
       "created": "2015/10/06",
       "status": "",
       "bid": 13,
@@ -26812,7 +26722,7 @@
     },
     {
       "code": "HD-CABRKT2W",
-      "desc": "Corsair 2x2.5->1x3.5 bracket e",
+      "desc": "Corsair 2x2.5-\u003E1x3.5 bracket e",
       "created": "2021/06/14",
       "status": "",
       "bid": 13,
@@ -27271,7 +27181,7 @@
     },
     {
       "code": "HD-IA290",
-      "desc": "Icydock mb290sp 2x2.5\"->3.5\"",
+      "desc": "Icydock mb290sp 2x2.5\"-\u003E3.5\"",
       "created": "2014/04/01",
       "status": "",
       "bid": 19,
@@ -27289,7 +27199,7 @@
     },
     {
       "code": "HD-IA344",
-      "desc": "Icydock mb344sp 4x2.5\"->5.2.5\"",
+      "desc": "Icydock mb344sp 4x2.5\"-\u003E5.2.5\"",
       "created": "2016/09/25",
       "status": "",
       "bid": 19,
@@ -27307,7 +27217,7 @@
     },
     {
       "code": "HD-IA610",
-      "desc": "Icydock mb610sp 3x2.5\"->3.5\"",
+      "desc": "Icydock mb610sp 3x2.5\"-\u003E3.5\"",
       "created": "2018/04/08",
       "status": "",
       "bid": 19,
@@ -27316,7 +27226,7 @@
     },
     {
       "code": "HD-IA703",
-      "desc": "Icydock mb703m2p-b m.2->2.5\"",
+      "desc": "Icydock mb703m2p-b m.2-\u003E2.5\"",
       "created": "2019/05/16",
       "status": "",
       "bid": 19,
@@ -27325,7 +27235,7 @@
     },
     {
       "code": "HD-IA705",
-      "desc": "*mb705m2p-b m.2->2.5\" u.2",
+      "desc": "*mb705m2p-b m.2-\u003E2.5\" u.2",
       "created": "2023/08/11",
       "status": "R",
       "bid": 19,
@@ -27334,7 +27244,7 @@
     },
     {
       "code": "HD-IA982SPR",
-      "desc": "!!Icydock mb982SPR 2x2.5\"->3.5",
+      "desc": "!!Icydock mb982SPR 2x2.5\"-\u003E3.5",
       "created": "2010/11/08",
       "status": "",
       "bid": 19,
@@ -27477,15 +27387,6 @@
       "war": 60
     },
     {
-      "code": "HD-KG1000NV2",
-      "desc": "!!Kingston nGff/m.2 1Tb NV2 G4",
-      "created": "2022/08/21",
-      "status": "",
-      "bid": 24,
-      "pid": 11,
-      "war": 36
-    },
-    {
       "code": "HD-KG1000NV3",
       "desc": "Kingston nGff/m.2 1Tb NV3 G4x4",
       "created": "2024/08/07",
@@ -27523,7 +27424,7 @@
     },
     {
       "code": "HD-KG2000NV2",
-      "desc": "Kingston nGff/m.2 2Tb NV2 G4x4",
+      "desc": "!!Kingston nGff/m.2 2Tb NV2 G4",
       "created": "2022/08/21",
       "status": "",
       "bid": 24,
@@ -27874,7 +27775,7 @@
     },
     {
       "code": "HD-LAHD323B",
-      "desc": "!!Lian-li hd-323 Blk 2x2.5->3.",
+      "desc": "!!Lian-li hd-323 Blk 2x2.5-\u003E3.",
       "created": "2015/06/21",
       "status": "",
       "bid": 28,
@@ -27883,7 +27784,7 @@
     },
     {
       "code": "HD-LAHD323S",
-      "desc": "!!Lian-li hd-323 Sil 2x2.5->3.",
+      "desc": "!!Lian-li hd-323 Sil 2x2.5-\u003E3.",
       "created": "2010/03/16",
       "status": "",
       "bid": 28,
@@ -27892,7 +27793,7 @@
     },
     {
       "code": "HD-LAHD324B",
-      "desc": "!!Lian-lin HD-324 Blk 2x2.5->3",
+      "desc": "!!Lian-lin HD-324 Blk 2x2.5-\u003E3",
       "created": "2014/07/21",
       "status": "",
       "bid": 28,
@@ -27901,7 +27802,7 @@
     },
     {
       "code": "HD-LAHD324S",
-      "desc": "!!Lian-lin HD-324 Sil 2x2.5->3",
+      "desc": "!!Lian-lin HD-324 Sil 2x2.5-\u003E3",
       "created": "2016/03/06",
       "status": "",
       "bid": 28,
@@ -27910,7 +27811,7 @@
     },
     {
       "code": "HD-LAHD520B",
-      "desc": "!LIAN-LI HD-520 Bk 2x2.5->5.25",
+      "desc": "!LIAN-LI HD-520 Bk 2x2.5-\u003E5.25",
       "created": "2014/05/26",
       "status": "",
       "bid": 28,
@@ -27919,7 +27820,7 @@
     },
     {
       "code": "HD-LAHD520S",
-      "desc": "!!LIAN-LI HD-520 Sil 2x2.5->5.",
+      "desc": "!!LIAN-LI HD-520 Sil 2x2.5-\u003E5.",
       "created": "2016/03/06",
       "status": "",
       "bid": 28,
@@ -29044,7 +28945,7 @@
     },
     {
       "code": "HD-W14000GO",
-      "desc": "WD141KRYZ 14Tb GOld 7200/512",
+      "desc": "WD141/2KRYZ 14Tb GOld 7200/512",
       "created": "2022/08/12",
       "status": "",
       "bid": 56,
@@ -30187,7 +30088,7 @@
     },
     {
       "code": "HU-DUBD410+L",
-      "desc": "DUB-D410 t-C->3xU3 hub+Lan",
+      "desc": "DUB-D410 t-C-\u003E3xU3 hub+Lan",
       "created": "2021/01/04",
       "status": "",
       "bid": 14,
@@ -30214,7 +30115,7 @@
     },
     {
       "code": "HU-JCH341",
-      "desc": "J5 JCH341 U3.1 type-C-> 4x t-A",
+      "desc": "J5 JCH341 U3.1 type-C-\u003E 4x t-A",
       "created": "2023/09/17",
       "status": "",
       "bid": 22,
@@ -30223,7 +30124,7 @@
     },
     {
       "code": "HU-JCH342",
-      "desc": "J5 JCH342 U3 type-C-> 2xA+2xC",
+      "desc": "J5 JCH342 U3 type-C-\u003E 2xA+2xC",
       "created": "2023/09/17",
       "status": "",
       "bid": 22,
@@ -30232,7 +30133,7 @@
     },
     {
       "code": "HU-JCH343",
-      "desc": "J5 JCH343 U3.1 type-C-> 4x t-A",
+      "desc": "J5 JCH343 U3.1 type-C-\u003E 4x t-A",
       "created": "2016/06/19",
       "status": "",
       "bid": 22,
@@ -30241,7 +30142,7 @@
     },
     {
       "code": "HU-JCH345",
-      "desc": "J5 JCH345 U3.1 type-C-> 4x t-C",
+      "desc": "J5 JCH345 U3.1 type-C-\u003E 4x t-C",
       "created": "2023/09/17",
       "status": "",
       "bid": 22,
@@ -30250,7 +30151,7 @@
     },
     {
       "code": "HU-JCH346",
-      "desc": "!!J5 JCH346 t-C-> 1x t-C+3x t-",
+      "desc": "!!J5 JCH346 t-C-\u003E 1x t-C+3x t-",
       "created": "2016/06/19",
       "status": "",
       "bid": 22,
@@ -30259,7 +30160,7 @@
     },
     {
       "code": "HU-JCH347+CR",
-      "desc": "J5 JCH347 t-C->3xU3 hub+ CRx2",
+      "desc": "J5 JCH347 t-C-\u003E3xU3 hub+ CRx2",
       "created": "2018/04/02",
       "status": "",
       "bid": 22,
@@ -30268,7 +30169,7 @@
     },
     {
       "code": "HU-JCH349",
-      "desc": "J5 JCH349 t-C-> 1x t-C+1x t-A",
+      "desc": "J5 JCH349 t-C-\u003E 1x t-C+1x t-A",
       "created": "2017/02/14",
       "status": "",
       "bid": 22,
@@ -30277,7 +30178,7 @@
     },
     {
       "code": "HU-JCH377",
-      "desc": "J5 JCH377 U3.1 type-C-> 7x t-A",
+      "desc": "J5 JCH377 U3.1 type-C-\u003E 7x t-A",
       "created": "2016/06/19",
       "status": "",
       "bid": 22,
@@ -30286,7 +30187,7 @@
     },
     {
       "code": "HU-JCH411+V",
-      "desc": "J5 JCH411 t-C->3xU3 hub+ Vga",
+      "desc": "J5 JCH411 t-C-\u003E3xU3 hub+ Vga",
       "created": "2018/04/02",
       "status": "",
       "bid": 22,
@@ -30295,7 +30196,7 @@
     },
     {
       "code": "HU-JCH451+H",
-      "desc": "J5 JCH451 t-C->3xU3 hub+ Hdmi",
+      "desc": "J5 JCH451 t-C-\u003E3xU3 hub+ Hdmi",
       "created": "2018/04/02",
       "status": "",
       "bid": 22,
@@ -30313,7 +30214,7 @@
     },
     {
       "code": "HU-JCH471+L",
-      "desc": "J5 JCH471 t-C->3xU3 hub+Lan(gb",
+      "desc": "J5 JCH471 t-C-\u003E3xU3 hub+Lan(gb",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -30538,7 +30439,7 @@
     },
     {
       "code": "HU-PC314",
-      "desc": "!!PQi C314 t-C->4xU3 (3xA+1xC)",
+      "desc": "!!PQi C314 t-C-\u003E4xU3 (3xA+1xC)",
       "created": "2016/03/12",
       "status": "",
       "bid": 37,
@@ -30547,7 +30448,7 @@
     },
     {
       "code": "IC-JEE254",
-      "desc": "J5 jee254 Sata6G->3.1 type-C",
+      "desc": "J5 jee254 Sata6G-\u003E3.1 type-C",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -30556,7 +30457,7 @@
     },
     {
       "code": "IC-SCBE1000",
-      "desc": "!!Sunix CBE1000 pcmcia->e/c34",
+      "desc": "!!Sunix CBE1000 pcmcia-\u003Ee/c34",
       "created": "2007/10/26",
       "status": "",
       "bid": 45,
@@ -30565,7 +30466,7 @@
     },
     {
       "code": "IC-V280ESPI",
-      "desc": "Vizo she-280ES-Pi usb3.0->sata",
+      "desc": "Vizo she-280ES-Pi usb3.0-\u003Esata",
       "created": "2010/03/25",
       "status": "",
       "bid": 55,
@@ -30574,7 +30475,7 @@
     },
     {
       "code": "IC-V9218",
-      "desc": "Vi-Power VP-9218 USB->eSATA",
+      "desc": "Vi-Power VP-9218 USB-\u003EeSATA",
       "created": "2006/08/03",
       "status": "",
       "bid": 0,
@@ -30583,7 +30484,7 @@
     },
     {
       "code": "IC-VS6C31+C",
-      "desc": "CB-STC31-2PB S6->t.C-U31+Case",
+      "desc": "CB-STC31-2PB S6-\u003Et.C-U31+Case",
       "created": "2017/05/21",
       "status": "",
       "bid": 51,
@@ -31802,15 +31703,6 @@
       "created": "2024/12/04",
       "status": "",
       "bid": 13,
-      "pid": 34,
-      "war": 24
-    },
-    {
-      "code": "KE-CMBL",
-      "desc": "!!cm Mech - BLue switch",
-      "created": "2013/10/17",
-      "status": "",
-      "bid": 12,
       "pid": 34,
       "war": 24
     },
@@ -36937,7 +36829,7 @@
     },
     {
       "code": "MB-AAHK",
-      "desc": "AsusHyperKit M2/2262->U.2(mSAS",
+      "desc": "AsusHyperKit M2/2262-\u003EU.2(mSAS",
       "created": "2015/09/05",
       "status": "",
       "bid": 7,
@@ -36946,7 +36838,7 @@
     },
     {
       "code": "MB-AAPCIENVME2",
-      "desc": "Asus PCiE-NVME2 PCiE->2xU.2",
+      "desc": "Asus PCiE-NVME2 PCiE-\u003E2xU.2",
       "created": "2016/10/22",
       "status": "",
       "bid": 7,
@@ -37135,7 +37027,7 @@
     },
     {
       "code": "MB-AB550SI+W",
-      "desc": "1sus Strix B550-i +Wifi m-iTX",
+      "desc": "Asus Strix B550-i +Wifi m-iTX",
       "created": "2020/08/06",
       "status": "C",
       "bid": 7,
@@ -38235,6 +38127,15 @@
       "code": "MB-GB550MK",
       "desc": "Gb B550M-K matx",
       "created": "2023/05/07",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB550VDP+WT",
+      "desc": "!!Gb B550 Vision D-P +Wifi+Tb3",
+      "created": "2021/03/11",
       "status": "",
       "bid": 17,
       "pid": 3,
@@ -40197,15 +40098,6 @@
       "code": "ME-A8V16C11L",
       "desc": "ADDU/X1600W8G11 8Gb 1600 c11 L",
       "created": "2015/01/31",
-      "status": "",
-      "bid": 4,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-A8X26C11X2K",
-      "desc": "!!Adata Xpg v3 2600 c11 8x2 bK",
-      "created": "2014/08/11",
       "status": "",
       "bid": 4,
       "pid": 5,
@@ -42273,15 +42165,6 @@
       "war": 12
     },
     {
-      "code": "ME-CD41630L16K",
-      "desc": "CMK16GX4M1?3000C16 D4 Lp 16G",
-      "created": "2017/11/22",
-      "status": "",
-      "bid": 13,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-CD41630P15X4",
       "desc": "!!CMD64GX4M4?3000C15 D4dP 16x4",
       "created": "2015/11/19",
@@ -42473,15 +42356,6 @@
     {
       "code": "ME-CD41632RTX2W",
       "desc": "CMN32GX4M2Z3200C16W rgbRT 16x2",
-      "created": "2021/08/10",
-      "status": "",
-      "bid": 13,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-CD41632RTX4W",
-      "desc": "!!CMN64GX4M4Z3200C16W rgRT 16Q",
       "created": "2021/08/10",
       "status": "",
       "bid": 13,
@@ -46593,17 +46467,8 @@
       "war": 12
     },
     {
-      "code": "ME-K5N8V48",
-      "desc": "!!KVR48S40BS6-8 D5 Nb 8G 4800",
-      "created": "2022/02/24",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-K5N8V52",
-      "desc": "KVR52S42BS6-8 D5 Nb 8G 5200",
+      "desc": "!!KVR52S42BS6-8 D5 Nb 8G 5200",
       "created": "2023/02/27",
       "status": "",
       "bid": 24,
@@ -47304,17 +47169,8 @@
       "war": 12
     },
     {
-      "code": "ME-KD41636RFW",
-      "desc": "KF436C18BWA/16 D4 3600RGB 16G",
-      "created": "2022/09/19",
-      "status": "C",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-KD41636RFWD",
-      "desc": "KF436C18BWAK2/32 3600RGB 16x2",
+      "desc": "!!KF436C18BWAK2/32 3600RGB 16D",
       "created": "2022/09/19",
       "status": "",
       "bid": 24,
@@ -47560,15 +47416,6 @@
       "desc": "432C16F/BB?/32 D4 3200 Fury 32",
       "created": "2020/01/14",
       "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-KD43232F16QK",
-      "desc": "*432C16F/BB?K4/128 D4 Fu 32x4",
-      "created": "2020/01/14",
-      "status": "R",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -47928,24 +47775,6 @@
       "code": "ME-KD4824RF15X4",
       "desc": "!!HX424C15FB3AK4/32 2400 RGBz4",
       "created": "2019/08/19",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-KD4826F16K",
-      "desc": "426C16F/BB?/8 D4 8G 2666 Fury",
-      "created": "2017/03/20",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-KD4826F16X2K",
-      "desc": "426C16F/BB?K2/16 D4 Fur 8x2 bK",
-      "created": "2017/03/20",
       "status": "",
       "bid": 24,
       "pid": 5,
@@ -48672,24 +48501,6 @@
       "war": 12
     },
     {
-      "code": "ME-KD51648R38",
-      "desc": "!!KF548C38BBA-16 D5-4800 R 16g",
-      "created": "2022/05/24",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-KD51648V40",
-      "desc": "!!KVR48U40BS8-16 D5 16G 4800 C",
-      "created": "2021/10/19",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-KD51648V40X2",
       "desc": "!!KVR48U40BS8K2-32 D5 4800 16D",
       "created": "2021/10/19",
@@ -48828,7 +48639,7 @@
       "code": "ME-KD51660B30DW",
       "desc": "KF560C30BWK2-32 D5-6000 Be 16D",
       "created": "2024/07/22",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48843,27 +48654,9 @@
       "war": 12
     },
     {
-      "code": "ME-KD51660G32",
-      "desc": "*KF560C32RS-16 D5-6000 reneG16",
-      "created": "2022/07/18",
-      "status": "R",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-KD51660G32DW",
-      "desc": "KF560C32RWK2-32 D5-6000 G 16x2",
+      "desc": "!!KF560C32RWK2-32 D5-6000G 16D",
       "created": "2023/03/31",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-KD51660G32X2",
-      "desc": "KF560C32RSK2-32 D5-6000 G 16x2",
-      "created": "2022/07/18",
       "status": "",
       "bid": 24,
       "pid": 5,
@@ -49018,6 +48811,15 @@
       "desc": "KF564C32RWAK2-32 D5-6400 R 16D",
       "created": "2023/03/31",
       "status": "",
+      "bid": 24,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-KD51664V52",
+      "desc": "KVR64A52BS8-16 D5 16G 6400 C52",
+      "created": "2025/01/14",
+      "status": "C",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49232,15 +49034,6 @@
     {
       "code": "ME-KD52484RG40D",
       "desc": "KF584CU40RSAK2-48 D5-8400R 24D",
-      "created": "2024/11/20",
-      "status": "C",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
-      "code": "ME-KD52484RG40W",
-      "desc": "KF584CU40RWAK2-48 D5-8400R 24D",
       "created": "2024/11/20",
       "status": "C",
       "bid": 24,
@@ -49590,6 +49383,15 @@
       "war": 12
     },
     {
+      "code": "ME-KD53264V52",
+      "desc": "KVR64A52BS8-32 D5 32G 6400 C52",
+      "created": "2025/01/14",
+      "status": "C",
+      "bid": 24,
+      "pid": 5,
+      "war": 12
+    },
+    {
       "code": "ME-KD54856V46",
       "desc": "KVR56U46BD8-48 D5 48G 5600 C46",
       "created": "2024/04/10",
@@ -49644,10 +49446,10 @@
       "war": 12
     },
     {
-      "code": "ME-KD5848B38",
-      "desc": "!!KF548C38BB-8 D5-4800 Beast 8",
-      "created": "2022/03/07",
-      "status": "",
+      "code": "ME-KD56464V52",
+      "desc": "KVR64A52BD8-64 D5 64G 6400 C52",
+      "created": "2025/01/14",
+      "status": "C",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49824,15 +49626,6 @@
       "war": 12
     },
     {
-      "code": "ME-KD5860B36X2",
-      "desc": "!!KF560C36BBEK2-16 D5-6000 8x2",
-      "created": "2023/01/30",
-      "status": "",
-      "bid": 24,
-      "pid": 5,
-      "war": 12
-    },
-    {
       "code": "ME-KD5860R30",
       "desc": "KF560C30BBA-8 D5-6000 b.RG 8Gb",
       "created": "2024/07/22",
@@ -49855,6 +49648,15 @@
       "desc": "!!KF560C40BBAK2-16 D5-6000R 8D",
       "created": "2022/05/24",
       "status": "",
+      "bid": 24,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-KD5864V52",
+      "desc": "KVR64A52BS6-8 D5 8G 6400 C52",
+      "created": "2025/01/14",
+      "status": "C",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -50299,15 +50101,6 @@
       "bid": 1,
       "pid": 41,
       "war": 12
-    },
-    {
-      "code": "MO-ARG",
-      "desc": "!!Asus Rog Gladius gaming mous",
-      "created": "2014/09/17",
-      "status": "",
-      "bid": 7,
-      "pid": 41,
-      "war": 24
     },
     {
       "code": "MO-ARG3",
@@ -51526,7 +51319,7 @@
     },
     {
       "code": "MR-I014",
-      "desc": "Icydock mb014sp -4x2.5\"->5.25\"",
+      "desc": "Icydock mb014sp -4x2.5\"-\u003E5.25\"",
       "created": "2022/01/12",
       "status": "",
       "bid": 19,
@@ -51535,7 +51328,7 @@
     },
     {
       "code": "MR-I024",
-      "desc": "Icydock mb024sp -4x2.5\"->5.25\"",
+      "desc": "Icydock mb024sp -4x2.5\"-\u003E5.25\"",
       "created": "2022/01/12",
       "status": "",
       "bid": 19,
@@ -51553,7 +51346,7 @@
     },
     {
       "code": "MR-I153",
-      "desc": "Icydock mb153spb 3xs->2x5.25\"",
+      "desc": "Icydock mb153spb 3xs-\u003E2x5.25\"",
       "created": "2012/11/06",
       "status": "",
       "bid": 19,
@@ -51562,7 +51355,7 @@
     },
     {
       "code": "MR-I155",
-      "desc": "Icydock mb155sp 5xS->3x5.25\"",
+      "desc": "Icydock mb155sp 5xS-\u003E3x5.25\"",
       "created": "2013/12/19",
       "status": "",
       "bid": 19,
@@ -51571,7 +51364,7 @@
     },
     {
       "code": "MR-I322",
-      "desc": "Icydock 322 -2x2.5+1x3.5->5.25",
+      "desc": "Icydock 322 -2x2.5+1x3.5-\u003E5.25",
       "created": "2015/08/30",
       "status": "",
       "bid": 19,
@@ -51580,7 +51373,7 @@
     },
     {
       "code": "MR-I324",
-      "desc": "Icydock mb324 -4x2.5\"->5.25\"",
+      "desc": "Icydock mb324 -4x2.5\"-\u003E5.25\"",
       "created": "2015/08/30",
       "status": "",
       "bid": 19,
@@ -51589,7 +51382,7 @@
     },
     {
       "code": "MR-I326",
-      "desc": "Icydock mb326 -6x2.5\"->5.25\"",
+      "desc": "Icydock mb326 -6x2.5\"-\u003E5.25\"",
       "created": "2017/01/10",
       "status": "",
       "bid": 19,
@@ -51607,7 +51400,7 @@
     },
     {
       "code": "MR-I521",
-      "desc": "Icydock mb521 1x2.5\"->3.5\"",
+      "desc": "Icydock mb521 1x2.5\"-\u003E3.5\"",
       "created": "2018/04/08",
       "status": "",
       "bid": 19,
@@ -51616,7 +51409,7 @@
     },
     {
       "code": "MR-I522",
-      "desc": "Icydock mb522 2x2.5\"->3.5\"",
+      "desc": "Icydock mb522 2x2.5\"-\u003E3.5\"",
       "created": "2018/04/08",
       "status": "",
       "bid": 19,
@@ -51625,7 +51418,7 @@
     },
     {
       "code": "MR-I524",
-      "desc": "!!Icydock mb524 4x2.5\"->5.25\"",
+      "desc": "!!Icydock mb524 4x2.5\"-\u003E5.25\"",
       "created": "2018/04/08",
       "status": "",
       "bid": 19,
@@ -51634,7 +51427,7 @@
     },
     {
       "code": "MR-I607",
-      "desc": "*Icydock mb607sp 4x2.5\"->5.25\"",
+      "desc": "*Icydock mb607sp 4x2.5\"-\u003E5.25\"",
       "created": "2019/06/23",
       "status": "R",
       "bid": 19,
@@ -51643,7 +51436,7 @@
     },
     {
       "code": "MR-I608",
-      "desc": "Icydock mb608sp 6x2.5\"->5.25\"",
+      "desc": "Icydock mb608sp 6x2.5\"-\u003E5.25\"",
       "created": "2019/06/23",
       "status": "",
       "bid": 19,
@@ -51652,7 +51445,7 @@
     },
     {
       "code": "MR-I795SP",
-      "desc": "Icydock mb795SP 2.5+3.5->5.25",
+      "desc": "Icydock mb795SP 2.5+3.5-\u003E5.25",
       "created": "2019/06/23",
       "status": "",
       "bid": 19,
@@ -51661,7 +51454,7 @@
     },
     {
       "code": "MR-I830",
-      "desc": "!!Icydock mb830sp 3xs->2x5.25\"",
+      "desc": "!!Icydock mb830sp 3xs-\u003E2x5.25\"",
       "created": "2019/11/30",
       "status": "",
       "bid": 19,
@@ -51670,7 +51463,7 @@
     },
     {
       "code": "MR-I901R",
-      "desc": "Icydock 901 2x3.5->2x5.25+Raid",
+      "desc": "Icydock 901 2x3.5-\u003E2x5.25+Raid",
       "created": "2021/05/02",
       "status": "",
       "bid": 19,
@@ -51679,7 +51472,7 @@
     },
     {
       "code": "MR-I902R",
-      "desc": "Icydock 902 2x2.5->5.25+Raid",
+      "desc": "Icydock 902 2x2.5-\u003E5.25+Raid",
       "created": "2021/05/02",
       "status": "",
       "bid": 19,
@@ -51688,7 +51481,7 @@
     },
     {
       "code": "MR-I971SP",
-      "desc": "Icydock mb971SP 2.5+3.5->5.25",
+      "desc": "Icydock mb971SP 2.5+3.5-\u003E5.25",
       "created": "2012/07/08",
       "status": "",
       "bid": 19,
@@ -51706,7 +51499,7 @@
     },
     {
       "code": "MR-I991IK",
-      "desc": "Icydock mb991iK 2.5\"->3.5\"",
+      "desc": "Icydock mb991iK 2.5\"-\u003E3.5\"",
       "created": "2010/06/30",
       "status": "",
       "bid": 19,
@@ -51715,7 +51508,7 @@
     },
     {
       "code": "MR-I992R",
-      "desc": "Icydock 992skR 2x2.5->3.5+Raid",
+      "desc": "Icydock 992skR 2x2.5-\u003E3.5+Raid",
       "created": "2017/03/22",
       "status": "",
       "bid": 19,
@@ -51724,7 +51517,7 @@
     },
     {
       "code": "MR-I993",
-      "desc": "Icydock mb993sk 3x2.5\"->3.5\"",
+      "desc": "Icydock mb993sk 3x2.5\"-\u003E3.5\"",
       "created": "2017/03/22",
       "status": "",
       "bid": 19,
@@ -51733,7 +51526,7 @@
     },
     {
       "code": "MR-I994+K",
-      "desc": "Icydock mb994sk-1b 4x2.5->5.2\"",
+      "desc": "Icydock mb994sk-1b 4x2.5-\u003E5.2\"",
       "created": "2015/09/22",
       "status": "",
       "bid": 19,
@@ -51742,7 +51535,7 @@
     },
     {
       "code": "MR-I996+K",
-      "desc": "Icydock mb996sk 6x2.5\"->5.25\"",
+      "desc": "Icydock mb996sk 6x2.5\"-\u003E5.25\"",
       "created": "2019/06/23",
       "status": "",
       "bid": 19,
@@ -51751,7 +51544,7 @@
     },
     {
       "code": "MR-I998",
-      "desc": "Icydock mb998sp-b 8x2.5->5.25\"",
+      "desc": "Icydock mb998sp-b 8x2.5-\u003E5.25\"",
       "created": "2015/08/23",
       "status": "",
       "bid": 19,
@@ -51760,7 +51553,7 @@
     },
     {
       "code": "MR-I998+K",
-      "desc": "Icydock mb998sk 8x2.5\"->5.25\"",
+      "desc": "Icydock mb998sk 8x2.5\"-\u003E5.25\"",
       "created": "2019/06/23",
       "status": "",
       "bid": 19,
@@ -51805,7 +51598,7 @@
     },
     {
       "code": "MR-V225S6",
-      "desc": "Vantec mrk-225S6 2x2.5\"->3.5\"",
+      "desc": "Vantec mrk-225S6 2x2.5\"-\u003E3.5\"",
       "created": "2013/01/21",
       "status": "",
       "bid": 51,
@@ -51913,7 +51706,7 @@
     },
     {
       "code": "NA-AOH102",
-      "desc": "!Asus oH102 usb->gigabit lan",
+      "desc": "!Asus oH102 usb-\u003Egigabit lan",
       "created": "2022/05/03",
       "status": "",
       "bid": 7,
@@ -52336,7 +52129,7 @@
     },
     {
       "code": "NA-JCE131",
-      "desc": "J5 JCE131 U3.1 type-C->gigab",
+      "desc": "J5 JCE131 U3.1 type-C-\u003Egigab",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -52345,7 +52138,7 @@
     },
     {
       "code": "NA-JCE133",
-      "desc": "J5 JCE133g U3 type-C->gigabit",
+      "desc": "J5 JCE133g U3 type-C-\u003Egigabit",
       "created": "2019/11/10",
       "status": "",
       "bid": 22,
@@ -52354,7 +52147,7 @@
     },
     {
       "code": "NA-JCE145",
-      "desc": "J5 JCE145 type-C-> 2.5Gigabit",
+      "desc": "J5 JCE145 type-C-\u003E 2.5Gigabit",
       "created": "2020/07/20",
       "status": "",
       "bid": 22,
@@ -52381,7 +52174,7 @@
     },
     {
       "code": "NA-JUC501",
-      "desc": "J5 JUC501 u->c wormhole switch",
+      "desc": "J5 JUC501 u-\u003Ec wormhole switch",
       "created": "2019/03/13",
       "status": "",
       "bid": 22,
@@ -52417,7 +52210,7 @@
     },
     {
       "code": "NA-JUE125",
-      "desc": "J5create JUE125 Usb2->10/100",
+      "desc": "J5create JUE125 Usb2-\u003E10/100",
       "created": "2016/08/01",
       "status": "",
       "bid": 22,
@@ -52426,7 +52219,7 @@
     },
     {
       "code": "NA-JUE130",
-      "desc": "J5create JUE130 Usb3->gigabit",
+      "desc": "J5create JUE130 Usb3-\u003Egigabit",
       "created": "2013/07/16",
       "status": "",
       "bid": 22,
@@ -52435,7 +52228,7 @@
     },
     {
       "code": "NA-JUE230",
-      "desc": "J5 JUE230 Gigabit->2 USB3.0",
+      "desc": "J5 JUE230 Gigabit-\u003E2 USB3.0",
       "created": "2015/02/14",
       "status": "",
       "bid": 22,
@@ -52453,7 +52246,7 @@
     },
     {
       "code": "NA-SCTL1200",
-      "desc": "!!Sunix CTL1200 type-c->10/100",
+      "desc": "!!Sunix CTL1200 type-c-\u003E10/100",
       "created": "2015/08/22",
       "status": "",
       "bid": 45,
@@ -52536,7 +52329,7 @@
       "code": "NA-TWN881ND",
       "desc": "TP-Link WN881ND 300mbps Pci-E",
       "created": "2024/05/24",
-      "status": "N",
+      "status": "",
       "bid": 79,
       "pid": 59,
       "war": 12
@@ -52789,6 +52582,15 @@
       "desc": "B1500cepe-i78512B0X -7Q+8+Nv",
       "created": "2023/02/10",
       "status": "C",
+      "bid": 7,
+      "pid": 9,
+      "war": 12
+    },
+    {
+      "code": "NB-AB1502-5T81S",
+      "desc": "*B1502CBA-I5810B1W",
+      "created": "2025/01/16",
+      "status": "R",
       "bid": 7,
       "pid": 9,
       "war": 12
@@ -55954,7 +55756,7 @@
     },
     {
       "code": "OT-B35F",
-      "desc": "!?3.5\"->5.25\"bracket+Front",
+      "desc": "!?3.5\"-\u003E5.25\"bracket+Front",
       "created": "2006/03/24",
       "status": "",
       "bid": 0,
@@ -56809,7 +56611,7 @@
     },
     {
       "code": "PS-AA4PS",
-      "desc": "4Pin molex->Sata convet",
+      "desc": "4Pin molex-\u003ESata convet",
       "created": "2008/07/18",
       "status": "",
       "bid": 71,
@@ -56818,7 +56620,7 @@
     },
     {
       "code": "PS-AA4PS2",
-      "desc": "4 Pin molex-> Sata power x2",
+      "desc": "4 Pin molex-\u003E Sata power x2",
       "created": "2018/05/14",
       "status": "",
       "bid": 71,
@@ -56881,7 +56683,7 @@
     },
     {
       "code": "PS-BAM1SA45G",
-      "desc": "Bitfenix Molex->1SAta 45cm Grn",
+      "desc": "Bitfenix Molex-\u003E1SAta 45cm Grn",
       "created": "2012/09/28",
       "status": "",
       "bid": 8,
@@ -56890,7 +56692,7 @@
     },
     {
       "code": "PS-BAM3MS",
-      "desc": "Bitfenix Molex->3xMolex Silver",
+      "desc": "Bitfenix Molex-\u003E3xMolex Silver",
       "created": "2012/09/27",
       "status": "",
       "bid": 8,
@@ -56899,7 +56701,7 @@
     },
     {
       "code": "PS-BAM3MW",
-      "desc": "Bitfenix Molex->3xMolex White",
+      "desc": "Bitfenix Molex-\u003E3xMolex White",
       "created": "2012/09/27",
       "status": "",
       "bid": 8,
@@ -56923,15 +56725,6 @@
       "bid": 13,
       "pid": 47,
       "war": 84
-    },
-    {
-      "code": "PS-C1000RMX",
-      "desc": "!!Corsair 1000w RMX modular",
-      "created": "2015/08/22",
-      "status": "",
-      "bid": 13,
-      "pid": 47,
-      "war": 120
     },
     {
       "code": "PS-C1000RMXS",
@@ -57288,15 +57081,6 @@
       "code": "PS-C750RMXSW",
       "desc": "Corsair 750w RMX Shift Wh",
       "created": "2024/03/22",
-      "status": "",
-      "bid": 13,
-      "pid": 47,
-      "war": 120
-    },
-    {
-      "code": "PS-C750RMXW",
-      "desc": "!!Corsair 750w RMX White modul",
-      "created": "2017/06/24",
       "status": "",
       "bid": 13,
       "pid": 47,
@@ -58365,15 +58149,6 @@
       "war": 60
     },
     {
-      "code": "PS-IFXX750PCRPS",
-      "desc": "Intel FXX750PCRPS 750w redunda",
-      "created": "2015/03/26",
-      "status": "",
-      "bid": 20,
-      "pid": 47,
-      "war": 12
-    },
-    {
       "code": "PS-T420",
       "desc": "Thermalmaster 420W for Elite",
       "created": "2012/02/29",
@@ -59185,7 +58960,7 @@
     },
     {
       "code": "SC-AAPCIER",
-      "desc": "Pci-e(1x)->(16x) Riser card u3",
+      "desc": "Pci-e(1x)-\u003E(16x) Riser card u3",
       "created": "2017/11/07",
       "status": "",
       "bid": 7,
@@ -59392,7 +59167,7 @@
     },
     {
       "code": "SC-DUBV120",
-      "desc": "DUB-V120 type-C->HDMi",
+      "desc": "DUB-V120 type-C-\u003EHDMi",
       "created": "2021/12/02",
       "status": "",
       "bid": 14,
@@ -59401,7 +59176,7 @@
     },
     {
       "code": "SC-DUBV210",
-      "desc": "DUB-V210 t-C->HDMi+D-sub",
+      "desc": "DUB-V210 t-C-\u003EHDMi+D-sub",
       "created": "2021/12/02",
       "status": "",
       "bid": 14,
@@ -60337,7 +60112,7 @@
     },
     {
       "code": "SC-JCA111",
-      "desc": "J5 JCA111 U3.1 type-C ->VGA",
+      "desc": "J5 JCA111 U3.1 type-C -\u003EVGA",
       "created": "2015/06/20",
       "status": "",
       "bid": 22,
@@ -60346,7 +60121,7 @@
     },
     {
       "code": "SC-JCA140",
-      "desc": "J5create JCA140 typeC->4K DP/F",
+      "desc": "J5create JCA140 typeC-\u003E4K DP/F",
       "created": "2015/10/16",
       "status": "",
       "bid": 22,
@@ -60355,7 +60130,7 @@
     },
     {
       "code": "SC-JCA141",
-      "desc": "J5create JCA141 typeC->4K DP/M",
+      "desc": "J5create JCA141 typeC-\u003E4K DP/M",
       "created": "2015/10/16",
       "status": "",
       "bid": 22,
@@ -60364,7 +60139,7 @@
     },
     {
       "code": "SC-JCA142",
-      "desc": "J5create JCA142 t-C->4K mDP/F",
+      "desc": "J5create JCA142 t-C-\u003E4K mDP/F",
       "created": "2018/04/02",
       "status": "",
       "bid": 22,
@@ -60373,7 +60148,7 @@
     },
     {
       "code": "SC-JCA152",
-      "desc": "J5 JCA152 type-c->4K HDMi+PD",
+      "desc": "J5 JCA152 type-c-\u003E4K HDMi+PD",
       "created": "2023/08/11",
       "status": "",
       "bid": 22,
@@ -60382,7 +60157,7 @@
     },
     {
       "code": "SC-JCA157",
-      "desc": "J5 JCA157 t-C-> 8K HDMi",
+      "desc": "J5 JCA157 t-C-\u003E 8K HDMi",
       "created": "2022/06/16",
       "status": "",
       "bid": 22,
@@ -60391,7 +60166,7 @@
     },
     {
       "code": "SC-JCA174",
-      "desc": "J5 JCA174 t-C->HDMi+D-sub",
+      "desc": "J5 JCA174 t-C-\u003EHDMi+D-sub",
       "created": "2019/08/25",
       "status": "",
       "bid": 22,
@@ -60400,7 +60175,7 @@
     },
     {
       "code": "SC-JCA365",
-      "desc": "J5 JCA365 type-A/C ->2x HDMi",
+      "desc": "J5 JCA365 type-A/C -\u003E2x HDMi",
       "created": "2024/02/19",
       "status": "",
       "bid": 22,
@@ -60409,7 +60184,7 @@
     },
     {
       "code": "SC-JCA366",
-      "desc": "J5 JCA366 type-c ->4x HDMi",
+      "desc": "J5 JCA366 type-c -\u003E4x HDMi",
       "created": "2019/11/09",
       "status": "",
       "bid": 22,
@@ -60418,7 +60193,7 @@
     },
     {
       "code": "SC-JCA465",
-      "desc": "J5 JCA465 type-c ->2x 4K HDMi",
+      "desc": "J5 JCA465 type-c -\u003E2x 4K HDMi",
       "created": "2023/05/02",
       "status": "",
       "bid": 22,
@@ -60427,7 +60202,7 @@
     },
     {
       "code": "SC-JCC111",
-      "desc": "J5 JCC111 U3.1 type-C ->VGA",
+      "desc": "J5 JCC111 U3.1 type-C -\u003EVGA",
       "created": "2017/09/03",
       "status": "",
       "bid": 22,
@@ -60436,7 +60211,7 @@
     },
     {
       "code": "SC-JCC153",
-      "desc": "J5 JCC153 U3.1 type-C ->HDMi4K",
+      "desc": "J5 JCC153 U3.1 type-C -\u003EHDMi4K",
       "created": "2017/09/03",
       "status": "",
       "bid": 22,
@@ -60445,7 +60220,7 @@
     },
     {
       "code": "SC-JCC154",
-      "desc": "JCC154g t-C ->HDMi4K+ t-a powe",
+      "desc": "JCC154g t-C -\u003EHDMi4K+ t-a powe",
       "created": "2021/01/20",
       "status": "",
       "bid": 22,
@@ -60454,7 +60229,7 @@
     },
     {
       "code": "SC-JCC155",
-      "desc": "JCC155g t-C ->HDMi4K+ t-c powr",
+      "desc": "JCC155g t-C -\u003EHDMi4K+ t-c powr",
       "created": "2020/12/13",
       "status": "",
       "bid": 22,
@@ -60463,7 +60238,7 @@
     },
     {
       "code": "SC-JCC157",
-      "desc": "J5 JCC157 t-C-> 8K HDMi cable",
+      "desc": "J5 JCC157 t-C-\u003E 8K HDMi cable",
       "created": "2022/07/14",
       "status": "",
       "bid": 22,
@@ -60472,7 +60247,7 @@
     },
     {
       "code": "SC-JCH453",
-      "desc": "J5 JCH453 t-c ->8K HDMi+4xhubs",
+      "desc": "J5 JCH453 t-c -\u003E8K HDMi+4xhubs",
       "created": "2023/05/02",
       "status": "",
       "bid": 22,
@@ -60481,7 +60256,7 @@
     },
     {
       "code": "SC-JUA161C",
-      "desc": "J5 JUA161C miCroUSB+t-C ->VGA",
+      "desc": "J5 JUA161C miCroUSB+t-C -\u003EVGA",
       "created": "2017/09/03",
       "status": "",
       "bid": 22,
@@ -60490,7 +60265,7 @@
     },
     {
       "code": "SC-JUA165C",
-      "desc": "!!J5 JUA165C miCroUSB+tC->HDMi",
+      "desc": "!!J5 JUA165C miCroUSB+tC-\u003EHDMi",
       "created": "2018/06/11",
       "status": "",
       "bid": 22,
@@ -60499,7 +60274,7 @@
     },
     {
       "code": "SC-JUA214",
-      "desc": "J5create JUA214 usb3->VGA",
+      "desc": "J5create JUA214 usb3-\u003EVGA",
       "created": "2019/10/06",
       "status": "",
       "bid": 22,
@@ -60508,7 +60283,7 @@
     },
     {
       "code": "SC-JUA254",
-      "desc": "J5create JUA254 Usb3->HDMi",
+      "desc": "J5create JUA254 Usb3-\u003EHDMi",
       "created": "2019/10/06",
       "status": "",
       "bid": 22,
@@ -60517,7 +60292,7 @@
     },
     {
       "code": "SC-JUA330U",
-      "desc": "!!J5 JUA330U U3->Dvi/hdmi/dsub",
+      "desc": "!!J5 JUA330U U3-\u003EDvi/hdmi/dsub",
       "created": "2014/04/22",
       "status": "",
       "bid": 22,
@@ -60526,7 +60301,7 @@
     },
     {
       "code": "SC-JUA354",
-      "desc": "J5create JUA354 Usb3->4K HDMi",
+      "desc": "J5create JUA354 Usb3-\u003E4K HDMi",
       "created": "2017/05/13",
       "status": "",
       "bid": 22,
@@ -60535,7 +60310,7 @@
     },
     {
       "code": "SC-JUA355",
-      "desc": "J5create JUA355 Usb3->HDMi",
+      "desc": "J5create JUA355 Usb3-\u003EHDMi",
       "created": "2015/04/05",
       "status": "",
       "bid": 22,
@@ -60544,7 +60319,7 @@
     },
     {
       "code": "SC-JUA360",
-      "desc": "J5create JUA360 U3->HDMi+D-sub",
+      "desc": "J5create JUA360 U3-\u003EHDMi+D-sub",
       "created": "2017/05/13",
       "status": "",
       "bid": 22,
@@ -60553,7 +60328,7 @@
     },
     {
       "code": "SC-JUA365",
-      "desc": "J5create JUA365 Usb3->2xHDMi",
+      "desc": "J5create JUA365 Usb3-\u003E2xHDMi",
       "created": "2017/01/10",
       "status": "",
       "bid": 22,
@@ -60922,7 +60697,7 @@
     },
     {
       "code": "SC-SC2HC3M0",
-      "desc": "Sunix C2HC3M0 type-C-> Hdmi",
+      "desc": "Sunix C2HC3M0 type-C-\u003E Hdmi",
       "created": "2019/06/03",
       "status": "",
       "bid": 45,
@@ -61102,7 +60877,7 @@
     },
     {
       "code": "SC-SVGA0419",
-      "desc": "Sunix VGA0419 pci-e(1x)->d-sub",
+      "desc": "Sunix VGA0419 pci-e(1x)-\u003Ed-sub",
       "created": "2021/03/24",
       "status": "",
       "bid": 45,
@@ -61111,7 +60886,7 @@
     },
     {
       "code": "SC-SVGA0429",
-      "desc": "SUNIX VGA0429 pci-e(1x)->DVi",
+      "desc": "SUNIX VGA0429 pci-e(1x)-\u003EDVi",
       "created": "2015/11/27",
       "status": "",
       "bid": 41,
@@ -61120,7 +60895,7 @@
     },
     {
       "code": "SC-SVGA0449",
-      "desc": "*Sunix SVGA0449 (1x)->d-sub+dv",
+      "desc": "*Sunix SVGA0449 (1x)-\u003Ed-sub+dv",
       "created": "2021/03/24",
       "status": "R",
       "bid": 45,
@@ -61129,7 +60904,7 @@
     },
     {
       "code": "SC-SVGA2728",
-      "desc": "!!Sunix VGA2728 usb3.0->DVi",
+      "desc": "!!Sunix VGA2728 usb3.0-\u003EDVi",
       "created": "2012/01/18",
       "status": "",
       "bid": 45,
@@ -61138,7 +60913,7 @@
     },
     {
       "code": "SC-SVGA2795",
-      "desc": "!!Sunix VGA2795 usb3.0->DP(4K)",
+      "desc": "!!Sunix VGA2795 usb3.0-\u003EDP(4K)",
       "created": "2016/05/15",
       "status": "",
       "bid": 45,
@@ -61210,7 +60985,7 @@
     },
     {
       "code": "SC-V410DU3",
-      "desc": "Vantec NBV-410DU3 u3->DP(4K)",
+      "desc": "Vantec NBV-410DU3 u3-\u003EDP(4K)",
       "created": "2016/08/07",
       "status": "",
       "bid": 51,
@@ -62076,15 +61851,6 @@
       "code": "SF-GWOWEC",
       "desc": "!!WoW Expansion Cataclysm",
       "created": "2010/12/06",
-      "status": "",
-      "bid": 74,
-      "pid": 48,
-      "war": 0
-    },
-    {
-      "code": "SF-GWOWELC",
-      "desc": "!!WoW Expansion Legion Collect",
-      "created": "2016/07/22",
       "status": "",
       "bid": 74,
       "pid": 48,
@@ -70425,24 +70191,6 @@
       "war": 0
     },
     {
-      "code": "UP-APNETR6",
-      "desc": "APC PNETR6 RJ45 surge module",
-      "created": "2018/10/25",
-      "status": "",
-      "bid": 6,
-      "pid": 51,
-      "war": 0
-    },
-    {
-      "code": "UP-APRM24",
-      "desc": "APC PRM24 19\"1U 24pos chassis",
-      "created": "2018/10/25",
-      "status": "",
-      "bid": 6,
-      "pid": 51,
-      "war": 0
-    },
-    {
       "code": "UP-ARBC110",
       "desc": "*Apc RBC110 replacement batter",
       "created": "2012/08/18",
@@ -71515,7 +71263,7 @@
     },
     {
       "code": "VS-APM4X2",
-      "desc": "!aavara PM4X2 4->2 HDMI",
+      "desc": "!aavara PM4X2 4-\u003E2 HDMI",
       "created": "2009/04/16",
       "status": "",
       "bid": 2,
@@ -71524,7 +71272,7 @@
     },
     {
       "code": "VS-APM4X4A",
-      "desc": "Aavara PM4X4A 4->4 HDMI",
+      "desc": "Aavara PM4X4A 4-\u003E4 HDMI",
       "created": "2011/11/10",
       "status": "",
       "bid": 2,
@@ -71542,7 +71290,7 @@
     },
     {
       "code": "VS-APS128A",
-      "desc": "!!Aavara PS128A 1->8 HDMI spli",
+      "desc": "!!Aavara PS128A 1-\u003E8 HDMI spli",
       "created": "2012/01/30",
       "status": "",
       "bid": 2,
@@ -71587,7 +71335,7 @@
     },
     {
       "code": "WA-A13G",
-      "desc": "!!Asus 1->3 years Global",
+      "desc": "!!Asus 1-\u003E3 years Global",
       "created": "2013/07/19",
       "status": "",
       "bid": 7,
@@ -71719,15 +71467,6 @@
       "bid": 13,
       "pid": 10,
       "war": 12
-    },
-    {
-      "code": "WC-CAAM4-MLP",
-      "desc": "CM AM4 Bracket for MasterLiqPr",
-      "created": "2017/06/30",
-      "status": "",
-      "bid": 12,
-      "pid": 10,
-      "war": 0
     },
     {
       "code": "WC-CAAM4H",
@@ -72219,15 +71958,6 @@
       "code": "WC-CH60XRE",
       "desc": "Corsair H60X Rgb Elite 120mm w",
       "created": "2022/12/28",
-      "status": "",
-      "bid": 13,
-      "pid": 10,
-      "war": 60
-    },
-    {
-      "code": "WC-CH75",
-      "desc": "!!Coair H75 cpu water cooling",
-      "created": "2013/10/19",
       "status": "",
       "bid": 13,
       "pid": 10,
