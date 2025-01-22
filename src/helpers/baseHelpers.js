@@ -78,7 +78,7 @@ export function adjustAdaptersAndConnectorsPricing(products) {
     if (product.categories.includes('Connectors Adaptors & Converters')) {
       const newFullPrice = calculateFullPrice({
         price: product.normal_cost,
-        margin: 35,
+        margin: 30,
         vat: 15
       })
       const newSalePrice = product.sale_price
