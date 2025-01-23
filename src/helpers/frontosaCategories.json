@@ -1,560 +1,146 @@
 {
   "version": 1,
   "brands": [
-    {
-      "id": 1,
-      "name": "3DConnexion"
-    },
-    {
-      "id": 2,
-      "name": "Aavara"
-    },
-    {
-      "id": 3,
-      "name": "Acer"
-    },
-    {
-      "id": 4,
-      "name": "Adata"
-    },
-    {
-      "id": 5,
-      "name": "AMD"
-    },
-    {
-      "id": 80,
-      "name": "Antec"
-    },
-    {
-      "id": 6,
-      "name": "APC"
-    },
-    {
-      "id": 7,
-      "name": "ASUS"
-    },
-    {
-      "id": 8,
-      "name": "Bitfenix"
-    },
-    {
-      "id": 69,
-      "name": "Black"
-    },
-    {
-      "id": 73,
-      "name": "Blizzard"
-    },
-    {
-      "id": 9,
-      "name": "Canon"
-    },
-    {
-      "id": 10,
-      "name": "CFI"
-    },
-    {
-      "id": 11,
-      "name": "Choiix"
-    },
-    {
-      "id": 66,
-      "name": "Compro"
-    },
-    {
-      "id": 12,
-      "name": "Coolermaster"
-    },
-    {
-      "id": 13,
-      "name": "Corsair"
-    },
-    {
-      "id": 14,
-      "name": "D-Link"
-    },
-    {
-      "id": 75,
-      "name": "Deepcool"
-    },
-    {
-      "id": 65,
-      "name": "Dell"
-    },
-    {
-      "id": 59,
-      "name": "Emtec"
-    },
-    {
-      "id": 15,
-      "name": "Epson"
-    },
-    {
-      "id": 16,
-      "name": "Erato"
-    },
-    {
-      "id": 77,
-      "name": "Evercool"
-    },
-    {
-      "id": 78,
-      "name": "G.Skill"
-    },
-    {
-      "id": 74,
-      "name": "Games"
-    },
-    {
-      "id": 17,
-      "name": "Gigabyte"
-    },
-    {
-      "id": 76,
-      "name": "Hisense"
-    },
-    {
-      "id": 18,
-      "name": "HP"
-    },
-    {
-      "id": 19,
-      "name": "ICY DOCK"
-    },
-    {
-      "id": 20,
-      "name": "Intel"
-    },
-    {
-      "id": 21,
-      "name": "InWin"
-    },
-    {
-      "id": 22,
-      "name": "J5Create"
-    },
-    {
-      "id": 23,
-      "name": "Kaspersky"
-    },
-    {
-      "id": 24,
-      "name": "Kingston"
-    },
-    {
-      "id": 25,
-      "name": "Krator"
-    },
-    {
-      "id": 61,
-      "name": "LaCie"
-    },
-    {
-      "id": 60,
-      "name": "Legend"
-    },
-    {
-      "id": 62,
-      "name": "Lenovo"
-    },
-    {
-      "id": 26,
-      "name": "Lexmark"
-    },
-    {
-      "id": 27,
-      "name": "LG"
-    },
-    {
-      "id": 28,
-      "name": "Lian-Li"
-    },
-    {
-      "id": 29,
-      "name": "LiteOn"
-    },
-    {
-      "id": 30,
-      "name": "Logitech"
-    },
-    {
-      "id": 32,
-      "name": "Microsoft"
-    },
-    {
-      "id": 63,
-      "name": "Mikrotik"
-    },
-    {
-      "id": 33,
-      "name": "MSI"
-    },
-    {
-      "id": 34,
-      "name": "Mukii"
-    },
-    {
-      "id": 71,
-      "name": "Oem"
-    },
-    {
-      "id": 35,
-      "name": "Oki"
-    },
-    {
-      "id": 36,
-      "name": "PNY"
-    },
-    {
-      "id": 37,
-      "name": "PQI"
-    },
-    {
-      "id": 64,
-      "name": "QNAP"
-    },
-    {
-      "id": 38,
-      "name": "Razer"
-    },
-    {
-      "id": 40,
-      "name": "Samsung"
-    },
-    {
-      "id": 41,
-      "name": "Sapphire"
-    },
-    {
-      "id": 42,
-      "name": "Seagate"
-    },
-    {
-      "id": 43,
-      "name": "Sony"
-    },
-    {
-      "id": 44,
-      "name": "SteelSeries"
-    },
-    {
-      "id": 45,
-      "name": "Sunix"
-    },
-    {
-      "id": 46,
-      "name": "Supertalent"
-    },
-    {
-      "id": 47,
-      "name": "Tanko"
-    },
-    {
-      "id": 48,
-      "name": "Targus"
-    },
-    {
-      "id": 49,
-      "name": "Thermalright"
-    },
-    {
-      "id": 68,
-      "name": "Thrustmaster"
-    },
-    {
-      "id": 79,
-      "name": "TP-Link"
-    },
-    {
-      "id": 50,
-      "name": "Transcend"
-    },
-    {
-      "id": 51,
-      "name": "Vantec"
-    },
-    {
-      "id": 52,
-      "name": "VAX"
-    },
-    {
-      "id": 53,
-      "name": "Verbatim"
-    },
-    {
-      "id": 54,
-      "name": "ViPower"
-    },
-    {
-      "id": 55,
-      "name": "Vizo"
-    },
-    {
-      "id": 56,
-      "name": "Western Digital"
-    },
-    {
-      "id": 70,
-      "name": "Yama"
-    },
-    {
-      "id": 57,
-      "name": "Zalman"
-    },
-    {
-      "id": 58,
-      "name": "Zboard"
-    }
+    { "id": 1, "name": "3DConnexion" },
+    { "id": 2, "name": "Aavara" },
+    { "id": 3, "name": "Acer" },
+    { "id": 4, "name": "Adata" },
+    { "id": 5, "name": "AMD" },
+    { "id": 80, "name": "Antec" },
+    { "id": 6, "name": "APC" },
+    { "id": 7, "name": "ASUS" },
+    { "id": 8, "name": "Bitfenix" },
+    { "id": 69, "name": "Black" },
+    { "id": 73, "name": "Blizzard" },
+    { "id": 9, "name": "Canon" },
+    { "id": 10, "name": "CFI" },
+    { "id": 11, "name": "Choiix" },
+    { "id": 66, "name": "Compro" },
+    { "id": 12, "name": "Coolermaster" },
+    { "id": 13, "name": "Corsair" },
+    { "id": 14, "name": "D-Link" },
+    { "id": 75, "name": "Deepcool" },
+    { "id": 65, "name": "Dell" },
+    { "id": 59, "name": "Emtec" },
+    { "id": 15, "name": "Epson" },
+    { "id": 16, "name": "Erato" },
+    { "id": 77, "name": "Evercool" },
+    { "id": 78, "name": "G.Skill" },
+    { "id": 74, "name": "Games" },
+    { "id": 17, "name": "Gigabyte" },
+    { "id": 76, "name": "Hisense" },
+    { "id": 18, "name": "HP" },
+    { "id": 19, "name": "ICY DOCK" },
+    { "id": 20, "name": "Intel" },
+    { "id": 21, "name": "InWin" },
+    { "id": 22, "name": "J5Create" },
+    { "id": 23, "name": "Kaspersky" },
+    { "id": 24, "name": "Kingston" },
+    { "id": 25, "name": "Krator" },
+    { "id": 61, "name": "LaCie" },
+    { "id": 60, "name": "Legend" },
+    { "id": 62, "name": "Lenovo" },
+    { "id": 26, "name": "Lexmark" },
+    { "id": 27, "name": "LG" },
+    { "id": 28, "name": "Lian-Li" },
+    { "id": 29, "name": "LiteOn" },
+    { "id": 30, "name": "Logitech" },
+    { "id": 32, "name": "Microsoft" },
+    { "id": 63, "name": "Mikrotik" },
+    { "id": 33, "name": "MSI" },
+    { "id": 34, "name": "Mukii" },
+    { "id": 71, "name": "Oem" },
+    { "id": 35, "name": "Oki" },
+    { "id": 36, "name": "PNY" },
+    { "id": 37, "name": "PQI" },
+    { "id": 64, "name": "QNAP" },
+    { "id": 38, "name": "Razer" },
+    { "id": 40, "name": "Samsung" },
+    { "id": 41, "name": "Sapphire" },
+    { "id": 42, "name": "Seagate" },
+    { "id": 43, "name": "Sony" },
+    { "id": 44, "name": "SteelSeries" },
+    { "id": 45, "name": "Sunix" },
+    { "id": 46, "name": "Supertalent" },
+    { "id": 47, "name": "Tanko" },
+    { "id": 48, "name": "Targus" },
+    { "id": 49, "name": "Thermalright" },
+    { "id": 68, "name": "Thrustmaster" },
+    { "id": 79, "name": "TP-Link" },
+    { "id": 50, "name": "Transcend" },
+    { "id": 51, "name": "Vantec" },
+    { "id": 52, "name": "VAX" },
+    { "id": 53, "name": "Verbatim" },
+    { "id": 54, "name": "ViPower" },
+    { "id": 55, "name": "Vizo" },
+    { "id": 56, "name": "Western Digital" },
+    { "id": 70, "name": "Yama" },
+    { "id": 57, "name": "Zalman" },
+    { "id": 58, "name": "Zboard" }
   ],
   "categories": [
-    {
-      "id": 14,
-      "name": "Add-On Cards"
-    },
-    {
-      "id": 12,
-      "name": "Audio"
-    },
-    {
-      "id": 17,
-      "name": "Bags - Covers"
-    },
-    {
-      "id": 60,
-      "name": "Cables"
-    },
-    {
-      "id": 67,
-      "name": "Cameras"
-    },
-    {
-      "id": 64,
-      "name": "Card Readers"
-    },
-    {
-      "id": 7,
-      "name": "Chassis"
-    },
-    {
-      "id": 18,
-      "name": "Compact Flash Card"
-    },
-    {
-      "id": 19,
-      "name": "Consumable"
-    },
-    {
-      "id": 65,
-      "name": "Converters"
-    },
-    {
-      "id": 10,
-      "name": "Cooling"
-    },
-    {
-      "id": 13,
-      "name": "CPU"
-    },
-    {
-      "id": 62,
-      "name": "Desktop Computers"
-    },
-    {
-      "id": 22,
-      "name": "Docking Stations"
-    },
-    {
-      "id": 24,
-      "name": "External Enclosures"
-    },
-    {
-      "id": 25,
-      "name": "External Hard Drives"
-    },
-    {
-      "id": 26,
-      "name": "Fan"
-    },
-    {
-      "id": 2,
-      "name": "Flash Drives"
-    },
-    {
-      "id": 73,
-      "name": "Game Capture"
-    },
-    {
-      "id": 61,
-      "name": "Game Controller"
-    },
-    {
-      "id": 27,
-      "name": "Gaming Chair"
-    },
-    {
-      "id": 29,
-      "name": "Gaming Merchandise"
-    },
-    {
-      "id": 4,
-      "name": "Graphics"
-    },
-    {
-      "id": 11,
-      "name": "Hard Drive"
-    },
-    {
-      "id": 31,
-      "name": "Headset"
-    },
-    {
-      "id": 69,
-      "name": "IoT"
-    },
-    {
-      "id": 76,
-      "name": "IP Cameras"
-    },
-    {
-      "id": 34,
-      "name": "Keyboard"
-    },
-    {
-      "id": 35,
-      "name": "Keyboard + Mouse Combo"
-    },
-    {
-      "id": 36,
-      "name": "KVM Switch"
-    },
-    {
-      "id": 39,
-      "name": "Lighting"
-    },
-    {
-      "id": 5,
-      "name": "Memory"
-    },
-    {
-      "id": 74,
-      "name": "Mobile Rack"
-    },
-    {
-      "id": 37,
-      "name": "Monitor"
-    },
-    {
-      "id": 3,
-      "name": "Motherboard"
-    },
-    {
-      "id": 66,
-      "name": "Mounting Kits"
-    },
-    {
-      "id": 41,
-      "name": "Mouse"
-    },
-    {
-      "id": 46,
-      "name": "Mousepad"
-    },
-    {
-      "id": 59,
-      "name": "Network Adapter"
-    },
-    {
-      "id": 40,
-      "name": "Network Router / Access Point"
-    },
-    {
-      "id": 57,
-      "name": "Network Storage"
-    },
-    {
-      "id": 58,
-      "name": "Network Switch"
-    },
-    {
-      "id": 9,
-      "name": "Notebook"
-    },
-    {
-      "id": 23,
-      "name": "Optical Drive"
-    },
-    {
-      "id": 21,
-      "name": "Optical Media"
-    },
-    {
-      "id": 44,
-      "name": "Paper"
-    },
-    {
-      "id": 50,
-      "name": "Phones"
-    },
-    {
-      "id": 16,
-      "name": "Power Bank"
-    },
-    {
-      "id": 47,
-      "name": "Power Supply"
-    },
-    {
-      "id": 1,
-      "name": "Printer"
-    },
-    {
-      "id": 45,
-      "name": "Projector"
-    },
-    {
-      "id": 49,
-      "name": "Scanner"
-    },
-    {
-      "id": 6,
-      "name": "SD Card"
-    },
-    {
-      "id": 75,
-      "name": "Smart Watch"
-    },
-    {
-      "id": 48,
-      "name": "Software"
-    },
-    {
-      "id": 68,
-      "name": "Streaming"
-    },
-    {
-      "id": 63,
-      "name": "Tablet"
-    },
-    {
-      "id": 38,
-      "name": "TV"
-    },
-    {
-      "id": 51,
-      "name": "UPS"
-    },
-    {
-      "id": 32,
-      "name": "USB Hub"
-    },
-    {
-      "id": 70,
-      "name": "Video Extender"
-    },
-    {
-      "id": 52,
-      "name": "Webcam"
-    }
+    { "id": 14, "name": "Add-On Cards" },
+    { "id": 12, "name": "Audio" },
+    { "id": 17, "name": "Bags - Covers" },
+    { "id": 60, "name": "Cables" },
+    { "id": 67, "name": "Cameras" },
+    { "id": 64, "name": "Card Readers" },
+    { "id": 7, "name": "Chassis" },
+    { "id": 18, "name": "Compact Flash Card" },
+    { "id": 19, "name": "Consumable" },
+    { "id": 65, "name": "Converters" },
+    { "id": 10, "name": "Cooling" },
+    { "id": 13, "name": "CPU" },
+    { "id": 62, "name": "Desktop Computers" },
+    { "id": 22, "name": "Docking Stations" },
+    { "id": 24, "name": "External Enclosures" },
+    { "id": 25, "name": "External Hard Drives" },
+    { "id": 26, "name": "Fan" },
+    { "id": 2, "name": "Flash Drives" },
+    { "id": 73, "name": "Game Capture" },
+    { "id": 61, "name": "Game Controller" },
+    { "id": 27, "name": "Gaming Chair" },
+    { "id": 29, "name": "Gaming Merchandise" },
+    { "id": 4, "name": "Graphics" },
+    { "id": 11, "name": "Hard Drive" },
+    { "id": 31, "name": "Headset" },
+    { "id": 69, "name": "IoT" },
+    { "id": 76, "name": "IP Cameras" },
+    { "id": 34, "name": "Keyboard" },
+    { "id": 35, "name": "Keyboard + Mouse Combo" },
+    { "id": 36, "name": "KVM Switch" },
+    { "id": 39, "name": "Lighting" },
+    { "id": 5, "name": "Memory" },
+    { "id": 74, "name": "Mobile Rack" },
+    { "id": 37, "name": "Monitor" },
+    { "id": 3, "name": "Motherboard" },
+    { "id": 66, "name": "Mounting Kits" },
+    { "id": 41, "name": "Mouse" },
+    { "id": 46, "name": "Mousepad" },
+    { "id": 59, "name": "Network Adapter" },
+    { "id": 40, "name": "Network Router / Access Point" },
+    { "id": 57, "name": "Network Storage" },
+    { "id": 58, "name": "Network Switch" },
+    { "id": 9, "name": "Notebook" },
+    { "id": 23, "name": "Optical Drive" },
+    { "id": 21, "name": "Optical Media" },
+    { "id": 44, "name": "Paper" },
+    { "id": 50, "name": "Phones" },
+    { "id": 16, "name": "Power Bank" },
+    { "id": 47, "name": "Power Supply" },
+    { "id": 1, "name": "Printer" },
+    { "id": 45, "name": "Projector" },
+    { "id": 49, "name": "Scanner" },
+    { "id": 6, "name": "SD Card" },
+    { "id": 75, "name": "Smart Watch" },
+    { "id": 48, "name": "Software" },
+    { "id": 68, "name": "Streaming" },
+    { "id": 63, "name": "Tablet" },
+    { "id": 38, "name": "TV" },
+    { "id": 51, "name": "UPS" },
+    { "id": 32, "name": "USB Hub" },
+    { "id": 70, "name": "Video Extender" },
+    { "id": 52, "name": "Webcam" }
   ],
   "items": [
     {
@@ -24301,7 +23887,7 @@
     },
     {
       "code": "FD-K256G80M",
-      "desc": "Kingston 256G dt80M u3 type-C",
+      "desc": "!Kingston256G dt80M u3 type-C",
       "created": "2023/01/16",
       "status": "",
       "bid": 24,
@@ -30907,8 +30493,17 @@
     },
     {
       "code": "IP-CTR4640",
-      "desc": "PSCFW:Canon pixma TR4640 Oin1",
+      "desc": "!!SCFW:Canon pixma TR4640 Oin1",
       "created": "2023/06/13",
+      "status": "",
+      "bid": 9,
+      "pid": 1,
+      "war": 12
+    },
+    {
+      "code": "IP-CTR4645",
+      "desc": "PSCFW:Canon Pixma TR4645 Oin1",
+      "created": "2025/01/21",
       "status": "",
       "bid": 9,
       "pid": 1,
@@ -31126,6 +30721,15 @@
       "desc": "PSCAW: 4SB24A 530 Oin1 inktank",
       "created": "2020/10/12",
       "status": "",
+      "bid": 18,
+      "pid": 1,
+      "war": 12
+    },
+    {
+      "code": "IP-H580O",
+      "desc": "PSCW: HP 1F3Y2A 580 Oin1 inkta",
+      "created": "2025/01/20",
+      "status": "C",
       "bid": 18,
       "pid": 1,
       "war": 12
@@ -33193,11 +32797,20 @@
     },
     {
       "code": "LC-DSE2422",
-      "desc": "Dell SE2422h 24\" - d-sub+hdmi",
+      "desc": "!Dell SE2422h 24\" - d-sub+hdmi",
       "created": "2022/09/18",
       "status": "",
       "bid": 65,
       "pid": 37,
+      "war": 36
+    },
+    {
+      "code": "LC-DSE2425",
+      "desc": "Dell SE2425h 24\" dsub+hdmi 75h",
+      "created": "2025/01/22",
+      "status": "C",
+      "bid": 0,
+      "pid": 0,
       "war": 36
     },
     {
@@ -33207,6 +32820,15 @@
       "status": "",
       "bid": 65,
       "pid": 37,
+      "war": 36
+    },
+    {
+      "code": "LC-DSE2725",
+      "desc": "Dell Se2725h 27\" dsub+hdmi 75h",
+      "created": "2025/01/22",
+      "status": "C",
+      "bid": 0,
+      "pid": 0,
       "war": 36
     },
     {
@@ -33585,6 +33207,15 @@
       "status": "",
       "bid": 40,
       "pid": 37,
+      "war": 24
+    },
+    {
+      "code": "LC-S27D300",
+      "desc": "Samsung s27D300gaux 27\" fhd",
+      "created": "2025/01/22",
+      "status": "C",
+      "bid": 0,
+      "pid": 0,
       "war": 24
     },
     {
@@ -48819,7 +48450,7 @@
       "code": "ME-KD51664V52",
       "desc": "KVR64A52BS8-16 D5 16G 6400 C52",
       "created": "2025/01/14",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49332,7 +48963,7 @@
       "code": "ME-KD53264G32DW",
       "desc": "KF564C32RWK2-64 D5 6400 G 32x2",
       "created": "2023/11/06",
-      "status": "N",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49386,7 +49017,7 @@
       "code": "ME-KD53264V52",
       "desc": "KVR64A52BS8-32 D5 32G 6400 C52",
       "created": "2025/01/14",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49449,7 +49080,16 @@
       "code": "ME-KD56464V52",
       "desc": "KVR64A52BD8-64 D5 64G 6400 C52",
       "created": "2025/01/14",
-      "status": "C",
+      "status": "N",
+      "bid": 24,
+      "pid": 5,
+      "war": 12
+    },
+    {
+      "code": "ME-KD5848B38",
+      "desc": "!!KF548C38BB-8 D5-4800 Beast 8",
+      "created": "2022/03/07",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -49656,7 +49296,7 @@
       "code": "ME-KD5864V52",
       "desc": "KVR64A52BS6-8 D5 8G 6400 C52",
       "created": "2025/01/14",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -53149,6 +52789,15 @@
       "desc": "K6502zc-oi71610BL0W 7T+N5",
       "created": "2023/06/12",
       "status": "",
+      "bid": 7,
+      "pid": 9,
+      "war": 12
+    },
+    {
+      "code": "NB-AK6502-7TN6",
+      "desc": "*K6502VV-oi71610s0x 7T+4060",
+      "created": "2025/01/21",
+      "status": "R",
       "bid": 7,
       "pid": 9,
       "war": 12

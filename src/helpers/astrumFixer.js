@@ -23,7 +23,6 @@ function prefixTonerTitles(products) {
 
 function prefixBatteryTitles(products) {
   const result = products.map((product) => {
-    if (product.categories.includes(' Batteries')) debugger
     return {
       ...product,
       name: product.categories.includes(' Batteries')
