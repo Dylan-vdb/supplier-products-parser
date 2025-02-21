@@ -31,8 +31,8 @@ export function saveSkuList(products, supplier) {
 export function handleLowStocks(products) {
   return products.map((product) => {
     let newStock = Number(product.stock)
-    const isFrontosa = product.images.includes('https://ik.imagekit.io/ajwhrydzs/FlattenedImages')
-    const isEsquire = product.images.includes('www.xyz.co.za')
+    const isFrontosa = product?.images?.includes('https://ik.imagekit.io/ajwhrydzs/FlattenedImages')
+    const isEsquire = product?.images?.includes('www.xyz.co.za')
 
     if (!isFrontosa && !isEsquire && newStock <= 5) {
       newStock = 0
@@ -120,7 +120,7 @@ export function refineCategories(products) {
   let result = products.reduce((acc, product) => {
     const updatedProduct = { ...product }
 
-    if (product.categories.includes('Mice')) {
+    if (product?.categories?.includes('Mice')) {
       updatedProduct.categories = product.categories.replaceAll('Mice', 'Mouses')
       if (updatedProduct.categories.includes('Mouses > Gaming Mouses')) {
         updatedProduct.categories = `Gaming > Mouses,${updatedProduct.categories}`
@@ -128,13 +128,13 @@ export function refineCategories(products) {
     }
 
     if (
-      product.categories.includes('Accessories > Notebook Accessories') &&
-      product.description.toLowerCase().includes('charger')
+      product?.categories?.includes('Accessories > Notebook Accessories') &&
+      product?.description?.toLowerCase().includes('charger')
     ) {
       updatedProduct.categories = 'Power Solutions > Notebook Chargers'
     }
 
-    if (updatedProduct.categories.includes('Accessories > Notebook Accessories')) {
+    if (updatedProduct?.categories?.includes('Accessories > Notebook Accessories')) {
       updatedProduct.categories = updatedProduct.categories.replace(
         'Accessories > Notebook Accessories',
         'Notebook Components > Accessories'

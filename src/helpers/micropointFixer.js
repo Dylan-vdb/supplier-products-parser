@@ -230,6 +230,23 @@ function includeNewCategories(products) {
   const result = products.reduce((acc, product) => {
     const updatedProduct = { ...product }
 
+    if (product.categories.includes('HARD DRIVES > 2.5" M.2 NVME SSD')) {
+      updatedProduct.categories = 'Storage Media > Solid State NVMe Drives'
+    }
+
+    if (product.categories.includes('HARD DRIVES > 2.5" SATA')) {
+      updatedProduct.categories = 'Storage Media > Hard Drives'
+    }
+
+    if (product.categories.includes('SOLID STATE DRIVE > 2.5" M.2 NVME SSD')) {
+      updatedProduct.categories = 'Storage Media > Solid State NVMe Drives'
+    }
+    // 2.5" SATA
+
+    if (product.categories.includes('SOLID STATE DRIVE > 2.5" SATA')) {
+      updatedProduct.categories = 'Storage Media > Solid State Drives'
+    }
+
     if (
       product.categories.includes('BATTERIES > BATTERIES') ||
       product.categories.includes('BATTERIES > AAA BATTERIES') ||

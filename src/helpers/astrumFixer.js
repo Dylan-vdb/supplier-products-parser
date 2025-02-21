@@ -5,9 +5,11 @@ export function processAstrumStock(productsRaw) {
   const tablesJoined = combineTables(productsRaw)
   const pricing = setPricing(tablesJoined)
   const prefixedTonerTitles = prefixTonerTitles(pricing)
-  const prefixedBatteryTitles = prefixBatteryTitles(prefixedTonerTitles)
+  const prefixedChargerTitles = prefixChargerTitles(prefixedTonerTitles)
+  const prefixedBatteryTitles = prefixBatteryTitles(prefixedChargerTitles)
   const improvedCategoryNames = improveCategoryNames(prefixedBatteryTitles)
   const products = saveSkuList(improvedCategoryNames, 'astrum')
+
   return products
 }
 
@@ -16,6 +18,18 @@ function prefixTonerTitles(products) {
     return {
       ...product,
       name: product.categories.includes('Toner ') ? 'ASTRUM GENERIC ' + product.name : product.name
+    }
+  })
+  return result
+}
+
+function prefixChargerTitles(products) {
+  const result = products.map((product) => {
+    return {
+      ...product,
+      name: product.categories.includes('Laptop Charger')
+        ? 'ASTRUM GENERIC ' + product.name
+        : product.name
     }
   })
   return result

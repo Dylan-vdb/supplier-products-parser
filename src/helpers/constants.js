@@ -44,6 +44,8 @@ export const symbolMap = {
 
 export const syntechCategoryReplacements = [
   ['Computers & Peripherals', 'Peripherals'],
+  ['Consumer Electronics > Cables > Cable Management', 'Cables > Accessories'],
+  ['Consumer Electronics > Cables > Audio Cables', 'Cables > Stereo Cables'],
   ['Consumer Electronics > ', 'Accessories > '],
   ['Peripherals > Desktop Computers > Gaming Desktops', 'Computers > Gaming Desktops'],
   ['Peripherals > Desktop Computers > Office Desktops', 'Computers > Office Desktops'],
@@ -756,5 +758,6 @@ export const micropointAcronyms = new Set([
   'SSD',
   'AMD',
   'ATI',
-  'AM2'
+  'AM2',
+  'NVMe'
 ])

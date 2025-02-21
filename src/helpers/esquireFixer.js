@@ -12,12 +12,10 @@ export function processEsquireStock() {
   const duplicatesRemoved = removeDuplicates(esquireStock)
   const tidiedProducts = tidyFields(duplicatesRemoved)
   const unmappedCategories = findUnmappedCategories(tidiedProducts)
-
   const categorizedProducts = improveCategoryNames(tidiedProducts)
   const pricedProducts = priceProducts(categorizedProducts)
   const finalProducts = saveSkuList(pricedProducts, 'esquire')
 
-  // downloadCategories();
   return finalProducts
 }
 
@@ -84,7 +82,7 @@ function findUnmappedCategories(products) {
 function removeDuplicates(products) {
   const seenProducts = products.reduce((acc, product) => {
     const productCode = product.productCode
-    if (!acc.has(productCode)) {
+    if (!acc.has(productCode) && product.description) {
       acc.set(productCode, product)
     }
     return acc
