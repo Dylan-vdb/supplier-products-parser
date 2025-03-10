@@ -242,26 +242,17 @@ function priceProducts(products) {
       return product
     }
 
-    const isOnSpecial = product.status === 1
-
     const regularPrice = calculateFullPrice({
       price: cost,
-      margin: isOnSpecial ? 25 : 16,
+      margin: 16,
       vat: 15
     })
 
     return {
       ...product,
       price: regularPrice,
-      sale_price: isOnSpecial
-        ? calculateFullPrice({
-            price: cost,
-            margin: 16,
-            vat: 15
-          })
-        : null,
-      tags: isOnSpecial ? 'On Sale' : null,
-      // is_featured: isOnSpecial ? 1 : 0
+      sale_price: null,
+      tags: null,
       is_featured: 0
     }
   })

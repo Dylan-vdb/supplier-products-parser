@@ -1288,7 +1288,7 @@
     },
     {
       "code": "BT-AP10000QCDK",
-      "desc": "Adata P10000QCD 10000mAh blK",
+      "desc": "!!Adata P10000QCD 10000mAh blK",
       "created": "2020/07/30",
       "status": "",
       "bid": 4,
@@ -1297,7 +1297,7 @@
     },
     {
       "code": "BT-AP10000QCDL",
-      "desc": "Adata P10000QCD 10000mAh bLue",
+      "desc": "!!Adata P10000QCD 10000mAh bLu",
       "created": "2021/12/15",
       "status": "",
       "bid": 4,
@@ -1306,7 +1306,7 @@
     },
     {
       "code": "BT-AP10000QCDW",
-      "desc": "Adata P10000QCD 10000mAh Whi",
+      "desc": "!!Adata P10000QCD 10000mAh Whi",
       "created": "2020/07/30",
       "status": "",
       "bid": 4,
@@ -1316,15 +1316,6 @@
     {
       "code": "BT-AP10050CK",
       "desc": "!!Adata P10050C 10500mAh blacK",
-      "created": "2018/09/20",
-      "status": "",
-      "bid": 4,
-      "pid": 16,
-      "war": 12
-    },
-    {
-      "code": "BT-AP10050CW",
-      "desc": "!!Adata P10050C 10500mAh White",
       "created": "2018/09/20",
       "status": "",
       "bid": 4,
@@ -1840,7 +1831,7 @@
       "desc": "CAT 6 Cable only per meter",
       "created": "2024/02/26",
       "status": "C",
-      "bid": 0,
+      "bid": 71,
       "pid": 60,
       "war": 0
     },
@@ -2884,7 +2875,7 @@
       "desc": "Rj45 cat6 100m roll",
       "created": "2022/06/15",
       "status": "C",
-      "bid": 0,
+      "bid": 71,
       "pid": 60,
       "war": 0
     },
@@ -2893,8 +2884,8 @@
       "desc": "RJ45 cat6 500m roll",
       "created": "2021/09/07",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 71,
+      "pid": 60,
       "war": 0
     },
     {
@@ -2902,8 +2893,8 @@
       "desc": "RJ45BOOT",
       "created": "2021/09/06",
       "status": "",
-      "bid": 0,
-      "pid": 0,
+      "bid": 71,
+      "pid": 60,
       "war": 0
     },
     {
@@ -2911,8 +2902,8 @@
       "desc": "RJ45 Connector",
       "created": "2024/07/26",
       "status": "C",
-      "bid": 0,
-      "pid": 0,
+      "bid": 71,
+      "pid": 60,
       "war": 0
     },
     {
@@ -4275,6 +4266,15 @@
       "war": 0
     },
     {
+      "code": "CB-TTSB913",
+      "desc": "*Targus TSB913eu 15.6\" backpak",
+      "created": "2025/02/19",
+      "status": "R",
+      "bid": 48,
+      "pid": 17,
+      "war": 12
+    },
+    {
       "code": "CB-TTSB914",
       "desc": "*Targus TSB914eu 15.6\" backpac",
       "created": "2020/02/21",
@@ -5513,7 +5513,7 @@
       "created": "2024/03/06",
       "status": "",
       "bid": 0,
-      "pid": 0,
+      "pid": 19,
       "war": 0
     },
     {
@@ -5758,6 +5758,15 @@
       "bid": 80,
       "pid": 7,
       "war": 1
+    },
+    {
+      "code": "CH-AAX61E",
+      "desc": "Antec AX61 Elite ATX RGB Case",
+      "created": "2025/02/21",
+      "status": "C",
+      "bid": 80,
+      "pid": 7,
+      "war": 24
     },
     {
       "code": "CH-ABC-K",
@@ -6431,15 +6440,6 @@
       "created": "2012/09/20",
       "status": "",
       "bid": 8,
-      "pid": 7,
-      "war": 6
-    },
-    {
-      "code": "CH-C05W",
-      "desc": "Corsair spec-05 Windowed",
-      "created": "2018/03/06",
-      "status": "",
-      "bid": 13,
       "pid": 7,
       "war": 6
     },
@@ -8973,15 +8973,6 @@
       "war": 1
     },
     {
-      "code": "CH-LAEX33BP",
-      "desc": "!!LIAN-LI EX-33B1-P 3xhdd+3xpo",
-      "created": "2010/04/23",
-      "status": "",
-      "bid": 28,
-      "pid": 7,
-      "war": 12
-    },
-    {
       "code": "CH-LAEX33R",
       "desc": "!!Lian-li EX-33R1 all Red+mesh",
       "created": "2012/06/20",
@@ -10417,7 +10408,7 @@
       "desc": "*HDMI M to 2x HDMI F - Y Split",
       "created": "2024/11/29",
       "status": "R",
-      "bid": 0,
+      "bid": 71,
       "pid": 65,
       "war": 0
     },
@@ -10462,7 +10453,7 @@
       "desc": "Hdmi Entender Mt-viki upto30m",
       "created": "2020/11/30",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 0,
       "war": 0
     },
@@ -10561,7 +10552,7 @@
       "desc": "Scsi 80pin to 68pin converter",
       "created": "2007/03/14",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 65,
       "war": 0
     },
@@ -12327,6 +12318,33 @@
       "status": "",
       "bid": 51,
       "pid": 64,
+      "war": 0
+    },
+    {
+      "code": "CT-C102BK",
+      "desc": "*Canon pfi-102BK BlacK",
+      "created": "2025/02/24",
+      "status": "R",
+      "bid": 9,
+      "pid": 19,
+      "war": 0
+    },
+    {
+      "code": "CT-C102MBK",
+      "desc": "*Canon pfi-102MBK Matte BlacK",
+      "created": "2025/02/24",
+      "status": "R",
+      "bid": 9,
+      "pid": 19,
+      "war": 0
+    },
+    {
+      "code": "CT-C102Y",
+      "desc": "*Canon pfi-102Y Yellow",
+      "created": "2025/02/24",
+      "status": "R",
+      "bid": 9,
+      "pid": 19,
       "war": 0
     },
     {
@@ -21609,15 +21627,6 @@
       "war": 24
     },
     {
-      "code": "FA-140CAFQRX2",
-      "desc": "!!140mm Corsair AF Quiet Redx2",
-      "created": "2018/11/26",
-      "status": "",
-      "bid": 13,
-      "pid": 26,
-      "war": 24
-    },
-    {
       "code": "FA-140CAFQW",
       "desc": "!!140mm Corsair AF Quiet White",
       "created": "2013/09/30",
@@ -22665,7 +22674,7 @@
       "code": "FD-A128GUR350",
       "desc": "Adata 128Gb UR350 usb3.0",
       "created": "2023/11/13",
-      "status": "C",
+      "status": "N",
       "bid": 4,
       "pid": 2,
       "war": 60
@@ -22827,7 +22836,7 @@
       "code": "FD-A256GUR340",
       "desc": "Adata 256Gb UR340 usb3.0",
       "created": "2024/09/19",
-      "status": "C",
+      "status": "N",
       "bid": 4,
       "pid": 2,
       "war": 60
@@ -22836,7 +22845,7 @@
       "code": "FD-A256GUR350",
       "desc": "Adata 256Gb UR350 usb3.0",
       "created": "2024/09/19",
-      "status": "C",
+      "status": "N",
       "bid": 4,
       "pid": 2,
       "war": 60
@@ -22989,7 +22998,7 @@
       "code": "FD-A32GUR350",
       "desc": "Adata 32Gb UR350 usb3.0",
       "created": "2023/11/14",
-      "status": "C",
+      "status": "N",
       "bid": 4,
       "pid": 2,
       "war": 60
@@ -23286,7 +23295,7 @@
       "code": "FD-A64GUR350",
       "desc": "Adata 64Gb UR350 usb3.0",
       "created": "2023/11/14",
-      "status": "C",
+      "status": "N",
       "bid": 4,
       "pid": 2,
       "war": 60
@@ -27292,7 +27301,7 @@
       "desc": "M.2 screw 20pcs",
       "created": "2020/12/01",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 0,
       "war": 0
     },
@@ -28681,6 +28690,15 @@
       "bid": 56,
       "pid": 11,
       "war": 60
+    },
+    {
+      "code": "HD-W4000U310",
+      "desc": "*WD HUS726T4TALE6L4",
+      "created": "2025/02/21",
+      "status": "R",
+      "bid": 56,
+      "pid": 11,
+      "war": 12
     },
     {
       "code": "HD-W6000GO",
@@ -31671,6 +31689,15 @@
       "war": 12
     },
     {
+      "code": "KM-DKM7321W",
+      "desc": "*Dell wireless 580-AJQJ KBMSE",
+      "created": "2025/02/21",
+      "status": "R",
+      "bid": 65,
+      "pid": 35,
+      "war": 12
+    },
+    {
       "code": "KM-G6300",
       "desc": "GigaByte KM6300 Kb+Mouse",
       "created": "2019/09/18",
@@ -32499,10 +32526,28 @@
       "war": 36
     },
     {
+      "code": "LC-DP2425H",
+      "desc": "*Dell P2425H 23.8\" FHD",
+      "created": "2025/02/21",
+      "status": "R",
+      "bid": 65,
+      "pid": 37,
+      "war": 36
+    },
+    {
       "code": "LC-DP2722",
       "desc": "Dell P2722h 27-dsub+dp+HDMi+hu",
       "created": "2022/09/18",
       "status": "",
+      "bid": 65,
+      "pid": 37,
+      "war": 36
+    },
+    {
+      "code": "LC-DP2722HE",
+      "desc": "*Dell P2722He 27\" +Type-c+rj45",
+      "created": "2025/02/21",
+      "status": "R",
       "bid": 65,
       "pid": 37,
       "war": 36
@@ -33699,7 +33744,7 @@
       "code": "LP-CMF275DW",
       "desc": "PSCFANW:Canon MF275DW Oin1",
       "created": "2023/07/05",
-      "status": "C",
+      "status": "N",
       "bid": 9,
       "pid": 1,
       "war": 12
@@ -36328,7 +36373,7 @@
       "desc": "Mb Acces. 1x Firewire",
       "created": "2009/09/16",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 7,
       "war": 0
     },
@@ -36382,7 +36427,7 @@
       "desc": "Addon Acc. USBx1+Firewire 6pin",
       "created": "2009/09/16",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 7,
       "war": 0
     },
@@ -36400,16 +36445,7 @@
       "desc": "MB acces. 2x USB + 1x 1394a",
       "created": "2010/05/21",
       "status": "",
-      "bid": 0,
-      "pid": 7,
-      "war": 0
-    },
-    {
-      "code": "MB-AAU2FFM",
-      "desc": "MBacces.2xUSB+1x1394a+1xm1394a",
-      "created": "2010/05/21",
-      "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 7,
       "war": 0
     },
@@ -36418,7 +36454,7 @@
       "desc": "MB acces. 2x USB + 1x GamePort",
       "created": "2010/05/21",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 7,
       "war": 0
     },
@@ -37839,7 +37875,7 @@
       "code": "MB-GB650MD3HP",
       "desc": "Gb B650M D3HP matx",
       "created": "2025/01/01",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -37848,7 +37884,7 @@
       "code": "MB-GB650MD3HP+W",
       "desc": "Gb B650M D3HP+Wifi matx",
       "created": "2025/01/01",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -37866,7 +37902,7 @@
       "code": "MB-GB650MG+W",
       "desc": "Gb B650M Gaming Wifi",
       "created": "2025/01/01",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38118,7 +38154,7 @@
       "code": "MB-GB760MD3HP+W",
       "desc": "Gb B760M D3HP Wifi6 lga1700",
       "created": "2024/12/24",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38127,7 +38163,7 @@
       "code": "MB-GB760MDS3H+W",
       "desc": "Gb B760M DS3H+Wifi lga1700 d5",
       "created": "2024/12/24",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38235,7 +38271,7 @@
       "code": "MB-GB850AE+W",
       "desc": "Gb B850 Aorus Elite +Wifi",
       "created": "2024/11/12",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38253,7 +38289,7 @@
       "code": "MB-GB850E+W",
       "desc": "Gb B850 Eagle + Wifi",
       "created": "2024/11/12",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38262,7 +38298,7 @@
       "code": "MB-GB850G+W",
       "desc": "Gb B850 Gaming + Wifi",
       "created": "2024/11/12",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38271,7 +38307,7 @@
       "code": "MB-GB850GX+W",
       "desc": "Gb B850 Gaming X + Wifi",
       "created": "2024/11/12",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38298,7 +38334,7 @@
       "code": "MB-GB850MD3HP",
       "desc": "Gb B850M D3HP matx",
       "created": "2024/11/12",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38307,7 +38343,7 @@
       "code": "MB-GB850MDS3H",
       "desc": "Gb B850M DS3H matx",
       "created": "2024/11/12",
-      "status": "C",
+      "status": "N",
       "bid": 17,
       "pid": 3,
       "war": 36
@@ -38316,6 +38352,204 @@
       "code": "MB-GB850MGX+W",
       "desc": "Gb B850M Gaming X matx",
       "created": "2024/11/12",
+      "status": "N",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860AEW+W",
+      "desc": "Gb B860 Aorus Elite Whi+Wifi",
+      "created": "2024/11/12",
+      "status": "N",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860DS3H",
+      "desc": "Gb lga1851 B860 DS3H",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860DS3H+W",
+      "desc": "Gb lga1851 B860 DS3H + Wifi",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860E+W",
+      "desc": "Gb lga1851 B860 Eagle + Wifi",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860GX+W",
+      "desc": "Gb B860 Gaming X +Wifi",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860IAPW+W",
+      "desc": "Gb B860i AorusPro Whi+Wifi iTX",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MAE",
+      "desc": "Gb lga1851 B860M Aorus Elite",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MAE+W",
+      "desc": "Gb B860M Aorus Elite +Wifi",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MAEW+W",
+      "desc": "Gb B860M Aorus Elite Whi+Wifi",
+      "created": "2024/11/12",
+      "status": "N",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MAP+W",
+      "desc": "Gb B860M Aorus Pro +Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MD2H",
+      "desc": "Gb lga1851 B860M D2H",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MD3HP",
+      "desc": "Gb lga1851 B860M D3HP",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MDS3H",
+      "desc": "Gb lga1851 B860M DS3H",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MDS3H+W",
+      "desc": "Gb lga1851 B860M DS3H +Wifi",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860ME",
+      "desc": "Gb lga1851 B860M Eagle",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860ME+W",
+      "desc": "Gb lga1851 B860M Eagle+Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MEP+W",
+      "desc": "Gb B860M Eagle Plus + Wifi",
+      "created": "2024/11/12",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MGX",
+      "desc": "Gb lga1851 B860M Gaming X",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MGX+W",
+      "desc": "Gb lga1851 B860M Gaming X+Wifi",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MGXD5",
+      "desc": "Gb lga1851 B860M Gaming X",
+      "created": "2024/11/12",
+      "status": "",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MH",
+      "desc": "Gb lga1851 B860M H",
+      "created": "2025/01/01",
+      "status": "C",
+      "bid": 17,
+      "pid": 3,
+      "war": 36
+    },
+    {
+      "code": "MB-GB860MK",
+      "desc": "Gb lga1851 B860M K",
+      "created": "2025/01/01",
       "status": "C",
       "bid": 17,
       "pid": 3,
@@ -38495,24 +38729,6 @@
     {
       "code": "MB-GX670-AE+W",
       "desc": "!!Gb X670 Aorus Elite + Wifi",
-      "created": "2022/07/10",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
-      "code": "MB-GX670-GX+W",
-      "desc": "!!Gb X670 Gaming X+Wifi",
-      "created": "2022/09/23",
-      "status": "",
-      "bid": 17,
-      "pid": 3,
-      "war": 36
-    },
-    {
-      "code": "MB-GX670E-AM+W",
-      "desc": "!!Gb X670E Aorus Master+Wifi",
       "created": "2022/07/10",
       "status": "",
       "bid": 17,
@@ -40350,7 +40566,7 @@
       "code": "ME-AD51660L30",
       "desc": "AX5U6000C3016G-CLABK Lancer 16",
       "created": "2022/12/07",
-      "status": "C",
+      "status": "N",
       "bid": 4,
       "pid": 5,
       "war": 12
@@ -48261,7 +48477,7 @@
       "code": "ME-KD51668B34X2",
       "desc": "KF568C34BBK2-32 D5-6800 Be 16D",
       "created": "2024/07/22",
-      "status": "C",
+      "status": "N",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -48502,9 +48718,9 @@
     },
     {
       "code": "ME-KD53252R36",
-      "desc": "*KF552C36BBEA-32 D5-5200 b R32",
+      "desc": "KF552C36BBEA-32 D5-5200 b R32",
       "created": "2023/01/30",
-      "status": "R",
+      "status": "",
       "bid": 24,
       "pid": 5,
       "war": 12
@@ -51750,6 +51966,15 @@
       "war": 12
     },
     {
+      "code": "NA-TUB500",
+      "desc": "*TP-Link UB500 BT5.0 nano",
+      "created": "2025/02/21",
+      "status": "R",
+      "bid": 79,
+      "pid": 59,
+      "war": 12
+    },
+    {
       "code": "NA-TUB5A",
       "desc": "TP-Link UB5A BT5.0",
       "created": "2024/06/20",
@@ -52011,6 +52236,15 @@
       "war": 12
     },
     {
+      "code": "NB-AB1403-7T161",
+      "desc": "*B1403cva-i71610b0x i7T+16+1Tb",
+      "created": "2025/02/20",
+      "status": "R",
+      "bid": 7,
+      "pid": 9,
+      "war": 36
+    },
+    {
       "code": "NB-AB1500-5Q5SF",
       "desc": "B1500ceae-i58512B?? + 5Q+8+51",
       "created": "2022/08/28",
@@ -52032,6 +52266,15 @@
       "code": "NB-AB1502-5T81S",
       "desc": "*B1502CBA-I5810B1W",
       "created": "2025/01/16",
+      "status": "R",
+      "bid": 7,
+      "pid": 9,
+      "war": 12
+    },
+    {
+      "code": "NB-AB1502-5T85S",
+      "desc": "*B1502CVA-I58512B0X 5T+8G+1T",
+      "created": "2025/02/17",
       "status": "R",
       "bid": 7,
       "pid": 9,
@@ -52672,6 +52915,15 @@
       "desc": "N7400pc-i716512G0W 7Q+Nv3050",
       "created": "2022/09/06",
       "status": "C",
+      "bid": 7,
+      "pid": 9,
+      "war": 12
+    },
+    {
+      "code": "NB-AP1503-5O165",
+      "desc": "*P1503cva-i516512b0w i5+16+512",
+      "created": "2025/02/18",
+      "status": "R",
       "bid": 7,
       "pid": 9,
       "war": 12
@@ -53814,6 +54066,15 @@
       "code": "NB-LTPL14-5T85P",
       "desc": "*Lenovo TP LS14 5T+8+512+Pro",
       "created": "2024/06/18",
+      "status": "R",
+      "bid": 62,
+      "pid": 9,
+      "war": 36
+    },
+    {
+      "code": "NB-LTPP16-73212",
+      "desc": "*Lenovo TP P16 7+32+1T+rtx2000",
+      "created": "2025/02/27",
       "status": "R",
       "bid": 62,
       "pid": 9,
@@ -55237,7 +55498,7 @@
       "desc": "!?3.5\"->5.25\"bracket+Front",
       "created": "2006/03/24",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 0,
       "war": 0
     },
@@ -56079,6 +56340,33 @@
       "war": 36
     },
     {
+      "code": "PS-A450AV",
+      "desc": "Antec Atom V 450w PSU",
+      "created": "2025/02/21",
+      "status": "C",
+      "bid": 80,
+      "pid": 47,
+      "war": 24
+    },
+    {
+      "code": "PS-A550AV",
+      "desc": "Antec Atom V 550w PSU",
+      "created": "2025/02/21",
+      "status": "C",
+      "bid": 80,
+      "pid": 47,
+      "war": 24
+    },
+    {
+      "code": "PS-A650AB",
+      "desc": "Antec Atom B 650w PSU Bronze",
+      "created": "2025/02/21",
+      "status": "C",
+      "bid": 80,
+      "pid": 47,
+      "war": 36
+    },
+    {
       "code": "PS-A650TB",
       "desc": "Asus  650w Tuf Bronze",
       "created": "2023/10/23",
@@ -56086,6 +56374,24 @@
       "bid": 7,
       "pid": 47,
       "war": 72
+    },
+    {
+      "code": "PS-A850CSK",
+      "desc": "ANTEC CSK ATX 3.1 850W Bronze",
+      "created": "2025/02/21",
+      "status": "C",
+      "bid": 80,
+      "pid": 47,
+      "war": 60
+    },
+    {
+      "code": "PS-A850GSK",
+      "desc": "ANTEC GSK ATX 3.1 850W GOLD",
+      "created": "2025/02/21",
+      "status": "C",
+      "bid": 80,
+      "pid": 47,
+      "war": 84
     },
     {
       "code": "PS-AA4PS",
@@ -57433,7 +57739,7 @@
       "desc": "2x6pin to 8pin converter VGA",
       "created": "2009/09/16",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 65,
       "war": 0
     },
@@ -57444,7 +57750,7 @@
       "status": "",
       "bid": 17,
       "pid": 47,
-      "war": 60
+      "war": 120
     },
     {
       "code": "PS-G1200PM+L",
@@ -57898,7 +58204,7 @@
     },
     {
       "code": "SC-A1030-2PO",
-      "desc": "Asus PH-GT1030-O2G",
+      "desc": "SCGX9070XT-GO0-O2G",
       "created": "2017/05/04",
       "status": "",
       "bid": 7,
@@ -58621,7 +58927,7 @@
       "desc": "Corssfire Bridge",
       "created": "2009/09/16",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 4,
       "war": 0
     },
@@ -59350,6 +59656,114 @@
       "desc": "!!Gb rtx4090 Gaming Oc 24G d6",
       "created": "2022/08/26",
       "status": "",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-AM",
+      "desc": "Gb rtx5080 Aorus Master 16G",
+      "created": "2024/12/24",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-AMW",
+      "desc": "Gb 5080 Aorus Master Whi/ice",
+      "created": "2025/01/02",
+      "status": "N",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-AO",
+      "desc": "Gb rtx5080 Aero Oc 16G d6",
+      "created": "2024/12/24",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-AXW",
+      "desc": "Gb rtx5080 Aorus Xtreme Water",
+      "created": "2025/01/02",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-GO",
+      "desc": "Gb rtx5080 Gaming Oc 16G d6",
+      "created": "2024/12/24",
+      "status": "N",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-W",
+      "desc": "Gb rtx5080 Windforce 16G",
+      "created": "2024/12/24",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5080-WO",
+      "desc": "Gb 5080 WindforceOc 16G d7",
+      "created": "2025/01/04",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5090-AM",
+      "desc": "Gb rtx5090 Aorus Master 32G",
+      "created": "2025/01/02",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5090-AMW",
+      "desc": "Gb 5090 Aorus Master Whi(ice)",
+      "created": "2025/01/02",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5090-AXW",
+      "desc": "Gb rtx5090 Aorus Xrteme Water",
+      "created": "2025/01/02",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5090-GO",
+      "desc": "Gb rtx5090 Gaming Oc 32G d7",
+      "created": "2025/01/02",
+      "status": "C",
+      "bid": 17,
+      "pid": 4,
+      "war": 36
+    },
+    {
+      "code": "SC-G5090-W",
+      "desc": "Gb rtx5090 Windforce 32G d7",
+      "created": "2025/01/02",
+      "status": "C",
       "bid": 17,
       "pid": 4,
       "war": 36
@@ -62284,7 +62698,7 @@
       "desc": "Access Cards",
       "created": "2017/07/19",
       "status": "",
-      "bid": 0,
+      "bid": 71,
       "pid": 0,
       "war": 3
     },
@@ -64317,7 +64731,7 @@
       "code": "TO-C071H",
       "desc": "Canon 071H - 2500p",
       "created": "2023/08/30",
-      "status": "C",
+      "status": "N",
       "bid": 9,
       "pid": 19,
       "war": 3
@@ -68806,7 +69220,7 @@
     },
     {
       "code": "TO-S404K",
-      "desc": "SAMSUNG clt-K404S blK toner",
+      "desc": "!!SAMSUNG clt-K404S blK toner",
       "created": "2016/01/23",
       "status": "",
       "bid": 40,
@@ -72000,6 +72414,15 @@
       "war": 24
     },
     {
+      "code": "WC-L920",
+      "desc": "Logitech c920 HD pro webcam",
+      "created": "2020/06/23",
+      "status": "",
+      "bid": 30,
+      "pid": 52,
+      "war": 24
+    },
+    {
       "code": "WC-L920S",
       "desc": "Logitech c920S/e hd pro webcam",
       "created": "2022/10/03",
@@ -72130,6 +72553,15 @@
       "desc": "*Logitech Brio 100 blacK FHD",
       "created": "2024/11/29",
       "status": "R",
+      "bid": 30,
+      "pid": 52,
+      "war": 12
+    },
+    {
+      "code": "WC-LB300",
+      "desc": "Logitech Brio 300 fhd webcam",
+      "created": "2025/02/21",
+      "status": "C",
       "bid": 30,
       "pid": 52,
       "war": 12
