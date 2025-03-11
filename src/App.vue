@@ -49,6 +49,10 @@ const astrumData = ref([])
 const esquireData = ref([])
 const discontinuedStock = ref([])
 
+const DIY = 'DIY Hardware & Tools'
+const LIFESTYLE = 'Lifestyle & Appliances'
+const STATIONERY = 'Stationery'
+
 async function onDrop(files) {
   const file = files[0]
   if (file.name.includes('Astrum')) {
@@ -93,7 +97,8 @@ function parseCsv(csvFile) {
 
 function processEsquire() {
   esquireData.value = processEsquireStock()
-  outPutCsv(esquireData.value)
+  const refinedData = furtherRefinements(esquireData.value)
+  outPutCsv(refinedData)
 }
 
 function parseXml(xmlFile) {
@@ -105,29 +110,31 @@ function parseXml(xmlFile) {
 
     if (xmlFile.name.includes('micropoint')) {
       micropointData.value = processMicropointStock(parsedXml)
-      outPutCsv(micropointData.value)
+      const refinedData = furtherRefinements(micropointData.value)
+      outPutCsv(refinedData)
     }
 
     if (xmlFile.name.includes('syntech')) {
       syntechData.value = processSyntechStock(parsedXml)
-      outPutCsv(syntechData.value)
+      const refinedData = furtherRefinements(syntechData.value)
+      outPutCsv(refinedData)
     }
 
-    if (xmlFile.name.includes('HardwareTools')) {
-      const hardwareTools = processEsquireExtras(parsedXml, 'DIY Hardware & Tools')
+    if (xmlFile.name.includes('Hardware')) {
+      const hardwareTools = processEsquireExtras(parsedXml, DIY)
       outPutCsv(hardwareTools)
       return
     }
 
     if (xmlFile.name.includes('Lifestyle')) {
-      const lifestyleData = processEsquireExtras(parsedXml, 'Lifestyle & Appliances')
+      const lifestyleData = processEsquireExtras(parsedXml, LIFESTYLE)
       outPutCsv(lifestyleData)
       return
     }
 
-    if (xmlFile.name.includes('Stationary')) {
-      const stationaryData = processEsquireExtras(parsedXml, 'Stationary')
-      outPutCsv(stationaryData)
+    if (xmlFile.name.includes('Stationery')) {
+      const stationeryData = processEsquireExtras(parsedXml, STATIONERY)
+      outPutCsv(stationeryData)
       return
     }
   }
@@ -196,13 +203,34 @@ function pullCategories() {
   URL.revokeObjectURL(url)
 }
 
-function outPutCsv(data) {
+function furtherRefinements(data) {
   const noLowStocks = handleLowStocks(data)
   const refinedCategories = refineCategories(noLowStocks)
   let adjustedPrices = adjustAdaptersAndConnectorsPricing(refinedCategories)
   adjustedPrices = adjustCablesPricing(adjustedPrices)
   const refinedIsFeatured = refineFeaturedItems(adjustedPrices)
-  const csvRaw = Papa.unparse(refinedIsFeatured, {
+  const prependedComputerCategories = prependComputerCategories(refinedIsFeatured)
+  return prependedComputerCategories
+}
+
+function prependComputerCategories(products) {
+  const result = products.map((product) => {
+    return {
+      ...product,
+      categories: modifyCategory(product.categories)
+    }
+  })
+  return result
+}
+
+function modifyCategory(category) {
+  if (category.startsWith('Stationery')) return category
+  if (category.startsWith('Tools')) return category.replace('Tools', DIY)
+  return `Computers Laptops & Electronics > ${category}`
+}
+
+function outPutCsv(data) {
+  const csvRaw = Papa.unparse(data, {
     delimiter: ';',
     quoteChars: '""'
   })
