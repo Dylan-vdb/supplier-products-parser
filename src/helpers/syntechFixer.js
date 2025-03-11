@@ -98,12 +98,12 @@ function handlePromotedProducts(products) {
           is_featured: 1,
           sale_price: calculateFullPrice({
             price: Number(product.promo_price),
-            margin: 22,
+            margin: 18,
             vat: 15
           }),
           price: calculateFullPrice({
             price: Number(product.normal_cost),
-            margin: 22,
+            margin: 25,
             vat: 15
           })
         }
@@ -111,7 +111,7 @@ function handlePromotedProducts(products) {
           ...product,
           price: calculateFullPrice({
             price: Number(product.normal_cost),
-            margin: 22,
+            margin: 18,
             vat: 15
           }),
           sale_price: null,
