@@ -28,6 +28,7 @@ import { processMicropointStock } from './helpers/micropointFixer'
 import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
 import { processEsquireStock } from './helpers/esquireFixer'
+import { processEsquireExtras } from './helpers/esquireExtrasFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap } from './helpers/constants'
@@ -49,25 +50,26 @@ const esquireData = ref([])
 const discontinuedStock = ref([])
 
 async function onDrop(files) {
-  if (files[0].name.includes('Astrum')) {
+  const file = files[0]
+  if (file.name.includes('Astrum')) {
     const rawData = await Promise.all(files.map((file) => parseCsv(file)))
     astrumData.value = processAstrumStock(rawData)
     outPutCsv(astrumData.value)
     return
   }
-  if (files[0].name.includes('Frontosa')) {
-    const rawData = await parseCsv(files[0])
+  if (file.name.includes('Frontosa')) {
+    const rawData = await parseCsv(file)
     frontosaData.value = processFrontosaStock(rawData.result.data)
     outPutCsv(frontosaData.value)
     return
   }
-  if (files[0].name.includes('wc-product-export')) {
-    const rawData = await parseCsv(files[0])
+  if (file.name.includes('wc-product-export')) {
+    const rawData = await parseCsv(file)
     discontinuedStock.value = processDiscontinuedStock(rawData.result.data)
     outPutCsv(discontinuedStock.value)
     return
   }
-  const file = files[0]
+
   if (file.type == 'text/csv') {
     parseCsv(file)
   } else {
@@ -109,6 +111,24 @@ function parseXml(xmlFile) {
     if (xmlFile.name.includes('syntech')) {
       syntechData.value = processSyntechStock(parsedXml)
       outPutCsv(syntechData.value)
+    }
+
+    if (xmlFile.name.includes('HardwareTools')) {
+      const hardwareTools = processEsquireExtras(parsedXml, 'DIY Hardware & Tools')
+      outPutCsv(hardwareTools)
+      return
+    }
+
+    if (xmlFile.name.includes('Lifestyle')) {
+      const lifestyleData = processEsquireExtras(parsedXml, 'Lifestyle & Appliances')
+      outPutCsv(lifestyleData)
+      return
+    }
+
+    if (xmlFile.name.includes('Stationary')) {
+      const stationaryData = processEsquireExtras(parsedXml, 'Stationary')
+      outPutCsv(stationaryData)
+      return
     }
   }
   reader.readAsText(xmlFile)
