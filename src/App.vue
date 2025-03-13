@@ -14,6 +14,7 @@
     <button @click="pullCategories">Pull Categories</button>
     <br />
     <button @click="processEsquire">PROCESS ESQUIRE</button>
+    <button @click="fetchAstrumProducts">Fetch Astrum</button>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ import { processEsquireStock } from './helpers/esquireFixer'
 import { processEsquireExtras } from './helpers/esquireExtrasFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
-import { symbolMap } from './helpers/constants'
+import { symbolMap, DIY, LIFESTYLE, STATIONERY } from './helpers/constants'
 import {
   handleLowStocks,
   adjustAdaptersAndConnectorsPricing,
@@ -39,6 +40,8 @@ import {
   refineCategories,
   refineFeaturedItems
 } from './helpers/baseHelpers'
+
+import { fetchAstrumProducts } from './helpers/api-astrum'
 
 const dropzoneRef = ref(null)
 const { isDragActive } = useDropZone(dropzoneRef, onDrop)
@@ -49,16 +52,13 @@ const astrumData = ref([])
 const esquireData = ref([])
 const discontinuedStock = ref([])
 
-const DIY = 'DIY Hardware & Tools'
-const LIFESTYLE = 'Lifestyle & Appliances'
-const STATIONERY = 'Stationery'
-
 async function onDrop(files) {
   const file = files[0]
   if (file.name.includes('Astrum')) {
     const rawData = await Promise.all(files.map((file) => parseCsv(file)))
     astrumData.value = processAstrumStock(rawData)
-    outPutCsv(astrumData.value)
+    const refinedData = furtherRefinements(astrumData.value)
+    outPutCsv(refinedData)
     return
   }
   if (file.name.includes('Frontosa')) {
@@ -121,19 +121,19 @@ function parseXml(xmlFile) {
     }
 
     if (xmlFile.name.includes('Hardware')) {
-      const hardwareTools = processEsquireExtras(parsedXml, DIY)
+      const hardwareTools = processEsquireExtras(parsedXml, DIY.category)
       outPutCsv(hardwareTools)
       return
     }
 
     if (xmlFile.name.includes('Lifestyle')) {
-      const lifestyleData = processEsquireExtras(parsedXml, LIFESTYLE)
+      const lifestyleData = processEsquireExtras(parsedXml, LIFESTYLE.category)
       outPutCsv(lifestyleData)
       return
     }
 
     if (xmlFile.name.includes('Stationery')) {
-      const stationeryData = processEsquireExtras(parsedXml, STATIONERY)
+      const stationeryData = processEsquireExtras(parsedXml, STATIONERY.category)
       outPutCsv(stationeryData)
       return
     }
@@ -223,10 +223,14 @@ function prependComputerCategories(products) {
   return result
 }
 
-function modifyCategory(category) {
-  if (category.startsWith('Stationery')) return category
-  if (category.startsWith('Tools')) return category.replace('Tools', DIY)
-  return `Computers Laptops & Electronics > ${category}`
+function modifyCategory(categories) {
+  const categoriesList = categories.split(',')
+  const result = categoriesList.map((category) => {
+    if (category.startsWith('Stationery')) return category
+    if (category.startsWith('Tools')) return category.replace('Tools', DIY)
+    return `Computers Laptops & Electronics > ${category}`
+  })
+  return result.join(',')
 }
 
 function outPutCsv(data) {

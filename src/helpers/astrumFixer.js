@@ -8,9 +8,9 @@ export function processAstrumStock(productsRaw) {
   const prefixedChargerTitles = prefixChargerTitles(prefixedTonerTitles)
   const prefixedBatteryTitles = prefixBatteryTitles(prefixedChargerTitles)
   const improvedCategoryNames = improveCategoryNames(prefixedBatteryTitles)
-  const products = saveSkuList(improvedCategoryNames, 'astrum')
+  const finalProducts = saveSkuList(improvedCategoryNames, 'astrum')
 
-  return products
+  return finalProducts
 }
 
 function prefixTonerTitles(products) {

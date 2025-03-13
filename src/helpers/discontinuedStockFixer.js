@@ -7,12 +7,19 @@ export function processDiscontinuedStock(products) {
   const micropointSkuListNew = getSkuListNew('micropointSkuListNew')
   const esquireSkuListNew = getSkuListNew('esquireSkuListNew')
 
+  const hardwareSkuListNew = getSkuListNew('hardwareSkuListNew')
+  const stationerySkuListNew = getSkuListNew('stationerySkuListNew')
+  const lifestyleSkuListNew = getSkuListNew('lifestyleSkuListNew')
+
   const activeSkus = [
     ...syntechSkuListNew,
     ...frontosaSkuListNew,
     ...astrumSkuListNew,
     ...micropointSkuListNew,
-    ...esquireSkuListNew
+    ...esquireSkuListNew,
+    ...hardwareSkuListNew,
+    ...stationerySkuListNew,
+    ...lifestyleSkuListNew
   ]
 
   const discontinuedSkus = wpSkus.filter((sku) => !activeSkus.includes(sku))
