@@ -186,12 +186,6 @@ function improveCategoryNames(products) {
             categories: 'Desktop Components > Expansion & Pcie Adapters > PCMCIA'
           }
         }
-        if (description.includes('PCMCIA')) {
-          return {
-            ...product,
-            categories: 'Desktop Components > Expansion & Pcie Adapters > PCMCIA'
-          }
-        }
       }
 
       // Special case for Notebook Bags and Cases

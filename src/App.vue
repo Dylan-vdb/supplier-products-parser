@@ -32,7 +32,7 @@ import { processEsquireStock } from './helpers/esquireFixer'
 import { processEsquireExtras } from './helpers/esquireExtrasFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
-import { symbolMap, DIY, LIFESTYLE, STATIONERY } from './helpers/constants'
+import { symbolMap, DIY, LIFESTYLE, STATIONERY, TECH } from './helpers/constants'
 import {
   handleLowStocks,
   adjustAdaptersAndConnectorsPricing,
@@ -135,6 +135,12 @@ function parseXml(xmlFile) {
     if (xmlFile.name.includes('Stationery')) {
       const stationeryData = processEsquireExtras(parsedXml, STATIONERY.category)
       outPutCsv(stationeryData)
+      return
+    }
+
+    if (xmlFile.name.includes('Tech')) {
+      const techData = processEsquireExtras(parsedXml, TECH.category)
+      outPutCsv(techData)
       return
     }
   }

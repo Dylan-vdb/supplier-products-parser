@@ -11,6 +11,11 @@ export const STATIONERY = {
   category: 'Stationery'
 }
 
+export const TECH = {
+  id: 'tech',
+  category: 'Computers Laptops & Electronics'
+}
+
 export const symbolMap = {
   '™': '',
   '∅': '',

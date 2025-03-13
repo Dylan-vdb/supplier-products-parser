@@ -1,5 +1,6 @@
+import { categories } from '@vueuse/core/metadata.cjs'
 import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
-import { DIY, LIFESTYLE, STATIONERY } from '../helpers/constants'
+import { DIY, LIFESTYLE, STATIONERY, TECH, esquireCategoryReplacements } from '../helpers/constants'
 
 const categoryGroupsList = [DIY, LIFESTYLE, STATIONERY, TECH]
 
@@ -17,7 +18,6 @@ export function processEsquireExtras(xmlData, mainCategory) {
     (product) => product.images.length > 0 && !product.images.includes('http://')
   )
   const finalProducts = saveSkuList(goodImages, getGroupName(topCategory))
-  debugger
   return finalProducts
 }
 
@@ -84,9 +84,10 @@ function correctFields(products) {
 }
 
 function modifyProductId(productId) {
-  if (topCategory === 'DIY Hardware & Tools') return `DIY-${productId}`
-  if (topCategory === 'Lifestyle & Appliances') return `LSTL-${productId}`
-  if (topCategory === 'Stationery') return `STAT-${productId}`
+  if (topCategory === DIY.category) return `DIY-${productId}`
+  if (topCategory === LIFESTYLE.category) return `LSTL-${productId}`
+  if (topCategory === STATIONERY.category) return `STAT-${productId}`
+  if (topCategory === TECH.category) return `SQR-${productId}`
 }
 
 function priceProducts(products) {
@@ -103,6 +104,99 @@ function priceProducts(products) {
 }
 
 function categorizeProducts(products) {
+  if (topCategory === TECH.category)
+    return products
+      .map((product) => {
+        const oldCategory = product.leafCategory?.trim() || ''
+
+        // Special case for USB Gadgets
+        if (oldCategory === 'USB Gadgets') {
+          const description = product.description
+          const lowerName = description.toLowerCase()
+          let category = 'Gadgets'
+          if (lowerName.includes('adapter cable') || lowerName.includes('printer converter')) {
+            category = 'Connectors Adaptors & Converters'
+          }
+          if (lowerName.includes('dream cheeky')) {
+            category = 'Gadgets > Fun'
+          }
+          if (lowerName.includes('selfie led ring')) {
+            category = 'Gadgets > Media & Streaming > Ring Lights'
+          }
+
+          return {
+            ...product,
+            categories: category
+          }
+        }
+
+        if (oldCategory === 'Notebook Accessories') {
+          const description = product.description
+          if (description.includes('AirBar Touchscreen Sensor')) {
+            return {
+              ...product,
+              categories: 'Notebook Components > Screens'
+            }
+          }
+
+          if (description.includes('USB 3.1 Type')) {
+            return {
+              ...product,
+              categories: 'Peripherals > USB Devices'
+            }
+          }
+          if (description.includes('Legion') || description.includes('Briefcase Alarm')) {
+            return {
+              ...product,
+              categories: 'Notebook Components > Locks'
+            }
+          }
+          if (description.includes('PCMCIA')) {
+            return {
+              ...product,
+              categories: 'Desktop Components > Expansion & Pcie Adapters > PCMCIA'
+            }
+          }
+        }
+
+        // Special case for Notebook Bags and Cases
+        if (oldCategory === 'Notebook Bags and Cases') {
+          const bagCategory = getBagCategoryFromDescription(product.description)
+          if (bagCategory) {
+            return {
+              ...product,
+              categories: bagCategory
+            }
+          }
+        }
+
+        // Special case for Ink and Toners
+        if (oldCategory === 'Ink and Toners-Generic' || oldCategory === 'Ink and Toners-Original') {
+          const cartridgeCategory = getCartridgeCategoryFromDescription(product.description)
+          if (cartridgeCategory) {
+            return {
+              ...product,
+              categories: cartridgeCategory
+            }
+          }
+        }
+
+        // Find a matching replacement
+        const replacement = esquireCategoryReplacements.find(([source]) => source === oldCategory)
+
+        // Return product with new categories field, null if no replacement found
+        return {
+          ...product,
+          categories: replacement ? replacement[1] : null
+        }
+      })
+      .filter((product) => product.categories !== null)
+      .map((product) => {
+        return {
+          ...product,
+          categories: TECH.category + ' > ' + product.categories
+        }
+      })
   return products.map((product) => {
     return {
       ...product,
@@ -111,4 +205,48 @@ function categorizeProducts(products) {
         : `${topCategory} > ${product.leafCategory}`
     }
   })
+}
+
+function getBagCategoryFromDescription(description = '') {
+  const lowerDesc = description.toLowerCase()
+
+  if (lowerDesc.includes('backpack')) {
+    return 'Bags Cases & Covers > Backpacks'
+  }
+  if (lowerDesc.includes('trolley')) {
+    return 'Bags Cases & Covers > Trolleys'
+  }
+  if (lowerDesc.includes('notebook bag') || lowerDesc.includes('sling-style carrier')) {
+    return 'Bags Cases & Covers > Bags'
+  }
+  if (lowerDesc.includes('case') || lowerDesc.includes('briefcase')) {
+    return 'Bags Cases & Covers > Cases'
+  }
+  if (lowerDesc.includes('anti-theft luggage zipper strap')) {
+    return 'Notebook Components > Locks'
+  }
+  if (lowerDesc.includes('sleeve')) {
+    return 'Bags Cases & Covers > Sleeves'
+  }
+  return null
+}
+
+function getCartridgeCategoryFromDescription(description = '') {
+  const lowerDesc = description.toLowerCase()
+
+  // Check for ink cartridges first
+  if (lowerDesc.includes('ink cartridge') || lowerDesc.includes('inkjet cartridge')) {
+    return 'Printers > Cartridges > Ink Cartridges'
+  }
+
+  // Check for toner cartridges
+  if (
+    lowerDesc.includes('drum unit') ||
+    lowerDesc.includes('black cartridge') ||
+    lowerDesc.includes('toner')
+  ) {
+    return 'Printers > Cartridges > Toner Cartridges'
+  }
+
+  return null
 }
