@@ -1,3 +1,16 @@
+export const DIY = {
+  id: 'diy',
+  category: 'DIY Hardware & Tools'
+}
+export const LIFESTYLE = {
+  id: 'lifestyle',
+  category: 'Lifestyle & Appliances'
+}
+export const STATIONERY = {
+  id: 'stationery',
+  category: 'Stationery'
+}
+
 export const symbolMap = {
   '™': '',
   '∅': '',

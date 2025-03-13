@@ -14,6 +14,7 @@
     <button @click="pullCategories">Pull Categories</button>
     <br />
     <button @click="processEsquire">PROCESS ESQUIRE</button>
+    <button @click="fetchAstrumProducts">Fetch Astrum</button>
   </div>
 </template>
 
@@ -28,9 +29,10 @@ import { processMicropointStock } from './helpers/micropointFixer'
 import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
 import { processEsquireStock } from './helpers/esquireFixer'
+import { processEsquireExtras } from './helpers/esquireExtrasFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
-import { symbolMap } from './helpers/constants'
+import { symbolMap, DIY, LIFESTYLE, STATIONERY } from './helpers/constants'
 import {
   handleLowStocks,
   adjustAdaptersAndConnectorsPricing,
@@ -38,6 +40,8 @@ import {
   refineCategories,
   refineFeaturedItems
 } from './helpers/baseHelpers'
+
+import { fetchAstrumProducts } from './helpers/api-astrum'
 
 const dropzoneRef = ref(null)
 const { isDragActive } = useDropZone(dropzoneRef, onDrop)
@@ -49,25 +53,27 @@ const esquireData = ref([])
 const discontinuedStock = ref([])
 
 async function onDrop(files) {
-  if (files[0].name.includes('Astrum')) {
+  const file = files[0]
+  if (file.name.includes('Astrum')) {
     const rawData = await Promise.all(files.map((file) => parseCsv(file)))
     astrumData.value = processAstrumStock(rawData)
-    outPutCsv(astrumData.value)
+    const refinedData = furtherRefinements(astrumData.value)
+    outPutCsv(refinedData)
     return
   }
-  if (files[0].name.includes('Frontosa')) {
-    const rawData = await parseCsv(files[0])
+  if (file.name.includes('Frontosa')) {
+    const rawData = await parseCsv(file)
     frontosaData.value = processFrontosaStock(rawData.result.data)
     outPutCsv(frontosaData.value)
     return
   }
-  if (files[0].name.includes('wc-product-export')) {
-    const rawData = await parseCsv(files[0])
+  if (file.name.includes('wc-product-export')) {
+    const rawData = await parseCsv(file)
     discontinuedStock.value = processDiscontinuedStock(rawData.result.data)
     outPutCsv(discontinuedStock.value)
     return
   }
-  const file = files[0]
+
   if (file.type == 'text/csv') {
     parseCsv(file)
   } else {
@@ -91,7 +97,8 @@ function parseCsv(csvFile) {
 
 function processEsquire() {
   esquireData.value = processEsquireStock()
-  outPutCsv(esquireData.value)
+  const refinedData = furtherRefinements(esquireData.value)
+  outPutCsv(refinedData)
 }
 
 function parseXml(xmlFile) {
@@ -103,12 +110,32 @@ function parseXml(xmlFile) {
 
     if (xmlFile.name.includes('micropoint')) {
       micropointData.value = processMicropointStock(parsedXml)
-      outPutCsv(micropointData.value)
+      const refinedData = furtherRefinements(micropointData.value)
+      outPutCsv(refinedData)
     }
 
     if (xmlFile.name.includes('syntech')) {
       syntechData.value = processSyntechStock(parsedXml)
-      outPutCsv(syntechData.value)
+      const refinedData = furtherRefinements(syntechData.value)
+      outPutCsv(refinedData)
+    }
+
+    if (xmlFile.name.includes('Hardware')) {
+      const hardwareTools = processEsquireExtras(parsedXml, DIY.category)
+      outPutCsv(hardwareTools)
+      return
+    }
+
+    if (xmlFile.name.includes('Lifestyle')) {
+      const lifestyleData = processEsquireExtras(parsedXml, LIFESTYLE.category)
+      outPutCsv(lifestyleData)
+      return
+    }
+
+    if (xmlFile.name.includes('Stationery')) {
+      const stationeryData = processEsquireExtras(parsedXml, STATIONERY.category)
+      outPutCsv(stationeryData)
+      return
     }
   }
   reader.readAsText(xmlFile)
@@ -176,13 +203,38 @@ function pullCategories() {
   URL.revokeObjectURL(url)
 }
 
-function outPutCsv(data) {
+function furtherRefinements(data) {
   const noLowStocks = handleLowStocks(data)
   const refinedCategories = refineCategories(noLowStocks)
   let adjustedPrices = adjustAdaptersAndConnectorsPricing(refinedCategories)
   adjustedPrices = adjustCablesPricing(adjustedPrices)
   const refinedIsFeatured = refineFeaturedItems(adjustedPrices)
-  const csvRaw = Papa.unparse(refinedIsFeatured, {
+  const prependedComputerCategories = prependComputerCategories(refinedIsFeatured)
+  return prependedComputerCategories
+}
+
+function prependComputerCategories(products) {
+  const result = products.map((product) => {
+    return {
+      ...product,
+      categories: modifyCategory(product.categories)
+    }
+  })
+  return result
+}
+
+function modifyCategory(categories) {
+  const categoriesList = categories.split(',')
+  const result = categoriesList.map((category) => {
+    if (category.startsWith('Stationery')) return category
+    if (category.startsWith('Tools')) return category.replace('Tools', DIY)
+    return `Computers Laptops & Electronics > ${category}`
+  })
+  return result.join(',')
+}
+
+function outPutCsv(data) {
+  const csvRaw = Papa.unparse(data, {
     delimiter: ';',
     quoteChars: '""'
   })

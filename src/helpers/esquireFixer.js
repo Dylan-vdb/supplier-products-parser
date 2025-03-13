@@ -4,11 +4,6 @@ import { esquireCategoryReplacements } from './constants'
 import Papa from 'papaparse'
 
 export function processEsquireStock() {
-  if (!Array.isArray(esquireCategoryReplacements)) {
-    console.error('Category replacements not loaded correctly:', esquireCategoryReplacements)
-    return
-  }
-
   const duplicatesRemoved = removeDuplicates(esquireStock)
   const tidiedProducts = tidyFields(duplicatesRemoved)
   const unmappedCategories = findUnmappedCategories(tidiedProducts)
@@ -23,8 +18,7 @@ function tidyFields(products) {
   return products
     .map((product) => {
       // Destructure the fields we want to rename, collecting the rest
-      const { productCode, price, imgURL, productName, groupName, description, url, ...rest } =
-        product
+      const { productCode, price, imgURL, productName, groupName, description, ...rest } = product
 
       // Return new object with renamed fields and remaining fields
       return {
