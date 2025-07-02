@@ -1,4 +1,3 @@
-import { categories } from '@vueuse/core/metadata.cjs'
 import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
 import { DIY, LIFESTYLE, STATIONERY, TECH, esquireCategoryReplacements } from '../helpers/constants'
 
@@ -7,6 +6,7 @@ const categoryGroupsList = [DIY, LIFESTYLE, STATIONERY, TECH]
 let topCategory
 export function processEsquireExtras(xmlData, mainCategory) {
   topCategory = mainCategory
+
   const rawData = xmlData.ROOT.Products.Product
   const correctedFields = correctFields(rawData).filter(
     (product) => product.leafCategory.length > 0
@@ -65,7 +65,7 @@ function correctFields(products) {
       image
     }) => {
       return {
-        stock: AvailableQty >= 1 ? AvailableQty : 0,
+        stock: AvailableQty > 1 ? AvailableQty : 0,
         sku: modifyProductId(ProductCode),
         normal_cost: Price,
         images: image,
@@ -194,7 +194,7 @@ function categorizeProducts(products) {
       .map((product) => {
         return {
           ...product,
-          categories: TECH.category + ' > ' + product.categories
+          categories: modifyCategory(product.categories)
         }
       })
   return products.map((product) => {
@@ -205,6 +205,14 @@ function categorizeProducts(products) {
         : `${topCategory} > ${product.leafCategory}`
     }
   })
+}
+
+function modifyCategory(categories) {
+  const categoriesList = categories.split(',')
+  const result = categoriesList.map((category) => {
+    return `Computers Laptops & Electronics > ${category}`
+  })
+  return result.join(',')
 }
 
 function getBagCategoryFromDescription(description = '') {

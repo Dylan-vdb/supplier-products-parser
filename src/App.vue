@@ -13,8 +13,16 @@
     </div>
     <button @click="pullCategories">Pull Categories</button>
     <br />
-    <button @click="processEsquire">PROCESS ESQUIRE</button>
-    <button @click="fetchAstrumProducts">Fetch Astrum</button>
+    <button @click="processSyntech">Process Syntech</button>
+    <button @click="processMicropoint">Process Micropoint</button>
+    <button @click="processEsquireTech">Process Esquire Tech</button>
+    <button @click="processEsquireHardware">Process Esquire Hardware</button>
+    <button @click="processEsquireStationery">Process Esquire Stationery</button>
+    <button @click="processEsquireLifestyle">Process Esquire Lifestyle</button>
+    <br />
+
+    <button @click="processEsquire">Process Esquire</button>
+    <button @click="processSuppliers">Process Suppliers</button>
   </div>
 </template>
 
@@ -28,7 +36,7 @@ import { processSyntechStock } from './helpers/syntechFixer'
 import { processMicropointStock } from './helpers/micropointFixer'
 import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
-import { processEsquireStock } from './helpers/esquireFixer'
+// import { processEsquireStock } from './helpers/esquireFixer'
 import { processEsquireExtras } from './helpers/esquireExtrasFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
@@ -51,6 +59,90 @@ const frontosaData = ref([])
 const astrumData = ref([])
 const esquireData = ref([])
 const discontinuedStock = ref([])
+
+async function processSupplierStock(endpoint, processFn) {
+  const result = await fetch(endpoint)
+
+  if (!result.ok) {
+    console.error('Network response was not ok', result.statusText)
+    return
+  }
+
+  const xmlText = await result.text()
+
+  const parser = new XMLParser()
+  const parsedXml = parser.parse(xmlText)
+
+  const processedData = processFn(parsedXml)
+  const refinedData = furtherRefinements(processedData)
+  outPutCsv(refinedData)
+}
+
+async function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+async function processSuppliers() {
+  // await processSyntech()
+  await processMicropoint()
+  await processEsquireTech()
+  await processEsquireHardware()
+  await processEsquireStationery()
+  await processEsquireLifestyle()
+}
+
+async function processSyntech() {
+  await processSupplierStock(
+    'https://www.syntech.co.za/feeds/feedhandler.php?key=3CCC41DC-9732-4435-880B-7CCC0B8E3C8B&feed=syntech-xml-full',
+    processSyntechStock
+  )
+}
+
+async function processMicropoint() {
+  await processSupplierStock(
+    'https://www.micropointsa.co.za/xml/xml.php?xmlKey=02e496837c88274e666b4779675a2342ae87b177',
+    processMicropointStock
+  )
+}
+
+async function processEsquire(url, category) {
+  const result = await fetch(url)
+  const xmlText = await result.text()
+
+  const parser = new XMLParser()
+  const parsedXml = parser.parse(xmlText)
+
+  const processedData = processEsquireExtras(parsedXml, category)
+  outPutCsv(processedData)
+}
+
+async function processEsquireTech() {
+  await processEsquire(
+    'https://api.esquire.co.za/api/Export?key=12&Org=esquire&ID=189929&m=0&o=ascending',
+    TECH.category
+  )
+}
+
+async function processEsquireHardware() {
+  await processEsquire(
+    'https://api.esquire.co.za/api/Export?key=12&Org=noble&ID=189929&m=0&o=ascending',
+    DIY.category
+  )
+}
+
+async function processEsquireStationery() {
+  await processEsquire(
+    'https://api.esquire.co.za/api/Export?key=12&Org=brainware&ID=189929&m=0&o=ascending',
+    STATIONERY.category
+  )
+}
+
+async function processEsquireLifestyle() {
+  await processEsquire(
+    'https://api.esquire.co.za/api/Export?key=12&Org=casey&ID=189929&m=0&o=ascending',
+    LIFESTYLE.category
+  )
+}
 
 async function onDrop(files) {
   const file = files[0]
@@ -93,12 +185,6 @@ function parseCsv(csvFile) {
       }
     })
   })
-}
-
-function processEsquire() {
-  esquireData.value = processEsquireStock()
-  const refinedData = furtherRefinements(esquireData.value)
-  outPutCsv(refinedData)
 }
 
 function parseXml(xmlFile) {
@@ -233,7 +319,7 @@ function modifyCategory(categories) {
   const categoriesList = categories.split(',')
   const result = categoriesList.map((category) => {
     if (category.startsWith('Stationery')) return category
-    if (category.startsWith('Tools')) return category.replace('Tools', DIY)
+    if (category.startsWith('Tools')) return category.replace('Tools', DIY.category)
     return `Computers Laptops & Electronics > ${category}`
   })
   return result.join(',')
@@ -270,13 +356,16 @@ function outPutCsv(data) {
   URL.revokeObjectURL(url)
 }
 
-defineExpose({
-  dropzoneRef,
-  isDragActive,
-  pullCategories,
-  testRegex,
-  processEsquire
-})
+// defineExpose({
+//   dropzoneRef,
+//   isDragActive,
+//   pullCategories,
+//   testRegex,
+//   processSyntech,
+//   processMicropoint,
+//   processEsquire,
+//   fetchAstrumProducts
+// })
 </script>
 
 <style scoped>

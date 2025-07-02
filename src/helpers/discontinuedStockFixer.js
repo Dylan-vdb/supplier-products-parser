@@ -5,7 +5,7 @@ export function processDiscontinuedStock(products) {
   const frontosaSkuListNew = getSkuListNew('frontosaSkuListNew')
   const astrumSkuListNew = getSkuListNew('astrumSkuListNew')
   const micropointSkuListNew = getSkuListNew('micropointSkuListNew')
-  const esquireSkuListNew = getSkuListNew('esquireSkuListNew')
+  const esquireSkuListNew = getSkuListNew('techSkuListNew')
 
   const hardwareSkuListNew = getSkuListNew('hardwareSkuListNew')
   const stationerySkuListNew = getSkuListNew('stationerySkuListNew')

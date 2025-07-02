@@ -195,6 +195,7 @@ function combineStocksField(products) {
 
 function improveCategoryNames(products) {
   // AT-ECAB-BK300-C2P3-BK/R
+
   const replacements = syntechCategoryReplacements
 
   return products.map((product) => {
