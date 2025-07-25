@@ -724,7 +724,8 @@ export const astrumCategoryReplacements = [
   ['Laptop Chargers', 'Power Solutions > Notebook Chargers'],
   ['Notebook PC', 'Accessories > Notebook Accessories'],
   ['Tablets PC', 'Tablets'],
-  ['USB Peripherals', 'Peripherals > USB Devices']
+  ['USB Peripherals', 'Peripherals > USB Devices'],
+  ['SMART DEVICES', 'Gadgets > Accessories']
 ]
 
 export const frontosaCategoryReplacements = [

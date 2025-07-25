@@ -1,7 +1,19 @@
 import { astrumCategoryReplacements } from '@/helpers/constants'
 import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
+import { XMLParser } from 'fast-xml-parser'
+import Papa from 'papaparse'
 
-export function processAstrumStock(productsRaw) {
+export async function processAstrumStock(files) {
+  const productsRaw = await Promise.all(
+    files.map((file) => {
+      if (file.type == 'text/csv') {
+        return parseCsv(file)
+      } else {
+        return parseXml(file)
+      }
+    })
+  )
+
   const tablesJoined = combineTables(productsRaw)
   const pricing = setPricing(tablesJoined)
   const prefixedTonerTitles = prefixTonerTitles(pricing)
@@ -49,11 +61,15 @@ function prefixBatteryTitles(products) {
 
 function combineTables(productsTables) {
   const stockTable = productsTables.find((table) => table.name.includes('SAR')).result.data
-  const detailsTable = productsTables.find((table) => table.name.includes('UPLOAD')).result.data
-  const joinedTable = detailsTable
+  const detailsTable = productsTables.find((table) => table.name.includes('astrum_products')).result
+    .products.product
+  const joinedTable = stockTable
     .map((product) => {
-      const details = stockTable.find((detail) => detail['ITEM NUMBER'] === product['Part Number'])
-      return { ...product, ...details }
+      const details = detailsTable.find((detail) => {
+        const sku = detail['sku_id'].split('_')[0]
+        return product['ITEM NUMBER'] === sku
+      })
+      return { ...details, ...product }
     })
     .filter((product) => product.id)
 
@@ -62,23 +78,26 @@ function combineTables(productsTables) {
 
 function setPricing(products) {
   let aboveCount = 0
-
   return products
+    .filter(
+      (product) => product.AVAIL && product.COST && product['ITEM NUMBER'] && product.image_link
+    )
     .map(
       ({
         AVAIL: stock,
         COST: normal_cost,
         title: name,
-        'Part Number': sku,
-        SRP,
+        'ITEM NUMBER': sku,
         categories,
         description,
-        image_link: images
+        image_link: images,
+        price: recommended_retail
       }) => {
         return {
-          stock,
-          SRP,
-          normal_cost,
+          stock: Number(stock),
+          normal_cost: Number(normal_cost),
+          promo_cost: Number(normal_cost),
+          recommended_retail: parseInt(recommended_retail),
           name,
           sku: 'AST-' + sku,
           categories,
@@ -93,9 +112,9 @@ function setPricing(products) {
       }
     )
     .map((product) => {
-      const recommended_retail = parseInt(product.SRP)
+      const recommended_retail = parseInt(product.recommended_retail)
       const sale_price = calculateFullPrice({
-        price: Number(product.normal_cost),
+        price: product.normal_cost,
         margin: 25,
         vat: 15
       })
@@ -116,7 +135,7 @@ function setPricing(products) {
         }
       }
     })
-    .filter((product) => !product?.stock?.includes('N/A'))
+  // .filter((product) => !product?.stock?.includes('N/A'))
 }
 
 function improveCategoryNames(products) {
@@ -128,5 +147,44 @@ function improveCategoryNames(products) {
     })
 
     return { ...product, categories: updatedCategoryTree }
+  })
+}
+
+function parseCsv(csvFile) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(csvFile, {
+      header: true,
+      complete: (results) => {
+        resolve({ name: csvFile.name, result: results })
+      },
+      error: (error) => {
+        reject(error)
+      }
+    })
+  })
+}
+
+function parseXml(xmlFile) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+
+    reader.onload = async (event) => {
+      const xmlRaw = event.target.result
+      const parser = new XMLParser()
+      const parsedXml = parser.parse(xmlRaw) // Uses the existing parsing logic
+
+      if (parsedXml) {
+        resolve({ name: xmlFile.name, result: parsedXml }) // Resolve the promise with the parsed object
+      } else {
+        reject(new Error('Failed to parse XML from file.')) // Reject on parsing error
+      }
+    }
+
+    reader.onerror = (error) => {
+      console.error('Error reading file:', error)
+      reject(error) // Reject the promise on file read error
+    }
+
+    reader.readAsText(xmlFile)
   })
 }

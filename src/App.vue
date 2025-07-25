@@ -83,7 +83,7 @@ async function delay(ms) {
 }
 
 async function processSuppliers() {
-  // await processSyntech()
+  await processSyntech()
   await processMicropoint()
   await processEsquireTech()
   await processEsquireHardware()
@@ -146,9 +146,8 @@ async function processEsquireLifestyle() {
 
 async function onDrop(files) {
   const file = files[0]
-  if (file.name.includes('Astrum')) {
-    const rawData = await Promise.all(files.map((file) => parseCsv(file)))
-    astrumData.value = processAstrumStock(rawData)
+  if (file.name.toLowerCase().includes('astrum')) {
+    astrumData.value = await processAstrumStock(files)
     const refinedData = furtherRefinements(astrumData.value)
     outPutCsv(refinedData)
     return
@@ -189,10 +188,11 @@ function parseCsv(csvFile) {
 
 function parseXml(xmlFile) {
   const reader = new FileReader()
+  let parsedXml
   reader.onload = async (event) => {
     const xmlRaw = event.target.result
     const parser = new XMLParser()
-    const parsedXml = parser.parse(xmlRaw)
+    parsedXml = parser.parse(xmlRaw)
 
     if (xmlFile.name.includes('micropoint')) {
       micropointData.value = processMicropointStock(parsedXml)
