@@ -22,6 +22,7 @@
     <br />
 
     <button @click="processEsquire">Process Esquire</button>
+    <button @click="processMustek">Process Mustek</button>
     <button @click="processSuppliers">Process Suppliers</button>
   </div>
 </template>
@@ -38,6 +39,7 @@ import { processFrontosaStock } from './helpers/frontosaFixer'
 import { processAstrumStock } from './helpers/astrumFixer'
 // import { processEsquireStock } from './helpers/esquireFixer'
 import { processEsquireExtras } from './helpers/esquireExtrasFixer'
+import { processMustekStock, fetchAndProcessMustekData } from './helpers/mustekFixer'
 
 import { processDiscontinuedStock } from './helpers/discontinuedStockFixer'
 import { symbolMap, DIY, LIFESTYLE, STATIONERY, TECH } from './helpers/constants'
@@ -59,6 +61,36 @@ const frontosaData = ref([])
 const astrumData = ref([])
 const esquireData = ref([])
 const discontinuedStock = ref([])
+
+// TODO: Move to helper
+// ===============================================================================================
+/**
+https://api.mustek.co.za/Customer/Items.ashx?CustomerToken=e9a64d38-9735-4aa7-9ac0-60fcbea26c1f
+
+https://api.mustek.co.za/Customer/ItemsStock.ashx?CustomerToken=e9a64d38-9735-4aa7-9ac0-60fcbea26c1f
+
+https://api.mustek.co.za/Customer/Media.ashx?CustomerToken=e9a64d38-9735-4aa7-9ac0-60fcbea26c1f
+ */
+async function processMustek() {
+  try {
+    console.log('Fetching Mustek data...')
+    
+    // Use the enhanced function that fetches and processes all Mustek data
+    const processedData = await fetchAndProcessMustekData()
+    
+    console.log(`Processed ${processedData.length} Mustek products`)
+    
+    
+
+  } catch (error) {
+    console.error('Error processing Mustek data:', error)
+  }
+}
+
+
+// ===============================================================================================
+
+
 
 async function processSupplierStock(endpoint, processFn) {
   const result = await fetch(endpoint)
