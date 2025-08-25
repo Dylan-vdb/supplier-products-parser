@@ -21,12 +21,20 @@ export function processSyntechStock(xmlData) {
 function includeNewCategories(products) {
   let watchCategories = []
   const result = products.map((product) => {
+    
+  
+    // "Computer peripherals > Headsets > Gaming headsets"
+    if (product.categorytree.includes('Computer peripherals >')) {
+      product.categorytree = product.categorytree.replace('Computer peripherals >', 'Peripherals >')
+    }
+
+
     let newCategory = product.categorytree
     if (product.categorytree.includes(' > Mounts and Brackets')) {
       newCategory = 'Peripherals > Mounting Kits'
     }
 
-    if (product.categorytree.includes(' > Screen Protectors')) {
+    if (product.categorytree.toLowerCase().includes(' > screen protectors'.toLowerCase())) {
       newCategory = 'Peripherals > Screen Protectors'
     }
 
@@ -88,7 +96,7 @@ function handlePromotedProducts(products) {
   return products.map((product) => {
     const promotionEndDate = new Date(product.promo_ends)
     const isPromoted =
-      product.categorytreealt?.includes('|On Promotion') && promotionEndDate > new Date()
+      !!product.promo_price && promotionEndDate > new Date()
 
     return isPromoted
       ? {
@@ -150,6 +158,7 @@ function tidyFields(products) {
       height,
       all_images: images,
       categorytree: categories,
+      originalCategory,
       tags,
       description,
       attributes,
@@ -164,6 +173,7 @@ function tidyFields(products) {
       date_sale_price_starts: promo_starts,
       date_sale_price_ends: promo_ends,
       normal_cost,
+      originalCategory,
       categories,
       tags,
       is_featured,
@@ -199,13 +209,13 @@ function improveCategoryNames(products) {
   const replacements = syntechCategoryReplacements
 
   return products.map((product) => {
+    // if (product.sku === 'ATOM V750') debugger
     let updatedCategoryTree = product.categorytree
-
     replacements.forEach(([find, replace]) => {
       updatedCategoryTree = updatedCategoryTree.replace(find, replace)
     })
 
-    return { ...product, categorytree: updatedCategoryTree }
+    return { ...product, categorytree: updatedCategoryTree, originalCategory: product.categorytree }
   })
 }
 

@@ -1,4 +1,32 @@
 import { featuredCategories } from './constants'
+import Papa from 'papaparse'
+
+export async function fetchLocalCsvFile(path) {
+  try {
+    const response = await fetch(path); // Path relative to public folder
+
+    const csvText = await response.text();
+    const data = await parseCsv(csvText)
+    debugger
+    return data.data
+  } catch (error) {
+    console.error('Error fetching CSV file:', error);
+  }
+}
+
+function parseCsv(csvFile) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(csvFile, {
+      header: true,
+      complete: (results) => {
+        resolve(results)
+      },
+      error: (error) => {
+        reject(error)
+      }
+    })
+  })
+}
 
 export function calculateFullPrice({ price, margin, vat }) {
   const marginPercentage = margin / 100
@@ -268,9 +296,9 @@ export function refineCategories(products) {
       }
     }
 
-    if (product.categories.includes('Peripherals > Cable Locks')) {
-      updatedProduct.categories = 'Cables > Cable Locks'
-    }
+    // if (product.categories.includes('Peripherals > Cable Locks')) {
+    //   updatedProduct.categories = 'Cables > Cable Locks'
+    // }
 
     if (product.categories.includes('Components > Software')) {
       updatedProduct.categories = 'Software'
@@ -460,10 +488,6 @@ export function refineCategories(products) {
         updatedProduct.categories = 'Networking & Wifi > CAT 6 Cables'
       }
 
-      if (product.categories.includes('Cables > Network > Display Port Cables')) {
-        updatedProduct.categories = 'Cables > DVI Cable'
-      }
-
       if (product.categories.includes('Cables > Network > Fibre')) {
         updatedProduct.categories = 'Networking & Wifi > Fibre Cables'
       }
@@ -636,6 +660,17 @@ export function refineCategories(products) {
         )
       }
 
+      if (
+        product.categories.includes(
+          'Cables > Printer')
+        )
+      {
+        updatedProduct.categories = product.categories.replace(
+          /Cables > Printer$/,
+          'Cables > Printer Cables'
+        )
+      }
+
       if (product.categories.includes('Dash Cameras')) {
         updatedProduct.categories = 'Gadgets > Dash Cameras'
       }
@@ -676,6 +711,10 @@ export function refineCategories(products) {
 
       if (product.categories.includes('Gaming > Gaming')) {
         updatedProduct.categories = product.categories.replace('Gaming > Gaming', 'Gaming')
+      }
+
+      if (product.categories.includes('Cables > Network cables')) {
+        updatedProduct.categories = product.categories.replace('Cables > Network cables', 'Cables > Network Cables')
       }
 
       acc.push(updatedProduct)

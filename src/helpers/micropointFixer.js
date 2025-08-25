@@ -92,7 +92,7 @@ function combineCategoriesField(products) {
   // Merge the two columns into one with the same '>' separator as syntech stock.
   return products.map((product) => {
     const combinedCategories = `${product.category_description} > ${product.group_description}`
-    return { ...product, categories: combinedCategories }
+    return { ...product, categories: combinedCategories, originalCategory: combinedCategories }
   })
 }
 
@@ -125,6 +125,7 @@ function mapToCommonFields(products) {
       images,
       description,
       categories,
+      originalCategory,
       brand,
       is_featured
     }) => {
@@ -143,6 +144,7 @@ function mapToCommonFields(products) {
         images,
         description,
         categories,
+        originalCategory,
         weight: null,
         length: null,
         width: null,

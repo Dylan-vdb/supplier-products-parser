@@ -6,14 +6,15 @@ const categoryGroupsList = [DIY, LIFESTYLE, STATIONERY, TECH]
 let topCategory
 export function processEsquireExtras(xmlData, mainCategory) {
   topCategory = mainCategory
-
   const rawData = xmlData.ROOT.Products.Product
   const correctedFields = correctFields(rawData).filter(
     (product) => product.leafCategory.length > 0
   )
+
   const pricedProducts = priceProducts(correctedFields)
   const withinWeight = pricedProducts.filter((product) => product.weight < 14500) //14500 grams
   const categorizedProducts = categorizeProducts(withinWeight)
+
   const goodImages = categorizedProducts.filter(
     (product) => product.images.length > 0 && !product.images.includes('http://')
   )
@@ -108,7 +109,7 @@ function categorizeProducts(products) {
     return products
       .map((product) => {
         const oldCategory = product.leafCategory?.trim() || ''
-
+        // if(product.sku === 'SQR-SEC4WPS') debugger
         // Special case for USB Gadgets
         if (oldCategory === 'USB Gadgets') {
           const description = product.description
@@ -181,13 +182,16 @@ function categorizeProducts(products) {
           }
         }
 
+      
+          
         // Find a matching replacement
         const replacement = esquireCategoryReplacements.find(([source]) => source === oldCategory)
 
         // Return product with new categories field, null if no replacement found
         return {
           ...product,
-          categories: replacement ? replacement[1] : null
+          categories: replacement ? replacement[1] : null,
+          originalCategory: oldCategory
         }
       })
       .filter((product) => product.categories !== null)
@@ -195,11 +199,14 @@ function categorizeProducts(products) {
         return {
           ...product,
           categories: modifyCategory(product.categories)
+          
         }
-      })
+      }).filter((product) => product.leafCategory !== 'HDMI, DVI & Displayport ')
+
   return products.map((product) => {
     return {
       ...product,
+      originalCategory: product.leafCategory,
       categories: product.headCategory
         ? `${topCategory} > ${product.headCategory} > ${product.leafCategory}`
         : `${topCategory} > ${product.leafCategory}`

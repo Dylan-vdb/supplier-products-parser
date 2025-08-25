@@ -24,6 +24,7 @@
     <button @click="processEsquire">Process Esquire</button>
     <button @click="processMustek">Process Mustek</button>
     <button @click="processSuppliers">Process Suppliers</button>
+    <button @click="fetchCsvFile">Fetch local CSV File</button>
   </div>
 </template>
 
@@ -48,10 +49,20 @@ import {
   adjustAdaptersAndConnectorsPricing,
   adjustCablesPricing,
   refineCategories,
-  refineFeaturedItems
+  refineFeaturedItems,
+  fetchLocalCsvFile
 } from './helpers/baseHelpers'
 
+
+
 import { fetchAstrumProducts } from './helpers/api-astrum'
+
+
+async function fetchCsvFile() {
+  const result = await fetchLocalCsvFile('/product-categories/EsquireTech.csv')
+  console.log(result)
+}
+
 
 const dropzoneRef = ref(null)
 const { isDragActive } = useDropZone(dropzoneRef, onDrop)
@@ -388,16 +399,6 @@ function outPutCsv(data) {
   URL.revokeObjectURL(url)
 }
 
-// defineExpose({
-//   dropzoneRef,
-//   isDragActive,
-//   pullCategories,
-//   testRegex,
-//   processSyntech,
-//   processMicropoint,
-//   processEsquire,
-//   fetchAstrumProducts
-// })
 </script>
 
 <style scoped>

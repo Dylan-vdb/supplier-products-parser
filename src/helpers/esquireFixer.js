@@ -136,6 +136,7 @@ function getCartridgeCategoryFromDescription(description = '') {
 function improveCategoryNames(products) {
   return products
     .map((product) => {
+ 
       // Get the old category and clean it up
       const oldCategory = product.categoriesOld?.trim() || ''
 
