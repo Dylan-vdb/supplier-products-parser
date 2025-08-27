@@ -6,7 +6,7 @@ import { calculateFullPrice } from './baseHelpers'
 import Papa from 'papaparse'
 
 // Mustek API endpoints
-const MUSTEK_TOKEN = 'e9a64d38-9735-4aa7-9ac0-60fcbea26c1f'
+const MUSTEK_TOKEN = 'e9a64d38-9735-4aa7-9ac0-60fcbea26c1f' // revoked
 const MUSTEK_ITEMS_URL = `https://api.mustek.co.za/Customer/Items.ashx?CustomerToken=${MUSTEK_TOKEN}`
 const MUSTEK_STOCK_URL = `https://api.mustek.co.za/Customer/ItemsStock.ashx?CustomerToken=${MUSTEK_TOKEN}`
 const MUSTEK_MEDIA_URL = `https://api.mustek.co.za/Customer/Media.ashx?CustomerToken=${MUSTEK_TOKEN}`
