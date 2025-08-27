@@ -1,7 +1,7 @@
-import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
+import { calculateFullPrice, saveSkuList, applyCategories } from '../helpers/baseHelpers'
 import { syntechCategoryReplacements, syntechUnwantedSubstrings } from './constants'
 
-export function processSyntechStock(xmlData) {
+export async function processSyntechStock(xmlData) {
   const products = xmlData.syntechstock.stock.product
   const withNormalCost = addNormalCost(products)
   const promotedProductsHandled = handlePromotedProducts(withNormalCost)
@@ -10,78 +10,13 @@ export function processSyntechStock(xmlData) {
   const filteredProducts = removeUnwantedCategories(cleanedProducts)
   const fixedImages = fixAllImagesField(filteredProducts)
   const fixedPipedNames = fixPipedNames(fixedImages)
-  const newCategoriesIncluded = includeNewCategories(fixedPipedNames)
-  const categorizedProducts = improveCategoryNames(newCategoriesIncluded)
+  const categorizedProducts = await applyCategories(fixedPipedNames, 'Syntech')
   const combinedStocks = combineStocksField(categorizedProducts)
   const tidiedFields = tidyFields(combinedStocks)
   const finalProducts = saveSkuList(tidiedFields, 'syntech')
   return finalProducts
 }
 
-function includeNewCategories(products) {
-  let watchCategories = []
-  const result = products.map((product) => {
-    
-  
-    // "Computer peripherals > Headsets > Gaming headsets"
-    if (product.categorytree.includes('Computer peripherals >')) {
-      product.categorytree = product.categorytree.replace('Computer peripherals >', 'Peripherals >')
-    }
-
-
-    let newCategory = product.categorytree
-    if (product.categorytree.includes(' > Mounts and Brackets')) {
-      newCategory = 'Peripherals > Mounting Kits'
-    }
-
-    if (product.categorytree.toLowerCase().includes(' > screen protectors'.toLowerCase())) {
-      newCategory = 'Peripherals > Screen Protectors'
-    }
-
-    if (product.categorytree.includes('Cables > Display Cables')) {
-      newCategory = 'Cables > Display Cables'
-    }
-
-    if (product.categorytree.includes('Cables > USB Cables')) {
-      newCategory = 'Cables > USB Cables'
-    }
-
-    if (product.categorytree.includes('> Tools')) {
-      newCategory = 'Tools'
-    }
-
-    if (product.categorytree.includes('Smart Security > IP Cameras')) {
-      newCategory = 'Gadgets > Smart Security > IP Cameras'
-    }
-
-    if (product.categorytree.includes('Smart Security > Controllers and Sensors')) {
-      newCategory = 'Gadgets > Smart Security > Controllers and Sensors'
-    }
-
-    if (product.categorytree.includes('Scooters and Bikes >')) {
-      newCategory = 'Gadgets > Scooters and Bikes'
-    }
-
-    if (product.categorytree.includes(' > Wearables > Accessories')) {
-      newCategory = 'Gadgets > Wearables'
-    }
-
-    if (product.categorytree.includes(' > Lifestyle Accessories')) {
-      if (product.name.toLowerCase().includes('writing tablet')) {
-        newCategory = 'Gadgets > Writing Tablets'
-      }
-      watchCategories.push(product)
-      newCategory = 'Gadgets'
-    }
-
-    return {
-      ...product,
-      categorytree: newCategory
-    }
-  })
-
-  return result
-}
 
 function addNormalCost(products) {
   return products.map((product) => {
@@ -157,8 +92,8 @@ function tidyFields(products) {
       width,
       height,
       all_images: images,
-      categorytree: categories,
-      originalCategory,
+      categorytree: originalCategory,
+      categories,
       tags,
       description,
       attributes,
@@ -200,22 +135,6 @@ function combineStocksField(products) {
     const stock = Number(obj.cptstock) + Number(obj.jhbstock)
 
     return { ...obj, stock }
-  })
-}
-
-function improveCategoryNames(products) {
-  // AT-ECAB-BK300-C2P3-BK/R
-
-  const replacements = syntechCategoryReplacements
-
-  return products.map((product) => {
-    // if (product.sku === 'ATOM V750') debugger
-    let updatedCategoryTree = product.categorytree
-    replacements.forEach(([find, replace]) => {
-      updatedCategoryTree = updatedCategoryTree.replace(find, replace)
-    })
-
-    return { ...product, categorytree: updatedCategoryTree, originalCategory: product.categorytree }
   })
 }
 

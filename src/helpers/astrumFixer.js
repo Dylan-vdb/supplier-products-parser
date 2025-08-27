@@ -1,5 +1,5 @@
 import { astrumCategoryReplacements } from '@/helpers/constants'
-import { calculateFullPrice, saveSkuList } from '@/helpers/baseHelpers'
+import { calculateFullPrice, saveSkuList, applyCategories } from '@/helpers/baseHelpers'
 import { XMLParser } from 'fast-xml-parser'
 import Papa from 'papaparse'
 
@@ -19,9 +19,8 @@ export async function processAstrumStock(files) {
   const prefixedTonerTitles = prefixTonerTitles(pricing)
   const prefixedChargerTitles = prefixChargerTitles(prefixedTonerTitles)
   const prefixedBatteryTitles = prefixBatteryTitles(prefixedChargerTitles)
-  const improvedCategoryNames = improveCategoryNames(prefixedBatteryTitles)
+  const improvedCategoryNames = await applyCategories(prefixedBatteryTitles, 'Astrum')
   const finalProducts = saveSkuList(improvedCategoryNames, 'astrum')
-
   return finalProducts
 }
 
@@ -135,20 +134,19 @@ function setPricing(products) {
         }
       }
     })
-  // .filter((product) => !product?.stock?.includes('N/A'))
 }
 
-function improveCategoryNames(products) {
-  const replacements = astrumCategoryReplacements
-  return products.map((product) => {
-    let updatedCategoryTree = product.categories
-    replacements.forEach(([find, replace]) => {
-      updatedCategoryTree = updatedCategoryTree.replace(find, replace)
-    })
+// function improveCategoryNames(products) {
+//   const replacements = astrumCategoryReplacements
+//   return products.map((product) => {
+//     let updatedCategoryTree = product.categories
+//     replacements.forEach(([find, replace]) => {
+//       updatedCategoryTree = updatedCategoryTree.replace(find, replace)
+//     })
 
-    return { ...product, categories: updatedCategoryTree }
-  })
-}
+//     return { ...product, categories: updatedCategoryTree, originalCategory: product.categories }
+//   })
+// }
 
 function parseCsv(csvFile) {
   return new Promise((resolve, reject) => {

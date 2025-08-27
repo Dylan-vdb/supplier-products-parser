@@ -1,10 +1,10 @@
-import { calculateFullPrice, saveSkuList } from '../helpers/baseHelpers'
-import { DIY, LIFESTYLE, STATIONERY, TECH, esquireCategoryReplacements } from '../helpers/constants'
+import { calculateFullPrice, saveSkuList, applyCategories } from '../helpers/baseHelpers'
+import { DIY, LIFESTYLE, STATIONERY, TECH } from '../helpers/constants'
 
 const categoryGroupsList = [DIY, LIFESTYLE, STATIONERY, TECH]
 
 let topCategory
-export function processEsquireExtras(xmlData, mainCategory) {
+export async function processEsquireExtras(xmlData, mainCategory) {
   topCategory = mainCategory
   const rawData = xmlData.ROOT.Products.Product
   const correctedFields = correctFields(rawData).filter(
@@ -13,9 +13,10 @@ export function processEsquireExtras(xmlData, mainCategory) {
 
   const pricedProducts = priceProducts(correctedFields)
   const withinWeight = pricedProducts.filter((product) => product.weight < 14500) //14500 grams
-  const categorizedProducts = categorizeProducts(withinWeight)
+  const categorizedProducts = await categorizeProducts(withinWeight)
+  const goodCategories = categorizedProducts.filter((product) => product.categories !== 'Not to import')
 
-  const goodImages = categorizedProducts.filter(
+  const goodImages = goodCategories.filter(
     (product) => product.images.length > 0 && !product.images.includes('http://')
   )
   const finalProducts = saveSkuList(goodImages, getGroupName(topCategory))
@@ -104,104 +105,10 @@ function priceProducts(products) {
   })
 }
 
-function categorizeProducts(products) {
+async function categorizeProducts(products) {
   if (topCategory === TECH.category)
-    return products
-      .map((product) => {
-        const oldCategory = product.leafCategory?.trim() || ''
-        // if(product.sku === 'SQR-SEC4WPS') debugger
-        // Special case for USB Gadgets
-        if (oldCategory === 'USB Gadgets') {
-          const description = product.description
-          const lowerName = description.toLowerCase()
-          let category = 'Gadgets'
-          if (lowerName.includes('adapter cable') || lowerName.includes('printer converter')) {
-            category = 'Connectors Adaptors & Converters'
-          }
-          if (lowerName.includes('dream cheeky')) {
-            category = 'Gadgets > Fun'
-          }
-          if (lowerName.includes('selfie led ring')) {
-            category = 'Gadgets > Media & Streaming > Ring Lights'
-          }
-
-          return {
-            ...product,
-            categories: category
-          }
-        }
-
-        if (oldCategory === 'Notebook Accessories') {
-          const description = product.description
-          if (description.includes('AirBar Touchscreen Sensor')) {
-            return {
-              ...product,
-              categories: 'Notebook Components > Screens'
-            }
-          }
-
-          if (description.includes('USB 3.1 Type')) {
-            return {
-              ...product,
-              categories: 'Peripherals > USB Devices'
-            }
-          }
-          if (description.includes('Legion') || description.includes('Briefcase Alarm')) {
-            return {
-              ...product,
-              categories: 'Notebook Components > Locks'
-            }
-          }
-          if (description.includes('PCMCIA')) {
-            return {
-              ...product,
-              categories: 'Desktop Components > Expansion & Pcie Adapters > PCMCIA'
-            }
-          }
-        }
-
-        // Special case for Notebook Bags and Cases
-        if (oldCategory === 'Notebook Bags and Cases') {
-          const bagCategory = getBagCategoryFromDescription(product.description)
-          if (bagCategory) {
-            return {
-              ...product,
-              categories: bagCategory
-            }
-          }
-        }
-
-        // Special case for Ink and Toners
-        if (oldCategory === 'Ink and Toners-Generic' || oldCategory === 'Ink and Toners-Original') {
-          const cartridgeCategory = getCartridgeCategoryFromDescription(product.description)
-          if (cartridgeCategory) {
-            return {
-              ...product,
-              categories: cartridgeCategory
-            }
-          }
-        }
-
-      
-          
-        // Find a matching replacement
-        const replacement = esquireCategoryReplacements.find(([source]) => source === oldCategory)
-
-        // Return product with new categories field, null if no replacement found
-        return {
-          ...product,
-          categories: replacement ? replacement[1] : null,
-          originalCategory: oldCategory
-        }
-      })
-      .filter((product) => product.categories !== null)
-      .map((product) => {
-        return {
-          ...product,
-          categories: modifyCategory(product.categories)
-          
-        }
-      }).filter((product) => product.leafCategory !== 'HDMI, DVI & Displayport ')
+    // Use category csv for tech
+    return await applyCategories(products, 'EsquireTech')
 
   return products.map((product) => {
     return {
