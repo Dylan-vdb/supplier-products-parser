@@ -24,7 +24,6 @@
     <button @click="processEsquire">Process Esquire</button>
     <button @click="processMustek">Process Mustek</button>
     <button @click="processSuppliers">Process Suppliers</button>
-    <button @click="fetchCsvFile">Fetch local CSV File</button>
   </div>
 </template>
 
@@ -48,7 +47,6 @@ import {
   handleLowStocks,
   adjustAdaptersAndConnectorsPricing,
   adjustCablesPricing,
-  refineCategories,
   refineFeaturedItems,
   fetchLocalCsvFile
 } from './helpers/baseHelpers'
@@ -56,12 +54,6 @@ import {
 
 
 import { fetchAstrumProducts } from './helpers/api-astrum'
-
-
-async function fetchCsvFile() {
-  const result = await fetchLocalCsvFile('/product-categories/EsquireTech.csv')
-  console.log(result)
-}
 
 
 const dropzoneRef = ref(null)
@@ -116,14 +108,11 @@ async function processSupplierStock(endpoint, processFn) {
   const parser = new XMLParser()
   const parsedXml = parser.parse(xmlText)
 
-  const processedData = processFn(parsedXml)
+  const processedData = await processFn(parsedXml)
   const refinedData = furtherRefinements(processedData)
   outPutCsv(refinedData)
 }
 
-async function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
 
 async function processSuppliers() {
   await processSyntech()
@@ -155,7 +144,7 @@ async function processEsquire(url, category) {
   const parser = new XMLParser()
   const parsedXml = parser.parse(xmlText)
 
-  const processedData = processEsquireExtras(parsedXml, category)
+  const processedData = await processEsquireExtras(parsedXml, category)
   outPutCsv(processedData)
 }
 
@@ -340,32 +329,10 @@ function pullCategories() {
 
 function furtherRefinements(data) {
   const noLowStocks = handleLowStocks(data)
-  const refinedCategories = refineCategories(noLowStocks)
-  let adjustedPrices = adjustAdaptersAndConnectorsPricing(refinedCategories)
+  let adjustedPrices = adjustAdaptersAndConnectorsPricing(noLowStocks)
   adjustedPrices = adjustCablesPricing(adjustedPrices)
   const refinedIsFeatured = refineFeaturedItems(adjustedPrices)
-  const prependedComputerCategories = prependComputerCategories(refinedIsFeatured)
-  return prependedComputerCategories
-}
-
-function prependComputerCategories(products) {
-  const result = products.map((product) => {
-    return {
-      ...product,
-      categories: modifyCategory(product.categories)
-    }
-  })
-  return result
-}
-
-function modifyCategory(categories) {
-  const categoriesList = categories.split(',')
-  const result = categoriesList.map((category) => {
-    if (category.startsWith('Stationery')) return category
-    if (category.startsWith('Tools')) return category.replace('Tools', DIY.category)
-    return `Computers Laptops & Electronics > ${category}`
-  })
-  return result.join(',')
+  return refinedIsFeatured
 }
 
 function outPutCsv(data) {
